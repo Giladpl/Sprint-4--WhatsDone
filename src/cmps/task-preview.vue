@@ -1,6 +1,6 @@
 <template>
   <section
-    class="task-preview"
+    class="task-preview flex-center"
     v-bind:style="{borderLeft: `8px solid ${groupColor}`}"
   >
     <div
@@ -71,7 +71,7 @@ export default {
     }
   },
   created() {
-    console.log(this.$state.getters.getCurrBoard);
+    // console.log(this.$state.getters.getCurrBoard);
   }
 }
 </script>
