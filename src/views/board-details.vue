@@ -3,6 +3,15 @@
     v-if="board"
     class="board-details"
   >
+    <input
+        class="board-title-input"
+        v-if="boardTitle"
+        type="text"
+        @input="updateBoardTitle"
+        v-model="boardTitle"
+    >
+    <div>{{board.description}}</div>
+    <div>Created By: {{board.createdBy.fullname}}</div>
     <ul class="clean-list">
       <li
         v-for="group in board.groups"
@@ -26,6 +35,7 @@ export default {
   data() {
     return {
       board: null,
+      boardTitle: null
     };
   },
   methods: {
@@ -34,6 +44,7 @@ export default {
         const id = this.$route.params.boardId;
         const board = await boardService.getById(id)
         this.board = board;
+        this.boardTitle = board.title;
       } catch (err) {
         console.log('cannot load board', err);
       }
@@ -42,10 +53,12 @@ export default {
       console.log(color);
 
     },
-		updateGroupTitle(title){
+		updateGroupTitle(title) {
 			console.log(title);
-			
-		}
+		},
+    updateBoardTitle(title) {
+      console.log(title);
+    }
   },
   computed: {
     loggedinUser() {
