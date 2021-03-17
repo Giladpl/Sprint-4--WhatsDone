@@ -1,6 +1,13 @@
 .colors-container {
-    border-radius: 50%;
-    width: 10px;
+    height: 400px;
+    width: 400px;
+
+    .btn-color {
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        border: none;
+    }
 
     .dark-green {
         background-color: rgb(13, 87, 3);
