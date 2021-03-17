@@ -1,6 +1,6 @@
 <template>
   <section class="colors-container">
-    <button class="btn-color dark-green"></button
+    <button @click="" class="btn-color dark-green"></button
     ><button class="btn-color green"></button
     ><button class="btn-color khaki"></button
     ><button class="btn-color orange"></button
@@ -19,8 +19,13 @@
 </template>
 
 <script>
-export default {};
-</script>
+export default {
+  name: 'colorPicker',
+  methods: {
+    changeColor() {
 
-<style>
-</style>
+    },
+  }
+
+};
+</script>
