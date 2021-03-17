@@ -69,10 +69,9 @@ function _createBoard(_id, title) {
         title,
         createdAt: 1589983468418,
         createdBy: {
-            // Mini-user, ID from backend
             _id: 'u101',
-            fullname: 'Abi Abambi',
-            imgUrl: 'http://some-img',
+            fullname: 'Shraga Puk',
+            imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
         },
         statuses: [
             {
@@ -101,8 +100,8 @@ function _createBoard(_id, title) {
         members: [
             {
                 _id: 'u101', // Each is mini-user, ID from Backend
-                fullname: 'Tal Tarablus',
-                imgUrl: 'https://www.google.com',
+                fullname: 'Shraga Puk',
+                imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
             },
             {
                 _id: 'u102', // Each is mini-user, ID from Backend

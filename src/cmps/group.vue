@@ -4,12 +4,12 @@
 
       <el-dropdown
         size="mini"
-        split-button="false"
+        split-button
         type="primary"
       >
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item @click="removeGroup">Delete Group</el-dropdown-item>
-          <el-dropdown-item @click="onColorPicker">Change Color</el-dropdown-item>
+          <el-dropdown-item @click.native="removeGroup">Delete Group</el-dropdown-item>
+          <el-dropdown-item @click.native="onColorPicker">Change Color</el-dropdown-item>
           <color-picker
             v-if="isColorPicker"
             @changeColor="changeColor"
@@ -17,20 +17,25 @@
         </el-dropdown-menu>
       </el-dropdown>
 
-      <div>{{group.title}}</div>
+      <!-- <div>{{group.title}}</div> -->
+      <input
+        v-if="groupTitle"
+        type="text" @input="updateTitle"
+        v-model="groupTitle"
+      >
       <div>Members</div>
       <div>Status</div>
       <div>Timeline</div>
       <div>Priority</div>
     </div>
     <li
-      v-for="task in tasks"
+      v-for="task in group.tasks"
       :key="task._id"
       class="task-container"
     >
       <task-preview
         :task="task"
-        :groupColor="groupColor"
+        :groupColor="group.color"
       />
     </li>
   </ul>
@@ -51,6 +56,7 @@ export default {
   data() {
     return {
       isColorPicker: false,
+      groupTitle: null,
     }
   },
   methods: {
@@ -60,9 +66,15 @@ export default {
     changeColor(chosenColor) {
       this.$emit('changeColor', chosenColor)
     },
-    isColorPicker() {
+    onColorPicker() {
       this.isColorPicker = !this.isColorPicker
+    },
+    updateTitle() {
+      this.$emit('updateTitle', this.groupTitle)
     }
+  },
+  created() {
+    this.groupTitle = this.group.title
   },
   components: {
     taskPreview,

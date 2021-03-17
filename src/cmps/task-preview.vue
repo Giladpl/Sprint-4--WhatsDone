@@ -7,8 +7,8 @@
         </div>
         <div>
             <ul class="members">
-                <li v-for="member in members" :key="member._id" class="miniUser">
-                    <el-avatar :size="size" :src="member.imgUrl"></el-avatar>
+                <li v-for="member in task.members" :key="member._id" class="miniUser">
+                    <el-avatar size="small" :src="member.imgUrl"></el-avatar>
                 </li>
             </ul>
         </div>
