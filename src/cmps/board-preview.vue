@@ -1,9 +1,9 @@
 <template>
-    <section class="board-preview">
+    <el-card class="board-preview">
         <p>img</p>
         <h4>{{board.title}}</h4>
         <p>Created by: {{board.createdBy.fullname}}</p>
-    </section>
+    </el-card>
 </template>
 
 <script>

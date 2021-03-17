@@ -1,12 +1,6 @@
 <template>
   <section class="home-page">
-    <h1>Hi</h1>
     <board-list :boards="boards" />
-    <el-card class="box-card">
-      <div v-for="o in 4" :key="o" class="text item">
-        {{ "List item " + o }}
-      </div>
-    </el-card>
   </section>
 </template>
 
@@ -25,5 +19,6 @@ export default {
   },
 };
 </script>
+
 
 
