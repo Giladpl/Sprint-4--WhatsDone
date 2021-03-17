@@ -1,8 +1,7 @@
-
 .header-component {
     left: 0;
     height: 100vh;
-    background-color:$clr3;
+    background-color: $clr3;
     z-index: 2;
 
     .main-header {
@@ -13,18 +12,27 @@
         align-items: center;
         padding: 10px;
 
-        .el-icon-s-grid {
+        .header-icon {
             font-size: 20px;
             color: white;
         }
+
+        .top-icon-wrapper {
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .header-avatar {
+            cursor: pointer;
+        }
     }
-    
 
     .secondary-header {
         height: 100%;
         width: 3.125rem;
-        -webkit-border-start: 1px solid hsla(0,0%,100%,.2);
-        border-inline-start: 1px solid hsla(0,0%,100%,.2);
+        -webkit-border-start: 1px solid hsla(0, 0%, 100%, 0.2);
+        border-inline-start: 1px solid hsla(0, 0%, 100%, 0.2);
         align-items: center;
     }
 }
