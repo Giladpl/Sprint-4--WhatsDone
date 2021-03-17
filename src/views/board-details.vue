@@ -1,7 +1,7 @@
 <template>
   <section v-if="board" class="board-details">
     <app-header />
-    <div class="detail-wrapper">
+    <div class="details-wrapper">
       <div>
         <input
           class="board-title-input"

@@ -38,6 +38,7 @@
         :groupColor="group.color"
       />
     </li>
+    <input class="input-add-task" type="text">
   </ul>
 </template>
 

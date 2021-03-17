@@ -1,4 +1,6 @@
 .group {
+    padding-bottom: 50px;
+    
     .group-header {
         height: 48px;
         padding: 0 8px;
@@ -7,9 +9,9 @@
         text-align: center;
         color: $clr3;
 
-        > * {
+        >* {
             padding: 0 10px;
-            font-size: 15px;  
+            font-size: 15px;
         }
 
         .group-title-input {

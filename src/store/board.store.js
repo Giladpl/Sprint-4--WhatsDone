@@ -7,6 +7,7 @@ export const boardStore = {
     },
     getters: {
         boards(state){ return state.boards},
+        getCurrBoard(state){ return state.currBoard}
     },
     mutations: {
         setBoards(state, payload){

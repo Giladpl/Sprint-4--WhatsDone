@@ -3,6 +3,11 @@
     min-height: 100vh;
     display: flex;
 
+    .details-wrapper {
+        width: 100%;
+        padding: 0 30px;
+    }
+
     .board-title-input,
     .board-description-input {
         border: 1px dashed transparent;
