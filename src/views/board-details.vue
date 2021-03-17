@@ -3,7 +3,7 @@
     v-if="board"
     class="board-details"
   >
-    <ul>
+    <ul class="clean-list">
       <li
         v-for="group in board.groups"
         :key="group._id"
