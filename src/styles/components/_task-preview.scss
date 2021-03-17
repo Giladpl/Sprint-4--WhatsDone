@@ -14,5 +14,18 @@
     .main-task {
         display: flex;
         justify-content: space-between;
+        width: 350px;
+        min-width: 200px;
+        .task-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-right: 30px;
+        }
+    }
+
+    .members {
+        display: flex;
+
     }
 }
