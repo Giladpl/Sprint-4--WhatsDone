@@ -21,7 +21,15 @@
             overflow: hidden;
             text-overflow: ellipsis;
             padding-right: 30px;
+            cursor: pointer;
+            
+            
+            
+            
         }
+    }
+    &:hover {
+       background-color: #E6E9EF;
     }
 
     .members {
