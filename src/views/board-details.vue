@@ -1,35 +1,39 @@
 <template>
   <section v-if="board" class="board-details">
-    <app-header/>
-    <div>
-      <input
-        class="board-title-input"
-        v-if="boardTitle"
-        type="text"
-        @input="updateBoardTitle"
-        v-model="boardTitle"
-      />
-    </div>
-    <div>
-      <input
-        class="board-description-input"
-        v-if="boardDescription"
-        type="text"
-        @input="updateBoardDescription"
-        v-model="boardDescription"
-      />
-    </div>
-    <div class="created-by" @click="openUserProfile">Created By: {{ board.createdBy.fullname }}</div>
-    <ul class="clean-list">
-      <li v-for="group in board.groups" :key="group._id">
-        <group
-          :group="group"
-          @changeColor="changeGroupColor"
-          @updateTitle="updateGroupTitle"
-          @removeTask="removeTask"
+    <app-header />
+    <div class="detail-wrapper">
+      <div>
+        <input
+          class="board-title-input"
+          v-if="boardTitle"
+          type="text"
+          @input="updateBoardTitle"
+          v-model="boardTitle"
         />
-      </li>
-    </ul>
+      </div>
+      <div>
+        <input
+          class="board-description-input"
+          v-if="boardDescription"
+          type="text"
+          @input="updateBoardDescription"
+          v-model="boardDescription"
+        />
+      </div>
+      <div class="created-by" @click="openUserProfile">
+        Created By: {{ board.createdBy.fullname }}
+      </div>
+      <ul class="clean-list">
+        <li v-for="group in board.groups" :key="group._id">
+          <group
+            :group="group"
+            @changeColor="changeGroupColor"
+            @updateTitle="updateGroupTitle"
+            @removeTask="removeTask"
+          />
+        </li>
+      </ul>
+    </div>
   </section>
 </template>
 
@@ -58,9 +62,9 @@ export default {
         console.log("cannot load board", err);
       }
     },
-		async removeTask(taskId){
-			console.log(taskId);
-		},
+    async removeTask(taskId) {
+      console.log(taskId);
+    },
     changeGroupColor(color) {
       console.log(color);
     },
@@ -74,8 +78,8 @@ export default {
       console.log(ev.target.value);
     },
     openUserProfile() {
-      console.log('open user profile');
-    }
+      console.log("open user profile");
+    },
   },
   computed: {
     loggedinUser() {
