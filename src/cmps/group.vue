@@ -1,7 +1,6 @@
 <template>
   <ul class="group clean-list">
-    <div class="flex">
-
+    <div class="group-header">
       <el-dropdown
         size="mini"
         split-button
@@ -16,9 +15,8 @@
           />
         </el-dropdown-menu>
       </el-dropdown>
-
-      <!-- <div>{{group.title}}</div> -->
       <input
+        class="group-title-input"
         v-if="groupTitle"
         type="text" @input="updateTitle"
         v-model="groupTitle"

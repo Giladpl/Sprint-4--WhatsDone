@@ -1,0 +1,23 @@
+.group {
+    .group-header {
+        height: 48px;
+        padding: 0 8px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        color: $clr3;
+
+        > * {
+            padding: 0 10px;
+            font-size: 15px;  
+        }
+
+        .group-title-input {
+            border: 1px dashed transparent;
+            padding: 3px 7px 3px 0;
+            background-color: inherit;
+            color: $clr3;
+            font-size: 20px;
+        }
+    }
+}
