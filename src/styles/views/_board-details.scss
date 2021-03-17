@@ -1,6 +1,7 @@
 .board-details {
     background-color: white;
     min-height: 100vh;
+    display: flex;
 
     .board-title-input,
     .board-description-input {
