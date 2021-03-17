@@ -21,16 +21,12 @@
     </div>
     <div class="created-by" @click="openUserProfile">Created By: {{ board.createdBy.fullname }}</div>
     <ul class="clean-list">
-      <li
-        v-for="group in board.groups"
-        :key="group._id"
-      >
-        <group @removeTask="removeTask"
       <li v-for="group in board.groups" :key="group._id">
         <group
           :group="group"
           @changeColor="changeGroupColor"
           @updateTitle="updateGroupTitle"
+          @removeTask="removeTask"
         />
       </li>
     </ul>
