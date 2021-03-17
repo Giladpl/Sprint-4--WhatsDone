@@ -1,7 +1,7 @@
 <template>
   <ul class="group clean-list">
     <div class="group-header">
-      <span><i class="el-icon-arrow-down"></i></span>
+      <span @click="toggleGroupEdit"><i class="el-icon-arrow-down"></i></span>
       <div class="group-edit">
         <div @click.native="removeGroup"><i class="el-icon-delete"></i>Delete Group</div>
         <div @click.native="onColorPicker"><i class="el-icon-delete"></i>Change Color</div>
@@ -70,6 +70,9 @@ export default {
     },
     removeTask(taskId) {
       this.$emit('removeTask', taskId)
+    },
+    toggleGroupEdit() {
+      console.log('not done');
     }
   },
   created() {
