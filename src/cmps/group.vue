@@ -9,8 +9,11 @@
       >
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item @click="removeGroup">Delete Group</el-dropdown-item>
-          <el-dropdown-item @click="chooseColor">Change Color</el-dropdown-item>
-          
+          <el-dropdown-item @click="onColorPicker">Change Color</el-dropdown-item>
+          <color-picker
+            v-if="isColorPicker"
+            @changeColor="changeColor"
+          />
         </el-dropdown-menu>
       </el-dropdown>
 
@@ -35,21 +38,35 @@
 
 <script>
 import taskPreview from "./task-preview.vue";
+import colorPicker from "./color-pick.vue";
 
 export default {
+  name: 'group',
   props: {
     group: {
       type: Array,
       required: true,
     },
   },
+  data() {
+    return {
+      isColorPicker: false,
+    }
+  },
   methods: {
-    remove(group) {
-      this.$emit("remove", group);
+    removeGroup() {
+      this.$emit('removeGroup', group.id);
     },
+    changeColor(chosenColor) {
+      this.$emit('changeColor', chosenColor)
+    },
+    isColorPicker() {
+      this.isColorPicker = !this.isColorPicker
+    }
   },
   components: {
     taskPreview,
+    colorPicker
   },
 };
 </script>
