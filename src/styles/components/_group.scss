@@ -1,4 +1,19 @@
 .group {
+    padding-bottom: 50px;
+
+    .input-add-task{
+        height: 35px;
+        width: 100%;
+        border: 1px solid transparent;
+        box-shadow: 0 3px 4px -5px #484444;
+        transition: .4s;
+
+        &:hover{
+            border: 1px solid grey;
+        }
+    }
+
+
     .group-header {
         height: 48px;
         padding: 0 8px;
@@ -7,9 +22,9 @@
         text-align: center;
         color: $clr3;
 
-        > * {
+        >* {
             padding: 0 10px;
-            font-size: 15px;  
+            font-size: 15px;
         }
 
         .group-title-input {

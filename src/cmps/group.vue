@@ -33,6 +33,7 @@
         :groupColor="group.color"
       />
     </li>
+    <input class="input-add-task" type="text" placeholder="+ Add">
   </ul>
 </template>
 
