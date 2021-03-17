@@ -16,7 +16,11 @@
             {{task.statusId}}
         </div>
         <div>
-            {{task.dueDate}}
+            <el-date-picker
+                v-model="task.dueDate"
+                type="date"
+                placeholder="Pick a day">
+            </el-date-picker>
         </div>
         <div>
             {{task.priorityId}}
