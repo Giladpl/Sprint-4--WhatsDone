@@ -13,6 +13,12 @@
     display: flex
 }
 
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .jc-center .ai-center .fd-column {
     justify-content: center;
     align-items: center;
