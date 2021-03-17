@@ -1,0 +1,14 @@
+.about {
+	height: 84vh;
+	text-align: center;
+	padding-top: 30px;
+
+	.vue-map-container {
+		margin: 40px auto;
+	}
+
+	.btns > * {
+		background-color: $clr1;
+		color: $clr2;
+	}
+}

@@ -1,0 +1,38 @@
+.app-header {
+	background-color: $clr1;
+	color: $clr2;
+	padding: 30px 40px;
+	height: 8vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.logo {
+		font-size: 30px;
+		font-weight: bold;
+		font-family: GreatVibes, serif;
+	}
+
+	nav {
+		> * {
+			text-decoration: none;
+			color: $clr2;
+
+			&:not(:last-child) {
+				margin-right: 15px;
+			}
+
+			&:hover {
+				opacity: 0.6;
+			}
+		}
+
+		a.router-link-exact-active {
+			color: $clr5;
+		}
+	}
+
+	@include for-wide-layout {
+		padding: 30px 100px;
+	}
+}

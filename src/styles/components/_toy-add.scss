@@ -1,0 +1,34 @@
+.add-toy {
+	text-align: center;
+
+	form {
+		margin-bottom: 50px;
+
+		> * {
+			margin-left: 3px;
+			margin-right: 3px;
+		}
+	}
+
+	.add-btn {
+		background-color: $clr1;
+		border: 1px solid $clr3;
+		color: $clr2;
+
+		&:hover {
+			color: $clr3;
+		}
+	}
+
+	.name-input {
+		width: 150px;
+	}
+
+	.num-input {
+		width: 100px;
+	}
+
+	.select {
+		width: 150px;
+	}
+}
