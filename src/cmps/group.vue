@@ -1,5 +1,5 @@
 <template>
-  <ul class="group">
+  <ul class="group clean-list">
     <div class="flex">
 
       <el-dropdown

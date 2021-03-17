@@ -1,0 +1,18 @@
+.task-preview{
+    display: flex;
+    max-height: 34px;
+    background-color: $clr2;
+    margin-bottom: .0625rem;
+    border-radius: 1px;
+    border-right: 8px solid #e6e9ef;
+    transition: background-color .3s;
+    padding: 0 .625rem;
+    color: $clr3;
+    font-size: .8125rem;
+    justify-content: space-between;
+
+    .main-task {
+        display: flex;
+        justify-content: space-between;
+    }
+}

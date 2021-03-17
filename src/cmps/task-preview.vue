@@ -1,12 +1,11 @@
 <template>
-    <section class="task-preview">
-        <div>
-            <div v-bind:style="{background: groupColor}"></div>
+    <section class="task-preview" v-bind:style="{borderLeft: `8px solid ${groupColor}`}">
+        <div class="main-task" @click.prevent="onTask">
             <div>{{task.title}}</div>
-            <div @click.prevent="onTask"><i class="el-icon-chat-dot-round"></i></div>
+            <div><i class="el-icon-chat-dot-round"></i></div>
         </div>
         <div>
-            <ul class="members">
+            <ul class="members clean-list">
                 <li v-for="member in task.members" :key="member._id" class="miniUser">
                     <el-avatar size="small" :src="member.imgUrl"></el-avatar>
                 </li>
