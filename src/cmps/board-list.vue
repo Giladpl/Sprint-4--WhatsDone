@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import boardPreview from "./board-preview.vue";
+import boardPreview from "./board-preview";
 
 export default {
 	props: {

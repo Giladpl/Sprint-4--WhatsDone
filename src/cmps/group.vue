@@ -37,14 +37,14 @@
 </template>
 
 <script>
-import taskPreview from "./task-preview.vue";
-import colorPicker from "./color-pick.vue";
+import taskPreview from "./task-preview";
+import colorPicker from "./color-picker";
 
 export default {
   name: 'group',
   props: {
     group: {
-      type: Array,
+      type: Object,
       required: true,
     },
   },

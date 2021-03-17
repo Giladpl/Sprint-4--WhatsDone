@@ -10,11 +10,8 @@ export default {
 		return {};
 	},
 	created() {
-		// this.$store.dispatch({
-		// 	type: "loadBoards",
-		// 	filterBy: { name: "", type: "All", stock: "All" },
-		// });
-		// console.log("Vue App was created!!!");
+		this.$store.dispatch({type: "loadBoards"});
+		console.log("Vue App was created!!!");
 	},
 	components: {},
 };
