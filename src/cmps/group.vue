@@ -3,8 +3,8 @@
     <div class="group-header">
       <span @click="toggleGroupEdit"><i class="el-icon-arrow-down"></i></span>
       <div class="group-edit">
-        <div @click.native="removeGroup"><i class="el-icon-delete"></i>Delete Group</div>
-        <div @click.native="onColorPicker"><i class="el-icon-delete"></i>Change Color</div>
+        <div @click="removeGroup"><i class="el-icon-delete"></i>Delete Group</div>
+        <div @click="onColorPicker"><i class="el-icon-delete"></i>Change Color</div>
       </div>
         <color-picker
           v-if="isColorPicker"
