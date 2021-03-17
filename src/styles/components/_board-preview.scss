@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.board-preview {
+display: flex;
+
+    a {
+        text-decoration: none;
+
+        ::after {
+            color: inherit;
+        }
+    }
+}
