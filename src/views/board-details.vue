@@ -1,15 +1,25 @@
 <template>
   <section v-if="board" class="board-details">
     <app-header/>
-    <input
-      class="board-title-input"
-      v-if="boardTitle"
-      type="text"
-      @input="updateBoardTitle"
-      v-model="boardTitle"
-    />
-    <div>{{ board.description }}</div>
-    <div>Created By: {{ board.createdBy.fullname }}</div>
+    <div>
+      <input
+        class="board-title-input"
+        v-if="boardTitle"
+        type="text"
+        @input="updateBoardTitle"
+        v-model="boardTitle"
+      />
+    </div>
+    <div>
+      <input
+        class="board-description-input"
+        v-if="boardDescription"
+        type="text"
+        @input="updateBoardDescription"
+        v-model="boardDescription"
+      />
+    </div>
+    <div class="created-by" @click="openUserProfile">Created By: {{ board.createdBy.fullname }}</div>
     <ul class="clean-list">
       <li v-for="group in board.groups" :key="group._id">
         <group
@@ -32,6 +42,7 @@ export default {
     return {
       board: null,
       boardTitle: null,
+      boardDescription: null,
     };
   },
   methods: {
@@ -41,6 +52,7 @@ export default {
         const board = await boardService.getById(id);
         this.board = board;
         this.boardTitle = board.title;
+        this.boardDescription = board.description;
       } catch (err) {
         console.log("cannot load board", err);
       }
@@ -51,9 +63,15 @@ export default {
     updateGroupTitle(title) {
       console.log(title);
     },
-    updateBoardTitle(title) {
-      console.log(title);
+    updateBoardTitle(ev) {
+      console.log(ev.target.value);
     },
+    updateBoardDescription(ev) {
+      console.log(ev.target.value);
+    },
+    openUserProfile() {
+      console.log('open user profile');
+    }
   },
   computed: {
     loggedinUser() {
