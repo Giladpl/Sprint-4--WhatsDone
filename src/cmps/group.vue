@@ -18,7 +18,8 @@
       <input
         class="group-title-input"
         v-if="groupTitle"
-        type="text" @input="updateTitle"
+        type="text"
+        @input="updateTitle"
         v-model="groupTitle"
       >
       <div>Members</div>
@@ -32,6 +33,7 @@
       class="task-container"
     >
       <task-preview
+        @removeTask="removeTask"
         :task="task"
         :groupColor="group.color"
       />
@@ -69,6 +71,9 @@ export default {
     },
     updateTitle() {
       this.$emit('updateTitle', this.groupTitle)
+    },
+    removeTask(taskId) {
+      this.$emit('removeTask', taskId)
     }
   },
   created() {

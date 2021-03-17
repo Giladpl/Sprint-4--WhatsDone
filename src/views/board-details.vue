@@ -17,7 +17,7 @@
         v-for="group in board.groups"
         :key="group._id"
       >
-        <group
+        <group @removeTask="removeTask"
           :group="group"
           @changeColor="changeGroupColor"
 					@updateTitle="updateGroupTitle"
@@ -49,6 +49,9 @@ export default {
         console.log('cannot load board', err);
       }
     },
+		async removeTask(taskId){
+			console.log(taskId);
+		},
     changeGroupColor(color) {
       console.log(color);
 

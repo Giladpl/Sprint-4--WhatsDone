@@ -11,6 +11,11 @@
     font-size: .8125rem;
     justify-content: space-between;
 
+    .btns-hidden{
+        opacity: 0;
+    }
+
+    
     .main-task {
         display: flex;
         justify-content: space-between;
@@ -22,14 +27,14 @@
             text-overflow: ellipsis;
             padding-right: 30px;
             cursor: pointer;
-            
-            
-            
-            
         }
     }
     &:hover {
-       background-color: #E6E9EF;
+        background-color: #E6E9EF;
+
+        .btns-hidden{
+            opacity: 1;
+        }
     }
 
     .members {
