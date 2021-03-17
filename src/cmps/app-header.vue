@@ -1,13 +1,12 @@
 <template>
-  <header-component class="header-component flex">
-      <main-header class="main-header flex .fd-column"/>
-      <secondary-header class="secondary-header flex .fd-column"/>
-  </header-component>
+  <section class="header-component flex">
+    <div class="main-header flex .fd-column"></div>
+    <div calss="secondary-header flex .fd-column"></div>
+  </section>
 </template>
 
 <script>
 export default {
-    name: 'appHeader',
-
-}
+  name: "appHeader",
+};
 </script>
