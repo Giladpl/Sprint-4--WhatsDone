@@ -245,7 +245,7 @@ function _createBoard(_id, title) {
                 color: '#8D0000',
             },
             {
-                id: 'g101',
+                id: 'g102',
                 title: 'UX/UI',
                 tasks: [
                     {

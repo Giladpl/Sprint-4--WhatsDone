@@ -39,7 +39,6 @@ export const boardStore = {
             const type = (board._id) ? 'editBoard' : 'addBoard';
             try {
                 const savedBoard = await boardService.save(board)
-                console.log(savedBoard);
                 commit({type, board: savedBoard})
             } catch (err) {
                 console.log('Store: Cannot save board', err);

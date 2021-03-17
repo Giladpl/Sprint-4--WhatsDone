@@ -6,10 +6,10 @@
         <div @click="removeGroup"><i class="el-icon-delete"></i>Delete Group</div>
         <div @click="onColorPicker"><i class="el-icon-delete"></i>Change Color</div>
       </div>
-        <color-picker
-          v-if="isColorPicker"
-          @changeColor="changeColor"
-        />
+      <color-picker
+        v-if="isColorPicker"
+        @changeColor="changeColor"
+      />
       <input
         class="group-title-input"
         v-if="groupTitle"
@@ -33,7 +33,11 @@
         :groupColor="group.color"
       />
     </li>
-    <input class="input-add-task" type="text" placeholder="+ Add">
+    <input
+      class="input-add-task"
+      type="text"
+      placeholder="+ Add"
+    >
   </ul>
 </template>
 
@@ -69,7 +73,7 @@ export default {
       this.$emit('updateTitle', this.groupTitle)
     },
     removeTask(taskId) {
-      this.$emit('removeTask', taskId)
+      this.$emit('removeTask', { taskId, groupId: this.group.id })
     },
     toggleGroupEdit() {
       console.log('not done');
