@@ -3,11 +3,7 @@ import { boardService } from "../services/board.service.js";
 export const boardStore = {
     state: {
         boards: [],
-        filterBy: {
-            name: '',
-            type: 'All',
-            stock: 'All'
-        }
+        currBoard: null,
     },
     getters: {
         boards(state){ return state.boards},
@@ -15,7 +11,7 @@ export const boardStore = {
     mutations: {
         setBoards(state, payload){
             state.boards = payload.boards;
-        },  
+        },
         addBoard(state, { board }) {
             state.boards.push(board);
         },
