@@ -1,26 +1,21 @@
 <template>
-  <section
-    v-if="board"
-    class="board-details"
-  >
+  <section v-if="board" class="board-details">
+    <app-header/>
     <input
-        class="board-title-input"
-        v-if="boardTitle"
-        type="text"
-        @input="updateBoardTitle"
-        v-model="boardTitle"
-    >
-    <div>{{board.description}}</div>
-    <div>Created By: {{board.createdBy.fullname}}</div>
+      class="board-title-input"
+      v-if="boardTitle"
+      type="text"
+      @input="updateBoardTitle"
+      v-model="boardTitle"
+    />
+    <div>{{ board.description }}</div>
+    <div>Created By: {{ board.createdBy.fullname }}</div>
     <ul class="clean-list">
-      <li
-        v-for="group in board.groups"
-        :key="group._id"
-      >
+      <li v-for="group in board.groups" :key="group._id">
         <group
           :group="group"
           @changeColor="changeGroupColor"
-					@updateTitle="updateGroupTitle"
+          @updateTitle="updateGroupTitle"
         />
       </li>
     </ul>
@@ -28,37 +23,37 @@
 </template>
 
 <script>
-import { boardService } from '../services/board.service.js';
-import group from '@/cmps/group';
+import { boardService } from "../services/board.service.js";
+import group from "@/cmps/group";
+import appHeader from "@/cmps/app-header";
 
 export default {
   data() {
     return {
       board: null,
-      boardTitle: null
+      boardTitle: null,
     };
   },
   methods: {
     async loadBoard() {
       try {
         const id = this.$route.params.boardId;
-        const board = await boardService.getById(id)
+        const board = await boardService.getById(id);
         this.board = board;
         this.boardTitle = board.title;
       } catch (err) {
-        console.log('cannot load board', err);
+        console.log("cannot load board", err);
       }
     },
     changeGroupColor(color) {
       console.log(color);
-
     },
-		updateGroupTitle(title) {
-			console.log(title);
-		},
+    updateGroupTitle(title) {
+      console.log(title);
+    },
     updateBoardTitle(title) {
       console.log(title);
-    }
+    },
   },
   computed: {
     loggedinUser() {
@@ -69,7 +64,8 @@ export default {
     this.loadBoard();
   },
   components: {
-    group
-  }
+    group,
+    appHeader,
+  },
 };
 </script>
