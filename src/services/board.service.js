@@ -360,7 +360,7 @@ function _createBoard(_id, title) {
                         dueDate: 16756215211,
                     },
                 ],
-                color: '#8D0000',
+                color: '#845EC2',
             },
         ],
         activities: [
