@@ -99,55 +99,146 @@ function _createBoard(_id, title) {
         ],
         members: [
             {
-                _id: 'u101', // Each is mini-user, ID from Backend
+                _id: 'u101', 
                 fullname: 'Shraga Puk',
                 imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
             },
             {
-                _id: 'u102', // Each is mini-user, ID from Backend
-                fullname: 'Tal Tarablus',
-                imgUrl: 'https://www.google.com',
+                _id: 'u102', 
+                fullname: 'Datia Puk',
+                imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
+            },
+            {
+                _id: 'u103', 
+                fullname: 'Tuki Norma',
+                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
+            },
+            {
+                _id: 'u104', 
+                fullname: 'Muki Abu Ja',
+                imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU',
+            },
+            {
+                _id: 'u105', 
+                fullname: 'JSON De Parse',
+                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
             },
         ],
         groups: [
             {
                 id: 'g101',
-                title: 'Group 1',
+                title: 'Product Definition',
                 tasks: [
                     {
-                        id: 't104',
-                        title: 'Help me',
+                        id: 't101',
+                        title: 'Understanding the basic flow',
                         members: [
                             {
-                                _id: 'u101',
-                                fullname: 'Tal Tarablus',
-                                imgUrl:
-                                    'http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg',
+                                _id: 'u101', 
+                                fullname: 'Shraga Puk',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
+                            },
+                            {
+                                _id: 'u102', 
+                                fullname: 'Datia Puk',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
                             },
                         ],
                         byMember: {
-                            _id: 'u102',
+                            _id: 'u101',
                             fullname: 'Shraga Puk',
                             imgUrl:
                                 'http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg',
                         },
                         comments: [
                             {
-                                id: 'u101',
-                                update: 'changed font size',
+                                id: 'c101',
+                                update: 'Added the basic pages to the presentation',
                                 file: 'http://some-img',
                                 createdAt: 154514,
                                 byMember: {
                                     _id: 'u101',
-                                    fullname: 'Abi Abambi',
-                                    imgUrl: 'http://some-img',
+                                    fullname: 'Shraga Puk',
+                                     imgUrl:
+                                   'http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg',
+                                },
+                            },
+                            {
+                                id: 'c102',
+                                update: 'Fixed the layout of the current Highlights page',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u102', 
+                                    fullname: 'Datia Puk',
+                                    imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
                                 },
                             },
                         ],
                         statusId: 's101',
                         priorityId: 'p102',
                         createdAt: 1590999730348,
-                        dueDate: 16156215211,
+                        dueDate: 16756215211,
+                    },
+                    {
+                        id: 't102',
+                        title: 'Preparation for collaboration between programmers',
+                        members: [
+                            {
+                                _id: 'u103', 
+                                fullname: 'Tuki Norma',
+                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
+                            },
+                            {
+                                _id: 'u105', 
+                                fullname: 'JSON De Parse',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                            },
+                        ],
+                        byMember: {
+                            _id: 'u103', 
+                            fullname: 'Tuki Norma',
+                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                        },
+                        comments: [
+                            {
+                                id: 'c103',
+                                update: 'Created a git depository and sent invitation',
+                                file: 'http://some-img',
+                                createdAt: 154514,
+                                byMember: {
+                                    _id: 'u103', 
+                                    fullname: 'Tuki Norma',
+                                    imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Uploaded the first commit with the folders structure',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                    fullname: 'JSON De Parse',
+                                    imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Finished the initial wire-connection, all looks in good working order',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                     fullname: 'JSON De Parse',
+                                   imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                        ],
+                        statusId: 's101',
+                        priorityId: 'p102',
+                        createdAt: 1590999730348,
+                        dueDate: 16756215211,
                     },
                 ],
                 color: '#8D0000',
