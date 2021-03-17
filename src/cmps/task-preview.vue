@@ -7,13 +7,15 @@
       class="main-task"
       @click.prevent="onTask"
     >
-      <div
-        @click.stop="removeTask"
-        class="btns-hidden"
-      ><i class="el-icon-delete"></i></div>
-      <div class="task-title">{{task.title}}</div>
+      <div class="remove-title-wrapper flex">
+        <div
+          @click.stop="removeTask"
+          class="btns-hidden"
+        ><i class="el-icon-delete"></i></div>
+        <div class="task-title">{{task.title}}</div>
       <div class="btns-hidden"><i class="el-icon-edit"></i></div>
-      <div><i class="el-icon-chat-dot-round"></i></div>
+      </div>
+      <div class="btn-chat"><i class="el-icon-chat-dot-round"></i></div>
     </div>
     <div>
       <ul class="members clean-list">
@@ -67,6 +69,9 @@ export default {
       this.$emit('removeTask', this.task.id);
 
     }
+  },
+  created() {
+    console.log(this.$state.getters.getCurrBoard);
   }
 }
 </script>
