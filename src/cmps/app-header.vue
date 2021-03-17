@@ -22,7 +22,7 @@ export default {
     };
   },
   created() {
-    this.$store.getters.loggedInUser = this.loggedInUser;
+    // this.$store.getters.loggedInUser = this.loggedInUser;
   },
 };
 </script>
