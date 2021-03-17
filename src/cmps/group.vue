@@ -1,20 +1,15 @@
 <template>
   <ul class="group clean-list">
     <div class="group-header">
-      <el-dropdown
-        size="mini"
-        split-button
-        type="primary"
-      >
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item @click.native="removeGroup">Delete Group</el-dropdown-item>
-          <el-dropdown-item @click.native="onColorPicker">Change Color</el-dropdown-item>
-          <color-picker
-            v-if="isColorPicker"
-            @changeColor="changeColor"
-          />
-        </el-dropdown-menu>
-      </el-dropdown>
+      <span><i class="el-icon-arrow-down"></i></span>
+      <div class="group-edit">
+        <div @click.native="removeGroup"><i class="el-icon-delete"></i>Delete Group</div>
+        <div @click.native="onColorPicker"><i class="el-icon-delete"></i>Change Color</div>
+      </div>
+        <color-picker
+          v-if="isColorPicker"
+          @changeColor="changeColor"
+        />
       <input
         class="group-title-input"
         v-if="groupTitle"
