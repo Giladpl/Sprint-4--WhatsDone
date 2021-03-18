@@ -41,6 +41,7 @@
             @removeTask="removeTask"
             @removeGroup="removeGroup"
             @addTask="addTask"
+            @updateDueDate="updateDueDate"
           />
         </li>
       </ul>
@@ -131,9 +132,6 @@ export default {
         console.log('cannot update group title', err);
       }
     },
-    openUserProfile() {
-      console.log("open user profile");
-    },
     async addTask({ taskTitle, groupId }) {
       try {
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId)
@@ -146,6 +144,20 @@ export default {
         console.log(err);
       }
 
+    },
+    async updateDueDate(update) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === update.groupId)
+        const idx = currGroup.tasks.findIndex(task => task.id === update.taskId)
+        currGroup.tasks[idx].dueDate = update.date
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        this.loadBoard()
+      } catch (err) {
+        console.log('cannot update due date' ,err);
+      }
+    },
+    openUserProfile() {
+      console.log("open user profile");
     },
   },
   computed: {
