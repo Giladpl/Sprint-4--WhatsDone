@@ -134,11 +134,18 @@ export default {
     openUserProfile() {
       console.log("open user profile");
     },
-    async addTask({ task, groupId }) {
-      const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId)
-      currGroup.tasks.push(task)
-      
-      // await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+    async addTask({ taskTitle, groupId }) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId)
+        const taskToAdd = boardService.getEmptyTask()
+        taskToAdd.title = taskTitle
+        currGroup.tasks.push(taskToAdd)
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        this.loadBoard()
+      } catch (err) {
+        console.log(err);
+      }
+
     },
   },
   computed: {

@@ -10,7 +10,8 @@ export const boardService = {
     getById,
     remove,
     save,
-    getEmptyToy: getEmptyBoard
+    getEmptyBoard,
+    getEmptyTask
 }
 
 _createBoards() 
@@ -47,6 +48,20 @@ function getEmptyBoard() {
         type,
         createdAt: Date.now(),
         inStock: true
+    }
+}
+
+function getEmptyTask(){
+    return {
+        id: utilService.makeId(),
+        title: null,
+        members: [],
+        byMember: {},
+        comments: [],
+        statusId: 's102',
+        priorityId: 'p101',
+        createdAt: Date.now(),
+        dueDate: Date.now(),
     }
 }
 

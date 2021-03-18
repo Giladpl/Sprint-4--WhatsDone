@@ -49,7 +49,9 @@
       </li>
     </draggable>
 
-    <input @keyup.enter="addTask"
+    <input
+      ref="addTaskInput"
+      @keyup.enter="addTask"
       class="input-add-task"
       type="text"
       placeholder="+ Add"
@@ -93,13 +95,13 @@ export default {
     changeColor(chosenColor) {
       this.isColorPicker = !this.isColorPicker
       this.isShownGroupEdit = !this.isShownGroupEdit
-      this.$emit('changeColor', {chosenColor, groupId: this.group.id})
+      this.$emit('changeColor', { chosenColor, groupId: this.group.id })
     },
     onColorPicker() {
       this.isColorPicker = !this.isColorPicker
     },
     updateTitle() {
-      this.$emit('updateTitle', {title: this.groupTitle, groupId: this.group.id})
+      this.$emit('updateTitle', { title: this.groupTitle, groupId: this.group.id })
     },
     removeTask(taskId) {
       this.$emit('removeTask', { taskId, groupId: this.group.id })
@@ -107,8 +109,9 @@ export default {
     toggleGroupEdit() {
       this.isShownGroupEdit = !this.isShownGroupEdit
     },
-    addTask(ev){
-      this.$emit('addTask', {task: ev.target.value, groupId: this.group.id})
+    addTask(ev) {
+      this.$emit('addTask', { taskTitle: ev.target.value, groupId: this.group.id })
+      this.$refs['addTaskInput'].value = ''
     },
     updateDueDate(update) {
       console.log(update);
