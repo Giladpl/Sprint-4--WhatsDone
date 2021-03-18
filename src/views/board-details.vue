@@ -5,47 +5,58 @@
   >
     <app-header />
     <div class="details-wrapper">
-      <div class="board-top-row">
-        <input
-          class="board-title-input"
-          type="text"
-          @change="updateBoardTitle"
-          v-model="boardToEdit.title"
-        />
-        <users-avatars
-          :board="board"
-          :members="board.members"
-        />
-      </div>
-      <div>
-        <input
-          class="board-description-input"
-          type="text"
-          @change="updateBoardDescription"
-          v-model="boardToEdit.description"
-        />
-      </div>
-      <div
-        class="created-by"
-        @click="openUserProfile"
-      >
-        <router-link to="/profile">
-          Created By: {{ board.createdBy.fullname }}
-        </router-link>
-      </div>
-      <div class="add-view-row-container">
-        <el-button
-          @click="toggleAddViewMenu"
-          class="add-view-btn"
-        >+ Add View</el-button>
+      <div class="board-static-header">
+        <div class="board-top-row">
+          <input
+            class="board-title-input"
+            type="text"
+            @change="updateBoardTitle"
+            v-model="boardToEdit.title"
+          />
+          <users-avatars
+            :board="board"
+            :members="board.members"
+          />
+        </div>
+        <div>
+          <input
+            class="board-description-input"
+            type="text"
+            @change="updateBoardDescription"
+            v-model="boardToEdit.description"
+          />
+        </div>
+        <div
+          class="created-by"
+          @click="openUserProfile"
+        >
+          <router-link to="/profile">
+            Created By: {{ board.createdBy.fullname }}
+          </router-link>
+        </div>
+        <div class="add-view-row-container">
+          <el-button
+            @click="toggleAddViewMenu"
+            class="add-view-btn"
+          >+ Add View</el-button>
+        </div>
         <el-card
           v-if="isAddViewMenu"
           class="add-view-card"
           shadow="always"
         >
-          <div><img class="btn-add-view-menu" src="@/assets/icons/table.svg">Table</div>
-          <div><img class="btn-add-view-menu" src="@/assets/icons/calendar.svg">Calander</div>
-          <div><img class="btn-add-view-menu" src="@/assets/icons/chart.svg">Chart</div>
+          <div><img
+              class="btn-add-view-menu"
+              src="@/assets/icons/table.svg"
+            >Table</div>
+          <div><img
+              class="btn-add-view-menu"
+              src="@/assets/icons/calendar.svg"
+            >Calander</div>
+          <div><img
+              class="btn-add-view-menu"
+              src="@/assets/icons/chart.svg"
+            >Chart</div>
         </el-card>
       </div>
 

@@ -3,6 +3,12 @@
     min-height: 100vh;
     display: flex;
 
+    .board-static-header{
+        position: sticky;
+        top: 0;
+        background-color: white;
+    }
+
     .add-view-card{
         width: 200px;
         position: absolute;
@@ -13,7 +19,7 @@
     }
         
         .board-top-row{
-            display: flex;
+        display: flex;
         justify-content: space-between;
         height: 80px;
         align-items: center;      
