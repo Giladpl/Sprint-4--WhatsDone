@@ -11,7 +11,8 @@ export const boardService = {
     remove,
     save,
     getEmptyBoard,
-    getEmptyTask
+    getEmptyTask,
+    getEmptyGroup
 }
 
 _createBoards() 
@@ -63,6 +64,16 @@ function getEmptyTask(){
         createdAt: Date.now(),
         dueDate: Date.now(),
     }
+}
+
+function getEmptyGroup(){
+    return {
+        id: utilService.makeId(),
+        title: 'Empty Group',
+        tasks: [],
+        color: '#8D0000',
+    }
+        
 }
 
 function _createBoards() {
