@@ -43,6 +43,7 @@
           :task="task"
           :groupColor="group.color"
           :statuses="statuses"
+          :priorities="priorities"
         />
       </li>
     </draggable>
@@ -69,6 +70,10 @@ export default {
       required: true,
     },
     statuses: {
+      type: Array,
+      required: true,
+    },
+    priorities: {
       type: Array,
       required: true,
     },
