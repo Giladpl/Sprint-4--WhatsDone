@@ -5,12 +5,16 @@
   >
     <app-header />
     <div class="details-wrapper">
-      <div>
+      <div class="board-top-row">
         <input
           class="board-title-input"
           type="text"
           @change="updateBoardTitle"
           v-model="boardToEdit.title"
+        />
+        <users-avatars
+          :board="board"
+          :members="board.members"
         />
       </div>
       <div>
@@ -62,6 +66,7 @@
 import { boardService } from "../services/board.service.js";
 import group from "@/cmps/group";
 import appHeader from "@/cmps/app-header";
+import usersAvatars from "@/cmps/users-avatars"
 
 export default {
   data() {
@@ -190,6 +195,7 @@ export default {
   components: {
     group,
     appHeader,
+    usersAvatars
   },
 };
 </script>

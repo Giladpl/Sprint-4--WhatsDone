@@ -155,6 +155,31 @@ function _createBoard(_id, title) {
                 fullname: 'JSON De Parse',
                 imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
             },
+            {
+                _id: 'u106', 
+                fullname: 'Nancy Williams',
+                imgUrl: 'https://randomuser.me/api/portraits/women/50.jpg',
+            },
+            {
+                _id: 'u107', 
+                fullname: 'Dan Willer',
+                imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg',
+            },
+            {
+                _id: 'u108', 
+                fullname: 'Robert Wilford',
+                imgUrl: 'https://randomuser.me/api/portraits/men/28.jpg',
+            },
+            {
+                _id: 'u109', 
+                fullname: 'Stephanie White',
+                imgUrl: 'https://randomuser.me/api/portraits/women/42.jpg',
+            },
+            {
+                _id: 'u110', 
+                fullname: 'Dan Henderson',
+                imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+            },
         ],
         groups: [
             {
