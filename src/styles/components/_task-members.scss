@@ -1,0 +1,23 @@
+.task-members {
+    .task-members-list {
+        flex-direction: column;
+        position: absolute;
+        width: 200px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 3px;
+        box-shadow: 0 1px 2px 0 rgba(159, 159, 160, 0.3), 0 1px 3px 1px rgba(149, 152, 153, 0.15);
+        font-size: 14px;
+        transform: translate(12px, 40px);
+
+        .task-member {
+            justify-content: space-between;
+            .task-member-name {
+            }
+
+            .task-member-subtract {
+            }
+        }
+    }
+}

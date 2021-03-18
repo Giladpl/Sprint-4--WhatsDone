@@ -1,4 +1,4 @@
-.task-preview{
+.task-preview {
     display: flex;
     // max-height: 34px;
     height: 35px;
@@ -55,6 +55,7 @@
 
     .members {
         display: flex;
+        cursor: pointer;
     }
 
     .status,

@@ -13,19 +13,18 @@
       </div>
       <div class="btn-chat"><i class="el-icon-chat-dot-round"></i></div>
     </div>
-    <div>
+    <div @click="toggleTaskMembers">
       <ul class="members clean-list">
-        <task-members
-          @click.native="toggleTaskMembers"
-          v-if="isTaskMemebersShown"
-          :boardMembers="boardMembers"
-          :taskMembers="task.members"
-        />
         <li v-for="member in task.members" :key="member._id" class="miniUser">
           <el-avatar size="small" :src="member.imgUrl"></el-avatar>
         </li>
       </ul>
     </div>
+    <task-members 
+      v-if="isTaskMemebersShown"
+      :boardMembers="boardMembers"
+      :taskMembers="task.members"
+    />
     <div
       class="status"
       v-if="getStatusById"
@@ -84,7 +83,7 @@ export default {
   data() {
     return {
       currDueDate: null,
-      isTaskMemebersShown: null,
+      isTaskMemebersShown: false,
     };
   },
   methods: {
@@ -98,6 +97,7 @@ export default {
       this.$emit("updateDueDate", { date, taskId: this.task.id });
     },
     toggleTaskMembers() {
+
       this.isTaskMemebersShown = !this.isTaskMemebersShown;
     },
   },

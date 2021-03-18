@@ -1,13 +1,12 @@
 <template>
-  <section>
-    <div class="task-members">
-      <ul class="task-members-list clean-list">
-        <li v-for="member in task.members" :key="member._id" class="miniUser">
+  <section class="task-members flex">
+      <ul class="task-members-list clean-list flex">
+        <li v-for="member in taskMembers" :key="member._id" class="task-member flex">
           <el-avatar size="small" :src="member.imgUrl"></el-avatar>
           <p class="task-member-name">{{member.fullname}}</p>
+          <i class="el-icon-minus"></i>
         </li>
       </ul>
-    </div>
   </section>
 </template>
 
@@ -24,8 +23,9 @@ export default {
     },
   },
   name: "task-members",
-  data() {},
-  created() {},
+  data() {return{}},
+  created() {
+  },
 };
 </script>
 
