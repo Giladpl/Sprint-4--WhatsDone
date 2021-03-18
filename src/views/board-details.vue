@@ -40,6 +40,7 @@
             @updateTitle="updateGroupTitle"
             @removeTask="removeTask"
             @removeGroup="removeGroup"
+            @addTask="addTask"
           />
         </li>
       </ul>
@@ -125,6 +126,11 @@ export default {
     },
     openUserProfile() {
       console.log("open user profile");
+    },
+    async addTask({ task, groupId }) {
+      const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId)
+      currGroup.tasks.push(task)
+      await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
     },
   },
   computed: {

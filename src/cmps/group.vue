@@ -48,7 +48,7 @@
       </li>
     </draggable>
 
-    <input
+    <input @keyup.enter="addTask"
       class="input-add-task"
       type="text"
       placeholder="+ Add"
@@ -103,7 +103,10 @@ export default {
     },
     toggleGroupEdit() {
       this.isShownGroupEdit = !this.isShownGroupEdit
-    }
+    },
+    addTask(ev){
+      this.$emit('addTask', {task: ev.target.value, groupId: this.group.id})
+    },
   },
   created() {
     this.groupTitle = this.group.title
