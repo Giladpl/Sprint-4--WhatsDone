@@ -1,10 +1,31 @@
 <template>
   <section>
-      <div class="top">
-          <el-avatar v-if="loggedInUser" class="usr-profile-avatar" size="large" :src="loggedInUser.imgUrl">{{checkLoggedUser}}</el-avatar>
-          <el-avatar v-else class="usr-profile-avatar" size="large">{{checkLoggedUser}}</el-avatar>
-          <h1 :checkLoggedUser="checkLoggedUser">{{checkLoggedUser}}</h1>
+    <div class="top">
+      <el-avatar
+        v-if="loggedInUser"
+        class="usr-profile-avatar"
+        size="large"
+        :src="loggedInUser.imgUrl"
+        >{{ checkLoggedUser }}</el-avatar
+      >
+      <el-avatar v-else class="usr-profile-avatar" size="large">G</el-avatar>
+      <h1 :checkLoggedUser="checkLoggedUser">{{ checkLoggedUser }}</h1>
+    </div>
+    <div class="bottom">
+      <div class="user-boards">
+          <h2>My boards</h2>
+          <h3>Board 1</h3>
+          <h3>Board 2</h3>
+          <h3>Board 3</h3>
       </div>
+      <div class="user-tasks">
+           <h2>My Tasks</h2>
+          <h3>Task 1</h3>
+          <h3>Task 2</h3>
+          <h3>Task 3</h3>
+      </div>
+      <div class="user-details"></div>
+    </div>
   </section>
 </template>
 
