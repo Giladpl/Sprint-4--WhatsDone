@@ -40,6 +40,7 @@
       >
         <task-preview
           @removeTask="removeTask"
+          @updateDueDate="updateDueDate"
           :task="task"
           :groupColor="group.color"
           :statuses="statuses"
@@ -109,6 +110,9 @@ export default {
     addTask(ev){
       this.$emit('addTask', {task: ev.target.value, groupId: this.group.id})
     },
+    updateDueDate(update) {
+      console.log(update);
+    }
   },
   created() {
     this.groupTitle = this.group.title
