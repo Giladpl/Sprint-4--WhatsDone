@@ -27,6 +27,10 @@
       >
         Created By: {{ board.createdBy.fullname }}
       </div>
+      <div class="add-view-row-container">
+        <el-button class="add-view-btn">+ Add View</el-button>
+      </div>
+
       <el-button
         @click="addGroup"
         class="btn-add-group"
@@ -168,7 +172,7 @@ export default {
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
         this.loadBoard()
       } catch (err) {
-        console.log('cannot update due date' ,err);
+        console.log('cannot update due date', err);
       }
     },
     openUserProfile() {
