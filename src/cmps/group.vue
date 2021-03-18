@@ -6,10 +6,10 @@
         <div @click="removeGroup"><i class="el-icon-delete"></i>Delete Group</div>
         <div @click="onColorPicker"><i class="el-icon-delete"></i>Change Color</div>
       </div>
-        <color-picker
-          v-if="isColorPicker"
-          @changeColor="changeColor"
-        />
+      <color-picker
+        v-if="isColorPicker"
+        @changeColor="changeColor"
+      />
       <input
         class="group-title-input"
         v-if="groupTitle"
@@ -22,24 +22,37 @@
       <div>Timeline</div>
       <div>Priority</div>
     </div>
-    <li
-      v-for="task in group.tasks"
-      :key="task._id"
-      class="task-container"
+    <draggable
+      v-model="group.tasks"
+      @start="drag=true"
+      @end="drag=false"
     >
-      <task-preview
-        @removeTask="removeTask"
-        :task="task"
-        :groupColor="group.color"
-      />
-    </li>
-    <input class="input-add-task" type="text" placeholder="+ Add">
+      <li
+        v-for="task in group.tasks"
+        :key="task._id"
+        class="task-container"
+      >
+        <task-preview
+          @removeTask="removeTask"
+          :task="task"
+          :groupColor="group.color"
+        />
+      </li>
+    </draggable>
+
+    <input
+      class="input-add-task"
+      type="text"
+      placeholder="+ Add"
+    >
   </ul>
 </template>
 
 <script>
 import taskPreview from "./task-preview";
 import colorPicker from "./color-picker";
+import draggable from 'vuedraggable'
+
 
 export default {
   name: 'group',
@@ -69,7 +82,7 @@ export default {
       this.$emit('updateTitle', this.groupTitle)
     },
     removeTask(taskId) {
-      this.$emit('removeTask', taskId)
+      this.$emit('removeTask', { taskId, groupId: this.group.id })
     },
     toggleGroupEdit() {
       console.log('not done');
@@ -80,7 +93,8 @@ export default {
   },
   components: {
     taskPreview,
-    colorPicker
+    colorPicker,
+    draggable
   },
 };
 </script>

@@ -1,30 +1,37 @@
 <template>
-  <section v-if="board" class="board-details">
+  <section
+    v-if="boardToEdit"
+    class="board-details"
+  >
     <app-header />
     <div class="details-wrapper">
       <div>
         <input
           class="board-title-input"
-          v-if="boardTitle"
           type="text"
-          @input="updateBoardTitle"
-          v-model="boardTitle"
+          @change="updateBoardTitle"
+          v-model="boardToEdit.title"
         />
       </div>
       <div>
         <input
           class="board-description-input"
-          v-if="boardDescription"
           type="text"
-          @input="updateBoardDescription"
-          v-model="boardDescription"
+          @change="updateBoardDescription"
+          v-model="boardToEdit.description"
         />
       </div>
-      <div class="created-by" @click="openUserProfile">
+      <div
+        class="created-by"
+        @click="openUserProfile"
+      >
         Created By: {{ board.createdBy.fullname }}
       </div>
       <ul class="clean-list">
-        <li v-for="group in board.groups" :key="group._id">
+        <li
+          v-for="group in board.groups"
+          :key="group._id"
+        >
           <group
             :group="group"
             @changeColor="changeGroupColor"
@@ -46,8 +53,7 @@ export default {
   data() {
     return {
       board: null,
-      boardTitle: null,
-      boardDescription: null,
+      boardToEdit: null,
     };
   },
   methods: {
@@ -56,14 +62,25 @@ export default {
         const id = this.$route.params.boardId;
         const board = await boardService.getById(id);
         this.board = board;
-        this.boardTitle = board.title;
-        this.boardDescription = board.description;
+        this.boardToEdit = JSON.parse(JSON.stringify(board))
       } catch (err) {
         console.log("cannot load board", err);
       }
     },
-    async removeTask(taskId) {
-      console.log(taskId);
+    async removeTask({ taskId, groupId }) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId)
+        const idx = currGroup.tasks.findIndex(task => task.id === taskId)
+        currGroup.tasks.splice(idx, 1)
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        thie.loadBoard()
+
+      } catch (err) {
+
+      }
+
+
+
     },
     changeGroupColor(color) {
       console.log(color);
@@ -71,11 +88,23 @@ export default {
     updateGroupTitle(title) {
       console.log(title);
     },
-    updateBoardTitle(ev) {
-      console.log(ev.target.value);
+    async updateBoardTitle(ev) {
+      this.boardToEdit.title = ev.target.value
+      try {
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        this.loadBoard()
+      } catch (err) {
+
+      }
     },
-    updateBoardDescription(ev) {
-      console.log(ev.target.value);
+    async updateBoardDescription(ev) {
+      this.boardToEdit.description = ev.target.value
+      try {
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        this.loadBoard()
+      } catch (err) {
+
+      }
     },
     openUserProfile() {
       console.log("open user profile");
