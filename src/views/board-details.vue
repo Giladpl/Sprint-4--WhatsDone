@@ -130,7 +130,8 @@ export default {
     async addTask({ task, groupId }) {
       const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId)
       currGroup.tasks.push(task)
-      await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+      
+      // await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
     },
   },
   computed: {
