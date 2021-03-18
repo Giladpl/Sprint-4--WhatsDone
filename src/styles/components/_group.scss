@@ -18,18 +18,27 @@
         }
     }
 
-
     .group-header {
+        
         height: 48px;
         padding: 0 8px;
         display: flex;
-        justify-content: space-between;
         text-align: center;
         color: $clr3;
+        
+        .group-header-right {
+            width: 100%;
+            > * {
+                padding: 0 10px;
+                font-size: 15px;
+                width: 9.375rem;   
+            }
+        }
 
-        >* {
-            padding: 0 10px;
-            font-size: 15px;
+        > *:not(.color-picker){
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .group-title-input {
@@ -38,9 +47,12 @@
             background-color: inherit;
             color: $clr3;
             font-size: 17px;
+            width: 350px;
+            min-width: 200px;
         }
 
         .group-edit {
+            flex-direction: column;
             position: absolute;
             width: 150px;
             z-index: 5;

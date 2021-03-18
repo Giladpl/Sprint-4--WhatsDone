@@ -1,7 +1,16 @@
 <template>
   <ul class="group clean-list">
     <div class="group-header">
-      <span @click="toggleGroupEdit"><i class="el-icon-arrow-down"></i></span>
+      <div class="group-header-left">
+        <span @click="toggleGroupEdit"><i class="el-icon-arrow-down"></i></span>
+        <input
+          class="group-title-input"
+          v-if="groupTitle"
+          type="text"
+          @change="updateTitle"
+          v-model="groupTitle"
+        >
+      </div>
       <div
         v-if="isShownGroupEdit"
         class="group-edit"
@@ -13,20 +22,16 @@
             ></i>Change Color</div>
       </div>
       <color-picker
+        class="color-picker"
         v-if="isColorPicker"
         @changeColor="changeColor"
       />
-      <input
-        class="group-title-input"
-        v-if="groupTitle"
-        type="text"
-        @change="updateTitle"
-        v-model="groupTitle"
-      >
-      <div>Members</div>
-      <div>Status</div>
-      <div>Timeline</div>
-      <div>Priority</div>
+      <div class="group-header-right">
+        <div>Members</div>
+        <div>Status</div>
+        <div>Timeline</div>
+        <div>Priority</div>
+      </div>
     </div>
     <draggable
       v-model="group.tasks"
@@ -48,7 +53,6 @@
         />
       </li>
     </draggable>
-
     <input
       ref="addTaskInput"
       @keyup.enter="addTask"
@@ -108,6 +112,7 @@ export default {
     },
     toggleGroupEdit() {
       this.isShownGroupEdit = !this.isShownGroupEdit
+      if (this.isColorPicker) this.isColorPicker = false;
     },
     addTask(ev) {
       this.$emit('addTask', { taskTitle: ev.target.value, groupId: this.group.id })
