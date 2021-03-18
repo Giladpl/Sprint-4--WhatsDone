@@ -2,9 +2,12 @@
   <ul class="group clean-list">
     <div class="group-header">
       <span @click="toggleGroupEdit"><i class="el-icon-arrow-down"></i></span>
-      <div class="group-edit">
+      <div
+        v-if="isShownGroupEdit"
+        class="group-edit"
+      >
         <div @click="removeGroup"><i class="el-icon-delete"></i>Delete Group</div>
-        <div @click="onColorPicker"><i class="el-icon-delete"></i>Change Color</div>
+        <div @click="onColorPicker"><i><img src=""></i>Change Color</div>
       </div>
       <color-picker
         v-if="isColorPicker"
@@ -66,6 +69,7 @@ export default {
     return {
       isColorPicker: false,
       groupTitle: null,
+      isShownGroupEdit: false,
     }
   },
   methods: {
@@ -85,7 +89,7 @@ export default {
       this.$emit('removeTask', { taskId, groupId: this.group.id })
     },
     toggleGroupEdit() {
-      console.log('not done');
+      this.isShownGroupEdit = !this.isShownGroupEdit
     }
   },
   created() {
