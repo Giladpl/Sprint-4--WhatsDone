@@ -1,18 +1,18 @@
 <template>
   <section class="header-component flex">
     <div class="main-header flex">
-        <!-- <section class="top-icon-wrapper flex">  -->
-          <i><img src="@/assets/icons/logo.jpg"></i>
-          <i><img src="@/assets/icons/calendar.svg"></i>
+      <!-- <section class="top-icon-wrapper flex">  -->
+      <i><img src="@/assets/icons/logo.jpg" /></i>
+      <i><img src="@/assets/icons/calendar.svg" /></i>
       <i class="header-icon el-icon-s-grid"></i>
       <i class="header-icon el-icon-bell"></i>
-        <!-- </section> -->
+      <!-- </section> -->
       <!-- <el-avatar v-if="loggedInUser" class="header-avatar" size="medium" :src="loggedInUser.imgUrl"> -->
       <!-- </el-avatar> -->
       <el-avatar class="header-avatar" size="medium">G</el-avatar>
-      <i class="uis uis-signout"></i>
+      <i class="fas fa-sign-out-alt"></i>
     </div>
-    <div class="secondary-header flex"/>
+    <div class="secondary-header flex" />
   </section>
 </template>
 
@@ -27,5 +27,6 @@ export default {
   created() {
     // this.$store.getters.loggedInUser = this.loggedInUser;
   },
+  components: {},
 };
 </script>
