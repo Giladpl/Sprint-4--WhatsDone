@@ -25,7 +25,7 @@ export default {
     };
   },
   created() {
-    // this.$store.getters.loggedInUser = this.loggedInUser;
+    // this.loggedInUser = this.$store.getters.loggedInUser;
   },
   components: {},
 };

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import homePage from '../views/home-page.vue'
 import login from '../views/login.vue'
 import boardDetails from '../views/board-details.vue'
+import userProfile from '../views/user-profile.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/board/:boardId',
     name: 'board-details',
     component: boardDetails
+  },
+  {
+    path: '/profile',
+    name: 'user-profile',
+    component: userProfile
   },
   // {
   //   path: '/about',

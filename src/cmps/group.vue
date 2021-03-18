@@ -114,7 +114,8 @@ export default {
       this.$refs['addTaskInput'].value = ''
     },
     updateDueDate(update) {
-      console.log(update);
+      update.groupId = this.group.id
+      this.$emit('updateDueDate', update)
     }
   },
   created() {
