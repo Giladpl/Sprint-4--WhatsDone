@@ -1,12 +1,22 @@
 .colors-container {
-    height: 400px;
-    width: 400px;
+    position: absolute;
+    transform: translate(135%, 70%);
+    width: 100px;
+    padding: .2em;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(159, 159, 160, 0.3), 0 1px 3px 1px rgba(149, 152, 153, 0.15);
+    cursor: default;
+    transition: .5s;
+    z-index: 5;
 
     .btn-color {
-        border-radius: 50%;
         width: 20px;
         height: 20px;
-        border: none;
+        margin: .2em;
+        border: 1px solid #d1d0d0;
+        border-radius: 50%;
+        cursor: pointer;
     }
 
     .dark-green {

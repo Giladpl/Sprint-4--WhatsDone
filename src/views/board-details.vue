@@ -34,9 +34,11 @@
         >
           <group
             :group="group"
+            :statuses="board.statuses"
             @changeColor="changeGroupColor"
             @updateTitle="updateGroupTitle"
             @removeTask="removeTask"
+            @removeGroup="removeGroup"
           />
         </li>
       </ul>
@@ -73,20 +75,24 @@ export default {
         const idx = currGroup.tasks.findIndex(task => task.id === taskId)
         currGroup.tasks.splice(idx, 1)
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
-        thie.loadBoard()
+        this.loadBoard()
+      } catch (err) {
+        console.log('cannot remove task', err);
+      }
+    },
+    async removeGroup({ groupId }) {
+      try {
+        const groupIdx = this.boardToEdit.groups.findIndex(group => group.id === groupId)
+        this.boardToEdit.groups.splice(groupIdx, 1)
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        this.loadBoard()
 
       } catch (err) {
 
       }
-
-
-
     },
     changeGroupColor(color) {
       console.log(color);
-    },
-    updateGroupTitle(title) {
-      console.log(title);
     },
     async updateBoardTitle(ev) {
       this.boardToEdit.title = ev.target.value
@@ -103,7 +109,17 @@ export default {
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
         this.loadBoard()
       } catch (err) {
-
+        console.log('cannot update board description', err);
+      }
+    },
+    async updateGroupTitle(groupUpdate) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupUpdate.groupId)
+        currGroup.title = groupUpdate.title
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        thie.loadBoard()
+      } catch (err) {
+        console.log('cannot update group title', err);
       }
     },
     openUserProfile() {

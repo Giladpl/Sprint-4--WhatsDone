@@ -7,7 +7,10 @@
         class="group-edit"
       >
         <div @click="removeGroup"><i class="el-icon-delete"></i>Delete Group</div>
-        <div @click="onColorPicker"><i><img class="color-palette" src="@/assets/color-palette.svg"></i>Change Color</div>
+        <div @click="onColorPicker"><i><img
+              class="color-palette"
+              src="@/assets/color-palette.svg"
+            ></i>Change Color</div>
       </div>
       <color-picker
         v-if="isColorPicker"
@@ -17,7 +20,7 @@
         class="group-title-input"
         v-if="groupTitle"
         type="text"
-        @input="updateTitle"
+        @change="updateTitle"
         v-model="groupTitle"
       >
       <div>Members</div>
@@ -39,6 +42,7 @@
           @removeTask="removeTask"
           :task="task"
           :groupColor="group.color"
+          :statuses="statuses"
         />
       </li>
     </draggable>
@@ -64,6 +68,10 @@ export default {
       type: Object,
       required: true,
     },
+    statuses: {
+      type: Array,
+      required: true,
+    },
   },
   data() {
     return {
@@ -74,7 +82,7 @@ export default {
   },
   methods: {
     removeGroup() {
-      this.$emit('removeGroup', group.id);
+      this.$emit('removeGroup', { groupId: this.group.id });
     },
     changeColor(chosenColor) {
       this.$emit('changeColor', chosenColor)
@@ -83,7 +91,7 @@ export default {
       this.isColorPicker = !this.isColorPicker
     },
     updateTitle() {
-      this.$emit('updateTitle', this.groupTitle)
+      this.$emit('updateTitle', {title: this.groupTitle, groupId: this.group.id})
     },
     removeTask(taskId) {
       this.$emit('removeTask', { taskId, groupId: this.group.id })
