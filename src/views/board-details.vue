@@ -38,6 +38,7 @@
             @changeColor="changeGroupColor"
             @updateTitle="updateGroupTitle"
             @removeTask="removeTask"
+            @removeGroup="removeGroup"
           />
         </li>
       </ul>
@@ -74,9 +75,20 @@ export default {
         const idx = currGroup.tasks.findIndex(task => task.id === taskId)
         currGroup.tasks.splice(idx, 1)
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
-        thie.loadBoard()
+        this.loadBoard()
       } catch (err) {
         console.log('cannot remove task', err);
+      }
+    },
+    async removeGroup({ groupId }) {
+      try {
+        const groupIdx = this.boardToEdit.groups.findIndex(group => group.id === groupId)
+        this.boardToEdit.groups.splice(groupIdx, 1)
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        this.loadBoard()
+
+      } catch (err) {
+
       }
     },
     changeGroupColor(color) {
