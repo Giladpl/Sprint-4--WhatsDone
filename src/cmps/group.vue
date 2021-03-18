@@ -50,6 +50,7 @@
           :groupColor="group.color"
           :statuses="statuses"
           :priorities="priorities"
+          :boardMembers="boardMembers"
         />
       </li>
     </draggable>
@@ -84,6 +85,10 @@ export default {
       type: Array,
       required: true,
     },
+    boardMembers: {
+      type: Array,
+      required: true,
+    }
   },
   data() {
     return {

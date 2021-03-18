@@ -50,6 +50,7 @@
             :group="group"
             :statuses="board.statuses"
             :priorities="board.priorities"
+            :boardMembers="board.members"
             @changeColor="changeGroupColor"
             @updateTitle="updateGroupTitle"
             @removeTask="removeTask"

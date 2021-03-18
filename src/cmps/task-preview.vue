@@ -65,12 +65,16 @@ export default {
     },
     statuses: {
       type: Array,
-      required: true,
+      required: true
     },
     priorities: {
       type: Array,
-      required: true,
+      required: true
     },
+    boardMembers: {
+      type: Array,
+      required: true
+    }
   },
   data() {
     return {
