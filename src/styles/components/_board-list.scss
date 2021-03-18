@@ -1,12 +1,13 @@
-* {
-    box-sizing: border-box;
-}
-
 .board-list {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+
     > * {
-        text-decoration: none;
+        padding: 0 10px;
+        text-align: center;
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 }
