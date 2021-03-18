@@ -1,24 +1,11 @@
 <template>
   <section class="home-page">
-    <board-list :boards="boards" />
+      <h1>Hi</h1>
   </section>
 </template>
 
 <script>
-import boardList from "@/cmps/board-list";
-
 export default {
-  name: "home-page",
-  computed: {
-    boards() {
-      return this.$store.getters.boards;
-    },
-  },
-  components: {
-    boardList,
-  },
-};
+
+}
 </script>
-
-
-
