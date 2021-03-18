@@ -7,7 +7,7 @@
         class="group-edit"
       >
         <div @click="removeGroup"><i class="el-icon-delete"></i>Delete Group</div>
-        <div @click="onColorPicker"><i><img src=""></i>Change Color</div>
+        <div @click="onColorPicker"><i><img class="color-palette" src="@/assets/color-palette.svg"></i>Change Color</div>
       </div>
       <color-picker
         v-if="isColorPicker"
