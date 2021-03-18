@@ -20,7 +20,7 @@
         class="group-title-input"
         v-if="groupTitle"
         type="text"
-        @input="updateTitle"
+        @change="updateTitle"
         v-model="groupTitle"
       >
       <div>Members</div>
@@ -86,7 +86,7 @@ export default {
       this.isColorPicker = !this.isColorPicker
     },
     updateTitle() {
-      this.$emit('updateTitle', this.groupTitle)
+      this.$emit('updateTitle', {title: this.groupTitle, groupId: this.group.id})
     },
     removeTask(taskId) {
       this.$emit('removeTask', { taskId, groupId: this.group.id })
