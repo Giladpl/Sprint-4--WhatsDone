@@ -3,6 +3,13 @@
     min-height: 100vh;
     display: flex;
 
+    .board-top-row{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        align-items: center;      
+    }
+
     .add-view-row-container{
         width: 100%;
         border: 1px solid transparent;
