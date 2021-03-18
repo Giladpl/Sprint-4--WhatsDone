@@ -59,7 +59,11 @@ export default {
     groupColor: {
       type: String,
       required: true
-    }
+    },
+    statuses: {
+      type: Array,
+      required: true,
+    },
   },
   methods: {
     onTask() {

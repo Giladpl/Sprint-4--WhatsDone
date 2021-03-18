@@ -39,6 +39,7 @@
           @removeTask="removeTask"
           :task="task"
           :groupColor="group.color"
+          :statuses="statuses"
         />
       </li>
     </draggable>
@@ -62,6 +63,10 @@ export default {
   props: {
     group: {
       type: Object,
+      required: true,
+    },
+    statuses: {
+      type: Array,
       required: true,
     },
   },

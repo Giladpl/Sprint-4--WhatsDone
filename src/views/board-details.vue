@@ -34,6 +34,7 @@
         >
           <group
             :group="group"
+            :statuses="board.statuses"
             @changeColor="changeGroupColor"
             @updateTitle="updateGroupTitle"
             @removeTask="removeTask"
