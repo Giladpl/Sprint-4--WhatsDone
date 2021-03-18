@@ -117,7 +117,7 @@ export default {
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupUpdate.groupId)
         currGroup.title = groupUpdate.title
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
-        thie.loadBoard()
+        this.loadBoard()
       } catch (err) {
         console.log('cannot update group title', err);
       }
