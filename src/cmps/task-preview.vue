@@ -36,8 +36,10 @@
     </div>
     <div>
       <el-date-picker
+        v-if="currDueDate"
         class="date-picker" 
-        v-model="task.dueDate"
+        v-model="currDueDate"
+        @change="updateDueDate"
         type="date"
         size="small"
         placeholder="Pick a day"
@@ -72,7 +74,7 @@ export default {
   },
   data() {
     return {
-      currStatus: null
+      currDueDate: null
     }
   },
   methods: {
@@ -81,6 +83,9 @@ export default {
     },
     removeTask() {
       this.$emit('removeTask', this.task.id);
+    },
+    updateDueDate(date) {
+      this.$emit('updateDueDate', {date ,taskId: this.task.id});
     }
   },
   computed: {
@@ -94,7 +99,7 @@ export default {
     }
   },
   created() {
-    // console.log(this.statuses);
+    this.currDueDate = this.task.dueDate;
   }
 }
 </script>

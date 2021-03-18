@@ -40,6 +40,8 @@
             @updateTitle="updateGroupTitle"
             @removeTask="removeTask"
             @removeGroup="removeGroup"
+            @addTask="addTask"
+            @updateDueDate="updateDueDate"
           />
         </li>
       </ul>
@@ -92,8 +94,15 @@ export default {
 
       }
     },
-    changeGroupColor(color) {
-      console.log(color);
+    async changeGroupColor(groupUpdate) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupUpdate.groupId)
+        currGroup.color = groupUpdate.chosenColor
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        this.loadBoard()
+      } catch (err) {
+        console.log('cannot update group color', err);
+      }
     },
     async updateBoardTitle(ev) {
       this.boardToEdit.title = ev.target.value
@@ -121,6 +130,30 @@ export default {
         this.loadBoard()
       } catch (err) {
         console.log('cannot update group title', err);
+      }
+    },
+    async addTask({ taskTitle, groupId }) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId)
+        const taskToAdd = boardService.getEmptyTask()
+        taskToAdd.title = taskTitle
+        currGroup.tasks.push(taskToAdd)
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        this.loadBoard()
+      } catch (err) {
+        console.log(err);
+      }
+
+    },
+    async updateDueDate(update) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === update.groupId)
+        const idx = currGroup.tasks.findIndex(task => task.id === update.taskId)
+        currGroup.tasks[idx].dueDate = update.date
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        this.loadBoard()
+      } catch (err) {
+        console.log('cannot update due date' ,err);
       }
     },
     openUserProfile() {

@@ -40,6 +40,7 @@
       >
         <task-preview
           @removeTask="removeTask"
+          @updateDueDate="updateDueDate"
           :task="task"
           :groupColor="group.color"
           :statuses="statuses"
@@ -49,6 +50,8 @@
     </draggable>
 
     <input
+      ref="addTaskInput"
+      @keyup.enter="addTask"
       class="input-add-task"
       type="text"
       placeholder="+ Add"
@@ -90,19 +93,29 @@ export default {
       this.$emit('removeGroup', { groupId: this.group.id });
     },
     changeColor(chosenColor) {
-      this.$emit('changeColor', chosenColor)
+      this.isColorPicker = !this.isColorPicker
+      this.isShownGroupEdit = !this.isShownGroupEdit
+      this.$emit('changeColor', { chosenColor, groupId: this.group.id })
     },
     onColorPicker() {
       this.isColorPicker = !this.isColorPicker
     },
     updateTitle() {
-      this.$emit('updateTitle', {title: this.groupTitle, groupId: this.group.id})
+      this.$emit('updateTitle', { title: this.groupTitle, groupId: this.group.id })
     },
     removeTask(taskId) {
       this.$emit('removeTask', { taskId, groupId: this.group.id })
     },
     toggleGroupEdit() {
       this.isShownGroupEdit = !this.isShownGroupEdit
+    },
+    addTask(ev) {
+      this.$emit('addTask', { taskTitle: ev.target.value, groupId: this.group.id })
+      this.$refs['addTaskInput'].value = ''
+    },
+    updateDueDate(update) {
+      update.groupId = this.group.id
+      this.$emit('updateDueDate', update)
     }
   },
   created() {
