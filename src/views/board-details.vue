@@ -27,6 +27,11 @@
       >
         Created By: {{ board.createdBy.fullname }}
       </div>
+      <el-button
+        @click="addGroup"
+        class="btn-add-group"
+        type="primary"
+      >Add Group</el-button>
       <ul class="clean-list">
         <li
           v-for="group in board.groups"
@@ -144,6 +149,16 @@ export default {
         console.log(err);
       }
 
+    },
+    async addGroup() {
+      try {
+        const groupToAdd = boardService.getEmptyGroup()
+        this.boardToEdit.groups.push(groupToAdd)
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        this.loadBoard()
+      } catch (err) {
+        console.log(err);
+      }
     },
     async updateDueDate(update) {
       try {
