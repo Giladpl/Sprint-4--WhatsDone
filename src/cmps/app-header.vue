@@ -9,7 +9,11 @@
       <!-- </section> -->
       <!-- <el-avatar v-if="loggedInUser" class="header-avatar" size="medium" :src="loggedInUser.imgUrl"> -->
       <!-- </el-avatar> -->
-      <el-avatar class="header-avatar" size="medium">G</el-avatar>
+      <router-link to="/profile"
+        ><el-avatar class="header-avatar" size="medium"
+          >G</el-avatar
+        ></router-link
+      >
       <i class="fas fa-sign-out-alt"></i>
     </div>
     <div class="secondary-header flex" />

@@ -29,7 +29,6 @@
         justify-content: space-evenly;
         align-items: center;
         color: $clr2;
-        padding: 0 30px;
 
         h2 {
             color: black;
@@ -45,6 +44,7 @@
         }
         .user-details {
             width: fit-content;
+
 
             .el-icon-user-solid {
                 color: black;
