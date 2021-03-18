@@ -31,11 +31,12 @@
         </li>
       </ul>
     </div>
-    <div v-if="getStatusById" v-bind:style="{background: getStatusById.color}">
+    <div class="status" v-if="getStatusById" v-bind:style="{background: getStatusById.color}">
       {{getStatusById.title}}
     </div>
     <div>
       <el-date-picker
+        class="date-picker" 
         v-model="task.dueDate"
         type="date"
         size="small"
@@ -43,7 +44,7 @@
       >
       </el-date-picker>
     </div>
-    <div v-if="getPriorityById" v-bind:style="{background: getPriorityById.color}">
+    <div class="priority" v-if="getPriorityById" v-bind:style="{background: getPriorityById.color}">
       {{getPriorityById.title}}
     </div>
   </section>

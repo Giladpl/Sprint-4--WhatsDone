@@ -12,11 +12,27 @@
     font-size: .8125rem;
     justify-content: space-between;
 
-    .btns-hidden{
-        opacity: 0;
+    &:hover {
+        background-color: #E6E9EF;
+
+        .btns-hidden{
+            opacity: 1;
+        }
     }
 
-    
+    > *:not(.main-task ) {
+        width: 9.375rem;
+        padding: 0 10px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+
+    .date-picker {
+        width: 130px;
+    }
+
     .main-task {
         display: flex;
         justify-content: space-between;
@@ -36,16 +52,17 @@
             font-size: 11px;
         }
     }
-    &:hover {
-        background-color: #E6E9EF;
-
-        .btns-hidden{
-            opacity: 1;
-        }
-    }
 
     .members {
         display: flex;
+    }
 
+    .status,
+    .priority {
+        color: #fff;
+    }
+
+    .btns-hidden{
+        opacity: 0;
     }
 }
