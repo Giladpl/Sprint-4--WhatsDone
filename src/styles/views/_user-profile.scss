@@ -1,7 +1,6 @@
 .user-profile-main-container {
-    width: auto;
     .profile-container {
-        
+        width: 100%;
     }
 
     .top {
@@ -38,29 +37,32 @@
         }
 
         .user-boards {
-            width: 250px;
+            width: fit-content;
         }
 
         .user-tasks {
-            width: 250px;
+            width: fit-content;
         }
         .user-details {
-            width: 250px;
+            width: fit-content;
+
+            .el-icon-user-solid {
+                color: black;
+                margin-right: 5px;
+                line-height: 30px;
+            }
+    
+            .el-icon-message {
+                color: black;
+                margin-right: 5px;
+                line-height: 30px;
+            }
+    
+            h3 span {
+                color: black;
+                font-weight: bolder;
+            }
         }
 
-        .el-icon-user-solid {
-            height: 20px;
-            color: black;
-        }
-
-        .el-icon-message {
-            height: 20px;
-            color: black;
-        }
-
-        h3 span {
-            color: black;
-            font-weight: bolder;
-        }
     }
 }

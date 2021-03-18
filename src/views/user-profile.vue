@@ -37,12 +37,16 @@
           <el-avatar v-else class="usr-profile-avatar" size="large"
             >G</el-avatar
           >
-          <!-- <el-icon-user-solid> <h3>Username: {{loggedInUser.username}}</h3></el-icon-user-solid> -->
-          <el-icon-user-solid class="user-icon" />
-          <h3><span>username:</span> guestus</h3>
-          <!-- <el-icon-message> <h3>email: guestus@gmail.com</h3></el-icon-message> -->
-          <el-icon-message class="user-details-email" />
-          <h3><span>email:</span> guestus@gmail.com</h3>
+          <div class="user-details-username flex">
+            <!-- <el-icon-user-solid> <h3>Username: {{loggedInUser.username}}</h3></el-icon-user-solid> -->
+            <i class="el-icon-user-solid"></i>
+            <h3><span>username:</span> guestus</h3>
+          </div>
+          <div class="user-details-email flex">
+            <!-- <el-icon-message> <h3>email: guestus@gmail.com</h3></el-icon-message> -->
+            <i class="el-icon-message"></i>
+            <h3><span>email:</span> guestus@gmail.com</h3>
+          </div>
         </div>
       </div>
     </div>
