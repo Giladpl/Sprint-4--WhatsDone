@@ -40,6 +40,7 @@
       >
         <task-preview
           @removeTask="removeTask"
+          @updateDueDate="updateDueDate"
           :task="task"
           :groupColor="group.color"
           :statuses="statuses"
@@ -90,7 +91,9 @@ export default {
       this.$emit('removeGroup', { groupId: this.group.id });
     },
     changeColor(chosenColor) {
-      this.$emit('changeColor', chosenColor)
+      this.isColorPicker = !this.isColorPicker
+      this.isShownGroupEdit = !this.isShownGroupEdit
+      this.$emit('changeColor', {chosenColor, groupId: this.group.id})
     },
     onColorPicker() {
       this.isColorPicker = !this.isColorPicker
@@ -107,6 +110,9 @@ export default {
     addTask(ev){
       this.$emit('addTask', {task: ev.target.value, groupId: this.group.id})
     },
+    updateDueDate(update) {
+      console.log(update);
+    }
   },
   created() {
     this.groupTitle = this.group.title

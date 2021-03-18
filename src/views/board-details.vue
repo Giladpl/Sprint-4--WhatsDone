@@ -93,8 +93,15 @@ export default {
 
       }
     },
-    changeGroupColor(color) {
-      console.log(color);
+    async changeGroupColor(groupUpdate) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupUpdate.groupId)
+        currGroup.color = groupUpdate.chosenColor
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        this.loadBoard()
+      } catch (err) {
+        console.log('cannot update group color', err);
+      }
     },
     async updateBoardTitle(ev) {
       this.boardToEdit.title = ev.target.value
