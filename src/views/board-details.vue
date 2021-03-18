@@ -1,6 +1,6 @@
 <template>
   <section
-    v-if="board"
+    v-if="boardToEdit"
     class="board-details"
   >
     <app-header />
@@ -8,19 +8,17 @@
       <div>
         <input
           class="board-title-input"
-          v-if="boardTitle"
           type="text"
-          @input="updateBoardTitle"
-          v-model="boardTitle"
+          @change="updateBoardTitle"
+          v-model="boardToEdit.title"
         />
       </div>
       <div>
         <input
           class="board-description-input"
-          v-if="boardDescription"
           type="text"
-          @input="updateBoardDescription"
-          v-model="boardDescription"
+          @change="updateBoardDescription"
+          v-model="boardToEdit.description"
         />
       </div>
       <div
@@ -55,8 +53,6 @@ export default {
   data() {
     return {
       board: null,
-      boardTitle: null,
-      boardDescription: null,
       boardToEdit: null,
     };
   },
@@ -66,8 +62,6 @@ export default {
         const id = this.$route.params.boardId;
         const board = await boardService.getById(id);
         this.board = board;
-        this.boardTitle = board.title;
-        this.boardDescription = board.description;
         this.boardToEdit = JSON.parse(JSON.stringify(board))
       } catch (err) {
         console.log("cannot load board", err);
@@ -76,10 +70,11 @@ export default {
     async removeTask({ taskId, groupId }) {
       try {
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId)
-        // const [currTask] = currGroup.tasks.filter(task => task.id == taskId)
         const idx = currGroup.tasks.findIndex(task => task.id === taskId)
         currGroup.tasks.splice(idx, 1)
-        this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        thie.loadBoard()
+
       } catch (err) {
 
       }
@@ -96,7 +91,8 @@ export default {
     async updateBoardTitle(ev) {
       this.boardToEdit.title = ev.target.value
       try {
-        this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        this.loadBoard()
       } catch (err) {
 
       }
@@ -104,8 +100,8 @@ export default {
     async updateBoardDescription(ev) {
       this.boardToEdit.description = ev.target.value
       try {
-        this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
-
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit })
+        this.loadBoard()
       } catch (err) {
 
       }

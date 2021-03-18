@@ -22,17 +22,24 @@
       <div>Timeline</div>
       <div>Priority</div>
     </div>
-    <li
-      v-for="task in group.tasks"
-      :key="task._id"
-      class="task-container"
+    <draggable
+      v-model="group.tasks"
+      @start="drag=true"
+      @end="drag=false"
     >
-      <task-preview
-        @removeTask="removeTask"
-        :task="task"
-        :groupColor="group.color"
-      />
-    </li>
+      <li
+        v-for="task in group.tasks"
+        :key="task._id"
+        class="task-container"
+      >
+        <task-preview
+          @removeTask="removeTask"
+          :task="task"
+          :groupColor="group.color"
+        />
+      </li>
+    </draggable>
+
     <input
       class="input-add-task"
       type="text"
@@ -44,6 +51,8 @@
 <script>
 import taskPreview from "./task-preview";
 import colorPicker from "./color-picker";
+import draggable from 'vuedraggable'
+
 
 export default {
   name: 'group',
@@ -84,7 +93,8 @@ export default {
   },
   components: {
     taskPreview,
-    colorPicker
+    colorPicker,
+    draggable
   },
 };
 </script>
