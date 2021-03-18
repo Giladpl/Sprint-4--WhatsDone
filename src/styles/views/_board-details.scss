@@ -3,6 +3,28 @@
     min-height: 100vh;
     display: flex;
 
+    .add-view-row-container{
+        width: 100%;
+        border: 1px solid transparent;
+        box-shadow: 0 3px 4px -5px #484444;
+
+        .add-view-btn{
+            margin: 20px 0;
+            background-color: #FFFFFF;
+            color: #3c3d41;
+            border-color: #e6e9ef ;
+
+            &:hover {
+                background-color: #e6e9ef;
+                color: #3c3d41;
+            }
+            // &:visited, &:active, &:focus{
+            //     color: #3c3d41;
+            //     background-color: #e6e9ef;
+            // }
+        }
+    }
+
     .btn-add-group {
         margin: 20px 0;
     }
