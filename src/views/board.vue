@@ -1,5 +1,6 @@
 <template>
   <section class="boards-page">
+    <h1>Try one of the boards</h1>
     <board-list :boards="boards" />
   </section>
 </template>

@@ -47,3 +47,11 @@ i {
 i:hover {
 	opacity: 0.7;
 }
+
+a {
+	text-decoration: none;
+}
+
+a:active {
+	color: $clr2;
+}
