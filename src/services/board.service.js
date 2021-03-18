@@ -83,12 +83,12 @@ function _createBoard(_id, title) {
             {
                 id: 's102',
                 title: 'Stuck',
-                color: 'red',
+                color: '#3347f8',
             },
             {
                 id: 's103',
                 title: 'Working on it',
-                color: 'yellow',
+                color: '#d133f8',
             },
         ],
         priorities: [
@@ -96,6 +96,11 @@ function _createBoard(_id, title) {
                 id: 'p101',
                 title: 'High',
                 color: '#61bd4f',
+            },
+            {
+                id: 'p102',
+                title: 'Low',
+                color: '#f89a5b',
             },
         ],
         members: [
@@ -237,7 +242,7 @@ function _createBoard(_id, title) {
                             },
                         ],
                         statusId: 's101',
-                        priorityId: 'p101',
+                        priorityId: 'p102',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
