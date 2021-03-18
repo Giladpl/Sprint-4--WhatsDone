@@ -24,8 +24,9 @@
       <div
         class="created-by"
         @click="openUserProfile"
-      >
+      ><router-link to="/profile">
         Created By: {{ board.createdBy.fullname }}
+        </router-link>
       </div>
       <div class="add-view-row-container">
         <el-button class="add-view-btn">+ Add View</el-button>
