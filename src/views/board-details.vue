@@ -28,12 +28,25 @@
       <div
         class="created-by"
         @click="openUserProfile"
-      ><router-link to="/profile">
-        Created By: {{ board.createdBy.fullname }}
+      >
+        <router-link to="/profile">
+          Created By: {{ board.createdBy.fullname }}
         </router-link>
       </div>
       <div class="add-view-row-container">
-        <el-button class="add-view-btn">+ Add View</el-button>
+        <el-button
+          @click="toggleAddViewMenu"
+          class="add-view-btn"
+        >+ Add View</el-button>
+        <el-card
+          v-if="isAddViewMenu"
+          class="add-view-card"
+          shadow="always"
+        >
+          <div><img class="btn-add-view-menu" src="@/assets/icons/table.svg">Table</div>
+          <div><img class="btn-add-view-menu" src="@/assets/icons/calendar.svg">Calander</div>
+          <div><img class="btn-add-view-menu" src="@/assets/icons/chart.svg">Chart</div>
+        </el-card>
       </div>
 
       <el-button
@@ -75,6 +88,7 @@ export default {
     return {
       board: null,
       boardToEdit: null,
+      isAddViewMenu: false,
     };
   },
   methods: {
@@ -185,6 +199,9 @@ export default {
     openUserProfile() {
       console.log("open user profile");
     },
+    toggleAddViewMenu() {
+      this.isAddViewMenu = !this.isAddViewMenu;
+    }
   },
   computed: {
     loggedinUser() {

@@ -35,8 +35,10 @@
         background-color: $clr5;
         border: 1px solid $clr2;
         border-radius: 4px;
-
+        color: $clr2;
+        
         &:hover {
+            color: $clr5;
             background-color: $clr2;
             border: 1px solid $clr3;
         }

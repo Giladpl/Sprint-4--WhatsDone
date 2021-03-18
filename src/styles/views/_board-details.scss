@@ -3,8 +3,17 @@
     min-height: 100vh;
     display: flex;
 
-    .board-top-row{
-        display: flex;
+    .add-view-card{
+        width: 200px;
+        position: absolute;
+    }
+    .btn-add-view-menu{
+        width: 13px;
+        margin-right: 5px;
+    }
+        
+        .board-top-row{
+            display: flex;
         justify-content: space-between;
         height: 80px;
         align-items: center;      
@@ -16,7 +25,7 @@
         box-shadow: 0 3px 4px -5px #484444;
 
         .add-view-btn{
-            margin: 20px 0;
+            margin: 10px 0;
             background-color: #FFFFFF;
             color: #3c3d41;
             border-color: #e6e9ef ;
