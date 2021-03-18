@@ -2,7 +2,9 @@
   <section class="header-component flex">
     <div class="main-header flex">
       <div class="top-header flex">
-        <i><img class="logo" src="@/assets/icons/increase.svg"/></i>
+        <router-link to="/">
+          <i><img class="logo" src="@/assets/icons/increase.svg"/></i>
+        </router-link>
         <i class="header-icon el-icon-s-grid"></i>
         <i class="header-icon el-icon-bell"></i>
       </div>
@@ -10,7 +12,9 @@
         <router-link to="/profile">
           <el-avatar class="header-avatar" size="medium">G</el-avatar>
         </router-link>
-        <i><img class="exit" src="@/assets/icons/exit.svg"/></i>
+        <router-link to="/">
+          <i><img class="exit" src="@/assets/icons/exit.svg"/></i>
+        </router-link>
       </div>
     </div>
     <!-- <div class="secondary-header flex" /> -->
@@ -27,7 +31,6 @@ export default {
   },
   created() {
     // this.loggedInUser = this.$store.getters.loggedInUser;
-  },
-  components: {},
+  }
 };
 </script>
