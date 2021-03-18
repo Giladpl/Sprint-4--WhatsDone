@@ -31,8 +31,8 @@
         </li>
       </ul>
     </div>
-    <div>
-      {{task.statusId}}
+    <div v-if="getStatusById" v-bind:style="{background: getStatusById.color}">
+      {{getStatusById.title}}
     </div>
     <div>
       <el-date-picker
@@ -43,8 +43,8 @@
       >
       </el-date-picker>
     </div>
-    <div>
-      {{task.priorityId}}
+    <div v-if="getPriorityById" v-bind:style="{background: getPriorityById.color}">
+      {{getPriorityById.title}}
     </div>
   </section>
 </template>
@@ -64,6 +64,15 @@ export default {
       type: Array,
       required: true,
     },
+    priorities: {
+      type: Array,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      currStatus: null
+    }
   },
   methods: {
     onTask() {
@@ -71,11 +80,20 @@ export default {
     },
     removeTask() {
       this.$emit('removeTask', this.task.id);
-
+    }
+  },
+  computed: {
+    getStatusById() {
+      const [status] = this.statuses.filter(status => status.id === this.task.statusId)
+      return status
+    },
+    getPriorityById() {
+      const [priority] = this.priorities.filter(priority => priority.id === this.task.priorityId)
+      return priority
     }
   },
   created() {
-    // console.log(this.$state.getters.getCurrBoard);
+    // console.log(this.statuses);
   }
 }
 </script>
