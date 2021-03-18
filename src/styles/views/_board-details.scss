@@ -1,5 +1,5 @@
 .board-details {
-    background-color: white;
+    background-color: $clr5;
     min-height: 100vh;
     display: flex;
 
@@ -49,6 +49,7 @@
         width: 100%;
         padding: 0 30px;
         border-top-left-radius: 10px;
+        background-color: #fff;
     }
 
     .board-title-input,
