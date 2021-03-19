@@ -1,5 +1,5 @@
 .task-members-list {
-    transform: translate(-52px, 256px);
+    transform: translate(-3%, 53%);
     cursor: pointer;
     flex-direction: column;
     position: absolute;
@@ -9,6 +9,21 @@
     box-shadow: 0 1px 2px 0 rgba(159, 159, 160, 0.3), 0 1px 3px 1px rgba(149, 152, 153, 0.15);
     font-size: 14px;
 
+    .line-separator-members{
+        width:85%;
+        height:1px;
+        margin:10px auto;
+        background-color:#dbdbdb;
+
+        .title-line-separator{
+            position: absolute;
+            transform: translate(35%, -10px);
+            background-color: #fff;
+            padding: 0 5px;
+            font-size: 12px;
+        }
+    }
+    
     .task-member {
         padding: 5px;
         justify-content: space-between;
