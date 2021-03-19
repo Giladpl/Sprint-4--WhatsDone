@@ -1,7 +1,7 @@
 <template>
   <section class="task-members-list flex">
     <ul class="clean-list">
-      <li
+      <li @click="removeFromTask"
         class="task-member flex"
         v-for="member1 in taskMembers"
         :key="member1._id"
@@ -16,7 +16,7 @@
     </ul>
     <div class="line-separator-members"> <span class="title-line-separator">Members to Add:</span> </div>
     <ul class="clean-list">
-      <li
+      <li @click="removeFromBoard"
         class="task-member flex"
         v-for="member in nonDuplicatedMembers"
         :key="member._id"
