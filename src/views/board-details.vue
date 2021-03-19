@@ -70,11 +70,8 @@
             @updateDueDate="updateDueDate"
             @removeMemberFromTask="removeMemberFromTask"
             @addMemberToTask="addMemberToTask"
-<<<<<<< HEAD
-=======
             @updateStatus="updateStatus"
             @addStatus="addStatus"
->>>>>>> 35d4cc23ad3e1017e49c15ff9e820e89cc7864b5
           />
         </li>
       </ul>
@@ -256,19 +253,14 @@ export default {
             return member._id === update.taskMember._id; //need to add failior treatment
           }
         );
-
         const taskShortcut = this.boardToEdit.groups[currGroupIdx].tasks[
           currTaskIdx
         ];
         this.boardToEdit.members.push(update.taskMember);
         taskShortcut.mambers.splice(memberToRemoveIdx, 1);
-        await this.$store.dispatch({
-          type: "saveBoard",
-          board: this.boardToEdit,
-        });
+        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
         this.loadBoard();
-                console.log("FROM BOARD-DETAILS: Removed member from task", update.taskMember);
-
+        console.log("FROM BOARD-DETAILS: Removed member from task", update.taskMember);
       } catch (err) {
         console.log(err);
       }
@@ -286,35 +278,28 @@ export default {
             return member._id === update.member._id; //need to add failior treatment
           }
         );
-
         const taskShortcut = this.boardToEdit.groups[currGroupIdx].tasks[
           currTaskIdx
         ];
         this.boardToEdit.members.splice(memberToRemoveIdx, 1);
         taskShortcut.mambers.push(update.member);
-        await this.$store.dispatch({
-          type: "saveBoard",
-          board: this.boardToEdit,
-        });
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit});
         this.loadBoard();
-        console.log("FROM BOARD-DETAILS: Added member to task", update.member);
+        console.log('FROM BOARD-DETAILS: Added member to task', update.member);
       } catch (err) {
         console.log(err);
       }
     },
-<<<<<<< HEAD
-=======
     async addStatus(newStatus) {
       try {
         newStatus.id = utilService.makeId();
         this.boardToEdit.statuses.push(newStatus);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
         this.loadBoard();  
       } catch (err) {
         console.log('cannot add status', err);
       }
     }
->>>>>>> 35d4cc23ad3e1017e49c15ff9e820e89cc7864b5
   },
   computed: {
     loggedinUser() {
