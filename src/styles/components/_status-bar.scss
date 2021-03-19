@@ -17,8 +17,7 @@
   [data-title]:after {
       content: attr(data-title);
       background-color: $clr2;
-      color: $clr1;
-      // font-size: 100%;
+      color: $clr3;
       position: absolute;
       padding: 1px 5px 2px 5px;
       bottom: -1.6em;
@@ -29,9 +28,6 @@
       border: 1px solid #111111;
       z-index: 99999;
       visibility: hidden;
-  }
-  [data-title] {
-      position: relative;
   }
   }
   
