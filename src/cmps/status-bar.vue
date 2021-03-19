@@ -1,13 +1,15 @@
 <template>
   <section
-    v-if="statuses"
     class="status-bar-wrapper"
+    v-if="statuses"
   >
     <div
+      class="part-of-bar"
       v-for="(status, idx) in statusesMap"
       :key="idx"
+      :style="{ backgroundColor: status.color, width: status.count / tasks.length * 100 + '%' }"
+      :data-title="`${status.title}, ${(status.count / tasks.length * 100).toFixed(0)}%`"
     >
-      <div :style="styleComputed">a</div>
     </div>
   </section>
 </template>
@@ -27,6 +29,7 @@ export default {
   data() {
     return {
       statusesMap: null,
+
     }
   },
   methods: {
@@ -38,25 +41,22 @@ export default {
           if (task.statusId === status.id) status.count++;
         })
       })
-      console.log(this.statusesMap);
+
     },
 
   },
   computed: {
-    precentageCalc() {
-      this.statusesMap / this.tasks.length * 100
-    },
-    styleComputed() {
-      return {
-        backgroundColor: this.color
+
+  },
+  watch: {
+    tasks: {
+      deep: true,
+      handler() {
+        this.createTasksMap()
       }
-    },
-    color() {
-      return 'red'
     }
   },
   created() {
-
     this.createTasksMap()
 
   }
