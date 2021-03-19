@@ -1,6 +1,6 @@
 <template>
   <section class="task-members flex">
-    <ul class="task-members-list clean-list flex">
+    <ul class="task-members-list members-top clean-list flex">
       <li
         v-for="member in boardMembers"
         :key="member._id"
@@ -11,7 +11,7 @@
           :src="member.imgUrl"
         ></el-avatar>
         <p class="task-member-name">{{member.fullname}}</p>
-        <!-- <i class="el-icon-plus"></i> -->
+        <i class="el-icon-minus"></i>
       </li>
     </ul>
   </section>
@@ -50,10 +50,7 @@ export default {
     const members = this.boardMembers.filter(member => {
       if (!this.taskMembersIds.includes(member._id)) return member
     })
-    console.log(members);
+    console.log('board members who arn\'t in the task:', members);
   },
 };
 </script>
-
-<style>
-</style>
