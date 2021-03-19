@@ -13,7 +13,7 @@
       </div>
       <div class="btn-chat"><i class="el-icon-chat-dot-round"></i></div>
     </div>
-    <div @click="toggleTaskMembers">
+    <div class="members-container" @click="toggleTaskMembers">
       <ul class="members clean-list">
         <li v-for="member in task.members" :key="member._id" class="miniUser">
           <el-avatar size="small" :src="member.imgUrl"></el-avatar>
@@ -25,7 +25,7 @@
         :taskMembers="task.members"
       />
     </div>
-    <div>
+    <div @click="toggleTaskStatuses">
       <div
         class="status"
         v-if="getStatusById"
@@ -34,10 +34,11 @@
         {{ getStatusById.title }}
       </div>
       <task-status
+        v-if="isTaskStatusesShown"
         :statuses="statuses" 
       />
     </div>
-    <div>
+    <div class="date-picker-container">
       <el-date-picker
         v-if="currDueDate"
         class="date-picker"
@@ -92,6 +93,7 @@ export default {
     return {
       currDueDate: null,
       isTaskMemebersShown: false,
+      isTaskStatusesShown: false
     };
   },
   methods: {
@@ -106,6 +108,9 @@ export default {
     },
     toggleTaskMembers() {
       this.isTaskMemebersShown = !this.isTaskMemebersShown;
+    },
+    toggleTaskStatuses() {
+      this.isTaskStatusesShown = !this.isTaskStatusesShown;
     },
   },
   computed: {
