@@ -97,7 +97,6 @@ export default {
       this.$emit("updateDueDate", { date, taskId: this.task.id });
     },
     toggleTaskMembers() {
-
       this.isTaskMemebersShown = !this.isTaskMemebersShown;
     },
   },
