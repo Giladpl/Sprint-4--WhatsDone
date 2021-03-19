@@ -1,30 +1,28 @@
 <template>
   <section class="task-members-list flex">
     <ul class="clean-list">
-      <li @click="removeFromTask"
+      <li
+        @click="removeMemberFromTask(taskMember)"
         class="task-member flex"
-        v-for="member1 in taskMembers"
-        :key="member1._id"
+        v-for="taskMember in taskMembers"
+        :key="taskMember._id"
       >
-        <el-avatar
-          size="small"
-          :src="member1.imgUrl"
-        ></el-avatar>
-        <p class="task-member-name">{{ member1.fullname }}</p>
+        <el-avatar size="small" :src="taskMember.imgUrl"></el-avatar>
+        <p class="task-member-name">{{ taskMember.fullname }}</p>
         <i class="el-icon-minus"></i>
       </li>
     </ul>
-    <div class="line-separator-members"> <span class="title-line-separator">Members to Add:</span> </div>
+    <div class="line-separator-members">
+      <span class="title-line-separator">Members to Add:</span>
+    </div>
     <ul class="clean-list">
-      <li @click="removeFromBoard"
+      <li
+        @click="addMemberToTask(member)"
         class="task-member flex"
         v-for="member in nonDuplicatedMembers"
         :key="member._id"
       >
-        <el-avatar
-          size="small"
-          :src="member.imgUrl"
-        ></el-avatar>
+        <el-avatar size="small" :src="member.imgUrl"></el-avatar>
         <p class="task-member-name">{{ member.fullname }}</p>
         <i class="el-icon-plus"></i>
       </li>
@@ -51,7 +49,14 @@ export default {
       nonDuplicatedMembers: [],
     };
   },
-  methods: {},
+  methods: {
+    removeMemberFromTask(taskMember) {
+      this.$emit('removeMemberFromTask', taskMember);
+    },
+    addMemberToTask(member) {
+      this.$emit('addMemberToTask', member);
+    },
+  },
   computed: {},
   created() {
     console.log("Board members:", this.boardMembers);
