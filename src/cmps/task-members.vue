@@ -25,7 +25,7 @@
           :src="member.imgUrl"
         ></el-avatar>
         <p class="task-member-name">{{member.fullname}}</p>
-        <i class="el-icon-minus"></i>
+        <i class="el-icon-plus"></i>
       </li>
     </ul>
   </section>
@@ -68,7 +68,6 @@ export default {
       if (!this.taskMembersIds.includes(member._id)) return member
     })
     console.log('board members who arn\'t task members:', this.nonDuplicatedMembers);
-    
   },
 };
 </script>
