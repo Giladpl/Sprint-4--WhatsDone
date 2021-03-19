@@ -114,10 +114,10 @@ export default {
       this.isTaskStatusesShown = !this.isTaskStatusesShown;
     },
      removeMemberFromTask(taskMember) {
-      this.$emit('removeMemberFromTask', { memberId: taskMember, taskId: this.task.id });
+      this.$emit('removeMemberFromTask', { taskMember, taskId: this.task.id });
     },
     addMemberToTask(member) {
-      this.$emit('addMemberToTask', { memberId: member, taskId: this.task.id });
+      this.$emit('addMemberToTask', { member, taskId: this.task.id });
     },
     updateStatus(statusId) {
       this.$emit('updateStatus', {statusId, taskId: this.task.id});
