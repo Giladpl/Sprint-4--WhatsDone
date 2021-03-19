@@ -318,7 +318,6 @@ export default {
     },
     async removeStatus(statusId) {
       try {
-        newStatus.id = utilService.makeId();
         const statusIdx = this.boardToEdit.statuses.findIndex(status => status.id === statusId)
         this.boardToEdit.statuses.splice(statusIdx, 1);
         await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
