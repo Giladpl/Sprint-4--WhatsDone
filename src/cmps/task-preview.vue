@@ -3,9 +3,15 @@
     class="task-preview flex-center"
     v-bind:style="{ borderLeft: `8px solid ${groupColor}` }"
   >
-    <div class="main-task" @click.prevent="onTask">
+    <div
+      class="main-task"
+      @click.prevent="onTask"
+    >
       <div class="remove-title-wrapper flex">
-        <div @click.stop="removeTask" class="btns-hidden">
+        <div
+          @click.stop="removeTask"
+          class="btns-hidden"
+        >
           <i class="el-icon-delete"></i>
         </div>
         <div class="task-title">{{ task.title }}</div>
@@ -13,13 +19,25 @@
       </div>
       <div class="btn-chat"><i class="el-icon-chat-dot-round"></i></div>
     </div>
-    <div class="members-container" @click="toggleTaskMembers">
+    <div
+      class="members-container"
+      @click="toggleTaskMembers"
+    >
       <ul class="members clean-list">
-        <li v-for="member in task.members" :key="member._id" class="miniUser">
-          <el-avatar size="small" :src="member.imgUrl"></el-avatar>
+        <li
+          v-for="member in task.members"
+          :key="member._id"
+          class="miniUser"
+        >
+          <el-avatar
+            size="small"
+            :src="member.imgUrl"
+          ></el-avatar>
         </li>
       </ul>
-      <task-members @removeMemberFromTask="removeMemberFromTask" @addMemberToTask="addMemberToTask"
+      <task-members
+        @removeMemberFromTask="removeMemberFromTask"
+        @addMemberToTask="addMemberToTask"
         v-if="isTaskMemebersShown"
         :boardMembers="boardMembers"
         :taskMembers="task.members"
@@ -35,7 +53,7 @@
       </div>
       <task-status
         v-if="isTaskStatusesShown"
-        :statuses="statuses" 
+        :statuses="statuses"
       />
     </div>
     <div class="date-picker-container">
@@ -48,6 +66,7 @@
         size="small"
         placeholder="Pick a day"
       >
+        >
       </el-date-picker>
     </div>
     <div>
@@ -93,7 +112,7 @@ export default {
     return {
       currDueDate: null,
       isTaskMemebersShown: false,
-      isTaskStatusesShown: false
+      isTaskStatusesShown: false,
     };
   },
   methods: {
@@ -112,7 +131,7 @@ export default {
     toggleTaskStatuses() {
       this.isTaskStatusesShown = !this.isTaskStatusesShown;
     },
-     removeMemberFromTask(taskMember) {
+    removeMemberFromTask(taskMember) {
       this.$emit('removeMemberFromTask', { taskMember, taskId: this.task.id });
     },
     addMemberToTask(member) {
