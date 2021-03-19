@@ -61,8 +61,6 @@ export default {
   },
   computed: {},
   created() {
-    // console.log("Board members:", this.boardMembers);
-    // console.log("Task members:", this.taskMembers);
 
     this.taskMembersIds = this.taskMembers.reduce((acc, member) => {
       acc.push(member._id);
@@ -71,10 +69,7 @@ export default {
     this.nonDuplicatedMembers = this.boardMembers.filter((member) => {
       if (!this.taskMembersIds.includes(member._id)) return member;
     });
-    // console.log(
-    //   "board members who arn't task members:",
-    //   this.nonDuplicatedMembers
-    // );
+  
   },
 };
 </script>

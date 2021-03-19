@@ -73,6 +73,9 @@
             @updateStatus="updateStatus"
             @addStatus="addStatus"
             @removeStatus="removeStatus"
+            @updatePriority="updatePriority"
+            @addPriority="addPriority"
+            @removePriority="removePriority"
           />
         </li>
       </ul>
@@ -243,22 +246,25 @@ export default {
     },
     async removeMemberFromTask(update) {
       try {
-        const currGroupIdx = this.boardToEdit.groups.findIndex((group) => {
+        const currGroupIdx = this.boardToEdit.groups.findIndex(group => {
           return group.id === update.groupId; //need to add failior treatment
         });
-        const currTaskIdx = this.boardToEdit.groups.tasks.findIndex((task) => {
+          // console.log('log of groups:', this.boardToEdit.groups[currGroupIdx]);
+
+        const currTaskIdx = this.boardToEdit.groups[currGroupIdx].tasks.findIndex(task => {
           return task.id === update.taskId; //need to add failior treatment
         });
-        const memberToRemoveIdx = this.boardToEdit.groups.members.findindex(
-          (member) => {
-            return member._id === update.taskMember._id; //need to add failior treatment
+          // console.log('log of taskts:', this.boardToEdit.groups[currGroupIdx].tasks);
+
+        const memberToRemoveIdx = this.boardToEdit.members.findIndex(member => {
+          return member._id === update.taskMember._id; //need to add failior treatment
           }
         );
-        const taskShortcut = this.boardToEdit.groups[currGroupIdx].tasks[
-          currTaskIdx
-        ];
-        this.boardToEdit.members.push(update.taskMember);
-        taskShortcut.mambers.splice(memberToRemoveIdx, 1);
+          // console.log('log of members in board:', this.boardToEdit.members);
+
+        const taskShortcut = this.boardToEdit.groups[currGroupIdx].tasks[currTaskIdx];
+        taskShortcut.members.splice(memberToRemoveIdx, 1);
+
         await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
         this.loadBoard();
         console.log("FROM BOARD-DETAILS: Removed member from task", update.taskMember);
@@ -268,22 +274,16 @@ export default {
     },
     async addMemberToTask(update) {
       try {
-        const currGroupIdx = this.boardToEdit.groups.findIndex((group) => {
+        const currGroupIdx = this.boardToEdit.groups.findIndex(group => {
           return group.id === update.groupId; //need to add failior treatment
         });
-        const currTaskIdx = this.boardToEdit.groups.tasks.findIndex((task) => {
+        const currTaskIdx = this.boardToEdit.groups[currGroupIdx].tasks.findIndex(task => {
           return task.id === update.taskId; //need to add failior treatment
         });
-        const memberToRemoveIdx = this.boardToEdit.groups.members.findindex(
-          (member) => {
-            return member._id === update.member._id; //need to add failior treatment
-          }
-        );
-        const taskShortcut = this.boardToEdit.groups[currGroupIdx].tasks[
-          currTaskIdx
-        ];
-        this.boardToEdit.members.splice(memberToRemoveIdx, 1);
-        taskShortcut.mambers.push(update.member);
+        
+        const taskShortcut = this.boardToEdit.groups[currGroupIdx].tasks[currTaskIdx];
+        taskShortcut.members.push(update.member);
+        
         await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit});
         this.loadBoard();
         console.log('FROM BOARD-DETAILS: Added member to task', update.member);
@@ -325,7 +325,42 @@ export default {
       } catch (err) {
         console.log('cannot remove status', err);
       }
-    }
+    },
+    async updatePriority(update) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === update.groupId
+        );
+        const idx = currGroup.tasks.findIndex(
+          (task) => task.id === update.taskId
+        );
+        currGroup.tasks[idx].priorityId = update.priorityId;
+        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        this.loadBoard();
+      } catch (err) {
+        console.log("cannot update priority", err);
+      }
+    },
+    async addPriority(newPriority) {
+      try {
+        newPriority.id = utilService.makeId();
+        this.boardToEdit.priorities.push(newPriority);
+        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        this.loadBoard();  
+      } catch (err) {
+        console.log('cannot add priority', err);
+      }
+    },
+    async removePriority(priorityId) {
+      try {
+        const priorityIdx = this.boardToEdit.priorities.findIndex(priority => priority.id === priorityId)
+        this.boardToEdit.priorities.splice(priorityIdx, 1);
+        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        this.loadBoard();  
+      } catch (err) {
+        console.log('cannot remove priority', err);
+      }
+    },
   },
   computed: {
     loggedinUser() {
