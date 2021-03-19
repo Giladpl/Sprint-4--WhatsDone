@@ -48,15 +48,18 @@
         class="task-container"
       >
         <task-preview
-          @removeMemberFromTask="removeMemberFromTask"
-          @addMemberToTask="addMemberToTask"
-          @removeTask="removeTask"
-          @updateDueDate="updateDueDate"
           :task="task"
           :groupColor="group.color"
           :statuses="statuses"
           :priorities="priorities"
           :boardMembers="boardMembers"
+          @removeMemberFromTask="removeMemberFromTask"
+          @addMemberToTask="addMemberToTask"
+          @removeTask="removeTask"
+          @updateDueDate="updateDueDate"
+          @updateStatus="updateStatus"
+          @addStatus="addStatus"
+          @removeStatus="removeStatus"
         />
       </li>
     </draggable>
@@ -148,6 +151,16 @@ export default {
       update.groupId = this.group.id;
       this.$emit('addMemberToTask', update);
     },
+    updateStatus(update) {
+      update.groupId = this.group.id;
+      this.$emit('updateStatus', update);
+    },
+    addStatus(newStatus) {
+      this.$emit('addStatus', newStatus)
+    },
+    removeStatus(statusId) {
+      this.$emit('removeStatus', statusId);  
+    }
   },
   created() {
     this.groupTitle = this.group.title;

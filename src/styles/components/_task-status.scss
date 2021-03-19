@@ -1,6 +1,6 @@
 .status-modal {
     position: absolute;
-    transform: translate(0, 59%);
+    transform: translate(0, 56.5%);
     
     .status-list {
         width: 9.375rem;
@@ -13,12 +13,19 @@
     }
 
     .label {
-        margin: 5px;
+        margin: 5px 0;
         padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        i {
+            font-size: 13px;
+        }
     }
 
     .input-add-status {
-        margin: 5px;
+        margin: 5px 0;
         padding: 10px;
         border-color: $clr1;
         border: none;

@@ -51,16 +51,18 @@ export default {
   },
   methods: {
     removeMemberFromTask(taskMember) {
-      this.$emit('removeMemberFromTask', taskMember);
+      this.$emit("removeMemberFromTask", taskMember);
+      console.log("Removed member from task", taskMember);
     },
     addMemberToTask(member) {
-      this.$emit('addMemberToTask', member);
+      this.$emit("addMemberToTask", member);
+      console.log("Added member to task", member);
     },
   },
   computed: {},
   created() {
-    console.log("Board members:", this.boardMembers);
-    console.log("Task members:", this.taskMembers);
+    // console.log("Board members:", this.boardMembers);
+    // console.log("Task members:", this.taskMembers);
 
     this.taskMembersIds = this.taskMembers.reduce((acc, member) => {
       acc.push(member._id);
@@ -69,10 +71,10 @@ export default {
     this.nonDuplicatedMembers = this.boardMembers.filter((member) => {
       if (!this.taskMembersIds.includes(member._id)) return member;
     });
-    console.log(
-      "board members who arn't task members:",
-      this.nonDuplicatedMembers
-    );
+    // console.log(
+    //   "board members who arn't task members:",
+    //   this.nonDuplicatedMembers
+    // );
   },
 };
 </script>
