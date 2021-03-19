@@ -2,7 +2,7 @@
   <section class="task-members flex">
     <ul class="task-members-list clean-list flex">
       <li
-        v-for="member in boardMembers"
+        v-for="member in nonDuplicatedMembers"
         :key="member._id"
         class="task-member flex"
       >
@@ -47,10 +47,10 @@ export default {
       acc.push(member._id)
       return acc
     }, [])
-    const members = this.boardMembers.filter(member => {
+    this.nonDuplicatedMembers = this.boardMembers.filter(member => {
       if (!this.taskMembersIds.includes(member._id)) return member
     })
-    console.log(members);
+    
   },
 };
 </script>
