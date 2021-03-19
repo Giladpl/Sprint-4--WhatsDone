@@ -19,18 +19,23 @@
           <el-avatar size="small" :src="member.imgUrl"></el-avatar>
         </li>
       </ul>
-    <task-members 
-      v-if="isTaskMemebersShown"
-      :boardMembers="boardMembers"
-      :taskMembers="task.members"
-    />
+      <task-members 
+        v-if="isTaskMemebersShown"
+        :boardMembers="boardMembers"
+        :taskMembers="task.members"
+      />
     </div>
-    <div
-      class="status"
-      v-if="getStatusById"
-      v-bind:style="{ background: getStatusById.color }"
-    >
-      {{ getStatusById.title }}
+    <div>
+      <div
+        class="status"
+        v-if="getStatusById"
+        v-bind:style="{ background: getStatusById.color }"
+      >
+        {{ getStatusById.title }}
+      </div>
+      <task-status
+        :statuses="statuses" 
+      />
     </div>
     <div>
       <el-date-picker
@@ -44,18 +49,21 @@
       >
       </el-date-picker>
     </div>
-    <div
-      class="priority"
-      v-if="getPriorityById"
-      v-bind:style="{ background: getPriorityById.color }"
-    >
-      {{ getPriorityById.title }}
+    <div>
+      <div
+        class="priority"
+        v-if="getPriorityById"
+        v-bind:style="{ background: getPriorityById.color }"
+      >
+        {{ getPriorityById.title }}
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-import taskMembers from "./task-members.vue";
+import taskMembers from "./task-members";
+import taskStatus from "./task-status";
 
 export default {
   props: {
@@ -119,6 +127,7 @@ export default {
   },
   components: {
     taskMembers,
+    taskStatus
   },
 };
 </script>

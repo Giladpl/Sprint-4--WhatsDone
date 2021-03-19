@@ -1,8 +1,8 @@
 <template>
     <section class="status-modal">
-        <ul v-if="renderStatuses">
+        <ul v-if="renderStatuses" class="status-list clean-list">
             <li v-for="status in renderStatuses" :key="status.id">
-                <div v-bind:style="{ borderLeft: `10px solid ${status.color}` }">{{status.title}}</div>
+                <div class="label" v-bind:style="{ borderLeft: `10px solid ${status.color}` }">{{status.title}}</div>
             </li>
             <li>
                 <input 
@@ -15,16 +15,18 @@
                 >
             </li>
         </ul>
-        <color-picker @changeColor="changeColor"/>
+        <!-- <color-picker @changeColor="changeColor"/> -->
     </section>
 </template>
 
 <script>
 import colorPicker from "./color-picker";
 export default {
-    statuses: {
-      type: Array,
-      required: true,
+    props: {
+        statuses: {
+          type: Array,
+          required: true,
+        },
     },
     data() {
         return {
