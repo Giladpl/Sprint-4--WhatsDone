@@ -119,7 +119,7 @@ function _createBoard(_id, title) {
             {
                 id: 'sNew',
                 title: '',
-                color: 'gray',
+                color: '#808080',
             },
         ],
         priorities: [
@@ -136,7 +136,7 @@ function _createBoard(_id, title) {
             {
                 id: 'pNew',
                 title: '',
-                color: 'gray',
+                color: '#808080',
             },
         ],
         members: [

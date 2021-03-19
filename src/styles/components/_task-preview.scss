@@ -29,6 +29,16 @@
         justify-content: center
     }
 
+    .status,
+    .priority {
+        width: 9.375rem;
+        padding: 0 10px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+
     .date-picker {
         width: 130px;
     }
