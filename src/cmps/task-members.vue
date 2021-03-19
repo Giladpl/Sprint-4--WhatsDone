@@ -1,22 +1,22 @@
 <template>
-  <section class="task-members flex">
-    <ul class="task-members-list members-top clean-list flex">
+  <section class="task-members-list flex">
+    <ul class="clean-list">
       <li
-        v-for="member in taskMembers"
-        :key="member._id"
         class="task-member flex"
+        v-for="member1 in taskMembers"
+        :key="member1._id"
       >
-        <el-avatar size="small" :src="member.imgUrl"></el-avatar>
-        <p class="task-member-name">{{ member.fullname }}</p>
+        <el-avatar size="small" :src="member1.imgUrl"></el-avatar>
+        <p class="task-member-name">{{ member1.fullname }}</p>
         <i class="el-icon-minus"></i>
       </li>
     </ul>
 
-    <ul class="task-members-list members-bottom clean-list flex">
+    <ul class="clean-list">
       <li
+        class="task-member flex"
         v-for="member in nonDuplicatedMembers"
         :key="member._id"
-        class="task-member flex"
       >
         <el-avatar size="small" :src="member.imgUrl"></el-avatar>
         <p class="task-member-name">{{ member.fullname }}</p>
