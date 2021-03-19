@@ -7,7 +7,7 @@
       v-for="(status, idx) in statusesMap"
       :key="idx"
     >
-      <div v-bind:style="{ background: status.color }">a</div>
+      <div :style="styleComputed">a</div>
     </div>
   </section>
 </template>
@@ -44,14 +44,16 @@ export default {
   },
   computed: {
     precentageCalc() {
-      return this.status / this.statuses.length
+      this.statusesMap / this.tasks.length * 100
     },
     styleComputed() {
       return {
-        color: this.status.color,
-        // width: 
+        backgroundColor: this.color
       }
     },
+    color() {
+      return 'red'
+    }
   },
   created() {
 
