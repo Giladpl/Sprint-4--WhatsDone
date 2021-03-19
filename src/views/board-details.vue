@@ -237,21 +237,21 @@ export default {
     toggleAddViewMenu() {
       this.isAddViewMenu = !this.isAddViewMenu;
     },
-    removeMemberFromTask(update) {
-      // this.$emit('removeMemberFromTask', taskMember, taskId);
-      try {
-        const groupToAdd = boardService.getEmptyGroup();
-        this.boardToEdit.groups.push(groupToAdd);
-        await this.$store.dispatch({
-          type: "saveBoard",
-          board: this.boardToEdit,
-        });
-        this.loadBoard();
-      } catch (err) {
-        console.log(err);
-      }
-    },
-    addMemberToTask(update) {
+    //async removeMemberFromTask(update) {
+    //   // this.$emit('removeMemberFromTask', taskMember, taskId);
+    //   try {
+    //     const groupToAdd = boardService.getEmptyGroup();
+    //     this.boardToEdit.groups.push(groupToAdd);
+    //     await this.$store.dispatch({
+    //       type: "saveBoard",
+    //       board: this.boardToEdit,
+    //     });
+    //     this.loadBoard();
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // },
+   async addMemberToTask(update) {
       // this.$emit('addMemberToTask', taskMember, taskId);
       try {
 
