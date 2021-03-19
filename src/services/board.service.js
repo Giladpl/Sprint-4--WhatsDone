@@ -59,8 +59,8 @@ function getEmptyTask(){
         members: [],
         byMember: {},
         comments: [],
-        statusId: 's102',
-        priorityId: 'p101',
+        statusId: 'sNew',
+        priorityId: 'pNew',
         createdAt: Date.now(),
         dueDate: Date.now(),
     }
@@ -116,6 +116,11 @@ function _createBoard(_id, title) {
                 title: 'Working on it',
                 color: '#d133f8',
             },
+            {
+                id: 'sNew',
+                title: '',
+                color: 'gray',
+            },
         ],
         priorities: [
             {
@@ -127,6 +132,11 @@ function _createBoard(_id, title) {
                 id: 'p102',
                 title: 'Low',
                 color: '#f89a5b',
+            },
+            {
+                id: 'pNew',
+                title: '',
+                color: 'gray',
             },
         ],
         members: [
