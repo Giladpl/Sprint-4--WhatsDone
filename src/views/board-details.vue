@@ -71,6 +71,7 @@
             @removeMemberFromTask="removeMemberFromTask"
             @addMemberToTask="addMemberToTask"
             @updateStatus="updateStatus"
+            @addStatus="addStatus"
           />
         </li>
       </ul>
@@ -83,6 +84,7 @@ import { boardService } from "../services/board.service.js";
 import group from "@/cmps/group";
 import appHeader from "@/cmps/app-header";
 import usersAvatars from "@/cmps/users-avatars";
+import { utilService } from '../services/util.service.js';
 
 export default {
   data() {
@@ -291,6 +293,16 @@ export default {
         this.loadBoard();
       } catch (err) {
         console.log("cannot update status", err);
+      }
+    },
+    async addStatus(newStatus) {
+      try {
+        newStatus.id = utilService.makeId();
+        this.boardToEdit.statuses.push(newStatus);
+        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        this.loadBoard();  
+      } catch (err) {
+        console.log('cannot add status', err);
       }
     }
   },

@@ -1,8 +1,8 @@
 <template>
     <section class="status-modal">
         <ul v-if="renderStatuses" class="status-list clean-list">
-            <li v-for="status in renderStatuses" :key="status.id" @click="onStatus(status.id)">
-                <div class="label" v-bind:style="{ borderLeft: `10px solid ${status.color}` }">{{status.title}}</div>
+            <li v-for="status in renderStatuses" :key="status.id">
+                <div class="label" @click="onStatus(status.id)" v-bind:style="{ borderLeft: `10px solid ${status.color}` }">{{status.title}}</div>
             </li>
             <li>
                 <input 
@@ -14,8 +14,8 @@
                 v-bind:style="{ borderLeft: `10px solid ${addStatusColor}` }"
                 >
             </li>
+            <color-picker class="label-color-picker" @changeColor="changeColor"/>
         </ul>
-        <!-- <color-picker @changeColor="changeColor"/> -->
     </section>
 </template>
 
@@ -41,6 +41,7 @@ export default {
         addStatus(ev) {
             this.$emit('addStatus', { title: ev.target.value, color: this.addStatusColor })
             this.$refs['addStatusInput'].value = ''
+            this.addStatusColor = 'gray'
         },
         onStatus(statusId) {
             this.$emit('updateStatus', statusId)

@@ -1,6 +1,6 @@
 .status-modal {
     position: absolute;
-    transform: translate(0, 59%);
+    transform: translate(0, 56.5%);
     
     .status-list {
         width: 9.375rem;
@@ -23,5 +23,9 @@
         border-color: $clr1;
         border: none;
         width: 130px;
+    }
+
+    .label-color-picker {
+        // transform: translate(0, 59%);
     }
 }
