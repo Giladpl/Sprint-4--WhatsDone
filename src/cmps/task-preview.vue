@@ -19,12 +19,12 @@
           <el-avatar size="small" :src="member.imgUrl"></el-avatar>
         </li>
       </ul>
-    </div>
     <task-members 
       v-if="isTaskMemebersShown"
       :boardMembers="boardMembers"
       :taskMembers="task.members"
     />
+    </div>
     <div
       class="status"
       v-if="getStatusById"

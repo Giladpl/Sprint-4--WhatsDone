@@ -11,7 +11,6 @@
     color: $clr3;
     font-size: .8125rem;
     justify-content: space-between;
-    position: relative  !important;
 
     &:hover {
         background-color: #E6E9EF;
@@ -55,6 +54,7 @@
     }
 
     .members {
+        // position: relative;
         display: flex;
         cursor: pointer;
     }
