@@ -58,8 +58,6 @@
       <ul class="clean-list">
         <li v-for="group in board.groups" :key="group._id">
           <group
-            @removeMemberFromTask="removeMemberFromTask"
-            @addMemberToTask="addMemberToTask"
             :group="group"
             :statuses="board.statuses"
             :priorities="board.priorities"
@@ -70,6 +68,9 @@
             @removeGroup="removeGroup"
             @addTask="addTask"
             @updateDueDate="updateDueDate"
+            @removeMemberFromTask="removeMemberFromTask"
+            @addMemberToTask="addMemberToTask"
+            @updateStatus="updateStatus"
           />
         </li>
       </ul>
@@ -277,6 +278,21 @@ export default {
         console.log(err);
       }
     },
+    async updateStatus(update) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === update.groupId
+        );
+        const idx = currGroup.tasks.findIndex(
+          (task) => task.id === update.taskId
+        );
+        currGroup.tasks[idx].statusId = update.statusId;
+        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        this.loadBoard();
+      } catch (err) {
+        console.log("cannot update status", err);
+      }
+    }
   },
   computed: {
     loggedinUser() {

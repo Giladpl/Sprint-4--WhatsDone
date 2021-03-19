@@ -1,7 +1,7 @@
 <template>
     <section class="status-modal">
         <ul v-if="renderStatuses" class="status-list clean-list">
-            <li v-for="status in renderStatuses" :key="status.id">
+            <li v-for="status in renderStatuses" :key="status.id" @click="onStatus(status.id)">
                 <div class="label" v-bind:style="{ borderLeft: `10px solid ${status.color}` }">{{status.title}}</div>
             </li>
             <li>
@@ -42,6 +42,9 @@ export default {
             this.$emit('addStatus', { title: ev.target.value, color: this.addStatusColor })
             this.$refs['addStatusInput'].value = ''
         },
+        onStatus(statusId) {
+            this.$emit('updateStatus', statusId)
+        }
     },
     created() {
         this.renderStatuses = this.statuses.filter(status => status.id !== 'sNew')

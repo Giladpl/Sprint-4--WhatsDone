@@ -36,6 +36,7 @@
       <task-status
         v-if="isTaskStatusesShown"
         :statuses="statuses" 
+        @updateStatus="updateStatus"
       />
     </div>
     <div class="date-picker-container">
@@ -118,6 +119,9 @@ export default {
     addMemberToTask(member) {
       this.$emit('addMemberToTask', { memberId: member, taskId: this.task.id });
     },
+    updateStatus(statusId) {
+      this.$emit('updateStatus', {statusId, taskId: this.task.id});
+    }
   },
   computed: {
     getStatusById() {
