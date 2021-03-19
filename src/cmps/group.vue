@@ -60,6 +60,9 @@
           @updateStatus="updateStatus"
           @addStatus="addStatus"
           @removeStatus="removeStatus"
+          @updatePriority="updatePriority"
+          @addPriority="addPriority"
+          @removePriority="removePriority"
         />
       </li>
     </draggable>
@@ -70,7 +73,10 @@
       type="text"
       placeholder="+ Add"
     />
-    <status-bar :statuses="statuses" />
+    <status-bar
+      :statuses="statuses"
+      :tasks="group.tasks"
+    />
   </ul>
 </template>
 
@@ -159,8 +165,18 @@ export default {
       this.$emit('addStatus', newStatus)
     },
     removeStatus(statusId) {
-      this.$emit('removeStatus', statusId);  
-    }
+      this.$emit('removeStatus', statusId);
+    },
+    updatePriority(update) {
+      update.groupId = this.group.id;
+      this.$emit('updatePriority', update);
+    },
+    addPriority(newPriority) {
+      this.$emit('addPriority', newPriority)
+    },
+    removePriority(priorityId) {
+      this.$emit('removePriority', priorityId);
+    },
   },
   created() {
     this.groupTitle = this.group.title;
