@@ -36,6 +36,7 @@
       <task-status
         v-if="isTaskStatusesShown"
         :statuses="statuses" 
+        @updateStatus="updateStatus"
       />
     </div>
     <div class="date-picker-container">
