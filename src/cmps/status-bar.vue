@@ -4,9 +4,11 @@
     class="status-bar-wrapper"
   >
     <div
-      v-for="(status, idx) in statuses"
+      v-for="(status, idx) in statusesMap"
       :key="idx"
-    ></div>
+    >
+      <div v-bind:style="{ background: status.color }">a</div>
+    </div>
   </section>
 </template>
 
@@ -43,6 +45,12 @@ export default {
   computed: {
     precentageCalc() {
       return this.status / this.statuses.length
+    },
+    styleComputed() {
+      return {
+        color: this.status.color,
+        // width: 
+      }
     },
   },
   created() {
