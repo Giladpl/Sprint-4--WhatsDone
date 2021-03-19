@@ -9,17 +9,16 @@
           type="text"
           @change="updateTitle"
           v-model="groupTitle"
-        >
+        />
       </div>
-      <div
-        v-if="isShownGroupEdit"
-        class="group-edit"
-      >
-        <div @click="removeGroup"><i class="el-icon-delete"></i>Delete Group</div>
-        <div @click="onColorPicker"><i><img
-              class="color-palette"
-              src="@/assets/color-palette.svg"
-            ></i>Change Color</div>
+      <div v-if="isShownGroupEdit" class="group-edit">
+        <div @click="removeGroup">
+          <i class="el-icon-delete"></i>Delete Group
+        </div>
+        <div @click="onColorPicker">
+          <i><img class="color-palette" src="@/assets/color-palette.svg" /></i
+          >Change Color
+        </div>
       </div>
       <color-picker
         class="color-picker"
@@ -33,17 +32,11 @@
         <div>Priority</div>
       </div>
     </div>
-    <draggable
-      v-model="group.tasks"
-      @start="drag=true"
-      @end="drag=false"
-    >
-      <li
-        v-for="task in group.tasks"
-        :key="task._id"
-        class="task-container"
-      >
+    <draggable v-model="group.tasks" @start="drag = true" @end="drag = false">
+      <li v-for="task in group.tasks" :key="task._id" class="task-container">
         <task-preview
+          @removeMemberFromTask="removeMemberFromTask"
+          @addMemberToTask="addMemberToTask"
           @removeTask="removeTask"
           @updateDueDate="updateDueDate"
           :task="task"
@@ -60,18 +53,17 @@
       class="input-add-task"
       type="text"
       placeholder="+ Add"
-    >
+    />
   </ul>
 </template>
 
 <script>
 import taskPreview from "./task-preview";
 import colorPicker from "./color-picker";
-import draggable from 'vuedraggable'
-
+import draggable from "vuedraggable";
 
 export default {
-  name: 'group',
+  name: "group",
   props: {
     group: {
       type: Object,
@@ -88,53 +80,67 @@ export default {
     boardMembers: {
       type: Array,
       required: true,
-    }
+    },
   },
   data() {
     return {
       isColorPicker: false,
       groupTitle: null,
       isShownGroupEdit: false,
-    }
+    };
   },
   methods: {
     removeGroup() {
-      this.$emit('removeGroup', { groupId: this.group.id });
+      this.$emit("removeGroup", { groupId: this.group.id });
     },
     changeColor(chosenColor) {
-      this.isColorPicker = !this.isColorPicker
-      this.isShownGroupEdit = !this.isShownGroupEdit
-      this.$emit('changeColor', { chosenColor, groupId: this.group.id })
+      this.isColorPicker = !this.isColorPicker;
+      this.isShownGroupEdit = !this.isShownGroupEdit;
+      this.$emit("changeColor", { chosenColor, groupId: this.group.id });
     },
     onColorPicker() {
-      this.isColorPicker = !this.isColorPicker
+      this.isColorPicker = !this.isColorPicker;
     },
     updateTitle() {
-      this.$emit('updateTitle', { title: this.groupTitle, groupId: this.group.id })
+      this.$emit("updateTitle", {
+        title: this.groupTitle,
+        groupId: this.group.id,
+      });
     },
     removeTask(taskId) {
-      this.$emit('removeTask', { taskId, groupId: this.group.id })
+      this.$emit("removeTask", { taskId, groupId: this.group.id });
     },
     toggleGroupEdit() {
-      this.isShownGroupEdit = !this.isShownGroupEdit
+      this.isShownGroupEdit = !this.isShownGroupEdit;
       if (this.isColorPicker) this.isColorPicker = false;
     },
     addTask(ev) {
-      this.$emit('addTask', { taskTitle: ev.target.value, groupId: this.group.id })
-      this.$refs['addTaskInput'].value = ''
+      this.$emit("addTask", {
+        taskTitle: ev.target.value,
+        groupId: this.group.id,
+      });
+      this.$refs["addTaskInput"].value = "";
     },
     updateDueDate(update) {
-      update.groupId = this.group.id
-      this.$emit('updateDueDate', update)
-    }
+      update.groupId = this.group.id;
+      this.$emit("updateDueDate", update);
+    },
+     removeMemberFromTask(update) {
+       update.groupId = this.group.id;
+      this.$emit('removeMemberFromTask', update);
+    },
+    addMemberToTask(update) {
+      update.groupId = this.group.id;
+      this.$emit('addMemberToTask', update);
+    },
   },
   created() {
-    this.groupTitle = this.group.title
+    this.groupTitle = this.group.title;
   },
   components: {
     taskPreview,
     colorPicker,
-    draggable
+    draggable,
   },
 };
 </script>

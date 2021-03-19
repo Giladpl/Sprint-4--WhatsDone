@@ -19,7 +19,7 @@
           <el-avatar size="small" :src="member.imgUrl"></el-avatar>
         </li>
       </ul>
-      <task-members 
+      <task-members @removeMemberFromTask="removeMemberFromTask" @addMemberToTask="addMemberToTask"
         v-if="isTaskMemebersShown"
         :boardMembers="boardMembers"
         :taskMembers="task.members"
@@ -111,6 +111,12 @@ export default {
     },
     toggleTaskStatuses() {
       this.isTaskStatusesShown = !this.isTaskStatusesShown;
+    },
+     removeMemberFromTask(taskMember) {
+      this.$emit('removeMemberFromTask', { taskMember, taskId: this.task.id });
+    },
+    addMemberToTask(member) {
+      this.$emit('addMemberToTask', { member, taskId: this.task.id });
     },
   },
   computed: {
