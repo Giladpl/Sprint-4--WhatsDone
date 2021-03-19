@@ -39,6 +39,7 @@
         :statuses="statuses" 
         @updateStatus="updateStatus"
         @addStatus="addStatus"
+        @removeStatus="removeStatus"
       />
     </div>
     <div class="date-picker-container">
@@ -127,6 +128,9 @@ export default {
     },
     addStatus(newStatus) {
       this.$emit('addStatus', newStatus)
+    },
+    removeStatus(statusId) {
+      this.$emit('removeStatus', statusId);  
     }
   },
   computed: {

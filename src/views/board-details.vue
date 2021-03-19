@@ -72,6 +72,7 @@
             @addMemberToTask="addMemberToTask"
             @updateStatus="updateStatus"
             @addStatus="addStatus"
+            @removeStatus="removeStatus"
           />
         </li>
       </ul>
@@ -313,6 +314,17 @@ export default {
         this.loadBoard();  
       } catch (err) {
         console.log('cannot add status', err);
+      }
+    },
+    async removeStatus(statusId) {
+      try {
+        newStatus.id = utilService.makeId();
+        const statusIdx = this.boardToEdit.statuses.findIndex(status => status.id === statusId)
+        this.boardToEdit.statuses.splice(statusIdx, 1);
+        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        this.loadBoard();  
+      } catch (err) {
+        console.log('cannot remove status', err);
       }
     }
   },

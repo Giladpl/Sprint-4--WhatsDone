@@ -1,8 +1,11 @@
 <template>
     <section class="status-modal">
         <ul v-if="renderStatuses" class="status-list clean-list">
-            <li v-for="status in renderStatuses" :key="status.id" @click="onStatus(status.id)" >
-                <div class="label" v-bind:style="{ borderLeft: `10px solid ${status.color}` }">{{status.title}}</div>
+            <li v-for="status in renderStatuses" :key="status.id" >
+                <div class="label" @click="onStatus(status.id)" v-bind:style="{ borderLeft: `10px solid ${status.color}` }" >
+                    {{status.title}}
+                    <i class="el-icon-delete" @click.stop="onRemoveStatus(status.id)"></i>
+                </div>
             </li>
             <li>
                 <input 
@@ -44,6 +47,9 @@ export default {
         },
         onStatus(statusId) {
             this.$emit('updateStatus', statusId);
+        },
+        onRemoveStatus(statusId) {
+            this.$emit('removeStatus', statusId);            
         }
     },
     computed: {

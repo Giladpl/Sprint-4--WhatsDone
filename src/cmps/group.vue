@@ -46,6 +46,7 @@
           @updateDueDate="updateDueDate"
           @updateStatus="updateStatus"
           @addStatus="addStatus"
+          @removeStatus="removeStatus"
         />
       </li>
     </draggable>
@@ -141,6 +142,9 @@ export default {
     },
     addStatus(newStatus) {
       this.$emit('addStatus', newStatus)
+    },
+    removeStatus(statusId) {
+      this.$emit('removeStatus', statusId);  
     }
   },
   created() {
