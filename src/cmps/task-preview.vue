@@ -78,9 +78,17 @@
         class="priority"
         v-if="getPriorityById"
         v-bind:style="{ background: getPriorityById.color }"
+        @click="toggleTaskPriorities"
       >
         {{ getPriorityById.title }}
       </div>
+      <task-priority
+        v-if="isTaskPrioritiesShown"
+        :priorities="priorities" 
+        @updatePriority="updatePriority"
+        @addPriority="addPriority"
+        @removePriority="removePriority"
+      />
     </div>
   </section>
 </template>
@@ -88,6 +96,7 @@
 <script>
 import taskMembers from "./task-members";
 import taskStatus from "./task-status";
+import taskPriority from "./task-priority";
 
 export default {
   props: {
@@ -117,6 +126,7 @@ export default {
       currDueDate: null,
       isTaskMemebersShown: false,
       isTaskStatusesShown: false,
+      isTaskPrioritiesShown: false,
     };
   },
   methods: {
@@ -150,7 +160,20 @@ export default {
     },
     removeStatus(statusId) {
       this.$emit('removeStatus', statusId);  
-    }
+    },
+    toggleTaskPriorities() {
+      this.isTaskPrioritiesShown = !this.isTaskPrioritiesShown;
+    },
+    updatePriority(priorityId) {
+      this.isTaskPrioritiesShown = !this.isTaskPrioritiesShown;
+      this.$emit('updatePriority', {priorityId, taskId: this.task.id});
+    },
+    addPriority(newPriority) {
+      this.$emit('addPriority', newPriority)
+    },
+    removePriority(priorityId) {
+      this.$emit('removePriority', priorityId);  
+    },
   },
   computed: {
     getStatusById() {
@@ -171,7 +194,8 @@ export default {
   },
   components: {
     taskMembers,
-    taskStatus
+    taskStatus,
+    taskPriority
   },
 };
 </script>

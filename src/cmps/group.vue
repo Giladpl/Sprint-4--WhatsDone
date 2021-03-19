@@ -60,6 +60,9 @@
           @updateStatus="updateStatus"
           @addStatus="addStatus"
           @removeStatus="removeStatus"
+          @updatePriority="updatePriority"
+          @addPriority="addPriority"
+          @removePriority="removePriority"
         />
       </li>
     </draggable>
@@ -163,7 +166,17 @@ export default {
     },
     removeStatus(statusId) {
       this.$emit('removeStatus', statusId);
-    }
+    },
+    updatePriority(update) {
+      update.groupId = this.group.id;
+      this.$emit('updatePriority', update);
+    },
+    addPriority(newPriority) {
+      this.$emit('addPriority', newPriority)
+    },
+    removePriority(priorityId) {
+      this.$emit('removePriority', priorityId);
+    },
   },
   created() {
     this.groupTitle = this.group.title;

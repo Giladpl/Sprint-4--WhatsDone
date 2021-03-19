@@ -1,8 +1,8 @@
-.status-modal {
+.priority-modal {
     position: absolute;
     transform: translate(0, 56.5%);
     
-    .status-list {
+    .priority-list {
         width: 9.375rem;
         top: 40px;
         padding: 5px 10px;
@@ -29,7 +29,7 @@
         }
     }
 
-    .input-add-status {
+    .input-add-priority {
         margin-bottom: 15px;
         padding: 10px;
         border-color: $clr1;

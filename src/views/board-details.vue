@@ -73,6 +73,9 @@
             @updateStatus="updateStatus"
             @addStatus="addStatus"
             @removeStatus="removeStatus"
+            @updatePriority="updatePriority"
+            @addPriority="addPriority"
+            @removePriority="removePriority"
           />
         </li>
       </ul>
@@ -325,7 +328,42 @@ export default {
       } catch (err) {
         console.log('cannot remove status', err);
       }
-    }
+    },
+    async updatePriority(update) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === update.groupId
+        );
+        const idx = currGroup.tasks.findIndex(
+          (task) => task.id === update.taskId
+        );
+        currGroup.tasks[idx].priorityId = update.priorityId;
+        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        this.loadBoard();
+      } catch (err) {
+        console.log("cannot update priority", err);
+      }
+    },
+    async addPriority(newPriority) {
+      try {
+        newPriority.id = utilService.makeId();
+        this.boardToEdit.priorities.push(newPriority);
+        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        this.loadBoard();  
+      } catch (err) {
+        console.log('cannot add priority', err);
+      }
+    },
+    async removePriority(priorityId) {
+      try {
+        const priorityIdx = this.boardToEdit.priorities.findIndex(priority => priority.id === priorityId)
+        this.boardToEdit.priorities.splice(priorityIdx, 1);
+        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        this.loadBoard();  
+      } catch (err) {
+        console.log('cannot remove priority', err);
+      }
+    },
   },
   computed: {
     loggedinUser() {
