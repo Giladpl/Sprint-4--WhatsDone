@@ -290,6 +290,21 @@ export default {
         console.log(err);
       }
     },
+    async updateStatus(update) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === update.groupId
+        );
+        const idx = currGroup.tasks.findIndex(
+          (task) => task.id === update.taskId
+        );
+        currGroup.tasks[idx].statusId = update.statusId;
+        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        this.loadBoard();
+      } catch (err) {
+        console.log("cannot update status", err);
+      }
+    },
     async addStatus(newStatus) {
       try {
         newStatus.id = utilService.makeId();

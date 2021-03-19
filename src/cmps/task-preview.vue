@@ -122,6 +122,7 @@ export default {
       this.$emit('addMemberToTask', { member, taskId: this.task.id });
     },
     updateStatus(statusId) {
+      this.isTaskStatusesShown = !this.isTaskStatusesShown;
       this.$emit('updateStatus', {statusId, taskId: this.task.id});
     },
     addStatus(newStatus) {

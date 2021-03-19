@@ -1,8 +1,8 @@
 <template>
     <section class="status-modal">
         <ul v-if="renderStatuses" class="status-list clean-list">
-            <li v-for="status in renderStatuses" :key="status.id">
-                <div class="label" @click="onStatus(status.id)" v-bind:style="{ borderLeft: `10px solid ${status.color}` }">{{status.title}}</div>
+            <li v-for="status in renderStatuses" :key="status.id" @click="onStatus(status.id)" >
+                <div class="label" v-bind:style="{ borderLeft: `10px solid ${status.color}` }">{{status.title}}</div>
             </li>
             <li>
                 <input 
@@ -30,7 +30,6 @@ export default {
     },
     data() {
         return {
-            renderStatuses: [],
             addStatusColor: 'gray'
         }
     },
@@ -39,16 +38,18 @@ export default {
             this.addStatusColor = color;
         },
         addStatus(ev) {
-            this.$emit('addStatus', { title: ev.target.value, color: this.addStatusColor })
-            this.$refs['addStatusInput'].value = ''
-            this.addStatusColor = 'gray'
+            this.$emit('addStatus', { title: ev.target.value, color: this.addStatusColor });
+            this.$refs['addStatusInput'].value = '';
+            this.addStatusColor = 'gray';
         },
         onStatus(statusId) {
-            this.$emit('updateStatus', statusId)
+            this.$emit('updateStatus', statusId);
         }
     },
-    created() {
-        this.renderStatuses = this.statuses.filter(status => status.id !== 'sNew')
+    computed: {
+        renderStatuses() {
+            return this.statuses.filter(status => status.id !== 'sNew');
+        }
     },
     components: {
         colorPicker
