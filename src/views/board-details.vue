@@ -237,7 +237,7 @@ export default {
     toggleAddViewMenu() {
       this.isAddViewMenu = !this.isAddViewMenu;
     },
-    //async removeMemberFromTask(update) {
+    // async removeMemberFromTask(update) {
     //   // this.$emit('removeMemberFromTask', taskMember, taskId);
     //   try {
     //     const groupToAdd = boardService.getEmptyGroup();
@@ -256,13 +256,13 @@ export default {
       try {
 
         const currGroupIdx =  this.boardToEdit.groups.findIndex(group => {
-          return group.id === groupId;
+          return group.id === update.groupId;
         });
         const currTaskIdx =  this.boardToEdit.groups.tasks.findIndex(task => {
-          return task.id === taskId;
+          return task.id === update.taskId;
         });
         const memberToRemoveIdx = this.boardToEdit.groups.members.findindex(member => {
-          return member._id === taskMember._id;
+          return member._id === update.memberId;
         });
 
         const tasksShortCut = this.boardToEdit.groups.tasks;
