@@ -6,19 +6,25 @@
         v-for="member1 in taskMembers"
         :key="member1._id"
       >
-        <el-avatar size="small" :src="member1.imgUrl"></el-avatar>
+        <el-avatar
+          size="small"
+          :src="member1.imgUrl"
+        ></el-avatar>
         <p class="task-member-name">{{ member1.fullname }}</p>
         <i class="el-icon-minus"></i>
       </li>
     </ul>
-
+    <div class="line-separator-members"> <span class="title-line-separator">Members to Add:</span> </div>
     <ul class="clean-list">
       <li
         class="task-member flex"
         v-for="member in nonDuplicatedMembers"
         :key="member._id"
       >
-        <el-avatar size="small" :src="member.imgUrl"></el-avatar>
+        <el-avatar
+          size="small"
+          :src="member.imgUrl"
+        ></el-avatar>
         <p class="task-member-name">{{ member.fullname }}</p>
         <i class="el-icon-plus"></i>
       </li>
