@@ -70,6 +70,11 @@
             @updateDueDate="updateDueDate"
             @removeMemberFromTask="removeMemberFromTask"
             @addMemberToTask="addMemberToTask"
+<<<<<<< HEAD
+=======
+            @updateStatus="updateStatus"
+            @addStatus="addStatus"
+>>>>>>> 35d4cc23ad3e1017e49c15ff9e820e89cc7864b5
           />
         </li>
       </ul>
@@ -82,6 +87,7 @@ import { boardService } from "../services/board.service.js";
 import group from "@/cmps/group";
 import appHeader from "@/cmps/app-header";
 import usersAvatars from "@/cmps/users-avatars";
+import { utilService } from '../services/util.service.js';
 
 export default {
   data() {
@@ -296,6 +302,19 @@ export default {
         console.log(err);
       }
     },
+<<<<<<< HEAD
+=======
+    async addStatus(newStatus) {
+      try {
+        newStatus.id = utilService.makeId();
+        this.boardToEdit.statuses.push(newStatus);
+        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        this.loadBoard();  
+      } catch (err) {
+        console.log('cannot add status', err);
+      }
+    }
+>>>>>>> 35d4cc23ad3e1017e49c15ff9e820e89cc7864b5
   },
   computed: {
     loggedinUser() {

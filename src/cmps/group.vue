@@ -35,16 +35,17 @@
     <draggable v-model="group.tasks" @start="drag = true" @end="drag = false">
       <li v-for="task in group.tasks" :key="task._id" class="task-container">
         <task-preview
-          @removeMemberFromTask="removeMemberFromTask"
-          @addMemberToTask="addMemberToTask"
-          @removeTask="removeTask"
-          @updateDueDate="updateDueDate"
-          @updateStatus="updateStatus"
           :task="task"
           :groupColor="group.color"
           :statuses="statuses"
           :priorities="priorities"
           :boardMembers="boardMembers"
+          @removeMemberFromTask="removeMemberFromTask"
+          @addMemberToTask="addMemberToTask"
+          @removeTask="removeTask"
+          @updateDueDate="updateDueDate"
+          @updateStatus="updateStatus"
+          @addStatus="addStatus"
         />
       </li>
     </draggable>
@@ -137,6 +138,9 @@ export default {
     updateStatus(update) {
       update.groupId = this.group.id;
       this.$emit('updateStatus', update);
+    },
+    addStatus(newStatus) {
+      this.$emit('addStatus', newStatus)
     }
   },
   created() {

@@ -25,11 +25,12 @@
         :taskMembers="task.members"
       />
     </div>
-    <div @click="toggleTaskStatuses">
+    <div>
       <div
         class="status"
         v-if="getStatusById"
         v-bind:style="{ background: getStatusById.color }"
+        @click="toggleTaskStatuses"
       >
         {{ getStatusById.title }}
       </div>
@@ -37,6 +38,7 @@
         v-if="isTaskStatusesShown"
         :statuses="statuses" 
         @updateStatus="updateStatus"
+        @addStatus="addStatus"
       />
     </div>
     <div class="date-picker-container">
@@ -121,6 +123,9 @@ export default {
     },
     updateStatus(statusId) {
       this.$emit('updateStatus', {statusId, taskId: this.task.id});
+    },
+    addStatus(newStatus) {
+      this.$emit('addStatus', newStatus)
     }
   },
   computed: {
