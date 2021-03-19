@@ -39,6 +39,7 @@
           @addMemberToTask="addMemberToTask"
           @removeTask="removeTask"
           @updateDueDate="updateDueDate"
+          @updateStatus="updateStatus"
           :task="task"
           :groupColor="group.color"
           :statuses="statuses"
@@ -133,6 +134,10 @@ export default {
       update.groupId = this.group.id;
       this.$emit('addMemberToTask', update);
     },
+    updateStatus(update) {
+      update.groupId = this.group.id;
+      this.$emit('updateStatus', update);
+    }
   },
   created() {
     this.groupTitle = this.group.title;

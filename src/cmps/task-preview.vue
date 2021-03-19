@@ -119,6 +119,9 @@ export default {
     addMemberToTask(member) {
       this.$emit('addMemberToTask', { member, taskId: this.task.id });
     },
+    updateStatus(statusId) {
+      this.$emit('updateStatus', {statusId, taskId: this.task.id});
+    }
   },
   computed: {
     getStatusById() {
