@@ -272,6 +272,11 @@ function _createBoard1(_id, title) {
                                 fullname: 'JSON De Parse',
                                 imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
                             },
+                            {
+                                _id: 'u104', 
+                                fullname: 'Muki Abu Ja',
+                                imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU',
+                              },
                         ],
                         byMember: {
                             _id: 'u103', 
@@ -323,21 +328,21 @@ function _createBoard1(_id, title) {
                         title: 'Creation of proposed timetable with target goals',
                         members: [
                             {
-                                _id: 'u103', 
-                                fullname: 'Tuki Norma',
-                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-                            },
-                            {
-                                _id: 'u105', 
-                                fullname: 'JSON De Parse',
-                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
-                            },
+                                _id: 'u106', 
+                                fullname: 'Nancy Williams',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/50.jpg',
+                              },
+                              {
+                                _id: 'u107', 
+                                fullname: 'Dan Willer',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg',
+                              },
                         ],
                         byMember: {
-                            _id: 'u103', 
-                            fullname: 'Tuki Norma',
-                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
-                        },
+                            _id: 'u108', 
+                            fullname: 'Robert Wilford',
+                            imgUrl: 'https://randomuser.me/api/portraits/men/28.jpg',
+                          },
                         comments: [
                             {
                                 id: 'c103',
@@ -443,21 +448,31 @@ function _createBoard1(_id, title) {
                         title: 'Getting an initial feedback from client',
                         members: [
                             {
-                                _id: 'u103', 
-                                fullname: 'Tuki Norma',
-                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-                            },
-                            {
+                                _id: 'u108', 
+                                fullname: 'Robert Wilford',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/28.jpg',
+                              },
+                              {
                                 _id: 'u105', 
                                 fullname: 'JSON De Parse',
                                 imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
-                            },
+                              },
+                              {
+                                _id: 'u101', 
+                                fullname: 'Shraga Puk',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
+                              },
+                              {
+                                _id: 'u103', 
+                                fullname: 'Tuki Norma',
+                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
+                              },
                         ],
                         byMember: {
                             _id: 'u103', 
                             fullname: 'Tuki Norma',
-                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
-                        },
+                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
+                          },
                         comments: [
                             {
                                 id: 'c103',
@@ -510,22 +525,21 @@ function _createBoard1(_id, title) {
                         title: 'Deciding of the Architecture to be used',
                         members: [
                             {
-                                _id: 'u101', 
-                                fullname: 'Shraga Puk',
-                                imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
-                            },
-                            {
-                                _id: 'u102', 
-                                fullname: 'Datia Puk',
-                                imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
-                            },
+                                _id: 'u109', 
+                                fullname: 'Stephanie White',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/42.jpg',
+                              },
+                              {
+                                _id: 'u110', 
+                                fullname: 'Dan Henderson',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+                              },
                         ],
                         byMember: {
-                            _id: 'u101',
-                            fullname: 'Shraga Puk',
-                            imgUrl:
-                                'http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg',
-                        },
+                            _id: 'u108', 
+                            fullname: 'Robert Wilford',
+                            imgUrl: 'https://randomuser.me/api/portraits/men/28.jpg',
+                          },
                         comments: [
                             {
                                 id: 'c101',
@@ -561,15 +575,30 @@ function _createBoard1(_id, title) {
                         title: 'Deciding of the relevant framework to be used',
                         members: [
                             {
-                                _id: 'u103', 
-                                fullname: 'Tuki Norma',
-                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-                            },
-                            {
-                                _id: 'u105', 
-                                fullname: 'JSON De Parse',
-                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
-                            },
+                                _id: 'u109', 
+                                fullname: 'Stephanie White',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/42.jpg',
+                              },
+                              {
+                                _id: 'u106', 
+                                fullname: 'Nancy Williams',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/50.jpg',
+                              },
+                              {
+                                _id: 'u104', 
+                                fullname: 'Muki Abu Ja',
+                                imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU',
+                              },
+                              {
+                                _id: 'u101', 
+                                fullname: 'Shraga Puk',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
+                              },
+                              {
+                                _id: 'u102', 
+                                fullname: 'Datia Puk',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
+                              },
                         ],
                         byMember: {
                             _id: 'u103', 
@@ -624,18 +653,13 @@ function _createBoard1(_id, title) {
                                 _id: 'u103', 
                                 fullname: 'Tuki Norma',
                                 imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-                            },
-                            {
-                                _id: 'u105', 
-                                fullname: 'JSON De Parse',
-                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
-                            },
+                              },
                         ],
                         byMember: {
                             _id: 'u103', 
                             fullname: 'Tuki Norma',
-                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
-                        },
+                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
+                          },
                         comments: [
                             {
                                 id: 'c103',
@@ -681,15 +705,20 @@ function _createBoard1(_id, title) {
                         title: 'Defining the platforms the software should run on',
                         members: [
                             {
-                                _id: 'u103', 
-                                fullname: 'Tuki Norma',
-                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-                            },
-                            {
-                                _id: 'u105', 
-                                fullname: 'JSON De Parse',
-                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
-                            },
+                                _id: 'u106', 
+                                fullname: 'Nancy Williams',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/50.jpg',
+                              },
+                              {
+                                _id: 'u107', 
+                                fullname: 'Dan Willer',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg',
+                              },
+                              {
+                                _id: 'u108', 
+                                fullname: 'Robert Wilford',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/28.jpg',
+                              },
                         ],
                         byMember: {
                             _id: 'u103', 
@@ -741,15 +770,15 @@ function _createBoard1(_id, title) {
                         title: 'Understanding the desired flow of the program',
                         members: [
                             {
-                                _id: 'u103', 
-                                fullname: 'Tuki Norma',
-                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-                            },
-                            {
+                                _id: 'u104', 
+                                fullname: 'Muki Abu Ja',
+                                imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU',
+                              },
+                              {
                                 _id: 'u105', 
                                 fullname: 'JSON De Parse',
                                 imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
-                            },
+                              },
                         ],
                         byMember: {
                             _id: 'u103', 
@@ -808,15 +837,15 @@ function _createBoard1(_id, title) {
                         title: 'Creation of prototype and receiving an approval',
                         members: [
                             {
+                                _id: 'u107', 
+                                fullname: 'Dan Willer',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg',
+                              },
+                              {
                                 _id: 'u101', 
                                 fullname: 'Shraga Puk',
                                 imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
-                            },
-                            {
-                                _id: 'u102', 
-                                fullname: 'Datia Puk',
-                                imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
-                            },
+                              },
                         ],
                         byMember: {
                             _id: 'u101',
@@ -859,15 +888,20 @@ function _createBoard1(_id, title) {
                         title: 'Working on Pages and CMPS structure',
                         members: [
                             {
-                                _id: 'u103', 
-                                fullname: 'Tuki Norma',
-                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-                            },
+                                _id: 'u104', 
+                                fullname: 'Muki Abu Ja',
+                                imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU',
+                              },
                             {
                                 _id: 'u105', 
                                 fullname: 'JSON De Parse',
                                 imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
                             },
+                            {
+                                _id: 'u107', 
+                                fullname: 'Dan Willer',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg',
+                              },
                         ],
                         byMember: {
                             _id: 'u103', 
@@ -881,10 +915,10 @@ function _createBoard1(_id, title) {
                                 file: 'http://some-img',
                                 createdAt: 154514,
                                 byMember: {
-                                    _id: 'u103', 
-                                    fullname: 'Tuki Norma',
-                                    imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
-                                },
+                                    _id: 'u108', 
+                                    fullname: 'Robert Wilford',
+                                    imgUrl: 'https://randomuser.me/api/portraits/men/28.jpg',
+                                  },
                             },
                             {
                                 id: 'c105',
@@ -919,21 +953,31 @@ function _createBoard1(_id, title) {
                         title: 'Creation of the main css layout',
                         members: [
                             {
-                                _id: 'u103', 
-                                fullname: 'Tuki Norma',
-                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-                            },
-                            {
+                                _id: 'u109', 
+                                fullname: 'Stephanie White',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/42.jpg',
+                              },
+                              {
+                                _id: 'u110', 
+                                fullname: 'Dan Henderson',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+                              },
+                              {
                                 _id: 'u105', 
                                 fullname: 'JSON De Parse',
                                 imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
-                            },
+                              },
+                              {
+                                _id: 'u106', 
+                                fullname: 'Nancy Williams',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/50.jpg',
+                              },
                         ],
-                        byMember: {
-                            _id: 'u103', 
-                            fullname: 'Tuki Norma',
-                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
-                        },
+                        byMember:  {
+                            _id: 'u106', 
+                            fullname: 'Nancy Williams',
+                            imgUrl: 'https://randomuser.me/api/portraits/women/50.jpg',
+                          },
                         comments: [
                             {
                                 id: 'c103',
@@ -986,22 +1030,21 @@ function _createBoard1(_id, title) {
                         title: 'Assigning QA team with Coding team to work together',
                         members: [
                             {
+                                _id: 'u107', 
+                                fullname: 'Dan Willer',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg',
+                              },
+                              {
                                 _id: 'u101', 
                                 fullname: 'Shraga Puk',
                                 imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
-                            },
-                            {
-                                _id: 'u102', 
-                                fullname: 'Datia Puk',
-                                imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
-                            },
+                              },
                         ],
                         byMember: {
-                            _id: 'u101',
+                            _id: 'u101', 
                             fullname: 'Shraga Puk',
-                            imgUrl:
-                                'http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg',
-                        },
+                            imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
+                          },
                         comments: [
                             {
                                 id: 'c101',
@@ -1037,21 +1080,21 @@ function _createBoard1(_id, title) {
                         title: 'Mapping of where to use automated vs manual testings',
                         members: [
                             {
-                                _id: 'u103', 
-                                fullname: 'Tuki Norma',
-                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-                            },
-                            {
-                                _id: 'u105', 
-                                fullname: 'JSON De Parse',
-                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
-                            },
+                                _id: 'u102', 
+                                fullname: 'Datia Puk',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
+                              },
+                              {
+                                _id: 'u106', 
+                                fullname: 'Nancy Williams',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/50.jpg',
+                              },
                         ],
                         byMember: {
-                            _id: 'u103', 
-                            fullname: 'Tuki Norma',
-                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
-                        },
+                            _id: 'u106', 
+                            fullname: 'Nancy Williams',
+                            imgUrl: 'https://randomuser.me/api/portraits/women/50.jpg',
+                          },
                         comments: [
                             {
                                 id: 'c103',
@@ -1097,21 +1140,26 @@ function _createBoard1(_id, title) {
                         title: 'Commencing the testing/debugging cycle',
                         members: [
                             {
-                                _id: 'u103', 
-                                fullname: 'Tuki Norma',
-                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-                            },
-                            {
-                                _id: 'u105', 
-                                fullname: 'JSON De Parse',
-                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
-                            },
+                                _id: 'u104', 
+                                fullname: 'Muki Abu Ja',
+                                imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU',
+                              },
+                              {
+                                _id: 'u109', 
+                                fullname: 'Stephanie White',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/42.jpg',
+                              },
+                              {
+                                _id: 'u104', 
+                                fullname: 'Muki Abu Ja',
+                                imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU',
+                              },
                         ],
                         byMember: {
-                            _id: 'u103', 
-                            fullname: 'Tuki Norma',
-                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
-                        },
+                            _id: 'u104', 
+                            fullname: 'Muki Abu Ja',
+                            imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU',
+                          },
                         comments: [
                             {
                                 id: 'c103',
@@ -1164,22 +1212,17 @@ function _createBoard1(_id, title) {
                         title: 'Initiating the deployment process, specifically to each relevant system',
                         members: [
                             {
-                                _id: 'u101', 
-                                fullname: 'Shraga Puk',
-                                imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
-                            },
-                            {
-                                _id: 'u102', 
-                                fullname: 'Datia Puk',
-                                imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
-                            },
+                                _id: 'u107', 
+                                fullname: 'Dan Willer',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg',
+                              },
+                             
                         ],
                         byMember: {
-                            _id: 'u101',
-                            fullname: 'Shraga Puk',
-                            imgUrl:
-                                'http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg',
-                        },
+                            _id: 'u107', 
+                            fullname: 'Dan Willer',
+                            imgUrl: 'https://randomuser.me/api/portraits/men/29.jpg',
+                          },
                         comments: [
                             {
                                 id: 'c101',
@@ -1215,10 +1258,10 @@ function _createBoard1(_id, title) {
                         title: 'Constant attention to logged-in reported bugs',
                         members: [
                             {
-                                _id: 'u103', 
-                                fullname: 'Tuki Norma',
-                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-                            },
+                                _id: 'u110', 
+                                fullname: 'Dan Henderson',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+                              },
                             {
                                 _id: 'u105', 
                                 fullname: 'JSON De Parse',
@@ -1275,21 +1318,21 @@ function _createBoard1(_id, title) {
                         title: 'Resolving newly discovered bugs- either on the spot or by initiating a new development phase',
                         members: [
                             {
-                                _id: 'u103', 
-                                fullname: 'Tuki Norma',
-                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-                            },
-                            {
-                                _id: 'u105', 
-                                fullname: 'JSON De Parse',
-                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
-                            },
+                                _id: 'u106', 
+                                fullname: 'Nancy Williams',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/50.jpg',
+                              },
+                              {
+                                _id: 'u109', 
+                                fullname: 'Stephanie White',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/42.jpg',
+                              },
                         ],
                         byMember: {
-                            _id: 'u103', 
-                            fullname: 'Tuki Norma',
-                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
-                        },
+                            _id: 'u109', 
+                            fullname: 'Stephanie White',
+                            imgUrl: 'https://randomuser.me/api/portraits/women/42.jpg',
+                          },
                         comments: [
                             {
                                 id: 'c103',
@@ -1335,21 +1378,26 @@ function _createBoard1(_id, title) {
                         title: 'Continued development of additional newly features for future releases',
                         members: [
                             {
-                                _id: 'u103', 
-                                fullname: 'Tuki Norma',
-                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-                            },
+                                _id: 'u104', 
+                                fullname: 'Muki Abu Ja',
+                                imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU',
+                              },
                             {
                                 _id: 'u105', 
                                 fullname: 'JSON De Parse',
                                 imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
                             },
+                            {
+                                _id: 'u110', 
+                                fullname: 'Dan Henderson',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+                              },
                         ],
                         byMember: {
-                            _id: 'u103', 
-                            fullname: 'Tuki Norma',
-                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
-                        },
+                            _id: 'u110', 
+                            fullname: 'Dan Henderson',
+                            imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+                          },
                         comments: [
                             {
                                 id: 'c103',

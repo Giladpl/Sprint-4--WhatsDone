@@ -6,11 +6,7 @@
           class="dowm-arrow-container"
           @click="toggleGroupEdit"
         >
-          <img
-            class="dowm-arrow-btn"
-            src="@/assets/icons/down-arrow.svg"
-            :style="{ fill: group.color }"
-          >
+          <i class="el-icon-arrow-down"></i>
         </span>
         <input
           class="group-title-input"
@@ -90,14 +86,19 @@
       placeholder="+ Add"
     />
     <div class="bars-container">
-      <status-bar
-        :statuses="statuses"
-        :tasks="group.tasks"
-      />
-      <priority-bar
-        :priorities="priorities"
-        :tasks="group.tasks"
-      />
+      <div class="bars-container-left"></div>
+      <div class="bars-container-right">
+        <div class="space"></div>
+        <status-bar
+          :statuses="statuses"
+          :tasks="group.tasks"
+        />
+        <div class="space"></div>
+        <priority-bar
+          :priorities="priorities"
+          :tasks="group.tasks"
+        />
+      </div>
     </div>
   </ul>
 </template>
@@ -214,8 +215,6 @@ export default {
     },
     changedByDrag() {
       this.$emit('updateTasksOrder', { groupId: this.group.id, tasks: this.group.tasks })
-      // console.log(this.group.tasks);
-      
     }
   },
   created() {

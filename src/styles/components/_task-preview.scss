@@ -49,11 +49,18 @@
         width: 130px;
     }
 
-    .main-task {
+    .task-left-container {
         display: flex;
         justify-content: space-between;
-        width: 350px;
-        min-width: 200px;
+        width: 100%;
+
+        .remove-title-wrapper {
+            width: 100%;   
+            
+            form{
+                width:100%
+            }
+        }
         .task-title {
             white-space: nowrap;
             overflow: hidden;
@@ -61,10 +68,8 @@
             padding-right: 10px;
             cursor: pointer;
             border: none;
-            width: rem(300px);
+            width: 100%;
             background-color: $clr2;
-
-        
         }
         .el-icon-delete{
             margin-right: 5px;
@@ -74,8 +79,13 @@
         }
     }
 
+    .task-right-container {
+        min-width: 700px;
+        display: flex;
+        justify-content: space-between;
+    }
+
     .members {
-        // position: relative;
         display: flex;
         cursor: pointer;
     }
