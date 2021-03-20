@@ -94,9 +94,7 @@
         type="date"
         size="small"
         placeholder="Pick a day"
-        :clearable="false"
-      >
-        >
+        :clearable="false">
       </el-date-picker>
     </div>
     <div class="priority-container">
@@ -104,8 +102,7 @@
         class="priority"
         v-if="getPriorityById"
         v-bind:style="{ background: getPriorityById.color }"
-        @click="toggleTaskPriorities"
-      >
+        @click="toggleTaskPriorities">
         {{ getPriorityById.title }}
       </div>
       <task-priority
@@ -114,8 +111,7 @@
         :priorities="priorities"
         @updatePriority="updatePriority"
         @addPriority="addPriority"
-        @removePriority="removePriority"
-      />
+        @removePriority="removePriority"/>
     </div>
   </section>
 </template>
@@ -166,6 +162,7 @@ export default {
       isTaskDetails: false,
       titleToEdit: null,
       isTitleEditable: false,
+      isMaxMembersToShow: false,
     };
   },
   methods: {
@@ -243,6 +240,12 @@ export default {
       );
       return priority;
     },
+    // taskMembersToShow() {
+    //   if (this.task.members.length > 2) {
+    //     this.isMaxMembersToShow = true;
+    //     return 
+    //   } 
+    // }
   },
   created() {
     this.currDueDate = this.task.dueDate;
