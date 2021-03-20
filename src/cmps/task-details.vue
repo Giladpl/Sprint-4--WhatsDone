@@ -1,6 +1,6 @@
 <template>
     <section class="task-details">
-        <div class="close-btn"><i class="el-icon-close"></i></div>
+        <div class="close-btn" @click="onClose"><i class="el-icon-close"></i></div>
         <div class="task-title">{{task.title}}</div>
         <div class="btns-container">
             <span @click="onUpdate">Updates</span>
@@ -36,6 +36,9 @@ export default {
         onActivity() {
             this.isUpdate = false;
             this.isActivity = true;
+        },
+        onClose() {
+            this.$emit('closeTaskDetails');
         }
     },
     created() {

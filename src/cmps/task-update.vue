@@ -1,9 +1,11 @@
 <template>
     <section class="update-container">
         <form @submit.prevent="addUpdate">
-            <input type="text" placeholder="Write an update.." v-model="updateToEdit.update">
-            <div><i class="el-icon-paperclip"></i>Add File</div>
-            <button>Update</button>
+            <el-input class="update-input" type="text" placeholder="Write an update.." v-model="updateToEdit.update"></el-input>
+            <div class="flex-between">
+                <div class="file-btn"><i class="el-icon-paperclip"></i>Add File</div>
+                <el-button size="small">Update</el-button>
+            </div>
         </form>
         <div v-if="comments">
             <div

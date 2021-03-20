@@ -37,10 +37,19 @@
         @click.stop="onChat"
       ><i class="el-icon-chat-dot-round"></i></div>
     </div>
-    <task-details
+    <<<<<<<
+      HEAD
+      <task-details
       v-if="isTaskDetails"
       :task="task"
     />
+    =======
+    <task-details
+      v-if="isTaskDetails"
+      :task="task"
+      @closeTaskDetails="closeTaskDetails"
+    />
+    >>>>>>> cb7b00421cb0b4bf7b8f2564bfd4ece191a937c4
     <div
       class="members-container"
       @click="toggleTaskMembers"
@@ -219,7 +228,10 @@ export default {
     saveEditedTitle() {
       this.isTitleEditable = !this.isTitleEditable
       this.$emit('updateTaksTitle', this.titleToEdit)
-    }
+    },
+    closeTaskDetails() {
+      this.isTaskDetails = !this.isTaskDetails;
+    },
   },
   computed: {
     getStatusById() {
