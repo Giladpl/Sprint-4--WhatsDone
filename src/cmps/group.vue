@@ -2,16 +2,19 @@
   <ul class="group clean-list">
     <div class="group-header">
       <div class="group-header-left">
-        <span @click="toggleGroupEdit"><i class="el-icon-arrow-down"></i></span>
+        <span @click="toggleGroupEdit">
+          <img class="dowm-arrow-btn" src="@/assets/icons/down-arrow.svg" :style="{ fill: group.color }">
+        </span>
         <input
           class="group-title-input"
           v-if="groupTitle"
           type="text"
           @change="updateTitle"
           v-model="groupTitle"
+          :style="{ color: group.color }"
         />
       </div>
-      <div
+      <div v-click-outside="toggleGroupEdit"
         v-if="isShownGroupEdit"
         class="group-edit"
       >
@@ -26,7 +29,7 @@
         </div>
       </div>
       <color-picker
-        class="color-picker"
+        class="color-picker" v-click-outside="onColorPicker"
         v-if="isColorPicker"
         @changeColor="changeColor"
       />
@@ -92,8 +95,12 @@ import colorPicker from "./color-picker";
 import draggable from "vuedraggable";
 import statusBar from '../cmps/status-bar';
 import priorityBar from '../cmps/priority-bar';
+import vClickOutside from "v-click-outside";
 
 export default {
+  directives: {
+      clickOutside: vClickOutside.directive,
+    },
   name: "group",
   props: {
     group: {

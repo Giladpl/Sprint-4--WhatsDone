@@ -35,7 +35,7 @@
           ></el-avatar>
         </li>
       </ul>
-      <task-members
+      <task-members v-click-outside="toggleTaskMembers"
         @removeMemberFromTask="removeMemberFromTask"
         @addMemberToTask="addMemberToTask"
         v-if="isTaskMemebersShown"
@@ -47,12 +47,12 @@
       <div
         class="status"
         v-if="getStatusById"
-        v-bind:style="{ background: getStatusById.color }"
+        :style="{ background: getStatusById.color }"
         @click="toggleTaskStatuses"
       >
         {{ getStatusById.title }}
       </div>
-      <task-status
+      <task-status v-click-outside="toggleTaskStatuses"
         v-if="isTaskStatusesShown"
         :statuses="statuses" 
         @updateStatus="updateStatus"
@@ -83,7 +83,7 @@
       >
         {{ getPriorityById.title }}
       </div>
-      <task-priority
+      <task-priority v-click-outside="toggleTaskPriorities"
         v-if="isTaskPrioritiesShown"
         :priorities="priorities" 
         @updatePriority="updatePriority"
@@ -98,8 +98,13 @@
 import taskMembers from "./task-members";
 import taskStatus from "./task-status";
 import taskPriority from "./task-priority";
+import vClickOutside from "v-click-outside";
+
 
 export default {
+  directives: {
+      clickOutside: vClickOutside.directive,
+    },
   props: {
     task: {
       type: Object,
@@ -140,12 +145,16 @@ export default {
     updateDueDate(date) {
       this.$emit("updateDueDate", { date, taskId: this.task.id });
     },
+    
     toggleTaskMembers() {
       this.isTaskMemebersShown = !this.isTaskMemebersShown;
     },
     toggleTaskStatuses() {
       this.isTaskStatusesShown = !this.isTaskStatusesShown;
     },
+      toggleTaskPriorities() {
+        this.isTaskPrioritiesShown = !this.isTaskPrioritiesShown;
+      },
     removeMemberFromTask(taskMember) {
       this.$emit('removeMemberFromTask', { taskMember, taskId: this.task.id });
     },
@@ -161,9 +170,6 @@ export default {
     },
     removeStatus(statusId) {
       this.$emit('removeStatus', statusId);  
-    },
-    toggleTaskPriorities() {
-      this.isTaskPrioritiesShown = !this.isTaskPrioritiesShown;
     },
     updatePriority(priorityId) {
       this.isTaskPrioritiesShown = !this.isTaskPrioritiesShown;
