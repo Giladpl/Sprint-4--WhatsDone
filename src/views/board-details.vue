@@ -100,6 +100,7 @@
             @addPriority="addPriority"
             @removePriority="removePriority"
             @updateTaskTitle="updateTaskTitle"
+            @updateTasksOrder="updateTasksOrder"
           />
         </li>
       </ul>
@@ -402,6 +403,22 @@ export default {
       } catch (err) {
         console.log('cannot update task', err);
       }
+    },
+    async updateTasksOrder({ tasks, groupId }) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === groupId
+        );
+        currGroup.tasks.splice(0, currGroup.tasks.length, ...tasks)
+        await this.$store.dispatch({
+          type: 'saveBoard',
+          board: this.boardToEdit,
+        });
+        this.loadBoard();
+      } catch (err) {
+        console.log(err);
+      }
+
     }
   },
   computed: {

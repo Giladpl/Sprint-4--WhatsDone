@@ -53,6 +53,7 @@
       v-model="group.tasks"
       @start="drag = true"
       @end="drag = false"
+      @change="changedByDrag"
     >
       <li
         v-for="task in group.tasks"
@@ -210,6 +211,11 @@ export default {
     updateTaskTitle(update) {
       update.groupId = this.group.id
       this.$emit('updateTaskTitle', update);
+    },
+    changedByDrag() {
+      this.$emit('updateTasksOrder', { groupId: this.group.id, tasks: this.group.tasks })
+      // console.log(this.group.tasks);
+      
     }
   },
   created() {
