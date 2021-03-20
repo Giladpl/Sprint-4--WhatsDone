@@ -5,17 +5,24 @@
             <div><i class="el-icon-paperclip"></i>Add File</div>
             <button>Update</button>
         </form>
-        <div v-if="comments" class="comment-content">
-            <div 
+        <div v-if="comments">
+            <div
+            class="comment-content" 
             v-for="comment in comments"
             :key="comment.id"
             >
-                <el-avatar class="comment-avatar" :src="comment.byMember.imgUrl"></el-avatar>
-                <div class="comment-fullname">{{comment.byMember.fullname}}</div>
-                <div class="comment-time">{{comment.createdAt}}</div>
+                <div class="member-content flex">
+                    <div class="flex-center">
+                        <el-avatar class="comment-avatar" :src="comment.byMember.imgUrl"></el-avatar>
+                        <div class="comment-fullname">{{comment.byMember.fullname}}</div>
+                    </div>
+                    <div class="comment-time">{{comment.createdAt}}</div>
+                </div>
                 <div class="comment-update">{{comment.update}}</div>
-                <div class="like-btn">Like</div>
-                <div class="reply-btn">Reply</div>
+                <div class="btns flex">
+                    <div class="like-btn flex-center">Like</div>
+                    <div class="reply-btn flex-center">Reply</div>
+                </div>
             </div>
         </div>
     </section>
