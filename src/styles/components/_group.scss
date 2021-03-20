@@ -27,7 +27,7 @@
         color: $clr3;
         
         .group-header-right {
-            width: 100%;
+            min-width: 700px;
             > * {
                 padding: 0 10px;
                 font-size: 15px;
@@ -36,6 +36,7 @@
         }
 
         .group-header-left {
+            width: 100%;
             .dowm-arrow-btn {
                 width: 15px;
                 display: flex;
@@ -102,13 +103,26 @@
             transition: .5s;
             z-index: 5;
         }
-
-       
     }
+
     .bars-container{
-        display: flex;
-        justify-content: space-evenly;
         width: 100%;
-        margin-top: rem(20px)
+        display: flex;
+        margin-top: rem(20px);
+
+        .bars-container-left {
+            width: 100%;
+        }
+
+        .bars-container-right {
+            min-width: 700px;
+            display: flex;
+            // justify-content: space-between;
+
+            .space {
+                width: 9.375rem;
+                padding: 0 10px;
+            }
+        }
     }
 }
