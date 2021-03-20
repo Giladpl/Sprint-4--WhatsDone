@@ -2,7 +2,6 @@
   <ul class="group clean-list">
     <div class="group-header">
       <div class="group-header-left">
-<<<<<<< HEAD
         <span
           class="dowm-arrow-container"
           @click="toggleGroupEdit"
@@ -12,11 +11,6 @@
             src="@/assets/icons/down-arrow.svg"
             :style="{ fill: group.color }"
           >
-=======
-        <span class="dowm-arrow-container" @click="toggleGroupEdit">
-  
-          <img class="dowm-arrow-btn" src="@/assets/icons/down-arrow.svg" :style="{ fill: group.color }">
->>>>>>> cb7b00421cb0b4bf7b8f2564bfd4ece191a937c4
         </span>
         <input
           class="group-title-input"
