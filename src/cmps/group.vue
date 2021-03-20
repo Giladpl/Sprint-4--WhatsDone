@@ -2,13 +2,16 @@
   <ul class="group clean-list">
     <div class="group-header">
       <div class="group-header-left">
-        <span @click="toggleGroupEdit"><i class="el-icon-arrow-down"></i></span>
+        <span @click="toggleGroupEdit">
+          <img class="dowm-arrow-btn" src="@/assets/icons/down-arrow.svg" :style="{ fill: group.color }">
+        </span>
         <input
           class="group-title-input"
           v-if="groupTitle"
           type="text"
           @change="updateTitle"
           v-model="groupTitle"
+          :style="{ color: group.color }"
         />
       </div>
       <div

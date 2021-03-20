@@ -47,7 +47,7 @@
       <div
         class="status"
         v-if="getStatusById"
-        v-bind:style="{ background: getStatusById.color }"
+        :style="{ background: getStatusById.color }"
         @click="toggleTaskStatuses"
       >
         {{ getStatusById.title }}
