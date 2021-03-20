@@ -3,6 +3,8 @@
     height: 100vh;
     background-color: $clr5;
     z-index: 2;
+    position: sticky;
+    top: 0;
 
     .main-header {
         width: 4.0625rem;
@@ -16,6 +18,8 @@
         }
 
         .top-header {
+            margin-top: 8px;
+
             > *:not(:first-child) {
                 padding: 10px 0;
             }

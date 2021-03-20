@@ -1422,9 +1422,9 @@ function _createBoard2(_id, title) {
         createdAt: 1589983468418,
         imgUrl:"https://img.huffingtonpost.com/asset/5755e87e130000a109383be7.jpeg?ops=scalefit_720_noupscale&format=webp",
         createdBy: {
-            _id: 'u101',
-            fullname: 'Shraga Puk',
-            imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
+            _id: 'u106', 
+            fullname: 'Nancy Williams',
+            imgUrl: 'https://randomuser.me/api/portraits/women/50.jpg',
         },
         statuses: [
             {
@@ -1530,11 +1530,11 @@ function _createBoard2(_id, title) {
         groups: [
             {
                 id: 'g101',
-                title: 'Problem Definition and Planning',
+                title: 'Deciding On the Desired Type of Trip',
                 tasks: [
                     {
                         id: 't101',
-                        title: 'Identifying the scope and purpose of the prospect application  ',
+                        title: 'Finding out who\'s interested  ',
                         members: [
                             {
                                 _id: 'u101', 
