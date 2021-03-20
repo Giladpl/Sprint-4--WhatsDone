@@ -17,8 +17,9 @@
         <div class="task-title">{{ task.title }}</div>
         <div class="btns-hidden"><i class="el-icon-edit"></i></div>
       </div>
-      <div class="btn-chat"><i class="el-icon-chat-dot-round"></i></div>
+      <div class="btn-chat" @click.stop="onChat" ><i class="el-icon-chat-dot-round"></i></div>
     </div>
+    <task-details :task="task"/>
     <div
       class="members-container"
       @click="toggleTaskMembers"
@@ -99,7 +100,7 @@ import taskMembers from "./task-members";
 import taskStatus from "./task-status";
 import taskPriority from "./task-priority";
 import vClickOutside from "v-click-outside";
-
+import taskDetails from "./task-details";
 
 export default {
   directives: {
@@ -133,6 +134,7 @@ export default {
       isTaskMemebersShown: false,
       isTaskStatusesShown: false,
       isTaskPrioritiesShown: false,
+      isTaskDetails: false
     };
   },
   methods: {
@@ -181,6 +183,9 @@ export default {
     removePriority(priorityId) {
       this.$emit('removePriority', priorityId);  
     },
+    onChat() {
+      this.isTaskDetails = !this.isTaskDetails;
+    }
   },
   computed: {
     getStatusById() {
@@ -202,7 +207,8 @@ export default {
   components: {
     taskMembers,
     taskStatus,
-    taskPriority
+    taskPriority,
+    taskDetails
   },
 };
 </script>
