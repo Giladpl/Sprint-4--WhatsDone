@@ -41,10 +41,6 @@
       v-if="isTaskDetails"
       :task="task"
       :activities="activities"
-    />
-    <task-details
-      v-if="isTaskDetails"
-      :task="task"
       @closeTaskDetails="closeTaskDetails"
     />
     <div

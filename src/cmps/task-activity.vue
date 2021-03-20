@@ -7,12 +7,12 @@
 <script>
 export default {
     props: {
-        activities: {
-            type: Array
-        },
+        // activities: {
+        //     type: Array
+        // },
     },
     created() {
-        console.log(this.activities);
+        // console.log(this.activities);
     }
 }
 </script>
