@@ -37,10 +37,10 @@
         <div class="add-view-row-container">
           <el-button
             @click="toggleAddViewMenu"
-            class="add-view-btn"
+            class="add-view-btn" size="small"
           >+ Add View</el-button>
         </div>
-        <el-card
+        <el-card v-click-outside="toggleAddViewMenu"
           v-if="isAddViewMenu"
           class="add-view-card"
           shadow="always"
@@ -69,7 +69,7 @@
       <el-button
         @click="addGroup"
         class="btn-add-group"
-        type="primary"
+        type="primary" size="small"
       >Add Group</el-button>
       <ul class="clean-list">
         <li
@@ -108,8 +108,13 @@ import group from "@/cmps/group";
 import appHeader from "@/cmps/app-header";
 import usersAvatars from "@/cmps/users-avatars";
 import { utilService } from '../services/util.service.js';
+import vClickOutside from "v-click-outside";
+
 
 export default {
+   directives: {
+      clickOutside: vClickOutside.directive
+    },
   data() {
     return {
       board: null,
