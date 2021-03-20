@@ -104,17 +104,22 @@ function _createBoard(_id, title) {
             {
                 id: 's101',
                 title: 'Done',
-                color: '#61bd4f',
+                color: 'rgb(20, 158, 5)',
             },
             {
                 id: 's102',
                 title: 'Stuck',
-                color: '#3347f8',
+                color: 'rgb(209, 90, 4)',
             },
             {
                 id: 's103',
                 title: 'Working on it',
-                color: '#d133f8',
+                color: 'rgb(121, 5, 171)'
+            },
+            {
+                id: 's104',
+                title: 'Waiting for review',
+                color: 'rgb(51, 71, 248)',
             },
             {
                 id: 'sNew',
@@ -126,12 +131,17 @@ function _createBoard(_id, title) {
             {
                 id: 'p101',
                 title: 'High',
-                color: '#61bd4f',
+                color: 'rgb(202, 5, 5)'
             },
             {
                 id: 'p102',
+                title: 'Medium',
+                color: 'rgb(209, 90, 4)',
+            },
+            {
+                id: 'p103',
                 title: 'Low',
-                color: '#f89a5b',
+                color: 'rgb(20, 158, 5)',
             },
             {
                 id: 'pNew',
@@ -242,8 +252,8 @@ function _createBoard(_id, title) {
                                 },
                             },
                         ],
-                        statusId: 's102',
-                        priorityId: 'p101',
+                        statusId: 's103',
+                        priorityId: 'p103',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
@@ -302,8 +312,8 @@ function _createBoard(_id, title) {
                                 },
                             },
                         ],
-                        statusId: 's101',
-                        priorityId: 'p102',
+                        statusId: 's103',
+                        priorityId: 'p101',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
@@ -362,7 +372,7 @@ function _createBoard(_id, title) {
                                 },
                             },
                         ],
-                        statusId: 's101',
+                        statusId: 's103',
                         priorityId: 'p102',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
@@ -422,7 +432,7 @@ function _createBoard(_id, title) {
                                 },
                             },
                         ],
-                        statusId: 's101',
+                        statusId: 's102',
                         priorityId: 'p102',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
@@ -482,8 +492,8 @@ function _createBoard(_id, title) {
                                 },
                             },
                         ],
-                        statusId: 's101',
-                        priorityId: 'p102',
+                        statusId: 's102',
+                        priorityId: 'p104',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
@@ -541,7 +551,7 @@ function _createBoard(_id, title) {
                             },
                         ],
                         statusId: 's101',
-                        priorityId: 'p101',
+                        priorityId: 'p104',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
@@ -600,7 +610,7 @@ function _createBoard(_id, title) {
                                 },
                             },
                         ],
-                        statusId: 's103',
+                        statusId: 's102',
                         priorityId: 'p101',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
@@ -660,8 +670,8 @@ function _createBoard(_id, title) {
                                 },
                             },
                         ],
-                        statusId: 's103',
-                        priorityId: 'p101',
+                        statusId: 's102',
+                        priorityId: 'p102',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
@@ -720,21 +730,81 @@ function _createBoard(_id, title) {
                                 },
                             },
                         ],
-                        statusId: 's103',
-                        priorityId: 'p101',
+                        statusId: 's101',
+                        priorityId: 'p104',
+                        createdAt: 1590999730348,
+                        dueDate: 16756215211,
+                    },
+                    {
+                        id: 't105',
+                        title: 'Understanding the desired flow of the program',
+                        members: [
+                            {
+                                _id: 'u103', 
+                                fullname: 'Tuki Norma',
+                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
+                            },
+                            {
+                                _id: 'u105', 
+                                fullname: 'JSON De Parse',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                            },
+                        ],
+                        byMember: {
+                            _id: 'u103', 
+                            fullname: 'Tuki Norma',
+                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                        },
+                        comments: [
+                            {
+                                id: 'c103',
+                                update: 'Created a git depository and sent invitation',
+                                file: 'http://some-img',
+                                createdAt: 154514,
+                                byMember: {
+                                    _id: 'u103', 
+                                    fullname: 'Tuki Norma',
+                                    imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Uploaded the first commit with the folders structure',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                    fullname: 'JSON De Parse',
+                                    imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Finished the initial wire-connection, all looks in good working order',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                     fullname: 'JSON De Parse',
+                                   imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                        ],
+                        statusId: 's102',
+                        priorityId: 'p103',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
                 ],
-                color: '#845EC2',
+                color: '#77dbed',
             },
             {
                 id: 'g103',
-                title: 'Coding',
+                title: 'Software development',
                 tasks: [
                     {
                         id: 't101',
-                        title: 'Creation of ',
+                        title: 'Creation of prototype and receiving an approval',
                         members: [
                             {
                                 _id: 'u101', 
@@ -785,7 +855,7 @@ function _createBoard(_id, title) {
                     },
                     {
                         id: 't102',
-                        title: 'Deciding of the best back-end type to be used',
+                        title: 'Working on Pages and CMPS structure',
                         members: [
                             {
                                 _id: 'u103', 
@@ -843,6 +913,482 @@ function _createBoard(_id, title) {
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
+                    {
+                        id: 't103',
+                        title: 'Creation of the main css layout',
+                        members: [
+                            {
+                                _id: 'u103', 
+                                fullname: 'Tuki Norma',
+                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
+                            },
+                            {
+                                _id: 'u105', 
+                                fullname: 'JSON De Parse',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                            },
+                        ],
+                        byMember: {
+                            _id: 'u103', 
+                            fullname: 'Tuki Norma',
+                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                        },
+                        comments: [
+                            {
+                                id: 'c103',
+                                update: 'Created a git depository and sent invitation',
+                                file: 'http://some-img',
+                                createdAt: 154514,
+                                byMember: {
+                                    _id: 'u103', 
+                                    fullname: 'Tuki Norma',
+                                    imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Uploaded the first commit with the folders structure',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                    fullname: 'JSON De Parse',
+                                    imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Finished the initial wire-connection, all looks in good working order',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                     fullname: 'JSON De Parse',
+                                   imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                        ],
+                        statusId: 's102',
+                        priorityId: 'p104',
+                        createdAt: 1590999730348,
+                        dueDate: 16756215211,
+                    },
+                ],
+                color: '#7cdb5c',
+            },
+            {
+                id: 'g104',
+                title: 'Testing and Debugging',
+                tasks: [
+                    {
+                        id: 't101',
+                        title: 'Assigning QA team with Coding team to work together',
+                        members: [
+                            {
+                                _id: 'u101', 
+                                fullname: 'Shraga Puk',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
+                            },
+                            {
+                                _id: 'u102', 
+                                fullname: 'Datia Puk',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
+                            },
+                        ],
+                        byMember: {
+                            _id: 'u101',
+                            fullname: 'Shraga Puk',
+                            imgUrl:
+                                'http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg',
+                        },
+                        comments: [
+                            {
+                                id: 'c101',
+                                update: 'Added the basic pages to the presentation',
+                                file: 'http://some-img',
+                                createdAt: 154514,
+                                byMember: {
+                                    _id: 'u101',
+                                    fullname: 'Shraga Puk',
+                                     imgUrl:
+                                   'http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg',
+                                },
+                            },
+                            {
+                                id: 'c102',
+                                update: 'Fixed the layout of the current Highlights page',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u102', 
+                                    fullname: 'Datia Puk',
+                                    imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
+                                },
+                            },
+                        ],
+                        statusId: 's102',
+                        priorityId: 'p101',
+                        createdAt: 1590999730348,
+                        dueDate: 16756215211,
+                    },
+                    {
+                        id: 't102',
+                        title: 'Mapping of where to use automated vs manual testings',
+                        members: [
+                            {
+                                _id: 'u103', 
+                                fullname: 'Tuki Norma',
+                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
+                            },
+                            {
+                                _id: 'u105', 
+                                fullname: 'JSON De Parse',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                            },
+                        ],
+                        byMember: {
+                            _id: 'u103', 
+                            fullname: 'Tuki Norma',
+                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                        },
+                        comments: [
+                            {
+                                id: 'c103',
+                                update: 'Created a git depository and sent invitation',
+                                file: 'http://some-img',
+                                createdAt: 154514,
+                                byMember: {
+                                    _id: 'u103', 
+                                    fullname: 'Tuki Norma',
+                                    imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Uploaded the first commit with the folders structure',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                    fullname: 'JSON De Parse',
+                                    imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Finished the initial wire-connection, all looks in good working order',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                     fullname: 'JSON De Parse',
+                                   imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                        ],
+                        statusId: 's103',
+                        priorityId: 'p101',
+                        createdAt: 1590999730348,
+                        dueDate: 16756215211,
+                    },
+                    {
+                        id: 't103',
+                        title: 'Commencing the testing/debugging cycle',
+                        members: [
+                            {
+                                _id: 'u103', 
+                                fullname: 'Tuki Norma',
+                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
+                            },
+                            {
+                                _id: 'u105', 
+                                fullname: 'JSON De Parse',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                            },
+                        ],
+                        byMember: {
+                            _id: 'u103', 
+                            fullname: 'Tuki Norma',
+                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                        },
+                        comments: [
+                            {
+                                id: 'c103',
+                                update: 'Created a git depository and sent invitation',
+                                file: 'http://some-img',
+                                createdAt: 154514,
+                                byMember: {
+                                    _id: 'u103', 
+                                    fullname: 'Tuki Norma',
+                                    imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Uploaded the first commit with the folders structure',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                    fullname: 'JSON De Parse',
+                                    imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Finished the initial wire-connection, all looks in good working order',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                     fullname: 'JSON De Parse',
+                                   imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                        ],
+                        statusId: 's101',
+                        priorityId: 'p104',
+                        createdAt: 1590999730348,
+                        dueDate: 16756215211,
+                    },
+                ],
+                color: '#d1be30',
+            },
+            {
+                id: 'g105',
+                title: 'Deployment, Operation and Maintenance',
+                tasks: [
+                    {
+                        id: 't101',
+                        title: 'Initiating the deployment process, specifically to each relevant system',
+                        members: [
+                            {
+                                _id: 'u101', 
+                                fullname: 'Shraga Puk',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
+                            },
+                            {
+                                _id: 'u102', 
+                                fullname: 'Datia Puk',
+                                imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
+                            },
+                        ],
+                        byMember: {
+                            _id: 'u101',
+                            fullname: 'Shraga Puk',
+                            imgUrl:
+                                'http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg',
+                        },
+                        comments: [
+                            {
+                                id: 'c101',
+                                update: 'Added the basic pages to the presentation',
+                                file: 'http://some-img',
+                                createdAt: 154514,
+                                byMember: {
+                                    _id: 'u101',
+                                    fullname: 'Shraga Puk',
+                                     imgUrl:
+                                   'http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg',
+                                },
+                            },
+                            {
+                                id: 'c102',
+                                update: 'Fixed the layout of the current Highlights page',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u102', 
+                                    fullname: 'Datia Puk',
+                                    imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
+                                },
+                            },
+                        ],
+                        statusId: 's103',
+                        priorityId: 'p102',
+                        createdAt: 1590999730348,
+                        dueDate: 16756215211,
+                    },
+                    {
+                        id: 't102',
+                        title: 'Constant attention to logged-in reported bugs',
+                        members: [
+                            {
+                                _id: 'u103', 
+                                fullname: 'Tuki Norma',
+                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
+                            },
+                            {
+                                _id: 'u105', 
+                                fullname: 'JSON De Parse',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                            },
+                        ],
+                        byMember: {
+                            _id: 'u103', 
+                            fullname: 'Tuki Norma',
+                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                        },
+                        comments: [
+                            {
+                                id: 'c103',
+                                update: 'Created a git depository and sent invitation',
+                                file: 'http://some-img',
+                                createdAt: 154514,
+                                byMember: {
+                                    _id: 'u103', 
+                                    fullname: 'Tuki Norma',
+                                    imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Uploaded the first commit with the folders structure',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                    fullname: 'JSON De Parse',
+                                    imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Finished the initial wire-connection, all looks in good working order',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                     fullname: 'JSON De Parse',
+                                   imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                        ],
+                        statusId: 's102',
+                        priorityId: 'p104',
+                        createdAt: 1590999730348,
+                        dueDate: 16756215211,
+                    },
+                    {
+                        id: 't103',
+                        title: 'Resolving newly discovered bugs- either on the spot or by initiating a new development phase',
+                        members: [
+                            {
+                                _id: 'u103', 
+                                fullname: 'Tuki Norma',
+                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
+                            },
+                            {
+                                _id: 'u105', 
+                                fullname: 'JSON De Parse',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                            },
+                        ],
+                        byMember: {
+                            _id: 'u103', 
+                            fullname: 'Tuki Norma',
+                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                        },
+                        comments: [
+                            {
+                                id: 'c103',
+                                update: 'Created a git depository and sent invitation',
+                                file: 'http://some-img',
+                                createdAt: 154514,
+                                byMember: {
+                                    _id: 'u103', 
+                                    fullname: 'Tuki Norma',
+                                    imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Uploaded the first commit with the folders structure',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                    fullname: 'JSON De Parse',
+                                    imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Finished the initial wire-connection, all looks in good working order',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                     fullname: 'JSON De Parse',
+                                   imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                        ],
+                        statusId: 's102',
+                        priorityId: 'p103',
+                        createdAt: 1590999730348,
+                        dueDate: 16756215211,
+                    },
+                    {
+                        id: 't104',
+                        title: 'Continued development of additional newly features for future releases',
+                        members: [
+                            {
+                                _id: 'u103', 
+                                fullname: 'Tuki Norma',
+                                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
+                            },
+                            {
+                                _id: 'u105', 
+                                fullname: 'JSON De Parse',
+                                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                            },
+                        ],
+                        byMember: {
+                            _id: 'u103', 
+                            fullname: 'Tuki Norma',
+                            imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                        },
+                        comments: [
+                            {
+                                id: 'c103',
+                                update: 'Created a git depository and sent invitation',
+                                file: 'http://some-img',
+                                createdAt: 154514,
+                                byMember: {
+                                    _id: 'u103', 
+                                    fullname: 'Tuki Norma',
+                                    imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg'
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Uploaded the first commit with the folders structure',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                    fullname: 'JSON De Parse',
+                                    imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                            {
+                                id: 'c105',
+                                update: 'Finished the initial wire-connection, all looks in good working order',
+                                file: 'http://some-img',
+                                createdAt: 154574,
+                                byMember: {
+                                    _id: 'u105', 
+                                     fullname: 'JSON De Parse',
+                                   imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+                                },
+                            },
+                        ],
+                        statusId: 's101',
+                        priorityId: 'p102',
+                        createdAt: 1590999730348,
+                        dueDate: 16756215211,
+                    },
                 ],
                 color: '#845EC2',
             },
@@ -865,4 +1411,3 @@ function _createBoard(_id, title) {
         ],
     };
 }
-
