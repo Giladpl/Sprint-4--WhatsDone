@@ -388,6 +388,20 @@ export default {
     async updateTaskTitle(taskTitleToUpdate){
       console.log(taskTitleToUpdate);
       
+      // try {
+      //   const [currGroup] = this.boardToEdit.groups.filter(
+      //     (group) => group.id === groupId
+      //   );
+      //   const idx = currGroup.tasks.findIndex((task) => task.id === taskId);
+      //   currGroup.tasks.splice(idx, 1, taskTitleToUpdate);
+      //   await this.$store.dispatch({
+      //     type: 'saveBoard',
+      //     board: this.boardToEdit,
+      //   });
+      //   this.loadBoard();
+      // } catch (err) {
+      //   console.log('cannot update task', err);
+      // }
     }
   },
   computed: {
