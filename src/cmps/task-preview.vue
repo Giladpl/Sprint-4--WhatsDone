@@ -24,7 +24,6 @@
             v-model="titleToEdit"
             class="task-title"
             value="titleToEdit"
-            :disabled=isTitleEditable
           >
         </form>
         <div
@@ -219,7 +218,6 @@ export default {
       this.isTaskDetails = !this.isTaskDetails;
     },
     editTitle() {
-      // this.isTitleEditable = !this.isTitleEditable
       this.$refs.inputTask.focus()
     },
     saveEditedTitle() {
