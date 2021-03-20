@@ -162,6 +162,7 @@ export default {
       isTaskDetails: false,
       titleToEdit: null,
       isTitleEditable: false,
+      isMaxMembersToShow: false,
     };
   },
   methods: {
@@ -237,6 +238,12 @@ export default {
       );
       return priority;
     },
+    // taskMembersToShow() {
+    //   if (this.task.members.length > 2) {
+    //     this.isMaxMembersToShow = true;
+    //     return 
+    //   } 
+    // }
   },
   created() {
     this.currDueDate = this.task.dueDate;
