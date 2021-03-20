@@ -104,22 +104,22 @@ function _createBoard(_id, title) {
             {
                 id: 's101',
                 title: 'Done',
-                color: 'rgb(20, 158, 5)',
+                color: '#00ca72',
             },
             {
                 id: 's102',
                 title: 'Stuck',
-                color: 'rgb(209, 90, 4)',
+                color: '#e44258',
             },
             {
                 id: 's103',
                 title: 'Working on it',
-                color: 'rgb(121, 5, 171)'
+                color: '#fdab3d'
             },
             {
                 id: 's104',
                 title: 'Waiting for review',
-                color: 'rgb(51, 71, 248)',
+                color: '#0085ff',
             },
             {
                 id: 'sNew',
@@ -131,17 +131,17 @@ function _createBoard(_id, title) {
             {
                 id: 'p101',
                 title: 'High',
-                color: 'rgb(202, 5, 5)'
+                color: '#e44258'
             },
             {
                 id: 'p102',
                 title: 'Medium',
-                color: 'rgb(209, 90, 4)',
+                color: '#a358df',
             },
             {
                 id: 'p103',
                 title: 'Low',
-                color: 'rgb(20, 158, 5)',
+                color: '#00ca72',
             },
             {
                 id: 'pNew',
@@ -421,7 +421,7 @@ function _createBoard(_id, title) {
                                 },
                             },
                             {
-                                id: 'c105',
+                                id: 'c102',
                                 update: 'Finished the initial wire-connection, all looks in good working order',
                                 file: 'http://some-img',
                                 createdAt: 154574,
@@ -433,7 +433,7 @@ function _createBoard(_id, title) {
                             },
                         ],
                         statusId: 's102',
-                        priorityId: 'p102',
+                        priorityId: 'p101',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
@@ -481,7 +481,7 @@ function _createBoard(_id, title) {
                                 },
                             },
                             {
-                                id: 'c105',
+                                id: 'c102',
                                 update: 'Finished the initial wire-connection, all looks in good working order',
                                 file: 'http://some-img',
                                 createdAt: 154574,
@@ -493,7 +493,7 @@ function _createBoard(_id, title) {
                             },
                         ],
                         statusId: 's102',
-                        priorityId: 'p104',
+                        priorityId: 'p102',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
@@ -551,7 +551,7 @@ function _createBoard(_id, title) {
                             },
                         ],
                         statusId: 's101',
-                        priorityId: 'p104',
+                        priorityId: 'p101',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
@@ -599,7 +599,7 @@ function _createBoard(_id, title) {
                                 },
                             },
                             {
-                                id: 'c105',
+                                id: 'c102',
                                 update: 'Finished the initial wire-connection, all looks in good working order',
                                 file: 'http://some-img',
                                 createdAt: 154574,
@@ -659,7 +659,7 @@ function _createBoard(_id, title) {
                                 },
                             },
                             {
-                                id: 'c105',
+                                id: 'c106',
                                 update: 'Finished the initial wire-connection, all looks in good working order',
                                 file: 'http://some-img',
                                 createdAt: 154574,
@@ -731,7 +731,7 @@ function _createBoard(_id, title) {
                             },
                         ],
                         statusId: 's101',
-                        priorityId: 'p104',
+                        priorityId: 'p102',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
@@ -779,7 +779,7 @@ function _createBoard(_id, title) {
                                 },
                             },
                             {
-                                id: 'c105',
+                                id: 'c107',
                                 update: 'Finished the initial wire-connection, all looks in good working order',
                                 file: 'http://some-img',
                                 createdAt: 154574,
@@ -897,7 +897,7 @@ function _createBoard(_id, title) {
                                 },
                             },
                             {
-                                id: 'c105',
+                                id: 'c109',
                                 update: 'Finished the initial wire-connection, all looks in good working order',
                                 file: 'http://some-img',
                                 createdAt: 154574,
@@ -957,7 +957,7 @@ function _createBoard(_id, title) {
                                 },
                             },
                             {
-                                id: 'c105',
+                                id: 'c107',
                                 update: 'Finished the initial wire-connection, all looks in good working order',
                                 file: 'http://some-img',
                                 createdAt: 154574,
@@ -969,7 +969,7 @@ function _createBoard(_id, title) {
                             },
                         ],
                         statusId: 's102',
-                        priorityId: 'p104',
+                        priorityId: 'p101',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
@@ -1075,7 +1075,7 @@ function _createBoard(_id, title) {
                                 },
                             },
                             {
-                                id: 'c105',
+                                id: 'c109',
                                 update: 'Finished the initial wire-connection, all looks in good working order',
                                 file: 'http://some-img',
                                 createdAt: 154574,
@@ -1147,7 +1147,7 @@ function _createBoard(_id, title) {
                             },
                         ],
                         statusId: 's101',
-                        priorityId: 'p104',
+                        priorityId: 'p101',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
@@ -1265,7 +1265,7 @@ function _createBoard(_id, title) {
                             },
                         ],
                         statusId: 's102',
-                        priorityId: 'p104',
+                        priorityId: 'p103',
                         createdAt: 1590999730348,
                         dueDate: 16756215211,
                     },
@@ -1313,7 +1313,7 @@ function _createBoard(_id, title) {
                                 },
                             },
                             {
-                                id: 'c105',
+                                id: 'c106',
                                 update: 'Finished the initial wire-connection, all looks in good working order',
                                 file: 'http://some-img',
                                 createdAt: 154574,
@@ -1373,7 +1373,7 @@ function _createBoard(_id, title) {
                                 },
                             },
                             {
-                                id: 'c105',
+                                id: 'c107',
                                 update: 'Finished the initial wire-connection, all looks in good working order',
                                 file: 'http://some-img',
                                 createdAt: 154574,

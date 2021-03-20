@@ -47,7 +47,7 @@ export default {
         }
     },
     created() {
-        this.drawer = true;
+        // this.drawer = true;
     },
     components: {
         taskUpdate,
