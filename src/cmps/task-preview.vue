@@ -35,14 +35,18 @@
       <div
         class="btn-chat"
         @click.stop="onChat"
-      ><i class="el-icon-chat-dot-round"></i></div></div>
-      <task-details
-      v-if="isTaskDetails"
-      :task="task"/>
+      ><i class="el-icon-chat-dot-round"></i></div>
+    </div>
     <task-details
       v-if="isTaskDetails"
       :task="task"
-      @closeTaskDetails="closeTaskDetails"/>
+      :activities="activities"
+    />
+    <task-details
+      v-if="isTaskDetails"
+      :task="task"
+      @closeTaskDetails="closeTaskDetails"
+    />
     <div
       class="members-container"
       @click="toggleTaskMembers"
@@ -95,9 +99,7 @@
         type="date"
         size="small"
         placeholder="Pick a day"
-        :clearable="false"
-      >
-        >
+        :clearable="false">
       </el-date-picker>
     </div>
     <div class="priority-container">
@@ -105,8 +107,7 @@
         class="priority"
         v-if="getPriorityById"
         v-bind:style="{ background: getPriorityById.color }"
-        @click="toggleTaskPriorities"
-      >
+        @click="toggleTaskPriorities">
         {{ getPriorityById.title }}
       </div>
       <task-priority
@@ -115,8 +116,7 @@
         :priorities="priorities"
         @updatePriority="updatePriority"
         @addPriority="addPriority"
-        @removePriority="removePriority"
-      />
+        @removePriority="removePriority"/>
     </div>
   </section>
 </template>
@@ -150,6 +150,10 @@ export default {
       required: true,
     },
     boardMembers: {
+      type: Array,
+      required: true,
+    },
+    activities: {
       type: Array,
       required: true,
     },
@@ -242,7 +246,7 @@ export default {
   },
   created() {
     this.currDueDate = this.task.dueDate;
-    this.titleToEdit = this.task.title
+    this.titleToEdit = this.task.title;
   },
   components: {
     taskMembers,
