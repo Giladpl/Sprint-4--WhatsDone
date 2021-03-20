@@ -207,10 +207,9 @@ export default {
     removePriority(priorityId) {
       this.$emit('removePriority', priorityId);
     },
-    updateTaskTitle(titleToEdit) {
-      console.log(titleToEdit);
-      
-      this.$emit('updateTaskTitle', {titleToEdit, groupId: this.group.id});
+    updateTaskTitle(update) {
+      update.groupId = this.group.id
+      this.$emit('updateTaskTitle', update);
     }
   },
   created() {

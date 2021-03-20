@@ -222,9 +222,7 @@ export default {
     },
     updateTaskTitle() {
       this.isTitleEditable = !this.isTitleEditable
-      console.log(this.titleToEdit);
-      
-      this.$emit('updateTaskTitle', this.titleToEdit);
+      this.$emit('updateTaskTitle', { updatedTitle: this.titleToEdit, taskId: this.task.id });
     },
     closeTaskDetails() {
       this.isTaskDetails = !this.isTaskDetails;
