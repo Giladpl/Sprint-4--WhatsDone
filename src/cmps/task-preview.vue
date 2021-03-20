@@ -19,7 +19,7 @@
       </div>
       <div class="btn-chat" @click.stop="onChat" ><i class="el-icon-chat-dot-round"></i></div>
     </div>
-    <task-details :task="task"/>
+    <task-details v-if="isTaskDetails" :task="task"/>
     <div
       class="members-container"
       @click="toggleTaskMembers"
@@ -44,7 +44,7 @@
         :taskMembers="task.members"
       />
     </div>
-    <div>
+    <div class="status-container">
       <div
         class="status"
         v-if="getStatusById"
@@ -75,7 +75,7 @@
         >
       </el-date-picker>
     </div>
-    <div>
+    <div class="priority-container">
       <div
         class="priority"
         v-if="getPriorityById"
