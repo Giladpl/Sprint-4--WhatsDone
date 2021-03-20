@@ -6,8 +6,8 @@
             <span @click="onUpdate">Updates</span>
             <span @click="onActivity">Activity Log</span>
         </div>
-        <task-update v-if="isUpdate" :comments="task.comments"/>
-        <task-activity v-if="isActivity"/>
+        <task-update v-if="isUpdate" :comments="task.comments" />
+        <task-activity v-if="isActivity" :activities="activities" />
     </section>
 </template>
 
@@ -20,6 +20,9 @@ export default {
         task: {
             type: Object,
             required: true
+        },
+        activities: {
+            type: Array
         },
     },
     data() {
@@ -42,6 +45,7 @@ export default {
         }
     },
     created() {
+        console.log(this.activities);
     },
     components: {
         taskUpdate,

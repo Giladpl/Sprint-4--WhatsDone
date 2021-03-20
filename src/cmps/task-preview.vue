@@ -40,6 +40,7 @@
     <task-details
       v-if="isTaskDetails"
       :task="task"
+      :activities="activities"
     />
     <task-details
       v-if="isTaskDetails"
@@ -156,6 +157,10 @@ export default {
       type: Array,
       required: true,
     },
+    activities: {
+      type: Array,
+      required: true,
+    },
   },
   data() {
     return {
@@ -245,7 +250,7 @@ export default {
   },
   created() {
     this.currDueDate = this.task.dueDate;
-    this.titleToEdit = this.task.title
+    this.titleToEdit = this.task.title;
   },
   components: {
     taskMembers,
