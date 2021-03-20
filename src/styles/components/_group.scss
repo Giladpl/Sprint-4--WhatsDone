@@ -90,5 +90,12 @@
             transition: .5s;
             z-index: 5;
         }
+
+       
+    }
+    .bars-container{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
     }
 }

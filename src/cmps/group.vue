@@ -73,10 +73,16 @@
       type="text"
       placeholder="+ Add"
     />
-    <status-bar
-      :statuses="statuses"
-      :tasks="group.tasks"
-    />
+    <div class="bars-container">
+      <status-bar
+        :statuses="statuses"
+        :tasks="group.tasks"
+      />
+      <priority-bar
+        :priorities="priorities"
+        :tasks="group.tasks"
+      />
+    </div>
   </ul>
 </template>
 
@@ -85,6 +91,7 @@ import taskPreview from "./task-preview";
 import colorPicker from "./color-picker";
 import draggable from "vuedraggable";
 import statusBar from '../cmps/status-bar';
+import priorityBar from '../cmps/priority-bar';
 
 export default {
   name: "group",
@@ -186,6 +193,7 @@ export default {
     colorPicker,
     draggable,
     statusBar,
+    priorityBar
   },
 };
 </script>

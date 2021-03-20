@@ -52,11 +52,11 @@ export default {
   methods: {
     removeMemberFromTask(taskMember) {
       this.$emit("removeMemberFromTask", taskMember);
-      console.log("Removed member from task", taskMember);
+      // console.log("Removed member from task", taskMember);
     },
     addMemberToTask(member) {
       this.$emit("addMemberToTask", member);
-      console.log("Added member to task", member);
+      // console.log("Added member to task", member);
     },
   },
   computed: {},

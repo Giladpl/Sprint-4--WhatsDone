@@ -69,6 +69,7 @@
         type="date"
         size="small"
         placeholder="Pick a day"
+        :clearable="false"
       >
         >
       </el-date-picker>
