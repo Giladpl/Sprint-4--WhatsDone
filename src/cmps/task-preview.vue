@@ -19,7 +19,7 @@
       </div>
       <div class="btn-chat" @click.stop="onChat" ><i class="el-icon-chat-dot-round"></i></div>
     </div>
-    <task-details v-if="isTaskDetails" :task="task"/>
+    <task-details v-if="isTaskDetails" :task="task" @closeTaskDetails="closeTaskDetails"/>
     <div
       class="members-container"
       @click="toggleTaskMembers"
@@ -184,6 +184,9 @@ export default {
       this.$emit('removePriority', priorityId);  
     },
     onChat() {
+      this.isTaskDetails = !this.isTaskDetails;
+    },
+    closeTaskDetails() {
       this.isTaskDetails = !this.isTaskDetails;
     }
   },
