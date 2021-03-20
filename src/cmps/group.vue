@@ -65,6 +65,7 @@
           :statuses="statuses"
           :priorities="priorities"
           :boardMembers="boardMembers"
+          :activities="activities"
           @removeMemberFromTask="removeMemberFromTask"
           @addMemberToTask="addMemberToTask"
           @removeTask="removeTask"
@@ -126,6 +127,10 @@ export default {
       required: true,
     },
     boardMembers: {
+      type: Array,
+      required: true,
+    },
+    activities: {
       type: Array,
       required: true,
     },

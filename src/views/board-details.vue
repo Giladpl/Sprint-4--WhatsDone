@@ -84,6 +84,7 @@
             :statuses="board.statuses"
             :priorities="board.priorities"
             :boardMembers="board.members"
+            :activities="activities"
             @changeColor="changeGroupColor"
             @updateTitle="updateGroupTitle"
             @removeTask="removeTask"
