@@ -223,6 +223,8 @@ export default {
     updateTaskTitle() {
       this.isTitleEditable = !this.isTitleEditable
       this.$emit('updateTaskTitle', { updatedTitle: this.titleToEdit, taskId: this.task.id });
+      this.$refs.inputTask.blur()
+
     },
     closeTaskDetails() {
       this.isTaskDetails = !this.isTaskDetails;
