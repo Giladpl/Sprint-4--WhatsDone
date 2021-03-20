@@ -80,8 +80,8 @@ function _createBoards() {
     let boards = storageService.load(KEY)
     if (!boards || !boards.length) {
         boards = [
-            _createBoard1('b101', 'board1'),
-            _createBoard2('b102', 'board2'),
+            _createBoard1('b101', 'Software Development'),
+            _createBoard2('b102', 'Trip Plannig'),
             // _createBoard('b103', 'board3'),
         ]
         storageService.store(KEY, boards)
@@ -95,6 +95,7 @@ function _createBoard1(_id, title) {
         title,
         description: 'Software Development Life Cycle',
         createdAt: 1589983468418,
+        imgUrl:"https://assets.skyfilabs.com/images/blog/10-interesting-web-development-projects.webp",
         createdBy: {
             _id: 'u101',
             fullname: 'Shraga Puk',
@@ -1419,6 +1420,7 @@ function _createBoard2(_id, title) {
         title,
         description: 'Software Development Life Cycle',
         createdAt: 1589983468418,
+        imgUrl:"https://img.huffingtonpost.com/asset/5755e87e130000a109383be7.jpeg?ops=scalefit_720_noupscale&format=webp",
         createdBy: {
             _id: 'u101',
             fullname: 'Shraga Puk',
