@@ -125,7 +125,7 @@ export default {
         this.board = board;
         this.boardToEdit = JSON.parse(JSON.stringify(board));
       } catch (err) {
-        console.log("cannot load board", err);
+        console.log('cannot load board', err);
       }
     },
     async removeTask({ taskId, groupId }) {
@@ -136,12 +136,12 @@ export default {
         const idx = currGroup.tasks.findIndex((task) => task.id === taskId);
         currGroup.tasks.splice(idx, 1);
         await this.$store.dispatch({
-          type: "saveBoard",
+          type: 'saveBoard',
           board: this.boardToEdit,
         });
         this.loadBoard();
       } catch (err) {
-        console.log("cannot remove task", err);
+        console.log('cannot remove task', err);
       }
     },
     async removeGroup({ groupId }) {
@@ -151,7 +151,7 @@ export default {
         );
         this.boardToEdit.groups.splice(groupIdx, 1);
         await this.$store.dispatch({
-          type: "saveBoard",
+          type: 'saveBoard',
           board: this.boardToEdit,
         });
         this.loadBoard();
@@ -164,19 +164,19 @@ export default {
         );
         currGroup.color = groupUpdate.chosenColor;
         await this.$store.dispatch({
-          type: "saveBoard",
+          type: 'saveBoard',
           board: this.boardToEdit,
         });
         this.loadBoard();
       } catch (err) {
-        console.log("cannot update group color", err);
+        console.log('cannot update group color', err);
       }
     },
     async updateBoardTitle(ev) {
       this.boardToEdit.title = ev.target.value;
       try {
         await this.$store.dispatch({
-          type: "saveBoard",
+          type: 'saveBoard',
           board: this.boardToEdit,
         });
         this.loadBoard();
@@ -186,12 +186,12 @@ export default {
       this.boardToEdit.description = ev.target.value;
       try {
         await this.$store.dispatch({
-          type: "saveBoard",
+          type: 'saveBoard',
           board: this.boardToEdit,
         });
         this.loadBoard();
       } catch (err) {
-        console.log("cannot update board description", err);
+        console.log('cannot update board description', err);
       }
     },
     async updateGroupTitle(groupUpdate) {
@@ -201,12 +201,12 @@ export default {
         );
         currGroup.title = groupUpdate.title;
         await this.$store.dispatch({
-          type: "saveBoard",
+          type: 'saveBoard',
           board: this.boardToEdit,
         });
         this.loadBoard();
       } catch (err) {
-        console.log("cannot update group title", err);
+        console.log('cannot update group title', err);
       }
     },
     async addTask({ taskTitle, groupId }) {
@@ -218,7 +218,7 @@ export default {
         taskToAdd.title = taskTitle;
         currGroup.tasks.push(taskToAdd);
         await this.$store.dispatch({
-          type: "saveBoard",
+          type: 'saveBoard',
           board: this.boardToEdit,
         });
         this.loadBoard();
@@ -231,7 +231,7 @@ export default {
         const groupToAdd = boardService.getEmptyGroup();
         this.boardToEdit.groups.push(groupToAdd);
         await this.$store.dispatch({
-          type: "saveBoard",
+          type: 'saveBoard',
           board: this.boardToEdit,
         });
         this.loadBoard();
@@ -249,16 +249,16 @@ export default {
         );
         currGroup.tasks[idx].dueDate = update.date;
         await this.$store.dispatch({
-          type: "saveBoard",
+          type: 'saveBoard',
           board: this.boardToEdit,
         });
         this.loadBoard();
       } catch (err) {
-        console.log("cannot update due date", err);
+        console.log('cannot update due date', err);
       }
     },
     openUserProfile() {
-      console.log("open user profile");
+      console.log('open user profile');
     },
     toggleAddViewMenu() {
       this.isAddViewMenu = !this.isAddViewMenu;
@@ -268,25 +268,21 @@ export default {
         const currGroupIdx = this.boardToEdit.groups.findIndex(group => {
           return group.id === update.groupId; //need to add failior treatment
         });
-        // console.log('log of groups:', this.boardToEdit.groups[currGroupIdx]);
 
         const currTaskIdx = this.boardToEdit.groups[currGroupIdx].tasks.findIndex(task => {
           return task.id === update.taskId; //need to add failior treatment
         });
-        // console.log('log of taskts:', this.boardToEdit.groups[currGroupIdx].tasks);
 
-        const memberToRemoveIdx = this.boardToEdit.members.findIndex(member => {
+        const memberToRemoveIdx = this.boardToEdit.groups[currGroupIdx].tasks[currTaskIdx].members.findIndex(member => {
           return member._id === update.taskMember._id; //need to add failior treatment
         }
         );
-        // console.log('log of members in board:', this.boardToEdit.members);
 
-        const taskShortcut = this.boardToEdit.groups[currGroupIdx].tasks[currTaskIdx];
-        taskShortcut.members.splice(memberToRemoveIdx, 1);
+        const taskMembersShortcut = this.boardToEdit.groups[currGroupIdx].tasks[currTaskIdx].members;
+        taskMembersShortcut.splice(memberToRemoveIdx, 1);
 
-        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
-        // console.log("FROM BOARD-DETAILS: Removed member from task", update.taskMember);
       } catch (err) {
         console.log(err);
       }
@@ -305,7 +301,6 @@ export default {
 
         await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
-        console.log('FROM BOARD-DETAILS: Added member to task', update.member);
       } catch (err) {
         console.log(err);
       }
@@ -319,10 +314,10 @@ export default {
           (task) => task.id === update.taskId
         );
         currGroup.tasks[idx].statusId = update.statusId;
-        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
-        console.log("cannot update status", err);
+        console.log('cannot update status', err);
       }
     },
     async addStatus(newStatus) {
@@ -354,10 +349,10 @@ export default {
           (task) => task.id === update.taskId
         );
         currGroup.tasks[idx].priorityId = update.priorityId;
-        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
-        console.log("cannot update priority", err);
+        console.log('cannot update priority', err);
       }
     },
     async addPriority(newPriority) {

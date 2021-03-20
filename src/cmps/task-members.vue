@@ -2,7 +2,7 @@
   <section class="task-members-list flex">
     <ul class="clean-list">
       <li
-        @click="removeMemberFromTask(taskMember)"
+        @click.stop="removeMemberFromTask(taskMember)"
         class="task-member flex"
         v-for="taskMember in taskMembers"
         :key="taskMember._id"
@@ -17,7 +17,7 @@
     </div>
     <ul class="clean-list">
       <li
-        @click="addMemberToTask(member)"
+        @click.stop="addMemberToTask(member)"
         class="task-member flex"
         v-for="member in nonDuplicatedMembers"
         :key="member._id"
@@ -42,7 +42,7 @@ export default {
       required: true,
     },
   },
-  name: "task-members",
+  name: 'task-members',
   data() {
     return {
       taskMembersIds: [],
@@ -51,25 +51,38 @@ export default {
   },
   methods: {
     removeMemberFromTask(taskMember) {
-      this.$emit("removeMemberFromTask", taskMember);
-      // console.log("Removed member from task", taskMember);
+      this.$emit('removeMemberFromTask', taskMember);
     },
     addMemberToTask(member) {
-      this.$emit("addMemberToTask", member);
-      // console.log("Added member to task", member);
+      this.$emit('addMemberToTask', member);
+    },
+    boardMembersToShow() {
+      this.taskMembersIds = this.taskMembers.reduce((acc, member) => {
+        acc.push(member._id);
+        return acc;
+      }, []);
+      this.nonDuplicatedMembers = this.boardMembers.filter((member) => {
+        if (!this.taskMembersIds.includes(member._id)) return member;
+      });
     },
   },
   computed: {},
   created() {
-
-    this.taskMembersIds = this.taskMembers.reduce((acc, member) => {
-      acc.push(member._id);
-      return acc;
-    }, []);
-    this.nonDuplicatedMembers = this.boardMembers.filter((member) => {
-      if (!this.taskMembersIds.includes(member._id)) return member;
-    });
-  
+    this.boardMembersToShow();
   },
+  watch: {
+boardMembers: {
+  deep: true,
+  handler() {
+    this.boardMembersToShow();
+  }
+},
+taskMembers: {
+  deep: true,
+  handler() {
+    this.boardMembersToShow();
+  }
+}
+  }
 };
 </script>
