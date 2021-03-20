@@ -266,15 +266,15 @@ export default {
     async removeMemberFromTask(update) {
       try {
         const currGroupIdx = this.boardToEdit.groups.findIndex(group => {
-          return group.id === update.groupId; //need to add failior treatment
+          return group.id === update.groupId; //failior treatment needed
         });
 
         const currTaskIdx = this.boardToEdit.groups[currGroupIdx].tasks.findIndex(task => {
-          return task.id === update.taskId; //need to add failior treatment
+          return task.id === update.taskId; //failior treatment needed
         });
 
         const memberToRemoveIdx = this.boardToEdit.groups[currGroupIdx].tasks[currTaskIdx].members.findIndex(member => {
-          return member._id === update.taskMember._id; //need to add failior treatment
+          return member._id === update.taskMember._id; //failior treatment needed
         }
         );
 
@@ -290,10 +290,10 @@ export default {
     async addMemberToTask(update) {
       try {
         const currGroupIdx = this.boardToEdit.groups.findIndex(group => {
-          return group.id === update.groupId; //need to add failior treatment
+          return group.id === update.groupId; //failior treatment needed
         });
         const currTaskIdx = this.boardToEdit.groups[currGroupIdx].tasks.findIndex(task => {
-          return task.id === update.taskId; //need to add failior treatment
+          return task.id === update.taskId; //failior treatment needed
         });
 
         const taskShortcut = this.boardToEdit.groups[currGroupIdx].tasks[currTaskIdx];
