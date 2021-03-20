@@ -6,14 +6,14 @@
     <app-header />
     <div class="details-wrapper">
       <div class="board-static-header">
-        <div class="board-top-row">
+        <div class="board-top-row flex-between">
           <input
             class="board-title-input"
             type="text"
             @change="updateBoardTitle"
             v-model="boardToEdit.title"
           />
-          <users-avatars
+          <board-member-avatar
             :board="board"
             :members="board.members"
           />
@@ -41,11 +41,10 @@
             size="small"
           >+ Add View</el-button>
         </div>
-        <el-card
+        <div
           v-click-outside="toggleAddViewMenu"
           v-if="isAddViewMenu"
           class="add-view-card"
-          shadow="always"
         >
           <div>
             <img
@@ -65,7 +64,7 @@
               src="@/assets/icons/chart.svg"
             />Chart
           </div>
-        </el-card>
+        </div>
       </div>
 
       <el-button
@@ -112,7 +111,7 @@
 import { boardService } from "../services/board.service.js";
 import group from "@/cmps/group";
 import appHeader from "@/cmps/app-header";
-import usersAvatars from "@/cmps/users-avatars";
+import boardMemberAvatar from "@/cmps/board-member-avatar";
 import { utilService } from '../services/util.service.js';
 import vClickOutside from "v-click-outside";
 
@@ -432,7 +431,7 @@ export default {
   components: {
     group,
     appHeader,
-    usersAvatars,
+    boardMemberAvatar,
   },
 };
 </script>
