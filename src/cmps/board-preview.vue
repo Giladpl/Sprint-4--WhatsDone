@@ -1,6 +1,8 @@
 <template>
     <el-card class="board-preview">
-        <p>img</p>
+        <p>
+            <img :src="board.imgUrl" height="300">
+        </p>
         <h4>{{board.title}}</h4>
         <p>Created by: {{board.createdBy.fullname}}</p>
     </el-card>
