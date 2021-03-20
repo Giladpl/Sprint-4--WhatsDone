@@ -6,19 +6,15 @@
             <span @click="onUpdate">Updates</span>
             <span @click="onActivity">Activity Log</span>
         </div>
-        <div v-if="isUpdate" class="update-container">
-            <form @submit.prevent="addUpdate">
-                <input type="text" placeholder="Write an update..">
-                <button>Update</button>
-            </form>
-        </div>
-        <div v-if="isActivity" class="activity-container">
-
-        </div>
+        <task-update v-if="isUpdate"/>
+        <task-activity v-if="isActivity"/>
     </section>
 </template>
 
 <script>
+import taskUpdate from './task-update'
+import taskActivity from './task-activity'
+
 export default {
     props: {
         task: {
@@ -29,7 +25,13 @@ export default {
     data() {
         return {
             isUpdate: true,
-            isActivity: false
+            isActivity: false,
+            updateToEdit: {
+                update: null,
+                file: null,
+                createdAt: null,
+                byMember: null
+            }
         }
     },
     methods: {
@@ -41,6 +43,10 @@ export default {
             this.isUpdate = false;
             this.isActivity = true;
         }
+    },
+    components: {
+        taskUpdate,
+        taskActivity
     }
 }
 </script>
