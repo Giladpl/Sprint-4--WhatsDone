@@ -13,7 +13,7 @@
             @change="updateBoardTitle"
             v-model="boardToEdit.title"
           />
-          <users-avatars
+          <board-member-avatar
             :board="board"
             :members="board.members"
           />
@@ -110,7 +110,7 @@
 import { boardService } from "../services/board.service.js";
 import group from "@/cmps/group";
 import appHeader from "@/cmps/app-header";
-import usersAvatars from "@/cmps/users-avatars";
+import boardMemberAvatar from "@/cmps/board-member-avatar";
 import { utilService } from '../services/util.service.js';
 import vClickOutside from "v-click-outside";
 
@@ -414,7 +414,7 @@ export default {
   components: {
     group,
     appHeader,
-    usersAvatars,
+    boardMemberAvatar,
   },
 };
 </script>
