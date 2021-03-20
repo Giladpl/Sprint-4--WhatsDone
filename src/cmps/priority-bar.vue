@@ -7,8 +7,8 @@
       class="part-of-bar"
       v-for="(priority, idx) in prioritiesMap"
       :key="idx"
-      :style="{ backgroundColor: priority.color, width: priority.count / tasks.length * 100 + '%' }"
-      :data-title="`${priority.title}, ${(priority.count / tasks.length * 100).toFixed(0)}%`"
+      :style="styleObject(priority)"
+      :data-title="dataLabel(priority)"
     >
     </div>
   </section>
@@ -43,9 +43,12 @@ export default {
       })
 
     },
-
-  },
-  computed: {
+    styleObject(priority) {
+      return { backgroundColor: priority.color, width: priority.count / this.tasks.length * 100 + '%' }
+    },
+    dataLabel(priority) {
+      return `${priority.title}, ${(priority.count / this.tasks.length * 100).toFixed(0)}%`
+    },
 
   },
   watch: {

@@ -7,8 +7,8 @@
       class="part-of-bar"
       v-for="(status, idx) in statusesMap"
       :key="idx"
-      :style="{ backgroundColor: status.color, width: status.count / tasks.length * 100 + '%' }"
-      :data-title="`${status.title}, ${(status.count / tasks.length * 100).toFixed(0)}%`"
+      :style="styleObject(status)"
+      :data-title="dataLabel(status)"
     >
     </div>
   </section>
@@ -43,6 +43,16 @@ export default {
       })
 
     },
+    dataLabel(status) {
+      return `${status.title}, ${(status.count / this.tasks.length * 100).toFixed(0)}%`
+    },
+
+    styleObject(status) {
+      return {
+        backgroundColor: status.color,
+        width: status.count / this.tasks.length * 100 + '%'
+      }
+    }
 
   },
   computed: {
