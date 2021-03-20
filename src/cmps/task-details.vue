@@ -6,7 +6,7 @@
             <span @click="onUpdate">Updates</span>
             <span @click="onActivity">Activity Log</span>
         </div>
-        <task-update v-if="isUpdate"/>
+        <task-update v-if="isUpdate" :comments="task.comments"/>
         <task-activity v-if="isActivity"/>
     </section>
 </template>
@@ -25,13 +25,7 @@ export default {
     data() {
         return {
             isUpdate: true,
-            isActivity: false,
-            updateToEdit: {
-                update: null,
-                file: null,
-                createdAt: null,
-                byMember: null
-            }
+            isActivity: false
         }
     },
     methods: {

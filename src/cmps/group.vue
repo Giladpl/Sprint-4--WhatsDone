@@ -2,7 +2,7 @@
   <ul class="group clean-list">
     <div class="group-header">
       <div class="group-header-left">
-        <span @click="toggleGroupEdit">
+        <span class="dowm-arrow-container" @click="toggleGroupEdit">
           <img class="dowm-arrow-btn" src="@/assets/icons/down-arrow.svg" :style="{ fill: group.color }">
         </span>
         <input
