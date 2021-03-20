@@ -15,8 +15,8 @@
           <i class="el-icon-delete"></i>
         </div>
         <form
-          @submit.prevent="saveEditedTitle"
-          @change.prevent="saveEditedTitle"
+          @submit.prevent="updateTaskTitle"
+          @change.prevent="updateTaskTitle"
         >
           <input
             ref="inputTask"
@@ -217,9 +217,9 @@ export default {
     editTitle() {
       this.$refs.inputTask.focus()
     },
-    saveEditedTitle() {
+    updateTaskTitle() {
       this.isTitleEditable = !this.isTitleEditable
-      this.$emit('updateTaksTitle', this.titleToEdit)
+      this.$emit('updateTaskTitle', { updatedTitle: this.titleToEdit, taskId: this.task.id });
     },
     closeTaskDetails() {
       this.isTaskDetails = !this.isTaskDetails;

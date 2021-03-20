@@ -77,6 +77,7 @@
           @addPriority="addPriority"
           @removePriority="removePriority"
           @updateTaksTitle="updateTaskTitle"
+          @updateTaskTitle="updateTaskTitle"
         />
       </li>
     </draggable>
@@ -206,8 +207,9 @@ export default {
     removePriority(priorityId) {
       this.$emit('removePriority', priorityId);
     },
-    updateTaskTitle(titleToEdit) {
-      this.$emit('updateTaskTitle', titleToEdit);
+    updateTaskTitle(update) {
+      update.groupId = this.group.id
+      this.$emit('updateTaskTitle', update);
     }
   },
   created() {

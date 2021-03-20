@@ -385,9 +385,23 @@ export default {
         console.log('cannot remove priority', err);
       }
     },
-    async updateTaskTitle(taskTitleToUpdate){
-      console.log(taskTitleToUpdate);
-      
+    async updateTaskTitle({ updatedTitle, taskId, groupId }) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === groupId
+        );
+        const taskIdx = currGroup.tasks.findIndex((task) => task.id === taskId);
+
+        currGroup.tasks[taskIdx].title = updatedTitle
+
+        await this.$store.dispatch({
+          type: 'saveBoard',
+          board: this.boardToEdit,
+        });
+        this.loadBoard();
+      } catch (err) {
+        console.log('cannot update task', err);
+      }
     }
   },
   computed: {

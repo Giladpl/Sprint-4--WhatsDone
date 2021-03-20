@@ -7,7 +7,7 @@
             <span @click="onActivity">Activity Log</span>
         </div>
         <task-update v-if="isUpdate" :comments="task.comments" />
-        <task-activity v-if="isActivity" />
+        <task-activity v-if="isActivity" :activities="setTaskActivity"/>
     </section>
 </template>
 
@@ -43,17 +43,13 @@ export default {
         },
         onClose() {
             this.$emit('closeTaskDetails');
-        },
-        setTaskActivity() {
-            if(this.activities) {
-                let newActivities = JSON.parse(JSON.stringify(this.activities));
-                console.log(newActivities);
-
-            }
-        } 
+        }
     },
-    created() {
-        this.setTaskActivity()
+    computed: {
+        setTaskActivity() {
+            let copyActivities = JSON.parse(JSON.stringify(this.activities));
+            return copyActivities.filter(activity => activity.task.id === this.task.id);
+        } 
     },
     components: {
         taskUpdate,
