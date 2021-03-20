@@ -215,8 +215,6 @@ export default {
     },
     changedByDrag() {
       this.$emit('updateTasksOrder', { groupId: this.group.id, tasks: this.group.tasks })
-      // console.log(this.group.tasks);
-      
     }
   },
   created() {
