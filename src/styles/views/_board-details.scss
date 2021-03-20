@@ -8,22 +8,49 @@
         top: 0;
         z-index: 100;
         background-color: white;
+
+        .board-title-input,
+        .board-description-input {
+            border: 1px dashed transparent;
+            padding: 3px 7px 3px 0;
+            background-color: inherit;
+            color: $clr3;
+            font-size: 17px;
+        }
+
+        .board-title-input {
+            font-size: 25px;
+        }
+    
+        .board-description-input {
+            min-width: 400px;
+            margin-bottom: 5px;
+        }
+
+        .created-by {
+            color: $clr3;
+            font-size: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+    
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .board-top-row{
+        height: 70px;    
     }
 
     .add-view-card{
         width: 200px;
         position: absolute;
     }
+
     .btn-add-view-menu{
         width: 13px;
         margin-right: 5px;
-    }
-        
-        .board-top-row{
-        display: flex;
-        justify-content: space-between;
-        height: 80px;
-        align-items: center;      
     }
 
     .add-view-row-container{
@@ -33,18 +60,13 @@
 
         .add-view-btn{
             margin: 10px 0;
-            background-color: #FFFFFF;
-            color: #3c3d41;
-            border-color: #e6e9ef ;
+            background-color: #fff;
+            color: $clr3;
+            border-color: $clr4;
 
             &:hover {
-                background-color: #e6e9ef;
-                color: #3c3d41;
+                background-color: $clr4;
             }
-            // &:visited, &:active, &:focus{
-            //     color: #3c3d41;
-            //     background-color: #e6e9ef;
-            // }
         }
     }
 
@@ -59,29 +81,5 @@
         background-color: #fff;
     }
 
-    .board-title-input,
-    .board-description-input {
-        border: 1px dashed transparent;
-        padding: 3px 7px 3px 0;
-        background-color: inherit;
-        color: $clr3;
-        font-size: 17px;
-    }
-
-    .board-title-input {
-        font-size: 25px;
-    }
-
-    .board-description-input {
-        min-width: 400px;
-    }
-
-    .created-by {
-        font-size: 15px;
-        cursor: pointer;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
+    
 }

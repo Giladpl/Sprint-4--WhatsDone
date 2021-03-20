@@ -6,7 +6,7 @@
     <app-header />
     <div class="details-wrapper">
       <div class="board-static-header">
-        <div class="board-top-row">
+        <div class="board-top-row flex-between">
           <input
             class="board-title-input"
             type="text"
@@ -41,11 +41,10 @@
             size="small"
           >+ Add View</el-button>
         </div>
-        <el-card
+        <div
           v-click-outside="toggleAddViewMenu"
           v-if="isAddViewMenu"
           class="add-view-card"
-          shadow="always"
         >
           <div>
             <img
@@ -65,7 +64,7 @@
               src="@/assets/icons/chart.svg"
             />Chart
           </div>
-        </el-card>
+        </div>
       </div>
 
       <el-button
