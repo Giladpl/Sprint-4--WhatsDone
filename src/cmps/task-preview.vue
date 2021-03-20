@@ -46,7 +46,8 @@
       class="members-container"
       @click="toggleTaskMembers"
     >
-      <ul class="members clean-list">
+    <task-members-container :task="task"/>
+      <!-- <ul class="members clean-list">
         <li
           v-for="member in task.members"
           :key="member._id"
@@ -57,7 +58,7 @@
             :src="member.imgUrl"
           ></el-avatar>
         </li>
-      </ul>
+      </ul> -->
       <task-members
         v-click-outside="toggleTaskMembers"
         @removeMemberFromTask="removeMemberFromTask"
@@ -118,6 +119,7 @@
 
 <script>
 import taskMembers from "./task-members";
+import taskMembersContainer from "./task-members-container";
 import taskStatus from "./task-status";
 import taskPriority from "./task-priority";
 import vClickOutside from "v-click-outside";
@@ -162,7 +164,6 @@ export default {
       isTaskDetails: false,
       titleToEdit: null,
       isTitleEditable: false,
-      isMaxMembersToShow: false,
     };
   },
   methods: {
@@ -220,8 +221,6 @@ export default {
     updateTaskTitle() {
       this.isTitleEditable = !this.isTitleEditable
       this.$emit('updateTaskTitle', { updatedTitle: this.titleToEdit, taskId: this.task.id });
-      this.$refs.inputTask.blur()
-
     },
     closeTaskDetails() {
       this.isTaskDetails = !this.isTaskDetails;
@@ -240,12 +239,6 @@ export default {
       );
       return priority;
     },
-    // taskMembersToShow() {
-    //   if (this.task.members.length > 2) {
-    //     this.isMaxMembersToShow = true;
-    //     return 
-    //   } 
-    // }
   },
   created() {
     this.currDueDate = this.task.dueDate;
@@ -255,7 +248,8 @@ export default {
     taskMembers,
     taskStatus,
     taskPriority,
-    taskDetails
+    taskDetails,
+    taskMembersContainer,
   },
 };
 </script>
