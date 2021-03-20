@@ -37,10 +37,12 @@
         <div class="add-view-row-container">
           <el-button
             @click="toggleAddViewMenu"
-            class="add-view-btn" size="small"
+            class="add-view-btn"
+            size="small"
           >+ Add View</el-button>
         </div>
-        <el-card v-click-outside="toggleAddViewMenu"
+        <el-card
+          v-click-outside="toggleAddViewMenu"
           v-if="isAddViewMenu"
           class="add-view-card"
           shadow="always"
@@ -69,7 +71,8 @@
       <el-button
         @click="addGroup"
         class="btn-add-group"
-        type="primary" size="small"
+        type="primary"
+        size="small"
       >Add Group</el-button>
       <ul class="clean-list">
         <li
@@ -95,6 +98,7 @@
             @updatePriority="updatePriority"
             @addPriority="addPriority"
             @removePriority="removePriority"
+            @updateTaskTitle="updateTaskTitle"
           />
         </li>
       </ul>
@@ -112,9 +116,9 @@ import vClickOutside from "v-click-outside";
 
 
 export default {
-   directives: {
-      clickOutside: vClickOutside.directive
-    },
+  directives: {
+    clickOutside: vClickOutside.directive
+  },
   data() {
     return {
       board: null,
@@ -380,6 +384,10 @@ export default {
         console.log('cannot remove priority', err);
       }
     },
+    async updateTaskTitle(taskTitleToUpdate){
+      console.log(taskTitleToUpdate);
+      
+    }
   },
   computed: {
     loggedinUser() {

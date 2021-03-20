@@ -2,9 +2,15 @@
   <ul class="group clean-list">
     <div class="group-header">
       <div class="group-header-left">
-        <span class="dowm-arrow-container" @click="toggleGroupEdit">
-  
-          <img class="dowm-arrow-btn" src="@/assets/icons/down-arrow.svg" :style="{ fill: group.color }">
+        <span
+          class="dowm-arrow-container"
+          @click="toggleGroupEdit"
+        >
+          <img
+            class="dowm-arrow-btn"
+            src="@/assets/icons/down-arrow.svg"
+            :style="{ fill: group.color }"
+          >
         </span>
         <input
           class="group-title-input"
@@ -15,7 +21,8 @@
           :style="{ color: group.color }"
         />
       </div>
-      <div v-click-outside="toggleGroupEdit"
+      <div
+        v-click-outside="toggleGroupEdit"
         v-if="isShownGroupEdit"
         class="group-edit"
       >
@@ -30,7 +37,8 @@
         </div>
       </div>
       <color-picker
-        class="color-picker" v-click-outside="onColorPicker"
+        class="color-picker"
+        v-click-outside="onColorPicker"
         v-if="isColorPicker"
         @changeColor="changeColor"
       />
@@ -67,6 +75,7 @@
           @updatePriority="updatePriority"
           @addPriority="addPriority"
           @removePriority="removePriority"
+          @updateTaksTitle="updateTaskTitle"
         />
       </li>
     </draggable>
@@ -100,8 +109,8 @@ import vClickOutside from "v-click-outside";
 
 export default {
   directives: {
-      clickOutside: vClickOutside.directive,
-    },
+    clickOutside: vClickOutside.directive,
+  },
   name: "group",
   props: {
     group: {
@@ -192,6 +201,9 @@ export default {
     removePriority(priorityId) {
       this.$emit('removePriority', priorityId);
     },
+    updateTaskTitle(titleToEdit) {
+      this.$emit('updateTaskTitle', titleToEdit);
+    }
   },
   created() {
     this.groupTitle = this.group.title;

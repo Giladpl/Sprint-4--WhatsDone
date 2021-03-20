@@ -14,12 +14,38 @@
         >
           <i class="el-icon-delete"></i>
         </div>
-        <div class="task-title">{{ task.title }}</div>
-        <div class="btns-hidden"><i class="el-icon-edit"></i></div>
+        <form
+          @submit.prevent="saveEditedTitle"
+          @change.prevent="saveEditedTitle"
+        >
+          <input
+            ref="inputTask"
+            type="text"
+            v-model="titleToEdit"
+            class="task-title"
+            value="titleToEdit"
+            :disabled=isTitleEditable
+          >
+        </form>
+        <div
+          @click="editTitle"
+          class="btns-hidden"
+        ><i class="el-icon-edit"></i></div>
       </div>
-      <div class="btn-chat" @click.stop="onChat" ><i class="el-icon-chat-dot-round"></i></div>
+      <div
+        class="btn-chat"
+        @click.stop="onChat"
+      ><i class="el-icon-chat-dot-round"></i></div>
     </div>
-    <task-details v-if="isTaskDetails" :task="task" @closeTaskDetails="closeTaskDetails"/>
+    <task-details
+      v-if="isTaskDetails"
+      :task="task"
+    />
+    <task-details
+      v-if="isTaskDetails"
+      :task="task"
+      @closeTaskDetails="closeTaskDetails"
+    />
     <div
       class="members-container"
       @click="toggleTaskMembers"
@@ -36,7 +62,8 @@
           ></el-avatar>
         </li>
       </ul>
-      <task-members v-click-outside="toggleTaskMembers"
+      <task-members
+        v-click-outside="toggleTaskMembers"
         @removeMemberFromTask="removeMemberFromTask"
         @addMemberToTask="addMemberToTask"
         v-if="isTaskMemebersShown"
@@ -53,9 +80,10 @@
       >
         {{ getStatusById.title }}
       </div>
-      <task-status v-click-outside="toggleTaskStatuses"
+      <task-status
+        v-click-outside="toggleTaskStatuses"
         v-if="isTaskStatusesShown"
-        :statuses="statuses" 
+        :statuses="statuses"
         @updateStatus="updateStatus"
         @addStatus="addStatus"
         @removeStatus="removeStatus"
@@ -84,9 +112,10 @@
       >
         {{ getPriorityById.title }}
       </div>
-      <task-priority v-click-outside="toggleTaskPriorities"
+      <task-priority
+        v-click-outside="toggleTaskPriorities"
         v-if="isTaskPrioritiesShown"
-        :priorities="priorities" 
+        :priorities="priorities"
         @updatePriority="updatePriority"
         @addPriority="addPriority"
         @removePriority="removePriority"
@@ -104,8 +133,8 @@ import taskDetails from "./task-details";
 
 export default {
   directives: {
-      clickOutside: vClickOutside.directive,
-    },
+    clickOutside: vClickOutside.directive,
+  },
   props: {
     task: {
       type: Object,
@@ -134,12 +163,14 @@ export default {
       isTaskMemebersShown: false,
       isTaskStatusesShown: false,
       isTaskPrioritiesShown: false,
-      isTaskDetails: false
+      isTaskDetails: false,
+      titleToEdit: null,
+      isTitleEditable: false,
     };
   },
   methods: {
     onTask() {
-      console.log("onTask");
+      // console.log("onTask");
     },
     removeTask() {
       this.$emit("removeTask", this.task.id);
@@ -147,16 +178,16 @@ export default {
     updateDueDate(date) {
       this.$emit("updateDueDate", { date, taskId: this.task.id });
     },
-    
+
     toggleTaskMembers() {
       this.isTaskMemebersShown = !this.isTaskMemebersShown;
     },
     toggleTaskStatuses() {
       this.isTaskStatusesShown = !this.isTaskStatusesShown;
     },
-      toggleTaskPriorities() {
-        this.isTaskPrioritiesShown = !this.isTaskPrioritiesShown;
-      },
+    toggleTaskPriorities() {
+      this.isTaskPrioritiesShown = !this.isTaskPrioritiesShown;
+    },
     removeMemberFromTask(taskMember) {
       this.$emit('removeMemberFromTask', { taskMember, taskId: this.task.id });
     },
@@ -165,30 +196,38 @@ export default {
     },
     updateStatus(statusId) {
       this.isTaskStatusesShown = !this.isTaskStatusesShown;
-      this.$emit('updateStatus', {statusId, taskId: this.task.id});
+      this.$emit('updateStatus', { statusId, taskId: this.task.id });
     },
     addStatus(newStatus) {
       this.$emit('addStatus', newStatus)
     },
     removeStatus(statusId) {
-      this.$emit('removeStatus', statusId);  
+      this.$emit('removeStatus', statusId);
     },
     updatePriority(priorityId) {
       this.isTaskPrioritiesShown = !this.isTaskPrioritiesShown;
-      this.$emit('updatePriority', {priorityId, taskId: this.task.id});
+      this.$emit('updatePriority', { priorityId, taskId: this.task.id });
     },
     addPriority(newPriority) {
       this.$emit('addPriority', newPriority)
     },
     removePriority(priorityId) {
-      this.$emit('removePriority', priorityId);  
+      this.$emit('removePriority', priorityId);
     },
     onChat() {
       this.isTaskDetails = !this.isTaskDetails;
     },
+    editTitle() {
+      // this.isTitleEditable = !this.isTitleEditable
+      this.$refs.inputTask.focus()
+    },
+    saveEditedTitle() {
+      this.isTitleEditable = !this.isTitleEditable
+      this.$emit('updateTaksTitle', this.titleToEdit)
+    },
     closeTaskDetails() {
       this.isTaskDetails = !this.isTaskDetails;
-    }
+    },
   },
   computed: {
     getStatusById() {
@@ -206,6 +245,7 @@ export default {
   },
   created() {
     this.currDueDate = this.task.dueDate;
+    this.titleToEdit = this.task.title
   },
   components: {
     taskMembers,
