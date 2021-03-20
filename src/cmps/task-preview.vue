@@ -4,7 +4,7 @@
     v-bind:style="{ borderLeft: `8px solid ${groupColor}` }"
   >
     <div
-      class="main-task"
+      class="task-left-container"
       @click.prevent="onTask"
     >
       <div class="remove-title-wrapper flex">
@@ -42,80 +42,79 @@
       :activities="activities"
       @closeTaskDetails="closeTaskDetails"
     />
-    <div
-      class="members-container"
-      @click="toggleTaskMembers"
-    >
-      <task-members-container :task="task" />
-      <!-- <ul class="members clean-list">
-        <li
-          v-for="member in task.members"
-          :key="member._id"
-          class="miniUser"
+    <div class="task-right-container">
+      <div
+        class="members-container"
+        @click="toggleTaskMembers"
+      >
+      <task-members-container :task="task"/>
+        <!-- <ul class="members clean-list">
+          <li
+            v-for="member in task.members"
+            :key="member._id"
+            class="miniUser"
+          >
+            <el-avatar
+              size="small"
+              :src="member.imgUrl"
+            ></el-avatar>
+          </li>
+        </ul> -->
+        <task-members
+          v-click-outside="toggleTaskMembers"
+          @removeMemberFromTask="removeMemberFromTask"
+          @addMemberToTask="addMemberToTask"
+          v-if="isTaskMemebersShown"
+          :boardMembers="boardMembers"
+          :taskMembers="task.members"
+        />
+      </div>
+      <div class="status-container">
+        <div
+          class="status"
+          v-if="getStatusById"
+          :style="{ background: getStatusById.color }"
+          @click="toggleTaskStatuses"
         >
-          <el-avatar
-            size="small"
-            :src="member.imgUrl"
-          ></el-avatar>
-        </li>
-      </ul> -->
-      <task-members
-        v-click-outside="toggleTaskMembers"
-        @removeMemberFromTask="removeMemberFromTask"
-        @addMemberToTask="addMemberToTask"
-        v-if="isTaskMemebersShown"
-        :boardMembers="boardMembers"
-        :taskMembers="task.members"
-      />
-    </div>
-    <div class="status-container">
-      <div
-        class="status"
-        v-if="getStatusById"
-        :style="{ background: getStatusById.color }"
-        @click="toggleTaskStatuses"
-      >
-        {{ getStatusById.title }}
+          {{ getStatusById.title }}
+        </div>
+        <task-status
+          v-click-outside="toggleTaskStatuses"
+          v-if="isTaskStatusesShown"
+          :statuses="statuses"
+          @updateStatus="updateStatus"
+          @addStatus="addStatus"
+          @removeStatus="removeStatus"
+        />
       </div>
-      <task-status
-        v-click-outside="toggleTaskStatuses"
-        v-if="isTaskStatusesShown"
-        :statuses="statuses"
-        @updateStatus="updateStatus"
-        @addStatus="addStatus"
-        @removeStatus="removeStatus"
-      />
-    </div>
-    <div class="date-picker-container">
-      <el-date-picker
-        v-if="currDueDate"
-        class="date-picker"
-        v-model="currDueDate"
-        @change="updateDueDate"
-        type="date"
-        size="small"
-        placeholder="Pick a date"
-        :clearable="false"
-      >
-      </el-date-picker>
-    </div>
-    <div class="priority-container">
-      <div
-        class="priority"
-        v-if="getPriorityById"
-        v-bind:style="{ background: getPriorityById.color }"
-        @click="toggleTaskPriorities"
-      >
-        {{ getPriorityById.title }}
+      <div class="date-picker-container">
+        <el-date-picker
+          v-if="currDueDate"
+          class="date-picker"
+          v-model="currDueDate"
+          @change="updateDueDate"
+          type="date"
+          size="small"
+          placeholder="Pick a day"
+          :clearable="false">
+        </el-date-picker>
       </div>
-      <task-priority
-        v-click-outside="toggleTaskPriorities"
-        v-if="isTaskPrioritiesShown"
-        :priorities="priorities"
-        @updatePriority="updatePriority"
-        @addPriority="addPriority"
-        @removePriority="removePriority"
-      />
+      <div class="priority-container">
+        <div
+          class="priority"
+          v-if="getPriorityById"
+          v-bind:style="{ background: getPriorityById.color }"
+          @click="toggleTaskPriorities">
+          {{ getPriorityById.title }}
+        </div>
+        <task-priority
+          v-click-outside="toggleTaskPriorities"
+          v-if="isTaskPrioritiesShown"
+          :priorities="priorities"
+          @updatePriority="updatePriority"
+          @addPriority="addPriority"
+          @removePriority="removePriority"/>
+      </div>
     </div>
   </section>
 </template>
