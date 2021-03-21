@@ -3,7 +3,7 @@
     <div class="group-header">
       <div class="group-header-left">
         <span
-          class="dowm-arrow-container"
+          class="down-arrow-container"
           @click="toggleGroupEdit"
         >
           <i class="el-icon-arrow-down"></i>
