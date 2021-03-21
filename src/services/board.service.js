@@ -1466,7 +1466,7 @@ function _createBoard2(_id, title) {
     return {
         _id,
         title,
-        description: 'Software Development Life Cycle',
+        description: 'Start Planning Your Dream Vacation Now',
         createdAt: 1589983468418,
         imgUrl:"https://img.huffingtonpost.com/asset/5755e87e130000a109383be7.jpeg?ops=scalefit_720_noupscale&format=webp",
         createdBy: {
@@ -1534,21 +1534,7 @@ function _createBoard2(_id, title) {
                 fullname: 'Datia Puk',
                 imgUrl: 'https://randomuser.me/api/portraits/women/14.jpg',
             },
-            {
-                _id: 'u103', 
-                fullname: 'Tuki Norma',
-                imgUrl: 'https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg',
-            },
-            {
-                _id: 'u104', 
-                fullname: 'Muki Abu Ja',
-                imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU',
-            },
-            {
-                _id: 'u105', 
-                fullname: 'JSON De Parse',
-                imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
-            },
+           
             {
                 _id: 'u106', 
                 fullname: 'Nancy Williams',
