@@ -3,7 +3,7 @@
     v-if="boardToEdit"
     class="board-details"
   >
-    <app-header />
+    <app-header :boards="boards" />
     <div class="details-wrapper">
       <div class="board-static-header">
         <div class="board-top-row flex-between">
@@ -416,6 +416,9 @@ export default {
   computed: {
     loggedinUser() {
       return this.$store.getters.loggedInUser;
+    },
+    boards() {
+      return this.$store.getters.boards;
     },
   },
   created() {

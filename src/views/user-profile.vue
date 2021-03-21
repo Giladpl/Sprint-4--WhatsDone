@@ -1,6 +1,6 @@
 <template>
   <section class="user-profile-main-container flex">
-    <app-header />
+    <app-header :boards="boards"/>
     <div class="profile-container">
       <div class="top">
         <el-avatar
@@ -68,6 +68,9 @@ export default {
     checkLoggedUser() {
       if (!this.loggedInUser) return "Guest";
       else return this.loggedInUser.fullname;
+    },
+    boards() {
+      return this.$store.getters.boards;
     },
   },
   created() {
