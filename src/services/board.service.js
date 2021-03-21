@@ -1547,6 +1547,144 @@ function _createBoard2(_id, title) {
         ],
         "groups": [
             {
+                "id": "g102",
+                "title": "Buidling the Trips's frame",
+                "tasks": [
+                    {
+                        "id": "juVjr",
+                        "title": "Finding out who's interested  ",
+                        "members": [
+                            {
+                                "_id": "u106",
+                                "fullname": "Nancy Williams",
+                                "imgUrl": "https://randomuser.me/api/portraits/women/50.jpg"
+                            }
+                        ],
+                        "byMember": {},
+                        "comments": [],
+                        "statusId": "s101",
+                        "priorityId": "p101",
+                        "createdAt": 1616315457306,
+                        "dueDate": 1616315457306
+                    },
+                    {
+                        "id": "t101",
+                        "title": "Decide on a few activities and attractions wanted by everyone",
+                        "members": [
+                            {
+                                "_id": "u107",
+                                "fullname": "Dan Willer",
+                                "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
+                            },
+                            {
+                                "_id": "u106",
+                                "fullname": "Nancy Williams",
+                                "imgUrl": "https://randomuser.me/api/portraits/women/50.jpg"
+                            },
+                            {
+                                "_id": "u108",
+                                "fullname": "Robert Wilford",
+                                "imgUrl": "https://randomuser.me/api/portraits/men/28.jpg"
+                            },
+                            {
+                                "_id": "u109",
+                                "fullname": "Stephanie White",
+                                "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u101",
+                            "fullname": "Shraga Puk",
+                            "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+                        },
+                        "comments": [
+                            {
+                                "id": "c101",
+                                "update": "Added the basic pages to the presentation",
+                                "file": "http://some-img",
+                                "createdAt": 154514,
+                                "byMember": {
+                                    "_id": "u101",
+                                    "fullname": "Shraga Puk",
+                                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+                                }
+                            },
+                            {
+                                "id": "c102",
+                                "update": "Fixed the layout of the current Highlights page",
+                                "file": "http://some-img",
+                                "createdAt": 154574,
+                                "byMember": {
+                                    "_id": "u102",
+                                    "fullname": "Datia Puk",
+                                    "imgUrl": "https://randomuser.me/api/portraits/women/14.jpg"
+                                }
+                            }
+                        ],
+                        "statusId": "s101",
+                        "priorityId": "p102",
+                        "createdAt": 1590999730348,
+                        "dueDate": "2021-03-09T22:00:00.000Z"
+                    },
+                    {
+                        "id": "t102",
+                        "title": "Understanding what kind of accommodation fit's everyone",
+                        "members": [
+                            {
+                                "_id": "u108",
+                                "fullname": "Robert Wilford",
+                                "imgUrl": "https://randomuser.me/api/portraits/men/28.jpg"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Tuki Norma",
+                            "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
+                        },
+                        "comments": [
+                            {
+                                "id": "c103",
+                                "update": "Created a git depository and sent invitation",
+                                "file": "http://some-img",
+                                "createdAt": 154514,
+                                "byMember": {
+                                    "_id": "u103",
+                                    "fullname": "Tuki Norma",
+                                    "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
+                                }
+                            },
+                            {
+                                "id": "c105",
+                                "update": "Uploaded the first commit with the folders structure",
+                                "file": "http://some-img",
+                                "createdAt": 154574,
+                                "byMember": {
+                                    "_id": "u105",
+                                    "fullname": "JSON De Parse",
+                                    "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
+                                }
+                            },
+                            {
+                                "id": "c102",
+                                "update": "Finished the initial wire-connection, all looks in good working order",
+                                "file": "http://some-img",
+                                "createdAt": 154574,
+                                "byMember": {
+                                    "_id": "u105",
+                                    "fullname": "JSON De Parse",
+                                    "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
+                                }
+                            }
+                        ],
+                        "statusId": "s103",
+                        "priorityId": "p101",
+                        "createdAt": 1590999730348,
+                        "dueDate": "2021-03-30T21:00:00.000Z"
+                    }
+                ],
+                "color": "rgb(232, 109, 248)"
+            },
+            {
                 "id": "g101",
                 "title": "Setting Dates and Booking Services",
                 "tasks": [
@@ -1734,144 +1872,7 @@ function _createBoard2(_id, title) {
                 ],
                 "color": "#8D0000"
             },
-            {
-                "id": "g102",
-                "title": "Buidling the Trips's frame",
-                "tasks": [
-                    {
-                        "id": "juVjr",
-                        "title": "Finding out who's interested  ",
-                        "members": [
-                            {
-                                "_id": "u106",
-                                "fullname": "Nancy Williams",
-                                "imgUrl": "https://randomuser.me/api/portraits/women/50.jpg"
-                            }
-                        ],
-                        "byMember": {},
-                        "comments": [],
-                        "statusId": "s101",
-                        "priorityId": "p101",
-                        "createdAt": 1616315457306,
-                        "dueDate": 1616315457306
-                    },
-                    {
-                        "id": "t101",
-                        "title": "Decide on a few activities and attractions wanted by everyone",
-                        "members": [
-                            {
-                                "_id": "u107",
-                                "fullname": "Dan Willer",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
-                            },
-                            {
-                                "_id": "u106",
-                                "fullname": "Nancy Williams",
-                                "imgUrl": "https://randomuser.me/api/portraits/women/50.jpg"
-                            },
-                            {
-                                "_id": "u108",
-                                "fullname": "Robert Wilford",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/28.jpg"
-                            },
-                            {
-                                "_id": "u109",
-                                "fullname": "Stephanie White",
-                                "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
-                            }
-                        ],
-                        "byMember": {
-                            "_id": "u101",
-                            "fullname": "Shraga Puk",
-                            "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                        },
-                        "comments": [
-                            {
-                                "id": "c101",
-                                "update": "Added the basic pages to the presentation",
-                                "file": "http://some-img",
-                                "createdAt": 154514,
-                                "byMember": {
-                                    "_id": "u101",
-                                    "fullname": "Shraga Puk",
-                                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                                }
-                            },
-                            {
-                                "id": "c102",
-                                "update": "Fixed the layout of the current Highlights page",
-                                "file": "http://some-img",
-                                "createdAt": 154574,
-                                "byMember": {
-                                    "_id": "u102",
-                                    "fullname": "Datia Puk",
-                                    "imgUrl": "https://randomuser.me/api/portraits/women/14.jpg"
-                                }
-                            }
-                        ],
-                        "statusId": "s101",
-                        "priorityId": "p102",
-                        "createdAt": 1590999730348,
-                        "dueDate": "2021-03-09T22:00:00.000Z"
-                    },
-                    {
-                        "id": "t102",
-                        "title": "Understanding what kind of accommodation fit's everyone",
-                        "members": [
-                            {
-                                "_id": "u108",
-                                "fullname": "Robert Wilford",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/28.jpg"
-                            }
-                        ],
-                        "byMember": {
-                            "_id": "u103",
-                            "fullname": "Tuki Norma",
-                            "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                        },
-                        "comments": [
-                            {
-                                "id": "c103",
-                                "update": "Created a git depository and sent invitation",
-                                "file": "http://some-img",
-                                "createdAt": 154514,
-                                "byMember": {
-                                    "_id": "u103",
-                                    "fullname": "Tuki Norma",
-                                    "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                                }
-                            },
-                            {
-                                "id": "c105",
-                                "update": "Uploaded the first commit with the folders structure",
-                                "file": "http://some-img",
-                                "createdAt": 154574,
-                                "byMember": {
-                                    "_id": "u105",
-                                    "fullname": "JSON De Parse",
-                                    "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                                }
-                            },
-                            {
-                                "id": "c102",
-                                "update": "Finished the initial wire-connection, all looks in good working order",
-                                "file": "http://some-img",
-                                "createdAt": 154574,
-                                "byMember": {
-                                    "_id": "u105",
-                                    "fullname": "JSON De Parse",
-                                    "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                                }
-                            }
-                        ],
-                        "statusId": "s103",
-                        "priorityId": "p101",
-                        "createdAt": 1590999730348,
-                        "dueDate": "2021-03-30T21:00:00.000Z"
-                    }
-                ],
-                "color": "rgb(232, 109, 248)"
-            },
+           
             {
                 "id": "g103",
                 "title": "Finale Arrangement Before We Go",
