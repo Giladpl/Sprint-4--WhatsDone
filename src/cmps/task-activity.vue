@@ -5,7 +5,7 @@
       :key="activity.id"
     >
       <div class="activity flex-between">
-        <div class="activity-time">{{currentDate | moment("from", "now")}}</div>
+        <div class="activity-time">{{activity.createdAt}}</div>
         <el-avatar
           class="activity-avatar"
           :src="activity.byMember.imgUrl"
@@ -18,6 +18,9 @@
 </template>
 
 <script>
+
+import moment from 'moment';
+
 export default {
   props: {
     activities: {
@@ -27,15 +30,12 @@ export default {
   },
   data() {
     return {
-      currentDate: '1616315467737'
+      
     }
   },
   methods: {
-    createdAtForDiaplay() {
-      // return this.$moment(1616313904857, 'YYYYMMDD').fromNow()
-      return this.$moment("1616315467737", "YYYYMMDD").fromNow()
-      //    return this.$moment('1616313904857', "YYYYMMDD").fromNow();  
-      // return moment(activity.createdAt, "YYYYMMDD").fromNow();
+    createdAtForDiaplay(timestamp) {
+      return moment(timestamp, "YYYYMMDD").fromNow();
     }
   }
 }

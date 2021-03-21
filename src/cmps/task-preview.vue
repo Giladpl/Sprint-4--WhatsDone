@@ -168,8 +168,6 @@ export default {
       this.$emit("removeTask", this.task.id);
     },
     updateDueDate(date) {
-      console.log(date);
-
       this.$emit("updateDueDate", { date, taskId: this.task.id });
     },
 
