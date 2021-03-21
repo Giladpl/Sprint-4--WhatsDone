@@ -14,7 +14,7 @@
         >
           <i class="el-icon-delete"></i>
         </div>
-        <form 
+        <form
           @submit.prevent="updateTaskTitle"
           @change.prevent="updateTaskTitle"
         >
@@ -77,9 +77,9 @@
       </div>
       <div class="date-picker-container">
         <el-date-picker
-          v-if="currDueDate"
+          v-if="dueDateToEdit"
           class="date-picker"
-          v-model="currDueDate"
+          v-model="dueDateToEdit"
           @change="updateDueDate"
           type="date"
           size="small"
@@ -155,6 +155,8 @@ export default {
       isTaskPrioritiesShown: false,
       isTaskDetails: false,
       isTitleEditable: false,
+      dueDateToEdit: null,
+      titleToEdit: null,
 
     };
   },
@@ -167,7 +169,7 @@ export default {
     },
     updateDueDate(date) {
       console.log(date);
-      
+
       this.$emit("updateDueDate", { date, taskId: this.task.id });
     },
 
@@ -214,6 +216,7 @@ export default {
     },
     updateTaskTitle() {
       this.isTitleEditable = !this.isTitleEditable
+      this.$refs.inputTask.blur()
       this.$emit('updateTaskTitle', { updatedTitle: this.titleToEdit, taskId: this.task.id });
     },
     closeTaskDetails() {
@@ -233,14 +236,19 @@ export default {
       );
       return priority;
     },
-    titleToEdit(){
-      return this.task.title
+  },
+  watch: {
+    task: {
+      deep: true,
+      handler() {
+        this.dueDateToEdit = this.task.dueDate
+        this.titleToEdit = this.task.title
+      },
     },
-    currDueDate(){
-      
-      
-      return this.task.dueDate
-    }
+  },
+  created() {
+    this.dueDateToEdit = this.task.dueDate
+    this.titleToEdit = this.task.title
   },
   components: {
     taskMembers,
