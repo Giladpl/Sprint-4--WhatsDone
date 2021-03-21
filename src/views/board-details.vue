@@ -172,7 +172,7 @@ export default {
       this.boardToEdit.activities.push(activity);
     },
     removeTask({ taskId, groupId }) {
-      this.$confirm('This will permanently delete the file. Continue?', 'Warning', {
+      this.$confirm('This will permanently delete the task. Continue?', 'Warning', {
         confirmButtonText: 'OK',
         cancelButtonText: 'Cancel',
         type: 'warning'
@@ -189,7 +189,7 @@ export default {
         .catch(() => console.log('Could not remove task'))
     },
     removeGroup({ groupId }) {
-      this.$confirm('This will permanently delete the file. Continue?', 'Warning', {
+      this.$confirm('This will permanently delete the group. Continue?', 'Warning', {
         confirmButtonText: 'OK',
         cancelButtonText: 'Cancel',
         type: 'warning'
