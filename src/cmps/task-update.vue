@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     addUpdate() {
-      console.log("addUpdate");
+      this.$emit('addUpdate', this.updateToEdit);
     },
   },
 };

@@ -28,10 +28,6 @@ export default {
       required: true
     },
   },
-  data() {
-    return {
-    }
-  },
   filters: {
     moment(timestamp) {
       return moment(timestamp).fromNow();
