@@ -41,6 +41,7 @@
       :task="task"
       :activities="activities"
       @closeTaskDetails="closeTaskDetails"
+      @addUpdate="addUpdate"
     />
     <div class="task-right-container">
       <div
@@ -220,6 +221,9 @@ export default {
     closeTaskDetails() {
       this.isTaskDetails = !this.isTaskDetails;
     },
+    addUpdate(comment) {
+      this.$emit('addUpdate', { comment, taskId: this.task.id });
+    }
   },
   computed: {
     getStatusById() {

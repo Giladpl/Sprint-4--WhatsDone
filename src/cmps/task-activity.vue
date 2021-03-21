@@ -18,7 +18,6 @@
 </template>
 
 <script>
-
 var moment = require('moment');
 
 export default {
@@ -27,10 +26,6 @@ export default {
       type: Array,
       required: true
     },
-  },
-  data() {
-    return {
-    }
   },
   filters: {
     moment(timestamp) {

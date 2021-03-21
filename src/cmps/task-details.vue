@@ -6,7 +6,7 @@
       <span @click="onUpdate">Updates</span>
       <span @click="onActivity">Activity Log</span>
     </div>
-    <task-update v-if="isUpdate" :comments="task.comments" />
+    <task-update v-if="isUpdate" :comments="task.comments" @addUpdate="addUpdate"/>
     <task-activity v-if="isActivity" :activities="setTaskActivity" />
   </section>
 </template>
@@ -48,6 +48,9 @@ export default {
     onClose() {
       this.$emit("closeTaskDetails");
     },
+    addUpdate(comment) {
+      this.$emit('addUpdate', comment);
+    }
   },
   computed: {
     setTaskActivity() {
