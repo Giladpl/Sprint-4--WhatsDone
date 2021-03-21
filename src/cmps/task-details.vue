@@ -47,6 +47,7 @@ export default {
     },
     onClose() {
       this.$emit("closeTaskDetails");
+      this.$emit('toggleMainScreen')
     },
     addUpdate(comment) {
       this.$emit('addUpdate', comment);

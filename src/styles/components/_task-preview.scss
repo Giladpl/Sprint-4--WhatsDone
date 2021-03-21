@@ -11,6 +11,10 @@
     font-size: .8125rem;
     justify-content: space-between;
 
+    .btn-chat{
+        cursor: pointer;
+    }
+
     &:hover {
         background-color: #E6E9EF;
 

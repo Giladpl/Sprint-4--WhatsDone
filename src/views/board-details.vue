@@ -1,5 +1,9 @@
 <template>
-  <section v-if="boardToEdit" class="board-details">
+  <section
+    v-if="boardToEdit"
+    class="board-details"
+  >
+    <div :class="classObjectScreen"></div>
     <app-header :boards="boards" />
     <div class="details-wrapper">
       <div class="board-static-header">
@@ -11,10 +15,16 @@
             v-model="boardToEdit.title"
           />
           <div class="board-btns flex-between">
-            <board-member-avatar :board="board" :members="board.members" />
+            <board-member-avatar
+              :board="board"
+              :members="board.members"
+            />
             <div>Activity</div>
             <div>
-              <el-button class="add-btn" size="mini">+Add to board</el-button>
+              <el-button
+                class="add-btn"
+                size="mini"
+              >+Add to board</el-button>
             </div>
             <div class="more-btn"><i class="el-icon-more"></i></div>
           </div>
@@ -27,8 +37,14 @@
             v-model="boardToEdit.description"
           />
         </div>
-        <div class="created-by" @click="openUserProfile">
-          <router-link class="router-link" to="/profile">
+        <div
+          class="created-by"
+          @click="openUserProfile"
+        >
+          <router-link
+            class="router-link"
+            to="/profile"
+          >
             Created By: {{ board.createdBy.fullname }}
           </router-link>
         </div>
@@ -37,8 +53,7 @@
             @click="toggleAddViewMenu"
             class="add-view-btn"
             size="small"
-            >+ Add View</el-button
-          >
+          >+ Add View</el-button>
         </div>
         <div
           v-click-outside="toggleAddViewMenu"
@@ -71,10 +86,12 @@
         class="btn-add-group"
         type="primary"
         size="small"
-        >Add Group</el-button
-      >
+      >Add Group</el-button>
       <ul class="clean-list">
-        <li v-for="group in board.groups" :key="group._id">
+        <li
+          v-for="group in board.groups"
+          :key="group._id"
+        >
           <group
             :group="group"
             :statuses="board.statuses"
@@ -98,6 +115,7 @@
             @updateTaskTitle="updateTaskTitle"
             @updateTasksOrder="updateTasksOrder"
             @addUpdate="addUpdate"
+            @toggleMainScreen="toggleMainScreen"
           />
         </li>
       </ul>
@@ -123,6 +141,7 @@ export default {
       board: null,
       boardToEdit: null,
       isAddViewMenu: false,
+      isMainScreen: false,
     };
   },
   methods: {
@@ -409,6 +428,9 @@ export default {
         console.log('cannot add update', err);
       }
     },
+    toggleMainScreen() {
+      this.isMainScreen = !this.isMainScreen;
+    }
   },
   computed: {
     loggedinUser() {
@@ -417,9 +439,15 @@ export default {
     boards() {
       return this.$store.getters.boards;
     },
+    classObjectScreen() {
+      return {
+        'main-screen': this.isMainScreen,
+        'main-screen-hidden': !this.isMainScreen
+      }
+    }
   },
   watch: {
-    '$route.params.boardId'(){
+    '$route.params.boardId'() {
       this.loadBoard()
     }
   },
