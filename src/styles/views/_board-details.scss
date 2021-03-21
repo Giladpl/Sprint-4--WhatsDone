@@ -19,6 +19,7 @@
         
 
         .board-top-row{
+            height: 70px;
             padding-top: 20px;  
             padding-bottom: 10px;  
 
@@ -29,25 +30,30 @@
     
             .board-btns {
                 > * {
-                    height: 100%;
                     cursor: pointer;
                     border-radius: 4px;
-    
+                    padding: 0 10px;
+                    height: 100%;
+
                     &:hover {
                         background-color: $clr4;
                     }
                 }
-    
-                > *:not(:last-child) {
-                    padding: 0 10px;
-                }
-    
-                > *:last-child {
-                    padding-left: 10px;
+
+                // > *:not(:last-child) {
+                //     width: 100px;
+                // }
+
+                .add-btn {
+                    color:#0085ff;
+                    border-color: #0085ff;
+
+                    &:hover {
+                        background-color: $clr4;
+                    }
                 }
             }
         }
-
     
         .board-description-input {
             min-width: 400px;

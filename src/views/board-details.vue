@@ -20,7 +20,7 @@
             />
             <div>Activity</div>
             <div>
-              <el-button size="mini">+Add to board</el-button>
+              <el-button class="add-btn" size="mini">+Add to board</el-button>
             </div>
             <div class="more-btn"><i class="el-icon-more"></i></div>
           </div>
