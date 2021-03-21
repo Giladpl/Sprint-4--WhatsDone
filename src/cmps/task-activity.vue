@@ -5,7 +5,7 @@
       :key="activity.id"
     >
       <div class="activity flex-between">
-        <div class="activity-time">{{activity.createdAt}}</div>
+        <div class="activity-time">{{activity.createdAt | moment}}</div>
         <el-avatar
           class="activity-avatar"
           :src="activity.byMember.imgUrl"
@@ -19,7 +19,7 @@
 
 <script>
 
-import moment from 'moment';
+var moment = require('moment');
 
 export default {
   props: {
@@ -30,12 +30,12 @@ export default {
   },
   data() {
     return {
-      
     }
   },
-  methods: {
-    createdAtForDiaplay(timestamp) {
-      return moment(timestamp, "YYYYMMDD").fromNow();
+  filters: {
+    moment: 
+    function(timestamp) {
+      return moment(timestamp).fromNow();
     }
   }
 }
