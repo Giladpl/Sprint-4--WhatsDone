@@ -5,7 +5,11 @@
       :key="activity.id"
     >
       <div class="activity flex-between">
+<<<<<<< HEAD
         <div class="activity-time">{{(activity.createdAt)}}</div>
+=======
+        <div class="activity-time">{{activity.createdAt | moment}}</div>
+>>>>>>> 74b0e590ecdf710b29becedc9c0cfbf2097dda21
         <el-avatar
           class="activity-avatar"
           :src="activity.byMember.imgUrl"
@@ -19,7 +23,11 @@
 
 <script>
 
+<<<<<<< HEAD
 // import moment from 'moment';
+=======
+var moment = require('moment');
+>>>>>>> 74b0e590ecdf710b29becedc9c0cfbf2097dda21
 
 export default {
   props: {
@@ -32,9 +40,15 @@ export default {
     return {
     }
   },
+<<<<<<< HEAD
   methods: {
     createdAtForDiaplay(timestamp) {
       return moment(timestamp, 'YYYY-MM-DD').fromNow();
+=======
+  filters: {
+    moment(timestamp) {
+      return moment(timestamp).fromNow();
+>>>>>>> 74b0e590ecdf710b29becedc9c0cfbf2097dda21
     }
   }
 }

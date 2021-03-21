@@ -5,7 +5,7 @@
         <router-link to="/">
           <i><img class="logo" src="@/assets/icons/increase.svg"/></i>
         </router-link>
-        <i class="header-icon el-icon-s-grid"></i>
+        <i class="header-icon el-icon-s-grid" @click="isBoardNavbarShown = !isBoardNavbarShown"></i>
         <i class="header-icon el-icon-bell"></i>
       </div>
       <div class="bottom-header flex">
@@ -17,7 +17,7 @@
         </router-link>
       </div>
     </div>
-    <!-- <div class="secondary-header flex" /> -->
+    <div class="secondary-header flex" v-if="isBoardNavbarShown" />
   </section>
 </template>
 
@@ -27,6 +27,7 @@ export default {
   data() {
     return {
       loggedInUser: null,
+      isBoardNavbarShown: false,
     };
   },
   created() {
