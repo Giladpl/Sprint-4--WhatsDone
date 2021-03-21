@@ -55,9 +55,9 @@
     }
     
     .secondary-header {
-        transition: 0.3s;
-        box-shadow: 0 1px 2px 0 rgba(159, 159, 160, 0.3), 0 1px 3px 1px rgba(149, 152, 153, 0.15);
         background-color: $clr5;
+        transition: width 0.3s;
+        box-shadow: 0 1px 2px 0 rgba(159, 159, 160, 0.3), 0 1px 3px 1px rgba(149, 152, 153, 0.15);
         border-top-left-radius: 10px;
         border-left: black 1px solid;
         height: 100%;
@@ -66,12 +66,12 @@
         align-items: center;
     }
     .header-not-shown {
-        width: 0;
         background-color: $clr5;
+        width: 0;
     }
     .header-shown {
-        width: 15.937rem;
         background-color: #fff;
+        width: 15.937rem;
     }
     
 }
