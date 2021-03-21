@@ -5,7 +5,7 @@
         <router-link to="/">
           <i><img class="logo" src="@/assets/icons/increase.svg"/></i>
         </router-link>
-        <i class="header-icon el-icon-s-grid" @click="isBoardNavbarShown = !isBoardNavbarShown"></i>
+        <i class="header-icon el-icon-s-grid" @click="toggleBoardNavbar"></i>
         <i class="header-icon el-icon-bell"></i>
       </div>
       <div class="bottom-header flex">
@@ -17,7 +17,7 @@
         </router-link>
       </div>
     </div>
-    <div class="secondary-header flex" v-if="isBoardNavbarShown" />
+    <div class="secondary-header flex" :class="{'header-shown': isBoardNavbarShown, 'header-not-shown': !isBoardNavbarShown}" />
   </section>
 </template>
 
@@ -29,6 +29,11 @@ export default {
       loggedInUser: null,
       isBoardNavbarShown: false,
     };
+  },
+  methods: {
+    toggleBoardNavbar() {
+      this.isBoardNavbarShown = !this.isBoardNavbarShown;
+    }
   },
   created() {
     // this.loggedInUser = this.$store.getters.loggedInUser;
