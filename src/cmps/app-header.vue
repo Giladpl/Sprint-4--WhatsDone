@@ -22,7 +22,9 @@
       <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list">
         <li><h4 class="change-board">Change Board</h4></li>
         <li class="mini-board-prev" v-for="board in boards" :key="board._id">
+         <router-link :to="'/board/' + board._id">
          <h4>{{ board.title }}</h4>
+         </router-link>
         </li>
       </ul>
     </div>
