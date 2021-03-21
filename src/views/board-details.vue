@@ -370,7 +370,7 @@ export default {
       }
     },
     async updateTasksOrder({ tasks, groupId }) {
-      try {        
+      try {
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId);
         currGroup.tasks.splice(0, currGroup.tasks.length, ...tasks)
         await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
