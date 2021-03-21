@@ -10,6 +10,8 @@ import './styles/styles.scss';
 
 Vue.use(ElementUI, { locale });
 
+// Vue.use(require("moment"));
+
 Vue.config.productionTip = false
 
 new Vue({

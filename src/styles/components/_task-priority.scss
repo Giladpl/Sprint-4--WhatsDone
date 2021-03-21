@@ -25,11 +25,15 @@
 
         &:hover {
             background-color: $clr4;
+
+            i{
+                opacity:1;
+            }
         }
 
         i {
             font-size: 13px;
-        }
+            opacity: 0; }
     }
 
     .input-add-priority {

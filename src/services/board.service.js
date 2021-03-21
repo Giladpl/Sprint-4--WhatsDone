@@ -119,7 +119,7 @@ function _createBoard1(_id, title) {
         },
         {
             "id": "s104",
-            "title": "Waiting for review",
+            "title": "Pending review",
             "color": "#0085ff"
         },
         {

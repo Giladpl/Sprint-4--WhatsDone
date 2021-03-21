@@ -65,7 +65,8 @@ export default {
   },
   methods: {
     addUpdate() {
-      console.log("addUpdate");
+      this.updateToEdit.createdAt = Date.now();
+      this.$emit('addUpdate', this.updateToEdit);
     },
   },
 };

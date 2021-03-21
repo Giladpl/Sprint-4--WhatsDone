@@ -100,6 +100,7 @@
             @removePriority="removePriority"
             @updateTaskTitle="updateTaskTitle"
             @updateTasksOrder="updateTasksOrder"
+            @addUpdate="addUpdate"
           />
         </li>
       </ul>
@@ -370,13 +371,37 @@ export default {
       }
     },
     async updateTasksOrder({ tasks, groupId }) {
-      try {        
+      try {
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId);
         currGroup.tasks.splice(0, currGroup.tasks.length, ...tasks)
         await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log(err);
+      }
+    },
+    async addUpdate(update) {
+      try {
+        if (this.loggedinUser) {
+          update.comment.byMember = {
+            _id: this.loggedinUser._id,
+            fullname: this.loggedinUser.fullname,
+            imgUrl: this.loggedinUser.imgUrl
+          }
+        } else {
+          update.comment.byMember = {
+            _id: 'guest',
+            fullname: 'Guest',
+            imgUrl: ''
+          }
+        }
+        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === update.groupId);
+        const idx = currGroup.tasks.findIndex(task => task.id === update.taskId);
+        currGroup.tasks[idx].comments.push(update.comment);
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        this.loadBoard();
+      } catch (err) {
+        console.log('cannot add update', err);
       }
     }
   },
