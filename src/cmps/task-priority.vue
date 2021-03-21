@@ -54,7 +54,7 @@ export default {
     },
     computed: {
         renderPriorities() {
-            console.log(this.priorities);
+            // console.log(this.priorities);
             return this.priorities.filter(priority => priority.id !== 'pNew');
         }
     },

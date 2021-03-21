@@ -33,8 +33,7 @@ export default {
     }
   },
   filters: {
-    moment: 
-    function(timestamp) {
+    moment(timestamp) {
       return moment(timestamp).fromNow();
     }
   }
