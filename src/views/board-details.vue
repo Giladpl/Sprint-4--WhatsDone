@@ -171,28 +171,36 @@ export default {
       }
       this.boardToEdit.activities.push(activity);
     },
-    async removeTask({ taskId, groupId }) {
-      try {
-        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId);
-        const idx = currGroup.tasks.findIndex((task) => task.id === taskId);
-        const currTask = currGroup.tasks.find((task) => task.id === taskId);
-        this.addActivity('Remove task', currTask);
-        currGroup.tasks.splice(idx, 1);
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
-        this.loadBoard();
-      } catch (err) {
-        console.log('cannot remove task', err);
-      }
+    removeTask({ taskId, groupId }) {
+      this.$confirm('This will permanently delete the file. Continue?', 'Warning', {
+        confirmButtonText: 'OK',
+        cancelButtonText: 'Cancel',
+        type: 'warning'
+      })
+        .then(() => {
+          const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId);
+          const idx = currGroup.tasks.findIndex((task) => task.id === taskId);
+          const currTask = currGroup.tasks.find((task) => task.id === taskId);
+          this.addActivity('Remove task', currTask);
+          currGroup.tasks.splice(idx, 1);
+          this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        })
+        .then(() => this.loadBoard())
+        .catch(() => console.log('Could not remove task'))
     },
-    async removeGroup({ groupId }) {
-      try {
-        const groupIdx = this.boardToEdit.groups.findIndex(group => group.id === groupId);
-        this.boardToEdit.groups.splice(groupIdx, 1);
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
-        this.loadBoard();
-      } catch (err) {
-        console.log('cannot remove group', err);
-      }
+    removeGroup({ groupId }) {
+      this.$confirm('This will permanently delete the file. Continue?', 'Warning', {
+        confirmButtonText: 'OK',
+        cancelButtonText: 'Cancel',
+        type: 'warning'
+      })
+        .then(() => {
+          const groupIdx = this.boardToEdit.groups.findIndex(group => group.id === groupId);
+          this.boardToEdit.groups.splice(groupIdx, 1);
+          this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        })
+        .then(() => this.loadBoard())
+        .catch(() => console.log('Could not remove group'))
     },
     async changeGroupColor(groupUpdate) {
       try {

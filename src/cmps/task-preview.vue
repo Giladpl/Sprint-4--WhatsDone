@@ -166,7 +166,7 @@ export default {
       // console.log("onTask");
     },
     removeTask() {
-      this.$emit("removeTask", this.task.id);
+        this.$emit("removeTask", this.task.id)
     },
     updateDueDate(date) {
       this.$emit("updateDueDate", { date, taskId: this.task.id });
@@ -225,7 +225,7 @@ export default {
       this.$emit('addUpdate', { comment, taskId: this.task.id });
     }
   },
-  computed: {
+computed: {
     getStatusById() {
       const [status] = this.statuses.filter(
         (status) => status.id === this.task.statusId
