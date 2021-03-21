@@ -45,6 +45,11 @@
                 display: flex;
                 align-items: center;
                 margin-right: 10px;
+                cursor: pointer;
+              
+                svg:hover{
+                    opacity: 0.6;	             
+                 }
             }
 
             .group-title-input {
