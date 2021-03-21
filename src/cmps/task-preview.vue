@@ -48,18 +48,6 @@
         @click="toggleTaskMembers"
       >
         <task-members-container :task="task" />
-        <!-- <ul class="members clean-list">
-          <li
-            v-for="member in task.members"
-            :key="member._id"
-            class="miniUser"
-          >
-            <el-avatar
-              size="small"
-              :src="member.imgUrl"
-            ></el-avatar>
-          </li>
-        </ul> -->
         <task-members
           v-click-outside="toggleTaskMembers"
           @removeMemberFromTask="removeMemberFromTask"
@@ -162,12 +150,10 @@ export default {
   },
   data() {
     return {
-      currDueDate: null,
       isTaskMemebersShown: false,
       isTaskStatusesShown: false,
       isTaskPrioritiesShown: false,
       isTaskDetails: false,
-      titleToEdit: null,
       isTitleEditable: false,
 
     };
@@ -245,10 +231,12 @@ export default {
       );
       return priority;
     },
-  },
-  created() {
-    this.currDueDate = this.task.dueDate;
-    this.titleToEdit = this.task.title;
+    titleToEdit(){
+      return this.task.title
+    },
+    currDueDate(){
+      return this.task.dueDate
+    }
   },
   components: {
     taskMembers,
