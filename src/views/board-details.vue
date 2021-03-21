@@ -177,7 +177,7 @@ export default {
         const currTask = currGroup.tasks.find((task) => task.id === taskId);
         this.addActivity('Remove task', currTask);
         currGroup.tasks.splice(idx, 1);
-        await this.$store.dispatch({type: 'saveBoard',board: this.boardToEdit});
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log('cannot remove task', err);
@@ -187,7 +187,7 @@ export default {
       try {
         const groupIdx = this.boardToEdit.groups.findIndex(group => group.id === groupId);
         this.boardToEdit.groups.splice(groupIdx, 1);
-        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log('cannot remove group', err);
@@ -197,7 +197,7 @@ export default {
       try {
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupUpdate.groupId);
         currGroup.color = groupUpdate.chosenColor;
-        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log('cannot update group color', err);
@@ -206,16 +206,16 @@ export default {
     async updateBoardTitle(ev) {
       this.boardToEdit.title = ev.target.value;
       try {
-        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot update board title',err);
+        console.log('cannot update board title', err);
       }
     },
     async updateBoardDescription(ev) {
       this.boardToEdit.description = ev.target.value;
       try {
-        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log('cannot update board description', err);
@@ -225,7 +225,7 @@ export default {
       try {
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupUpdate.groupId);
         currGroup.title = groupUpdate.title;
-        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log('cannot update group title', err);
@@ -238,7 +238,7 @@ export default {
         taskToAdd.title = taskTitle;
         currGroup.tasks.push(taskToAdd);
         this.addActivity('Add task', taskToAdd);
-        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log(err);
@@ -248,7 +248,7 @@ export default {
       try {
         const groupToAdd = boardService.getEmptyGroup();
         this.boardToEdit.groups.push(groupToAdd);
-        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log('cannot add group', err);
@@ -259,7 +259,7 @@ export default {
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === update.groupId);
         const idx = currGroup.tasks.findIndex(task => task.id === update.taskId);
         currGroup.tasks[idx].dueDate = update.date;
-        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log('cannot update due date', err);
@@ -363,17 +363,17 @@ export default {
         const taskIdx = currGroup.tasks.findIndex(task => task.id === taskId);
         this.addActivity('Update task title', currGroup.tasks[taskIdx]);
         currGroup.tasks[taskIdx].title = updatedTitle
-        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log('cannot update task', err);
       }
     },
     async updateTasksOrder({ tasks, groupId }) {
-      try {
+      try {        
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId);
         currGroup.tasks.splice(0, currGroup.tasks.length, ...tasks)
-        await this.$store.dispatch({type: 'saveBoard', board: this.boardToEdit});
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log(err);
