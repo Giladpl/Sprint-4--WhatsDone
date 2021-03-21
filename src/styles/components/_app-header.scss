@@ -50,10 +50,13 @@
         i {
             font-size: 25px;
             color: white;
-        }  
+            cursor: pointer;
+        }
+          
     }
 
     .secondary-header {
+        transition: 0.3s;
         height: 100%;
         width: 3.125rem;
         -webkit-border-start: 1px solid hsla(0, 0%, 100%, 0.2);
