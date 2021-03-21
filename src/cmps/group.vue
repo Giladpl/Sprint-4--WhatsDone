@@ -75,6 +75,7 @@
           @removePriority="removePriority"
           @updateTaksTitle="updateTaskTitle"
           @updateTaskTitle="updateTaskTitle"
+          @addUpdate="addUpdate"
         />
       </li>
     </draggable>
