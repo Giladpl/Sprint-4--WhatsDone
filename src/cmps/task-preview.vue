@@ -14,7 +14,7 @@
         >
           <i class="el-icon-delete"></i>
         </div>
-        <form
+        <form class="task-input-form"
           @submit.prevent="updateTaskTitle"
           @change.prevent="updateTaskTitle"
         >

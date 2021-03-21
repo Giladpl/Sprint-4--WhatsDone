@@ -70,6 +70,10 @@
             border: none;
             width: 100%;
             background-color: $clr2;
+
+            &:hover {
+                background-color: $clr4;
+            }
         }
         .el-icon-delete{
             margin-right: 5px;
