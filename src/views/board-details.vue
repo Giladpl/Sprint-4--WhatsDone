@@ -13,10 +13,17 @@
             @change="updateBoardTitle"
             v-model="boardToEdit.title"
           />
-          <board-member-avatar
-            :board="board"
-            :members="board.members"
-          />
+          <div class="board-btns flex-between">
+            <board-member-avatar
+              :board="board"
+              :members="board.members"
+            />
+            <div>Activity</div>
+            <div>
+              <el-button class="add-btn" size="mini">+Add to board</el-button>
+            </div>
+            <div class="more-btn"><i class="el-icon-more"></i></div>
+          </div>
         </div>
         <div>
           <input

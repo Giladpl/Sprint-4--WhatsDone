@@ -12,14 +12,47 @@
         .board-title-input,
         .board-description-input {
             border: 1px dashed transparent;
-            padding: 3px 7px 3px 0;
             background-color: inherit;
             color: $clr3;
             font-size: 17px;
         }
+        
 
-        .board-title-input {
-            font-size: 25px;
+        .board-top-row{
+            height: 70px;
+            padding-top: 20px;  
+            padding-bottom: 10px;  
+
+            .board-title-input {
+                font-size: 25px;
+                width: 100%;
+            }
+    
+            .board-btns {
+                > * {
+                    cursor: pointer;
+                    border-radius: 4px;
+                    padding: 0 10px;
+                    height: 100%;
+
+                    &:hover {
+                        background-color: $clr4;
+                    }
+                }
+
+                // > *:not(:last-child) {
+                //     width: 100px;
+                // }
+
+                .add-btn {
+                    color:#0085ff;
+                    border-color: #0085ff;
+
+                    &:hover {
+                        background-color: $clr4;
+                    }
+                }
+            }
         }
     
         .board-description-input {
@@ -63,10 +96,6 @@
                 }
             }
         }
-    }
-
-    .board-top-row{
-        height: 70px;    
     }
 
     .add-view-card{
