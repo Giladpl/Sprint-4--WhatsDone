@@ -12,7 +12,7 @@
         display: flex;
         align-items: center;
     }
-    
+
     .main-content {
         grid-column: 1;
         grid-row: 2 / 3;
@@ -23,6 +23,12 @@
         > * {
             padding: 0 2rem;
         }
+    }
+
+    span {
+        color: $clr5;
+        font-weight: 600;
+        font-style: italic;
     }
 
     .logo {
@@ -36,7 +42,7 @@
         border: 1px solid $clr2;
         border-radius: 4px;
         color: $clr2;
-        
+
         &:hover {
             color: $clr5;
             background-color: $clr2;
@@ -47,5 +53,4 @@
             color: $clr2;
         }
     }
-    
 }
