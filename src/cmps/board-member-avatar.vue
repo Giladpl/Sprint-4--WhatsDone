@@ -9,13 +9,13 @@
       class="miniUser"
     >
       <el-avatar
-        size="medium"
+        size="small"
         :src="member.imgUrl"
       ></el-avatar>
     </li>
     <el-avatar v-if="restOfMembersAvatar > 0"
       class="rest-of-members-avatar"
-      size="medium"
+      size="small"
     >+{{restOfMembersAvatar}}</el-avatar>
   </ul>
 </template>
