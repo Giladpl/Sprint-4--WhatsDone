@@ -1,7 +1,7 @@
 import { asyncStorageService } from './async-storage.service.js'
 import { storageService } from './storage.service.js'
 import { utilService } from './util.service.js'
-// import {httpService} from './http.service.js'
+import {httpService} from './http.service.js'
 
 const KEY = 'boardsDB';
 
@@ -36,7 +36,7 @@ function save(board) {
     // if (board._id) {
     //     return httpService.put(`board/${board._id}`, board)
     // } else {
-    //     return httpService.post(`toy/`, board)
+    //     return httpService.post(`board/`, board)
     // }
     const savedBoard = (board._id) ? asyncStorageService.put(KEY, board) : asyncStorageService.post(KEY, board)
     return savedBoard;
@@ -44,11 +44,16 @@ function save(board) {
 
 function getEmptyBoard() {
     return {
-        name,
-        price,
-        type,
+        title: 'New board',
+        description: 'Add description',
         createdAt: Date.now(),
-        inStock: true
+        imgUrl: null,
+        createdBy: {},
+        statuses: [],
+        priorities: [],
+        members: [],
+        groups: [],
+        activities: []
     }
 }
 
@@ -81,8 +86,7 @@ function _createBoards() {
     if (!boards || !boards.length) {
         boards = [
             _createBoard1('b101', 'Software Development'),
-            _createBoard2('b102', 'Trip Plannig'),
-            // _createBoard('b103', 'board3'),
+            _createBoard2('b102', 'Trip Plannig')
         ]
         storageService.store(KEY, boards)
     }
