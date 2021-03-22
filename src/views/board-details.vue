@@ -1,8 +1,8 @@
 <template>
-  <section v-if="boardToEdit" class="board-details" :style="isFixed" :class="{'no-brdr-radius' : isBrdrRadius}">
+  <section v-if="boardToEdit" class="board-details" :style="isFixed">
     <div :class="classObjectScreen"></div>
     <app-header :boards="boards" @brdrRadiusChange="changeBrderRadius" />
-    <div class="details-wrapper">
+    <div class="details-wrapper" :class="{'no-brdr-radius' : isBrdrRadius}">
       <div class="board-static-header">
         <div class="board-top-row flex-between">
           <input class="board-title-input" type="text" @change="updateBoardTitle" v-model="boardToEdit.title" />
@@ -100,7 +100,7 @@ export default {
       boardToEdit: null,
       isAddViewMenu: false,
       isMainScreen: false,
-      isBrdrRadius: true,
+      isBrdrRadius: false,
     };
   },
   methods: {
@@ -516,10 +516,8 @@ export default {
         console.log(err);
       }
     },
-    changeBrderRadius(bool) {
-      console.log('bool:', bool);
-      if (bool) this.isBrdrRadius = false;
-      this.isBrdrRadius = true;
+    changeBrderRadius() {
+      this.isBrdrRadius = !this.isBrdrRadius;
     },
   },
   computed: {
