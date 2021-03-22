@@ -1,5 +1,5 @@
 <template>
-  <section
+  <sectionthis.isMainScreen
     v-if="boardToEdit"
     class="board-details"
     :style="isFixed"
@@ -130,7 +130,7 @@
         <!-- </ul> -->
       </draggable>
     </div>
-  </section>
+  </sectionthis.isMainScreen>
 </template>
 
 <script>

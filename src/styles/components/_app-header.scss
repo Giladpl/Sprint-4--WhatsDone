@@ -37,6 +37,9 @@
             .header-avatar {
                 cursor: pointer;
                 border: 2px solid white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .exit {
