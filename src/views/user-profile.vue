@@ -19,17 +19,17 @@
       <div v-if="!isGuest" class="bottom">
         <div class="user-boards">
           <h2>My boards</h2>
-          <h3>Board 1</h3>
-          <h3>Board 2</h3>
-          <h3>Board 3</h3>
+          <div v-for="board in boards" :key="board._id">
+            <h4>{{board.title}}</h4>
+          </div>
         </div>
         <div class="user-tasks">
           <h2>My Tasks</h2>
-          <h3>Task 1</h3>
-          <h3>Task 2</h3>
-          <h3>Task 3</h3>
+          <div v-for="task in tasks" :key="task.id">
+            <h4>{{task.title}}</h4>
+          </div>
         </div>
-        <div class="user-details">
+        <!-- <div class="user-details">
           <el-avatar
             class="usr-profile-avatar"
             size="large"
@@ -44,7 +44,7 @@
             <i class="el-icon-message"></i>
             <h3><span>email:</span> guestus@gmail.com</h3>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -63,7 +63,17 @@ export default {
   },
   computed: {
     boards() {
-      return this.$store.getters.boards;
+      let allBoards = this.$store.getters.boards;
+      return allBoards.filter(board => board.createdBy._id === this.loggedInUser._id)
+    },
+    tasks() {
+      let userTasks = []
+      let allBoards = this.$store.getters.boards;
+      allBoards.forEach(board => {
+        let tasksBoard = board.tasks.filter(task => task.byMember._id === this.loggedInUser._id)
+        userTasks.push(tasksBoard)
+      });
+      return userTasks;
     },
     loggedInUser() {
       let user = this.$store.getters.loggedInUser;
