@@ -1,5 +1,5 @@
 import {asyncStorageService} from './async-storage.service.js'
-// import { httpService } from './http.service.js';
+import { httpService } from './http.service.js';
 
 export const userService = {
     login,
@@ -12,7 +12,7 @@ export const userService = {
     getLoggedInUser
 }
 
-window.userService = userService
+// window.userService = userService
 // Note: due to async, must run one by one...
 // userService.signup({fullname: 'Puki Norma', username: 'user1', password:'123',score: 100, isAdmin: false})
 // userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 100, isAdmin: true})

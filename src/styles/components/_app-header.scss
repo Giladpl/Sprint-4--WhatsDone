@@ -56,7 +56,7 @@
             cursor: pointer;
         }
     }
-    
+
     .secondary-header {
         background-color: $clr5;
         transition: 0.3s;
@@ -87,10 +87,12 @@
     .header-not-shown {
         background-color: $clr5;
         width: 0;
+
     }
     .header-shown {
         background-color: #fff;
         width: 15.937rem;
+        // backface-visibility: hidden;
+
     }
-    
 }
