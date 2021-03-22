@@ -7,7 +7,8 @@
           @click="toggleGroupEdit"
         >
 
-          <svg class="down-arrow-regular"
+          <svg
+            class="down-arrow-regular"
             :fill="group.color"
             viewBox="0 0 512 512"
           >
@@ -230,7 +231,7 @@ export default {
     },
     toggleMainScreen() {
       this.$emit('toggleMainScreen')
-    }
+    },
   },
   watch: {
     group: {
