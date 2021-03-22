@@ -36,10 +36,15 @@
         v-click-outside="toggleBoardNavbar"
       >
         <li>
-          <i class="el-icon-circle-plus-outline add-board"></i>
+          <i class="el-icon-circle-plus-outline"></i>
         </li>
         <li>
-          <i><img class="sidebar-board-prev img" > </i>
+          <i><img class="sidebar-board-prev img" src="@/assets/icons/filter.svg"></i>
+        </li>
+        <li>
+        <li class="flex">
+          <i class="sidebar-board-prev el-icon-search"></i>
+          <el-input class="board-search" placeholder="\e778" />
         </li>
         <li>
           <h4 class="change-board">Change Board</h4>
