@@ -1,5 +1,5 @@
 <template>
-  <section v-if="boardToEdit" class="board-details" :class="{'no-brdr-radius' : changeBrderRadius = true}">
+  <section v-if="boardToEdit" class="board-details" :class="{'no-brdr-radius' : isBrdrRadius}">
     <div :class="classObjectScreen"></div>
     <app-header :boards="boards" @brdrRadiusChange="changeBrderRadius" />
     <div class="details-wrapper">
@@ -100,6 +100,7 @@ export default {
       boardToEdit: null,
       isAddViewMenu: false,
       isMainScreen: false,
+      isBrdrRadius: true,
     };
   },
   methods: {
@@ -515,6 +516,11 @@ export default {
         console.log(err);
       }
     },
+    changeBrderRadius(bool) {
+      console.log('bool:', bool);
+      if (bool) this.isBrdrRadius = false;
+      this.isBrdrRadius = true;
+    },
   },
   computed: {
     loggedinUser() {
@@ -528,10 +534,6 @@ export default {
         "main-screen": this.isMainScreen,
         "main-screen-hidden": !this.isMainScreen,
       };
-    },
-    changeBrderRadius(bool) {
-      if (bool) return false;
-      return true;
     },
   },
   watch: {
