@@ -10,7 +10,7 @@
       </div>
       <div class="bottom-header flex">
         <router-link to="/profile">
-          <el-avatar class="header-avatar" size="medium">G</el-avatar>
+          <el-avatar class="header-avatar" size="medium" :src="loggedInUser.imgUrl"></el-avatar>
         </router-link>
         <router-link to="/">
           <i><img class="exit" src="@/assets/icons/exit.svg" /></i>
@@ -44,20 +44,34 @@ export default {
   },
   data() {
     return {
-      loggedInUser: null,
       isBoardNavbarShown: false,
       board: null,
     };
   },
   methods: {
     toggleBoardNavbar() {
-        this.isBoardNavbarShown = !this.isBoardNavbarShown;
-        this.$emit("brdrRadiusChange");
+      this.isBoardNavbarShown = !this.isBoardNavbarShown;
+      this.$emit("brdrRadiusChange");
     },
+  },
+  computed: {
+    loggedInUser() {
+      let user = this.$store.getters.loggedInUser;
+      if (!user) {
+        user = {
+          _id: 'guest',
+          fullname: 'Guest',
+          imgUrl: 'G'
+        }
+      }
+      return user;
+    }
   },
   created() {
     // this.loggedInUser = this.$store.getters.loggedInUser;
   },
-  components: { boardList },
+  components: { 
+    boardList 
+  }
 };
 </script>
