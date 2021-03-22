@@ -27,7 +27,7 @@
 				</div>
 				<div class="form-container sign-up-container">
 					<form @submit.prevent="doSignup">
-						<h2>Sign Up</h2>
+						<h1>Sign Up</h1>
 						<div>{{msg}}</div>
 						<input
 							type="text"
