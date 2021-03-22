@@ -1,61 +1,73 @@
 <template>
-	<section class="login">
-		<p>{{ msg }}</p>
-		<div v-if="loggedinUser">
-			<h3>
-				Loggedin User:
-				{{ loggedinUser.username }}
-				<!-- <router-link :to="'/user/' + loggedinUser._id">User details</router-link> -->
+	<section class="login-page">
+		<div class="container" :class="{'right-panel-active' : isPanel}">
+			<div v-if="loggedinUser">
+				<h3>Loggedin User:</h3>
+				<h3>{{ loggedinUser.fullname }}</h3>
+				<router-link to="/profile">User details</router-link>
 				<button @click="doLogout">Logout</button>
-			</h3>
+			</div>
+			<div v-else>
+				<div class="form-container login-container">
+					<form @submit.prevent="doLogin">
+						<h1>Login</h1>
+						<div>{{msg}}</div>
+						<input
+							type="text"
+							v-model="loginCred.username"
+							placeholder="User name"
+						/>
+						<input
+							type="text"
+							v-model="loginCred.password"
+							placeholder="Password"
+						/>
+						<button>Login</button>
+					</form>
+				</div>
+				<div class="form-container sign-up-container">
+					<form @submit.prevent="doSignup">
+						<h1>Sign Up</h1>
+						<div>{{msg}}</div>
+						<input
+							type="text"
+							v-model="signupCred.fullname"
+							placeholder="Your full name"
+						/>
+						<input
+							type="text"
+							v-model="signupCred.password"
+							placeholder="Password"
+						/>
+						<input
+							type="text"
+							v-model="signupCred.username"
+							placeholder="Username"
+						/>
+						<input
+							type="text"
+							v-model="signupCred.imgUrl"
+							placeholder="Add img"
+						/>
+						<button>Signup</button>
+					</form>
+				</div>
+				<div class="overlay-container">
+					<div class="overlay">
+						<div class="overlay-panel overlay-left">
+							<h1>Welcome Back!</h1>
+							<p>To keep connected with us please login with your personal info</p>
+							<button class="ghost" id="signIn" @click="onLogin">Login</button>
+						</div>
+						<div class="overlay-panel overlay-right">
+							<h1>Hello, Friend!</h1>
+							<p>Enter your personal details and start journey with us</p>
+							<button class="ghost" id="signUp" @click="onSignUp">Sign Up</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div v-else>
-			<h2>Login</h2>
-			<form @submit.prevent="doLogin">
-				<input
-					type="text"
-					v-model="loginCred.username"
-					placeholder="User name"
-				/>
-				<input
-					type="text"
-					v-model="loginCred.password"
-					placeholder="Password"
-				/>
-				<button>Login</button>
-			</form>
-
-			<form @submit.prevent="doSignup">
-				<h2>Signup</h2>
-				<input
-					type="text"
-					v-model="signupCred.fullname"
-					placeholder="Your full name"
-				/>
-				<input
-					type="text"
-					v-model="signupCred.password"
-					placeholder="Password"
-				/>
-				<input
-					type="text"
-					v-model="signupCred.username"
-					placeholder="Username"
-				/>
-				<div>Add img</div>
-				<button>Signup</button>
-			</form>
-		</div>
-		<!-- <hr />
-		<details v-if="loggedinUser && loggedinUser.isAdmin">
-			<summary>Admin Section</summary>
-			<ul>
-				<li v-for="user in users" :key="user._id">
-					<pre>{{ user }}</pre>
-					<button @click="removeUser(user._id)">x</button>
-				</li>
-			</ul>
-		</details> -->
 	</section>
 </template>
 
@@ -67,6 +79,7 @@ export default {
 			msg: '',
 			loginCred: { username: 'shraga', password: '1234' },
 			signupCred: { username: '', password: '', fullname: '', imgUrl: '' },
+			isPanel: false
 		};
 	},
 	computed: {
@@ -77,10 +90,13 @@ export default {
 			return this.$store.getters.loggedInUser;
 		},
 	},
-	created() {
-		this.loadUsers();
-	},
 	methods: {
+		onSignUp() {
+			this.isPanel = true
+		},
+		onLogin() {
+			this.isPanel = false
+		},
 		async doLogin() {
 			if (!this.loginCred.username) {
 				this.msg = 'Please enter username/password';
@@ -120,6 +136,9 @@ export default {
 				this.msg = 'Failed to remove user';
 			}
 		},
+	},
+	created() {
+		// this.loadUsers();
 	},
 };
 </script>

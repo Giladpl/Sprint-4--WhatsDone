@@ -17,19 +17,19 @@
         <el-button class="signup-btn"><router-link class="router-link" to="/login">Sign Up</router-link></el-button>
       </div>
       <div v-if="!isGuest" class="bottom">
-        <div class="user-boards">
+        <div v-if="userBoards" class="user-boards">
           <h2>My boards</h2>
-          <h3>Board 1</h3>
-          <h3>Board 2</h3>
-          <h3>Board 3</h3>
+          <div v-for="board in userBoards" :key="board._id">
+            <h4>{{board.title}}</h4>
+          </div>
         </div>
-        <div class="user-tasks">
+        <div v-if="userTasks" class="user-tasks">
           <h2>My Tasks</h2>
-          <h3>Task 1</h3>
-          <h3>Task 2</h3>
-          <h3>Task 3</h3>
+          <div v-for="task in userTasks" :key="task.id">
+            <h4>{{task.title}}</h4>
+          </div>
         </div>
-        <div class="user-details">
+        <!-- <div class="user-details">
           <el-avatar
             class="usr-profile-avatar"
             size="large"
@@ -44,7 +44,7 @@
             <i class="el-icon-message"></i>
             <h3><span>email:</span> guestus@gmail.com</h3>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -58,12 +58,23 @@ export default {
   name: "user-profile",
   data() {
     return {
-      isGuest: false
+      isGuest: false,
+      boards: null,
     };
   },
   computed: {
-    boards() {
-      return this.$store.getters.boards;
+    userBoards() {
+      return this.boards.filter(board => board.createdBy._id === this.loggedInUser._id) 
+    },
+    userTasks() {
+      let tasks = []
+      this.boards.forEach(board => {
+        board.groups.forEach(group => {
+          let miniTasks = group.tasks.filter(task => task.byMember._id === this.loggedInUser._id);
+          tasks.push(...miniTasks);
+        })
+      });
+      return tasks;
     },
     loggedInUser() {
       let user = this.$store.getters.loggedInUser;
@@ -77,6 +88,9 @@ export default {
       }
       return user;
     }
+  },
+  created() {
+    this.boards = this.$store.getters.boards
   }
 };
 </script>
