@@ -34,9 +34,13 @@
         justify-content: center
     }
 
-    .date-picker-container,
-    .members-container {
+    .date-picker-container{
         padding: 0 10px;
+    }
+    
+    .members-container{
+        padding: 0 10px;
+        padding-top: 4px;
     }
 
     .status,
@@ -97,6 +101,7 @@
         display: flex;
         align-items: center;
         cursor: pointer;
+        line-height: 1;
     }
 
     .status,

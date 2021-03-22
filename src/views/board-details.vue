@@ -1,55 +1,118 @@
 <template>
-  <section v-if="boardToEdit" class="board-details" :style="isFixed">
+  <section
+    v-if="boardToEdit"
+    class="board-details"
+    :style="isFixed"
+  >
     <div :class="classObjectScreen"></div>
-    <app-header :boards="boards" @brdrRadiusChange="changeBrderRadius" />
-    <div class="details-wrapper" :class="{'no-brdr-radius' : isBrdrRadius}">
+    <app-header
+      :boards="boards"
+      @brdrRadiusChange="changeBrderRadius"
+    />
+    <div
+      class="details-wrapper"
+      :class="{'no-brdr-radius' : isBrdrRadius}"
+    >
       <div class="board-static-header">
         <div class="board-top-row flex-between">
-          <input class="board-title-input" type="text" @change="updateBoardTitle" v-model="boardToEdit.title" />
+          <input
+            class="board-title-input"
+            type="text"
+            @change="updateBoardTitle"
+            v-model="boardToEdit.title"
+          />
           <div class="board-btns flex-between">
-            <board-member-avatar :board="board" :members="board.members" />
+            <board-member-avatar
+              :board="board"
+              :members="board.members"
+            />
             <div>Activity</div>
             <div>
-              <el-button class="add-btn" size="mini">+Add to board</el-button>
+              <el-button
+                class="add-btn"
+                size="mini"
+              >+Add to board</el-button>
             </div>
             <div class="more-btn"><i class="el-icon-more"></i></div>
           </div>
         </div>
         <div>
-          <input class="board-description-input" type="text" @change="updateBoardDescription" v-model="boardToEdit.description" />
+          <input
+            class="board-description-input"
+            type="text"
+            @change="updateBoardDescription"
+            v-model="boardToEdit.description"
+          />
         </div>
-        <div class="created-by" @click="openUserProfile">
-          <router-link class="router-link" to="/profile">
+        <div
+          class="created-by"
+          @click="openUserProfile"
+        >
+          <router-link
+            class="router-link"
+            to="/profile"
+          >
             Created By: {{ board.createdBy.fullname }}
           </router-link>
         </div>
         <div class="add-view-row-container">
-          <el-button @click="toggleAddViewMenu" class="add-view-btn" size="small">
+          <el-button
+            @click="toggleAddViewMenu"
+            class="add-view-btn"
+            size="small"
+          >
             + Add View
-            </el-button>
+          </el-button>
         </div>
-        <div v-click-outside="toggleAddViewMenu" v-if="isAddViewMenu" class="add-view-card">
+        <div
+          v-click-outside="toggleAddViewMenu"
+          v-if="isAddViewMenu"
+          class="add-view-card"
+        >
           <div>
-            <img class="btn-add-view-menu" src="@/assets/icons/table.svg" />
+            <img
+              class="btn-add-view-menu"
+              src="@/assets/icons/table.svg"
+            />
             Table
           </div>
           <div>
-            <img class="btn-add-view-menu" src="@/assets/icons/calendar.svg" />
+            <img
+              class="btn-add-view-menu"
+              src="@/assets/icons/calendar.svg"
+            />
             Calander
           </div>
           <div>
-            <img class="btn-add-view-menu" src="@/assets/icons/chart.svg" />
+            <img
+              class="btn-add-view-menu"
+              src="@/assets/icons/chart.svg"
+            />
             Chart
           </div>
         </div>
       </div>
 
-      <el-button @click="addGroup" class="btn-add-group" type="primary" size="small">
+      <el-button
+        @click="addGroup"
+        class="btn-add-group"
+        type="primary"
+        size="small"
+      >
         Add Group
-        </el-button>
+      </el-button>
 
-      <draggable class="clean-list" v-model="board.groups" @start="drag = true" @end="drag = false" @change="changedByDrag">
-        <li v-for="group in board.groups" :key="group._id">
+      <draggable
+        class="clean-list"
+        v-model="board.groups"
+        @start="drag = true"
+        @end="drag = false"
+        @change="changedByDrag"
+      >
+        <li
+          v-for="group in board.groups"
+          :key="group._id"
+        >
           <group
             :group="group"
             :statuses="board.statuses"
@@ -78,7 +141,7 @@
         </li>
       </draggable>
     </div>
-  </section>
+    </section>
 </template>
 
 <script>

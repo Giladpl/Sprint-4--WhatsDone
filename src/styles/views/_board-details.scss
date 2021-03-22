@@ -2,6 +2,14 @@
     background-color: $clr5;
     min-height: 100vh;
     display: flex;
+    width: 100%;
+
+    .details-wrapper {
+        width: 100%;
+        padding: 0 30px;
+        border-top-left-radius: 10px;
+        background-color: #fff;
+    }
     
     .main-screen {
         z-index: 150;
@@ -148,12 +156,7 @@
         margin: 10px 0;
     }
 
-    .details-wrapper {
-        width: 100%;
-        padding: 0 30px;
-        border-top-left-radius: 10px;
-        background-color: #fff;
-    }
+   
 
     .no-brdr-radius {
         border-top-left-radius: 0;
