@@ -10,7 +10,13 @@
     text-align: left;
     padding: 5px 20px;
     box-shadow: 0 0 10px 0 $clr5;
-    // overflow-y: scroll;
+    overflow-y: auto;
+    
+    .close-btn{
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
 
     .task-title {
         font-size: 20px;

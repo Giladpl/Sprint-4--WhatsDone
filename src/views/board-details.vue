@@ -1,5 +1,5 @@
 <template>
-  <section v-if="boardToEdit" class="board-details" :class="{'no-brdr-radius' : isBrdrRadius}">
+  <section v-if="boardToEdit" class="board-details" :style="isFixed" :class="{'no-brdr-radius' : isBrdrRadius}">
     <div :class="classObjectScreen"></div>
     <app-header :boards="boards" @brdrRadiusChange="changeBrderRadius" />
     <div class="details-wrapper">
@@ -531,10 +531,13 @@ export default {
     },
     classObjectScreen() {
       return {
-        "main-screen": this.isMainScreen,
-        "main-screen-hidden": !this.isMainScreen,
-      };
+        'main-screen': this.isMainScreen,
+        'main-screen-hidden': !this.isMainScreen,
+      }
     },
+    isFixed() {
+      return this.isMainScreen ? 'position: fixed' : ''
+    }
   },
   watch: {
     "$route.params.boardId"() {
