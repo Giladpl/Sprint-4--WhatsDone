@@ -523,7 +523,7 @@ function _createBoard1() {
             "title": "Program Design",
             "tasks": [
                 {
-                    "id": "t101",
+                    "id": "t106",
                     "title": "Deciding of the Architecture to be used",
                     "members": [
                         {
@@ -572,7 +572,7 @@ function _createBoard1() {
                     "dueDate": "2021-05-04T21:00:00.000Z"
                 },
                 {
-                    "id": "t102",
+                    "id": "t107",
                     "title": "Deciding of the relevant framework to be used",
                     "members": [
                         {
@@ -647,7 +647,7 @@ function _createBoard1() {
                     "dueDate": "2021-04-11T21:00:00.000Z"
                 },
                 {
-                    "id": "t103",
+                    "id": "t108",
                     "title": "Initial planning of the desired user interface",
                     "members": [
                         {
@@ -702,7 +702,7 @@ function _createBoard1() {
                     "dueDate": "2021-04-03T21:00:00.000Z"
                 },
                 {
-                    "id": "t104",
+                    "id": "t109",
                     "title": "Defining the platforms the software should run on",
                     "members": [
                         {
@@ -767,7 +767,7 @@ function _createBoard1() {
                     "dueDate": "2021-04-01T21:00:00.000Z"
                 },
                 {
-                    "id": "t105",
+                    "id": "t110",
                     "title": "Understanding the desired flow of the program",
                     "members": [
                         {
@@ -834,7 +834,7 @@ function _createBoard1() {
             "title": "Software development",
             "tasks": [
                 {
-                    "id": "t101",
+                    "id": "t111",
                     "title": "Creation of prototype and receiving an approval",
                     "members": [
                         {
@@ -883,7 +883,7 @@ function _createBoard1() {
                     "dueDate": "2021-04-10T21:00:00.000Z"
                 },
                 {
-                    "id": "t102",
+                    "id": "t112",
                     "title": "Working on Pages and CMPS structure",
                     "members": [
                         {
@@ -948,7 +948,7 @@ function _createBoard1() {
                     "dueDate": "2021-03-26T21:00:00.000Z"
                 },
                 {
-                    "id": "t103",
+                    "id": "t113",
                     "title": "Creation of the main css layout",
                     "members": [
                         {
@@ -1025,7 +1025,7 @@ function _createBoard1() {
             "title": "Testing and Debugging",
             "tasks": [
                 {
-                    "id": "t101",
+                    "id": "t114",
                     "title": "Assigning QA team with Coding team to work together",
                     "members": [
                         {
@@ -1074,7 +1074,7 @@ function _createBoard1() {
                     "dueDate": "2021-03-30T21:00:00.000Z"
                 },
                 {
-                    "id": "t102",
+                    "id": "t115",
                     "title": "Mapping of where to use automated vs manual testings",
                     "members": [
                         {
@@ -1134,7 +1134,7 @@ function _createBoard1() {
                     "dueDate": "2021-03-29T21:00:00.000Z"
                 },
                 {
-                    "id": "t103",
+                    "id": "t116",
                     "title": "Commencing the testing/debugging cycle",
                     "members": [
                         {
@@ -1206,7 +1206,7 @@ function _createBoard1() {
             "title": "Deployment, Operation and Maintenance",
             "tasks": [
                 {
-                    "id": "t101",
+                    "id": "t117",
                     "title": "Initiating the deployment process, specifically to each relevant system",
                     "members": [
                         {
@@ -1250,7 +1250,7 @@ function _createBoard1() {
                     "dueDate": "2021-04-22T21:00:00.000Z"
                 },
                 {
-                    "id": "t102",
+                    "id": "t118",
                     "title": "Constant attention to logged-in reported bugs",
                     "members": [
                         {
@@ -1310,7 +1310,7 @@ function _createBoard1() {
                     "dueDate": "2021-03-31T21:00:00.000Z"
                 },
                 {
-                    "id": "t103",
+                    "id": "t119",
                     "title": "Resolving newly discovered bugs- either on the spot or by initiating a new development phase",
                     "members": [
                         {
@@ -1370,7 +1370,7 @@ function _createBoard1() {
                     "dueDate": "2021-03-28T21:00:00.000Z"
                 },
                 {
-                    "id": "t104",
+                    "id": "t120",
                     "title": "Continued development of additional newly features for future releases",
                     "members": [
                         {
@@ -1620,7 +1620,7 @@ function _createBoard2() {
                         "dueDate": 1616315457306
                     },
                     {
-                        "id": "t101",
+                        "id": "t121",
                         "title": "Decide on a few activities and attractions wanted by everyone",
                         "members": [
                             {
@@ -1679,7 +1679,7 @@ function _createBoard2() {
                         "dueDate": "2021-03-09T22:00:00.000Z"
                     },
                     {
-                        "id": "t102",
+                        "id": "t122",
                         "title": "Understanding what kind of accommodation fit's everyone",
                         "members": [
                             {
@@ -1741,7 +1741,7 @@ function _createBoard2() {
                 "title": "Setting Dates and Booking Services",
                 "tasks": [
                     {
-                        "id": "t104",
+                        "id": "t123",
                         "title": "Deciding on a  few dates possibilities",
                         "members": [
                             {
@@ -1801,7 +1801,7 @@ function _createBoard2() {
                         "dueDate": "2021-04-03T21:00:00.000Z"
                     },
                     {
-                        "id": "t105",
+                        "id": "t124",
                         "title": "Understanding what is the most available date for everyone",
                         "members": [
                             {
@@ -1856,7 +1856,7 @@ function _createBoard2() {
                         "dueDate": "2021-04-03T21:00:00.000Z"
                     },
                     {
-                        "id": "t101",
+                        "id": "t125",
                         "title": "Setting a destination and a finale date",
                         "members": [
                             {
@@ -1930,7 +1930,7 @@ function _createBoard2() {
                 "title": "Finale Arrangement Before We Go",
                 "tasks": [
                     {
-                        "id": "t101",
+                        "id": "t126",
                         "title": "Finding baby sitters and dog walkers",
                         "members": [
                             {
@@ -1974,7 +1974,7 @@ function _createBoard2() {
                         "dueDate": "2021-05-09T21:00:00.000Z"
                     },
                     {
-                        "id": "t102",
+                        "id": "t127",
                         "title": "Talking to the gardeners",
                         "members": [
                             {
@@ -2029,7 +2029,7 @@ function _createBoard2() {
                         "dueDate": "2021-05-19T21:00:00.000Z"
                     },
                     {
-                        "id": "t103",
+                        "id": "t128",
                         "title": "Arranging transportation to the airport",
                         "members": [
                             {
