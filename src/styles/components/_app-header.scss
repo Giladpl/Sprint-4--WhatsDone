@@ -75,13 +75,18 @@
             display: flex;
             flex-direction: column;
 
-            .el-icon-circle-plus-outline {
-                font-size: 18px;
-                color: black;
-                cursor: pointer;
-                margin-bottom: 16px;
-                margin-inline-start: 7px;
-                margin-right: 10px;
+            .add-board {
+                margin-top: 16px;
+
+                .el-icon-circle-plus-outline {
+                    font-size: 18px;
+                    color: black;
+                    cursor: pointer;
+                    margin-bottom: 16px;
+                    margin-inline-start: 7px;
+                    margin-right: 10px;
+            }
+
             }
             img {
                 width: 18px;
@@ -125,6 +130,10 @@
                     margin-top: 10px;
                 }
             }
+        }
+
+        .chosen-board {
+            background-color:#f944441a;
         }
     }
     .header-not-shown {

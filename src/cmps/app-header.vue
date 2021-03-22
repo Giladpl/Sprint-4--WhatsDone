@@ -21,23 +21,39 @@
         </router-link>
       </div>
     </div>
-    <div class="secondary-header flex" :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown,}">
+    <div
+      class="secondary-header flex"
+      :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}">
       <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list" v-click-outside="toggleBoardNavbar">
-        <li class="flex">
+        <li class="add-board flex">
           <i class="el-icon-circle-plus-outline"></i>
           Add
         </li>
         <li class="flex">
-          <i><img class="sidebar-board-prev img" src="@/assets/icons/filter.svg" /></i>
+          <i
+            ><img
+              class="sidebar-board-prev img"
+              src="@/assets/icons/filter.svg"
+          /></i>
           Filters
         </li>
         <li></li>
         <li class="flex">
-          <el-input class="board-search" placeholder="Search a board..." prefix-icon="el-icon-search" />        </li>
+          <el-input
+            class="board-search"
+            placeholder="Search a board..."
+            prefix-icon="el-icon-search"
+          />
+        </li>
         <li>
           <h4 class="change-board">Change Board</h4>
         </li>
-        <li class="mini-board-prev flex" v-for="board in boards" :key="board._id">
+        <li
+          class="mini-board-prev flex"
+          v-for="board in boards"
+          :key="board._id"
+          :class="{ 'chosen-board': isChosenBoard(board._id) }"
+        >
           <i class="el-icon-caret-right" />
           <router-link class="router-link" :to="'/board/' + board._id">
             <h4>{{ board.title }}</h4>
@@ -58,6 +74,10 @@ export default {
       type: Array,
       required: true,
     },
+    boardId: {
+      type: String,
+      required: true,
+    },
   },
   directives: {
     clickOutside: vClickOutside.directive,
@@ -72,6 +92,9 @@ export default {
     toggleBoardNavbar() {
       this.isBoardNavbarShown = !this.isBoardNavbarShown;
       this.$emit("brdrRadiusChange");
+    },
+    isChosenBoard(id) {
+      return this.boardId === id;
     },
   },
   computed: {

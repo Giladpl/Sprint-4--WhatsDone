@@ -5,10 +5,7 @@
     :style="isFixed"
   >
     <div :class="classObjectScreen"></div>
-    <app-header
-      :boards="boards"
-      @brdrRadiusChange="changeBrderRadius"
-    />
+    <app-header :boardId="board._id" :boards="boards" @brdrRadiusChange="changeBrderRadius" />
     <div
       class="details-wrapper"
       :class="{'no-brdr-radius' : isBrdrRadius}"
