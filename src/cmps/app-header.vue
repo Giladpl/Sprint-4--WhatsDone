@@ -3,27 +3,53 @@
     <div class="main-header flex">
       <div class="top-header flex">
         <router-link to="/">
-          <i><img class="logo" src="@/assets/icons/increase.svg" /></i>
+          <i><img
+              class="logo"
+              src="@/assets/icons/increase.svg"
+            /></i>
         </router-link>
-        <i class="header-icon el-icon-s-grid" @click="toggleBoardNavbar"></i>
+        <i
+          class="header-icon el-icon-s-grid"
+          @click="toggleBoardNavbar"
+        ></i>
         <i class="header-icon el-icon-bell"></i>
       </div>
       <div class="bottom-header flex">
         <router-link to="/profile">
-          <el-avatar class="header-avatar" size="medium">G</el-avatar>
+          <el-avatar
+            class="header-avatar"
+            size="medium"
+          >G</el-avatar>
         </router-link>
         <router-link to="/">
-          <i><img class="exit" src="@/assets/icons/exit.svg" /></i>
+          <i><img
+              class="exit"
+              src="@/assets/icons/exit.svg"
+            /></i>
         </router-link>
       </div>
     </div>
     <div
-      class="secondary-header flex" :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}"
+      class="secondary-header flex"
+      :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}"
     >
-      <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list">
-        <li><h4 class="change-board">Change Board</h4></li>
-        <li class="mini-board-prev" v-for="board in boards" :key="board._id">
-          <router-link class="router-link" :to="'/board/' + board._id">
+      <ul
+        v-if="isBoardNavbarShown"
+        class="sidebar-board-prev clean-list"
+        v-click-outside="toggleBoardNavbar"
+      >
+        <li>
+          <h4 class="change-board">Change Board</h4>
+        </li>
+        <li
+          class="mini-board-prev"
+          v-for="board in boards"
+          :key="board._id"
+        >
+          <router-link
+            class="router-link"
+            :to="'/board/' + board._id"
+          >
             <h4>{{ board.title }}</h4>
           </router-link>
         </li>
@@ -34,6 +60,7 @@
 
 <script>
 import boardList from "./board-list.vue";
+import vClickOutside from "v-click-outside";
 export default {
   name: "appHeader",
   props: {
@@ -41,6 +68,9 @@ export default {
       type: Array,
       required: true,
     },
+  },
+  directives: {
+    clickOutside: vClickOutside.directive,
   },
   data() {
     return {
@@ -51,8 +81,9 @@ export default {
   },
   methods: {
     toggleBoardNavbar() {
-        this.isBoardNavbarShown = !this.isBoardNavbarShown;
-        this.$emit("brdrRadiusChange");
+      this.isBoardNavbarShown = !this.isBoardNavbarShown;
+      this.$emit("brdrRadiusChange");
+
     },
   },
   created() {
