@@ -51,13 +51,8 @@ export default {
   },
   methods: {
     toggleBoardNavbar() {
-      if (this.isBoardNavbarShown) {
-        this.isBoardNavbarShown = false;
-        this.$emit("brdrRadiusChange", false);
-      } else {
-        this.isBoardNavbarShown = true;
-        this.$emit("brdrRadiusChange", true);
-      }
+        this.isBoardNavbarShown = !this.isBoardNavbarShown;
+        this.$emit("brdrRadiusChange");
     },
   },
   created() {
