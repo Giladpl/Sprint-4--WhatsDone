@@ -141,7 +141,7 @@
         </li>
       </draggable>
     </div>
-    </section>
+  </section>
 </template>
 
 <script>
@@ -301,7 +301,7 @@ export default {
       try {
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupUpdate.groupId);
         currGroup.title = groupUpdate.title;
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot update group title", err);
@@ -314,7 +314,7 @@ export default {
         taskToAdd.title = taskTitle;
         currGroup.tasks.push(taskToAdd);
         this.addActivity("Add task", taskToAdd);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log(err);
@@ -324,7 +324,7 @@ export default {
       try {
         const groupToAdd = boardService.getEmptyGroup();
         this.boardToEdit.groups.push(groupToAdd);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot add group", err);
@@ -335,7 +335,7 @@ export default {
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === update.groupId);
         const idx = currGroup.tasks.findIndex(task => task.id === update.taskId);
         currGroup.tasks[idx].dueDate = update.date;
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot update due date", err);
@@ -350,7 +350,7 @@ export default {
         const taskMembersShortcut = currTask.members;
         taskMembersShortcut.splice(memberToRemoveIdx, 1);
         this.addActivity("Remove member", currTask);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot remove member", err);
@@ -363,7 +363,7 @@ export default {
         const taskShortcut = this.boardToEdit.groups[currGroupIdx].tasks[currTaskIdx];
         taskShortcut.members.push(update.member);
         this.addActivity("Add member", taskShortcut);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot add member", err);
@@ -375,7 +375,7 @@ export default {
         const idx = currGroup.tasks.findIndex(task => task.id === update.taskId);
         currGroup.tasks[idx].statusId = update.statusId;
         this.addActivity("Update status", currGroup.tasks[idx]);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot update status", err);
@@ -385,7 +385,7 @@ export default {
       try {
         newStatus.id = utilService.makeId();
         this.boardToEdit.statuses.push(newStatus);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot add status", err);
@@ -395,7 +395,7 @@ export default {
       try {
         const statusIdx = this.boardToEdit.statuses.findIndex(status => status.id === statusId);
         this.boardToEdit.statuses.splice(statusIdx, 1);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot remove status", err);
@@ -407,7 +407,7 @@ export default {
         const idx = currGroup.tasks.findIndex(task => task.id === update.taskId);
         currGroup.tasks[idx].priorityId = update.priorityId;
         this.addActivity("Update priority", currGroup.tasks[idx]);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot update priority", err);
@@ -417,7 +417,7 @@ export default {
       try {
         newPriority.id = utilService.makeId();
         this.boardToEdit.priorities.push(newPriority);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot add priority", err);
@@ -427,7 +427,7 @@ export default {
       try {
         const priorityIdx = this.boardToEdit.priorities.findIndex(priority => priority.id === priorityId);
         this.boardToEdit.priorities.splice(priorityIdx, 1);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot remove priority", err);
@@ -439,7 +439,7 @@ export default {
         const taskIdx = currGroup.tasks.findIndex((task) => task.id === taskId);
         this.addActivity("Update task title", currGroup.tasks[taskIdx]);
         currGroup.tasks[taskIdx].title = updatedTitle;
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot update task", err);
@@ -449,7 +449,7 @@ export default {
       try {
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId);
         currGroup.tasks.splice(0, currGroup.tasks.length, ...tasks);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log(err);
@@ -473,7 +473,7 @@ export default {
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === update.groupId);
         const idx = currGroup.tasks.findIndex(task => task.id === update.taskId);
         currGroup.tasks[idx].comments.push(update.comment);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot add update", err);
@@ -482,7 +482,7 @@ export default {
     async changedByDrag() {
       try {
         this.boardToEdit.groups.splice(0, this.boardToEdit.groups.length, ...this.board.groups);
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log(err);
