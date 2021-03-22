@@ -209,9 +209,9 @@ export default {
         activity.byMember.fullname = this.loggedinUser.fullname;
         activity.byMember.imgUrl = this.loggedinUser.imgUrl;
       } else {
-        activity.byMember._id = "guest";
-        activity.byMember.fullname = "Guest";
-        activity.byMember.imgUrl = "";
+        activity.byMember._id = 'guest';
+        activity.byMember.fullname = 'Guest';
+        activity.byMember.imgUrl = 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png';
       }
       this.boardToEdit.activities.push(activity);
     },
@@ -465,9 +465,9 @@ export default {
           };
         } else {
           update.comment.byMember = {
-            _id: "guest",
-            fullname: "Guest",
-            imgUrl: "",
+            _id: 'guest',
+            fullname: 'Guest',
+            imgUrl: 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png',
           };
         }
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === update.groupId);
