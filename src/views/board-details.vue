@@ -2,6 +2,7 @@
   <section
     v-if="boardToEdit"
     class="board-details"
+    :style="isFixed"
   >
     <div :class="classObjectScreen"></div>
     <app-header :boards="boards" />
@@ -462,8 +463,11 @@ export default {
     classObjectScreen() {
       return {
         'main-screen': this.isMainScreen,
-        'main-screen-hidden': !this.isMainScreen
+        'main-screen-hidden': !this.isMainScreen,
       }
+    },
+    isFixed() {
+      return this.isMainScreen ? 'position: fixed' : ''
     }
   },
   watch: {
