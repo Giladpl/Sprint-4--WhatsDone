@@ -87,7 +87,15 @@
         type="primary"
         size="small"
       >Add Group</el-button>
-      <ul class="clean-list">
+
+      <draggable
+        class="clean-list"
+        v-model="board.groups"
+        @start="drag = true"
+        @end="drag = false"
+        @change="changedByDrag"
+      >
+        <!-- <ul class="clean-list"> -->
         <li
           v-for="group in board.groups"
           :key="group._id"
@@ -118,7 +126,8 @@
             @toggleMainScreen="toggleMainScreen"
           />
         </li>
-      </ul>
+        <!-- </ul> -->
+      </draggable>
     </div>
   </section>
 </template>
@@ -130,6 +139,8 @@ import appHeader from "@/cmps/app-header";
 import boardMemberAvatar from "@/cmps/board-member-avatar";
 import { utilService } from '../services/util.service.js';
 import vClickOutside from "v-click-outside";
+import draggable from "vuedraggable";
+
 
 
 export default {
@@ -430,7 +441,16 @@ export default {
     },
     toggleMainScreen() {
       this.isMainScreen = !this.isMainScreen;
-    }
+    },
+    async changedByDrag() {
+      try {
+        this.boardToEdit.groups.splice(0, this.boardToEdit.groups.length, ...this.board.groups)
+        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        this.loadBoard();
+      } catch (err) {
+        console.log(err);
+      }
+    },
   },
   computed: {
     loggedinUser() {
@@ -458,6 +478,7 @@ export default {
     group,
     appHeader,
     boardMemberAvatar,
+    draggable,
   },
 };
 </script>

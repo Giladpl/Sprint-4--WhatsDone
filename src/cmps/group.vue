@@ -7,7 +7,7 @@
           @click="toggleGroupEdit"
         >
 
-          <svg
+          <svg class="down-arrow-regular"
             :fill="group.color"
             viewBox="0 0 512 512"
           >
@@ -231,6 +231,14 @@ export default {
     toggleMainScreen() {
       this.$emit('toggleMainScreen')
     }
+  },
+  watch: {
+    group: {
+      deep: true,
+      handler() {
+        this.groupTitle = this.group.title;
+      },
+    },
   },
   created() {
     this.groupTitle = this.group.title;
