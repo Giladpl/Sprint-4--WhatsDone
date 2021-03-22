@@ -36,6 +36,12 @@
         v-click-outside="toggleBoardNavbar"
       >
         <li>
+          <i class="el-icon-circle-plus-outline add-board"></i>
+        </li>
+        <li>
+          <i><img class="sidebar-board-prev img" > </i>
+        </li>
+        <li>
           <h4 class="change-board">Change Board</h4>
         </li>
         <li
