@@ -1,5 +1,11 @@
 <template>
   <section class="task-members-list flex">
+      <el-input class="members-search"
+        @input="boardMembersToShow()"
+        ref="searchInput"
+        placeholder="Search for a name"
+        v-model="filterBy.name"
+      ></el-input>
     <ul class="clean-list">
       <li
         @click.stop="removeMemberFromTask(taskMember)"
@@ -7,7 +13,10 @@
         v-for="taskMember in taskMembers"
         :key="taskMember._id"
       >
-        <el-avatar size="small" :src="taskMember.imgUrl"></el-avatar>
+        <el-avatar
+          size="small"
+          :src="taskMember.imgUrl"
+        ></el-avatar>
         <p class="task-member-name">{{ taskMember.fullname }}</p>
         <i class="el-icon-minus"></i>
       </li>
@@ -22,7 +31,10 @@
         v-for="member in nonDuplicatedMembers"
         :key="member._id"
       >
-        <el-avatar size="small" :src="member.imgUrl"></el-avatar>
+        <el-avatar
+          size="small"
+          :src="member.imgUrl"
+        ></el-avatar>
         <p class="task-member-name">{{ member.fullname }}</p>
         <i class="el-icon-plus"></i>
       </li>
@@ -47,6 +59,9 @@ export default {
     return {
       taskMembersIds: [],
       nonDuplicatedMembers: [],
+      filterBy: {
+        name: null
+      }
     };
   },
   methods: {
@@ -63,6 +78,9 @@ export default {
       }, []);
       this.nonDuplicatedMembers = this.boardMembers.filter((member) => {
         if (!this.taskMembersIds.includes(member._id)) return member;
+      }).filter(member => {
+        const regex = new RegExp(this.filterBy.name, 'i');
+        return !this.filterBy.name || regex.test(member.fullname)
       });
     },
   },
@@ -70,19 +88,22 @@ export default {
   created() {
     this.boardMembersToShow();
   },
+  mounted() {
+    this.$refs.searchInput.focus();
+  },
   watch: {
-boardMembers: {
-  deep: true,
-  handler() {
-    this.boardMembersToShow();
-  }
-},
-taskMembers: {
-  deep: true,
-  handler() {
-    this.boardMembersToShow();
-  }
-}
+    boardMembers: {
+      deep: true,
+      handler() {
+        this.boardMembersToShow();
+      }
+    },
+    taskMembers: {
+      deep: true,
+      handler() {
+        this.boardMembersToShow();
+      }
+    }
   }
 };
 </script>

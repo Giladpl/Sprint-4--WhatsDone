@@ -227,7 +227,6 @@ export default {
       this.$emit('addUpdate', { comment, taskId: this.task.id });
     },
     toggleMainScreen() {
-
       this.$emit('toggleMainScreen')
     },
   },
