@@ -65,7 +65,7 @@ export default {
 	data() {
 		return {
 			msg: '',
-			loginCred: { username: 'puki', password: '1234' },
+			loginCred: { username: 'shraga', password: '1234' },
 			signupCred: { username: '', password: '', fullname: '', imgUrl: '' },
 		};
 	},
