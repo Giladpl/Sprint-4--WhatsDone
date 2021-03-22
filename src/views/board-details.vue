@@ -1,105 +1,55 @@
 <template>
-  <section
-    v-if="boardToEdit"
-    class="board-details"
-  >
+  <section v-if="boardToEdit" class="board-details" :class="{'no-brdr-radius' : changeBrderRadius = true}">
     <div :class="classObjectScreen"></div>
-    <app-header :boards="boards" />
+    <app-header :boards="boards" @brdrRadiusChange="changeBrderRadius" />
     <div class="details-wrapper">
       <div class="board-static-header">
         <div class="board-top-row flex-between">
-          <input
-            class="board-title-input"
-            type="text"
-            @change="updateBoardTitle"
-            v-model="boardToEdit.title"
-          />
+          <input class="board-title-input" type="text" @change="updateBoardTitle" v-model="boardToEdit.title" />
           <div class="board-btns flex-between">
-            <board-member-avatar
-              :board="board"
-              :members="board.members"
-            />
+            <board-member-avatar :board="board" :members="board.members" />
             <div>Activity</div>
             <div>
-              <el-button
-                class="add-btn"
-                size="mini"
-              >+Add to board</el-button>
+              <el-button class="add-btn" size="mini">+Add to board</el-button>
             </div>
             <div class="more-btn"><i class="el-icon-more"></i></div>
           </div>
         </div>
         <div>
-          <input
-            class="board-description-input"
-            type="text"
-            @change="updateBoardDescription"
-            v-model="boardToEdit.description"
-          />
+          <input class="board-description-input" type="text" @change="updateBoardDescription" v-model="boardToEdit.description" />
         </div>
-        <div
-          class="created-by"
-          @click="openUserProfile"
-        >
-          <router-link
-            class="router-link"
-            to="/profile"
-          >
+        <div class="created-by" @click="openUserProfile">
+          <router-link class="router-link" to="/profile">
             Created By: {{ board.createdBy.fullname }}
           </router-link>
         </div>
         <div class="add-view-row-container">
-          <el-button
-            @click="toggleAddViewMenu"
-            class="add-view-btn"
-            size="small"
-          >+ Add View</el-button>
+          <el-button @click="toggleAddViewMenu" class="add-view-btn" size="small">
+            + Add View
+            </el-button>
         </div>
-        <div
-          v-click-outside="toggleAddViewMenu"
-          v-if="isAddViewMenu"
-          class="add-view-card"
-        >
+        <div v-click-outside="toggleAddViewMenu" v-if="isAddViewMenu" class="add-view-card">
           <div>
-            <img
-              class="btn-add-view-menu"
-              src="@/assets/icons/table.svg"
-            />Table
+            <img class="btn-add-view-menu" src="@/assets/icons/table.svg" />
+            Table
           </div>
           <div>
-            <img
-              class="btn-add-view-menu"
-              src="@/assets/icons/calendar.svg"
-            />Calander
+            <img class="btn-add-view-menu" src="@/assets/icons/calendar.svg" />
+            Calander
           </div>
           <div>
-            <img
-              class="btn-add-view-menu"
-              src="@/assets/icons/chart.svg"
-            />Chart
+            <img class="btn-add-view-menu" src="@/assets/icons/chart.svg" />
+            Chart
           </div>
         </div>
       </div>
 
-      <el-button
-        @click="addGroup"
-        class="btn-add-group"
-        type="primary"
-        size="small"
-      >Add Group</el-button>
+      <el-button @click="addGroup" class="btn-add-group" type="primary" size="small">
+        Add Group
+        </el-button>
 
-      <draggable
-        class="clean-list"
-        v-model="board.groups"
-        @start="drag = true"
-        @end="drag = false"
-        @change="changedByDrag"
-      >
-        <!-- <ul class="clean-list"> -->
-        <li
-          v-for="group in board.groups"
-          :key="group._id"
-        >
+      <draggable class="clean-list" v-model="board.groups" @start="drag = true" @end="drag = false" @change="changedByDrag">
+        <li v-for="group in board.groups" :key="group._id">
           <group
             :group="group"
             :statuses="board.statuses"
@@ -126,7 +76,6 @@
             @toggleMainScreen="toggleMainScreen"
           />
         </li>
-        <!-- </ul> -->
       </draggable>
     </div>
   </section>
@@ -137,15 +86,13 @@ import { boardService } from "../services/board.service.js";
 import group from "@/cmps/group";
 import appHeader from "@/cmps/app-header";
 import boardMemberAvatar from "@/cmps/board-member-avatar";
-import { utilService } from '../services/util.service.js';
+import { utilService } from "../services/util.service.js";
 import vClickOutside from "v-click-outside";
 import draggable from "vuedraggable";
 
-
-
 export default {
   directives: {
-    clickOutside: vClickOutside.directive
+    clickOutside: vClickOutside.directive,
   },
   data() {
     return {
@@ -163,11 +110,11 @@ export default {
         this.board = board;
         this.boardToEdit = JSON.parse(JSON.stringify(board));
       } catch (err) {
-        console.log('cannot load board', err);
+        console.log("cannot load board", err);
       }
     },
     openUserProfile() {
-      console.log('open user profile');
+      console.log("open user profile");
     },
     toggleAddViewMenu() {
       this.isAddViewMenu = !this.isAddViewMenu;
@@ -178,103 +125,136 @@ export default {
         action,
         createdAt: Date.now(),
         byMember: {
-          _id: '',
-          fullname: '',
-          imgUrl: '',
+          _id: "",
+          fullname: "",
+          imgUrl: "",
         },
         task: {
           id: task.id,
           title: task.title,
         },
-      }
+      };
       if (this.loggedinUser) {
         activity.byMember._id = this.loggedinUser._id;
         activity.byMember.fullname = this.loggedinUser.fullname;
         activity.byMember.imgUrl = this.loggedinUser.imgUrl;
       } else {
-        activity.byMember._id = 'guest';
-        activity.byMember.fullname = 'Guest';
-        activity.byMember.imgUrl = '';
+        activity.byMember._id = "guest";
+        activity.byMember.fullname = "Guest";
+        activity.byMember.imgUrl = "";
       }
       this.boardToEdit.activities.push(activity);
     },
     removeTask({ taskId, groupId }) {
-      this.$confirm('This will permanently delete the task. Continue?', 'Warning', {
-        confirmButtonText: 'OK',
-        cancelButtonText: 'Cancel',
-        type: 'warning'
-      })
+      this.$confirm(
+        "This will permanently delete the task. Continue?",
+        "Warning",
+        {
+          confirmButtonText: "OK",
+          cancelButtonText: "Cancel",
+          type: "warning",
+        }
+      )
         .then(() => {
-          const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId);
+          const [currGroup] = this.boardToEdit.groups.filter(
+            (group) => group.id === groupId
+          );
           const idx = currGroup.tasks.findIndex((task) => task.id === taskId);
           const currTask = currGroup.tasks.find((task) => task.id === taskId);
-          this.addActivity('Remove task', currTask);
+          this.addActivity("Remove task", currTask);
           currGroup.tasks.splice(idx, 1);
-          this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+          this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         })
         .then(() => this.loadBoard())
-        .catch(() => console.log('Could not remove task'))
+        .catch(() => console.log("Could not remove task"));
     },
     removeGroup({ groupId }) {
-      this.$confirm('This will permanently delete the group. Continue?', 'Warning', {
-        confirmButtonText: 'OK',
-        cancelButtonText: 'Cancel',
-        type: 'warning'
-      })
+      this.$confirm(
+        "This will permanently delete the group. Continue?",
+        "Warning",
+        {
+          confirmButtonText: "OK",
+          cancelButtonText: "Cancel",
+          type: "warning",
+        }
+      )
         .then(() => {
-          const groupIdx = this.boardToEdit.groups.findIndex(group => group.id === groupId);
+          const groupIdx = this.boardToEdit.groups.findIndex(
+            (group) => group.id === groupId
+          );
           this.boardToEdit.groups.splice(groupIdx, 1);
-          this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+          this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         })
         .then(() => this.loadBoard())
-        .catch(() => console.log('Could not remove group'))
+        .catch(() => console.log("Could not remove group"));
     },
     async changeGroupColor(groupUpdate) {
       try {
-        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupUpdate.groupId);
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === groupUpdate.groupId
+        );
         currGroup.color = groupUpdate.chosenColor;
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot update group color', err);
+        console.log("cannot update group color", err);
       }
     },
     async updateBoardTitle(ev) {
       this.boardToEdit.title = ev.target.value;
       try {
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot update board title', err);
+        console.log("cannot update board title", err);
       }
     },
     async updateBoardDescription(ev) {
       this.boardToEdit.description = ev.target.value;
       try {
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot update board description', err);
+        console.log("cannot update board description", err);
       }
     },
     async updateGroupTitle(groupUpdate) {
       try {
-        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupUpdate.groupId);
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === groupUpdate.groupId
+        );
         currGroup.title = groupUpdate.title;
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot update group title', err);
+        console.log("cannot update group title", err);
       }
     },
     async addTask({ taskTitle, groupId }) {
       try {
-        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId);
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === groupId
+        );
         const taskToAdd = boardService.getEmptyTask();
         taskToAdd.title = taskTitle;
         currGroup.tasks.push(taskToAdd);
-        this.addActivity('Add task', taskToAdd);
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        this.addActivity("Add task", taskToAdd);
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
         console.log(err);
@@ -284,132 +264,202 @@ export default {
       try {
         const groupToAdd = boardService.getEmptyGroup();
         this.boardToEdit.groups.push(groupToAdd);
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot add group', err);
+        console.log("cannot add group", err);
       }
     },
     async updateDueDate(update) {
       try {
-        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === update.groupId);
-        const idx = currGroup.tasks.findIndex(task => task.id === update.taskId);
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === update.groupId
+        );
+        const idx = currGroup.tasks.findIndex(
+          (task) => task.id === update.taskId
+        );
         currGroup.tasks[idx].dueDate = update.date;
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot update due date', err);
+        console.log("cannot update due date", err);
       }
     },
     async removeMemberFromTask(update) {
       try {
-        const currGroupIdx = this.boardToEdit.groups.findIndex(group => group.id === update.groupId);
-        const currTaskIdx = this.boardToEdit.groups[currGroupIdx].tasks.findIndex(task => task.id === update.taskId);
-        const currTask = this.boardToEdit.groups[currGroupIdx].tasks[currTaskIdx];
-        const memberToRemoveIdx = currTask.members.findIndex(member => member._id === update.taskMember._id);
+        const currGroupIdx = this.boardToEdit.groups.findIndex(
+          (group) => group.id === update.groupId
+        );
+        const currTaskIdx = this.boardToEdit.groups[
+          currGroupIdx
+        ].tasks.findIndex((task) => task.id === update.taskId);
+        const currTask = this.boardToEdit.groups[currGroupIdx].tasks[
+          currTaskIdx
+        ];
+        const memberToRemoveIdx = currTask.members.findIndex(
+          (member) => member._id === update.taskMember._id
+        );
         const taskMembersShortcut = currTask.members;
         taskMembersShortcut.splice(memberToRemoveIdx, 1);
-        this.addActivity('Remove member', currTask);
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        this.addActivity("Remove member", currTask);
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot remove member', err);
+        console.log("cannot remove member", err);
       }
     },
     async addMemberToTask(update) {
       try {
-        const currGroupIdx = this.boardToEdit.groups.findIndex(group => group.id === update.groupId);
-        const currTaskIdx = this.boardToEdit.groups[currGroupIdx].tasks.findIndex(task => task.id === update.taskId);
-        const taskShortcut = this.boardToEdit.groups[currGroupIdx].tasks[currTaskIdx];
+        const currGroupIdx = this.boardToEdit.groups.findIndex(
+          (group) => group.id === update.groupId
+        );
+        const currTaskIdx = this.boardToEdit.groups[
+          currGroupIdx
+        ].tasks.findIndex((task) => task.id === update.taskId);
+        const taskShortcut = this.boardToEdit.groups[currGroupIdx].tasks[
+          currTaskIdx
+        ];
         taskShortcut.members.push(update.member);
-        this.addActivity('Add member', taskShortcut);
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        this.addActivity("Add member", taskShortcut);
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot add member', err);
+        console.log("cannot add member", err);
       }
     },
     async updateStatus(update) {
       try {
-        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === update.groupId);
-        const idx = currGroup.tasks.findIndex(task => task.id === update.taskId);
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === update.groupId
+        );
+        const idx = currGroup.tasks.findIndex(
+          (task) => task.id === update.taskId
+        );
         currGroup.tasks[idx].statusId = update.statusId;
-        this.addActivity('Update status', currGroup.tasks[idx]);
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        this.addActivity("Update status", currGroup.tasks[idx]);
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot update status', err);
+        console.log("cannot update status", err);
       }
     },
     async addStatus(newStatus) {
       try {
         newStatus.id = utilService.makeId();
         this.boardToEdit.statuses.push(newStatus);
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot add status', err);
+        console.log("cannot add status", err);
       }
     },
     async removeStatus(statusId) {
       try {
-        const statusIdx = this.boardToEdit.statuses.findIndex(status => status.id === statusId);
+        const statusIdx = this.boardToEdit.statuses.findIndex(
+          (status) => status.id === statusId
+        );
         this.boardToEdit.statuses.splice(statusIdx, 1);
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot remove status', err);
+        console.log("cannot remove status", err);
       }
     },
     async updatePriority(update) {
       try {
-        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === update.groupId);
-        const idx = currGroup.tasks.findIndex(task => task.id === update.taskId);
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === update.groupId
+        );
+        const idx = currGroup.tasks.findIndex(
+          (task) => task.id === update.taskId
+        );
         currGroup.tasks[idx].priorityId = update.priorityId;
-        this.addActivity('Update priority', currGroup.tasks[idx]);
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        this.addActivity("Update priority", currGroup.tasks[idx]);
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot update priority', err);
+        console.log("cannot update priority", err);
       }
     },
     async addPriority(newPriority) {
       try {
         newPriority.id = utilService.makeId();
         this.boardToEdit.priorities.push(newPriority);
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot add priority', err);
+        console.log("cannot add priority", err);
       }
     },
     async removePriority(priorityId) {
       try {
-        const priorityIdx = this.boardToEdit.priorities.findIndex(priority => priority.id === priorityId)
+        const priorityIdx = this.boardToEdit.priorities.findIndex(
+          (priority) => priority.id === priorityId
+        );
         this.boardToEdit.priorities.splice(priorityIdx, 1);
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot remove priority', err);
+        console.log("cannot remove priority", err);
       }
     },
     async updateTaskTitle({ updatedTitle, taskId, groupId }) {
       try {
-        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId);
-        const taskIdx = currGroup.tasks.findIndex(task => task.id === taskId);
-        this.addActivity('Update task title', currGroup.tasks[taskIdx]);
-        currGroup.tasks[taskIdx].title = updatedTitle
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === groupId
+        );
+        const taskIdx = currGroup.tasks.findIndex((task) => task.id === taskId);
+        this.addActivity("Update task title", currGroup.tasks[taskIdx]);
+        currGroup.tasks[taskIdx].title = updatedTitle;
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot update task', err);
+        console.log("cannot update task", err);
       }
     },
     async updateTasksOrder({ tasks, groupId }) {
       try {
-        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId);
-        currGroup.tasks.splice(0, currGroup.tasks.length, ...tasks)
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === groupId
+        );
+        currGroup.tasks.splice(0, currGroup.tasks.length, ...tasks);
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
         console.log(err);
@@ -421,22 +471,29 @@ export default {
           update.comment.byMember = {
             _id: this.loggedinUser._id,
             fullname: this.loggedinUser.fullname,
-            imgUrl: this.loggedinUser.imgUrl
-          }
+            imgUrl: this.loggedinUser.imgUrl,
+          };
         } else {
           update.comment.byMember = {
-            _id: 'guest',
-            fullname: 'Guest',
-            imgUrl: ''
-          }
+            _id: "guest",
+            fullname: "Guest",
+            imgUrl: "",
+          };
         }
-        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === update.groupId);
-        const idx = currGroup.tasks.findIndex(task => task.id === update.taskId);
+        const [currGroup] = this.boardToEdit.groups.filter(
+          (group) => group.id === update.groupId
+        );
+        const idx = currGroup.tasks.findIndex(
+          (task) => task.id === update.taskId
+        );
         currGroup.tasks[idx].comments.push(update.comment);
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
-        console.log('cannot add update', err);
+        console.log("cannot add update", err);
       }
     },
     toggleMainScreen() {
@@ -444,8 +501,15 @@ export default {
     },
     async changedByDrag() {
       try {
-        this.boardToEdit.groups.splice(0, this.boardToEdit.groups.length, ...this.board.groups)
-        await this.$store.dispatch({ type: 'saveBoard', board: this.boardToEdit });
+        this.boardToEdit.groups.splice(
+          0,
+          this.boardToEdit.groups.length,
+          ...this.board.groups
+        );
+        await this.$store.dispatch({
+          type: "saveBoard",
+          board: this.boardToEdit,
+        });
         this.loadBoard();
       } catch (err) {
         console.log(err);
@@ -461,15 +525,19 @@ export default {
     },
     classObjectScreen() {
       return {
-        'main-screen': this.isMainScreen,
-        'main-screen-hidden': !this.isMainScreen
-      }
-    }
+        "main-screen": this.isMainScreen,
+        "main-screen-hidden": !this.isMainScreen,
+      };
+    },
+    changeBrderRadius(bool) {
+      if (bool) return false;
+      return true;
+    },
   },
   watch: {
-    '$route.params.boardId'() {
-      this.loadBoard()
-    }
+    "$route.params.boardId"() {
+      this.loadBoard();
+    },
   },
   created() {
     this.loadBoard();

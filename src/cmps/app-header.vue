@@ -18,11 +18,7 @@
       </div>
     </div>
     <div
-      class="secondary-header flex"
-      :class="{
-        'header-shown': isBoardNavbarShown,
-        'header-not-shown': !isBoardNavbarShown,
-      }"
+      class="secondary-header flex" :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}"
     >
       <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list">
         <li><h4 class="change-board">Change Board</h4></li>
@@ -55,7 +51,13 @@ export default {
   },
   methods: {
     toggleBoardNavbar() {
-      this.isBoardNavbarShown = !this.isBoardNavbarShown;
+      if (this.isBoardNavbarShown) {
+        this.isBoardNavbarShown = true;
+        this.$emit("brdrRadiusChange", true);
+      } else {
+        this.isBoardNavbarShown = false;
+        this.$emit("brdrRadiusChange", false);
+      }
     },
   },
   created() {
