@@ -2,7 +2,7 @@
     background-color: $clr5;
     min-height: 100vh;
     display: flex;
-    width: 100%;
+    width: auto;
 
     .details-wrapper {
         width: 100%;
@@ -41,10 +41,15 @@
 
         .board-title-input,
         .board-description-input {
-            border: 1px dashed transparent;
+            border-color: transparent;
             background-color: inherit;
             color: $clr3;
             font-size: 17px;
+            padding: 5px;
+
+            &:hover {
+                outline: 1px dashed $clr6;
+            }
         }
         
 

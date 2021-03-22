@@ -11,9 +11,10 @@
         </el-avatar>
         <h1>{{ loggedInUser.fullname }}</h1>
       </div>
-      <div v-if="isGuest" class="bottom-guest">
-        <div>Click for signup</div>
-        <router-link to="/login">SignUp</router-link>
+      <div v-if="isGuest" class="bottom-guest flex-center">
+        <div>Hello, Friend!</div>   
+        <div>Enter your personal details and start your journey with us</div>
+        <el-button class="signup-btn"><router-link class="router-link" to="/login">Sign Up</router-link></el-button>
       </div>
       <div v-if="!isGuest" class="bottom">
         <div class="user-boards">
