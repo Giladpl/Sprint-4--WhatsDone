@@ -95,7 +95,7 @@ function _createBoards() {
 
 function _createBoard1() {
   return {
-    "_id": "6058c5f5364773a1b1a9cecc",
+    "_id": "6058d267364773a1b1adee0b",
     "title": "Software Development",
     "description": "Software Development Life Cycle",
     "createdAt": 1589983468418,
@@ -1516,7 +1516,7 @@ function _createBoard1() {
 
 function _createBoard2() {
     return {
-        "_id": "6058c620364773a1b1a9defa",
+        "_id": "6058d296364773a1b1adfcee",
         "title": "Trip Plannig",
         "description": "Start Planning Your Dream Vacation Now",
         "createdAt": 1589983468418,
