@@ -5,7 +5,7 @@
 			<h3>
 				Loggedin User:
 				{{ loggedinUser.username }}
-				<router-link :to="'/user/' + loggedinUser._id">User details</router-link>
+				<!-- <router-link :to="'/user/' + loggedinUser._id">User details</router-link> -->
 				<button @click="doLogout">Logout</button>
 			</h3>
 		</div>
@@ -42,10 +42,11 @@
 					v-model="signupCred.username"
 					placeholder="Username"
 				/>
+				<div>Add img</div>
 				<button>Signup</button>
 			</form>
 		</div>
-		<hr />
+		<!-- <hr />
 		<details v-if="loggedinUser && loggedinUser.isAdmin">
 			<summary>Admin Section</summary>
 			<ul>
@@ -54,7 +55,7 @@
 					<button @click="removeUser(user._id)">x</button>
 				</li>
 			</ul>
-		</details>
+		</details> -->
 	</section>
 </template>
 
@@ -65,7 +66,7 @@ export default {
 		return {
 			msg: '',
 			loginCred: { username: 'puki', password: '1234' },
-			signupCred: { username: '', password: '', fullname: '' },
+			signupCred: { username: '', password: '', fullname: '', imgUrl: '' },
 		};
 	},
 	computed: {
