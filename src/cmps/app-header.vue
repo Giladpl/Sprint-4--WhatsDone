@@ -21,18 +21,8 @@
         </router-link>
       </div>
     </div>
-    <div
-      class="secondary-header flex"
-      :class="{
-        'header-shown': isBoardNavbarShown,
-        'header-not-shown': !isBoardNavbarShown,
-      }"
-    >
-      <ul
-        v-if="isBoardNavbarShown"
-        class="sidebar-board-prev clean-list"
-        v-click-outside="toggleBoardNavbar"
-      >
+    <div class="secondary-header flex" :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown,}">
+      <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list" v-click-outside="toggleBoardNavbar">
         <li class="flex">
           <i class="el-icon-circle-plus-outline"></i>
           Add
@@ -47,7 +37,8 @@
         <li>
           <h4 class="change-board">Change Board</h4>
         </li>
-        <li class="mini-board-prev" v-for="board in boards" :key="board._id">
+        <li class="mini-board-prev flex" v-for="board in boards" :key="board._id">
+          <i class="el-icon-caret-right" />
           <router-link class="router-link" :to="'/board/' + board._id">
             <h4>{{ board.title }}</h4>
           </router-link>
