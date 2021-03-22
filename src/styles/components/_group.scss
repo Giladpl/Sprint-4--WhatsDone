@@ -1,19 +1,19 @@
 .group {
     padding-bottom: 50px;
 
-    .color-palette{
+    .color-palette {
         width: 16px;
         color: 63 64 69;
     }
 
-    .input-add-task{
+    .input-add-task {
         height: 35px;
         width: 100%;
         border: 1px solid transparent;
         box-shadow: 0 3px 4px -5px #484444;
         transition: .4s;
 
-        &:hover{
+        &:hover {
             border: 1px solid grey;
         }
     }
@@ -25,51 +25,59 @@
         display: flex;
         text-align: center;
         color: $clr3;
-        
+
         .group-header-right {
             min-width: 700px;
             display: flex;
             justify-content: space-between;
             padding-right: .625rem;
-            > * {
+
+            >* {
                 padding: 0 10px;
                 font-size: 15px;
-                width: 9.375rem;   
+                width: 9.375rem;
             }
         }
 
         .group-header-left {
             width: 100%;
+
             .down-arrow-container {
                 width: 15px;
                 display: flex;
                 align-items: center;
                 margin-right: 10px;
                 cursor: pointer;
-              
-                .down-arrow-regular:hover{
-                    opacity: 0.6;  
-                 }
+                width: rem(17px);
+                height: auto;
+
+                .down-arrow-regular:hover {
+                    opacity: 0.6;
+                }
             }
 
             .group-title-input {
                 border: 1px dashed transparent;
-                padding: 3px 7px 3px 0;
+                padding: 5px;
                 background-color: inherit;
                 color: $clr3;
-                font-size: 17px;
+                font-size: rem(17px);
                 width: 350px;
                 min-width: 200px;
+
+                &:hover {
+                    outline: 1px dashed $clr6;
+                }
             }
         }
 
-        > *:not(.color-picker){
+        >*:not(.color-picker) {
             display: flex;
             align-items: center;
             // justify-content: space-between;
         }
 
-        
+
 
         .group-edit {
             flex-direction: column;
@@ -83,7 +91,7 @@
             font-size: 14px;
             transform: translate(12px, 40px);
 
-            > * {
+            >* {
                 text-align: left;
                 cursor: pointer;
                 padding: 3px 1px;
@@ -112,7 +120,7 @@
         }
     }
 
-    .bars-container{
+    .bars-container {
         width: 100%;
         display: flex;
         margin-top: rem(20px);
