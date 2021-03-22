@@ -4,16 +4,18 @@
     <div class="profile-container">
       <div class="top">
         <el-avatar
-          v-if="loggedInUser"
           class="usr-profile-avatar"
           size="large"
           :src="loggedInUser.imgUrl"
-          >{{ checkLoggedUser }}</el-avatar
         >
-        <el-avatar v-else class="usr-profile-avatar" size="large">G</el-avatar>
-        <h1 :checkLoggedUser="checkLoggedUser">{{ checkLoggedUser }}</h1>
+        </el-avatar>
+        <h1>{{ loggedInUser.fullname }}</h1>
       </div>
-      <div class="bottom">
+      <div v-if="isGuest" class="bottom-guest">
+        <div>Click for signup</div>
+        <router-link to="/login">SignUp</router-link>
+      </div>
+      <div v-if="!isGuest" class="bottom">
         <div class="user-boards">
           <h2>My boards</h2>
           <h3>Board 1</h3>
@@ -28,22 +30,16 @@
         </div>
         <div class="user-details">
           <el-avatar
-            v-if="loggedInUser"
             class="usr-profile-avatar"
             size="large"
             :src="loggedInUser.imgUrl"
-            >{{ checkLoggedUser }}</el-avatar
           >
-          <el-avatar v-else class="usr-profile-avatar" size="large"
-            >G</el-avatar
-          >
+          </el-avatar>
           <div class="user-details-username flex">
-            <!-- <el-icon-user-solid> <h3>Username: {{loggedInUser.username}}</h3></el-icon-user-solid> -->
             <i class="el-icon-user-solid"></i>
             <h3><span>username:</span> guestus</h3>
           </div>
           <div class="user-details-email flex">
-            <!-- <el-icon-message> <h3>email: guestus@gmail.com</h3></el-icon-message> -->
             <i class="el-icon-message"></i>
             <h3><span>email:</span> guestus@gmail.com</h3>
           </div>
@@ -61,22 +57,26 @@ export default {
   name: "user-profile",
   data() {
     return {
-      loggedInUser: null,
+      isGuest: false
     };
   },
   computed: {
-    checkLoggedUser() {
-      if (!this.loggedInUser) return "Guest";
-      else return this.loggedInUser.fullname;
-    },
     boards() {
       return this.$store.getters.boards;
     },
-  },
-  created() {
-    const user = JSON.parse(this.$store.getters.loggedInUser) || null;
-    this.loggedInUser = user || null;
-  },
+    loggedInUser() {
+      let user = this.$store.getters.loggedInUser;
+      if (!user) {
+        this.isGuest = true;
+        user = {
+          _id: 'guest',
+          fullname: 'Guest',
+          imgUrl: 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png'
+        }
+      }
+      return user;
+    }
+  }
 };
 </script>
 
