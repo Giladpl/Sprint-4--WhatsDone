@@ -68,14 +68,41 @@
         border-inline-start: 1px solid hsla(0, 0%, 100%, 0.2);
         align-items: center;
         flex-direction: column;
+        padding: 5px;
 
         .sidebar-board-prev {
             display: flex;
             flex-direction: column;
 
+            .el-icon-circle-plus-outline {
+                font-size: 25px;
+                color: black;
+                cursor: pointer;
+                margin-bottom: 16px;
+            }
+            img {
+                width: 25px;
+                display: block;
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
+
+            .el-icon-search {
+                font-size: 25px;
+                color: black;
+                cursor: pointer;
+                margin-bottom: 16px;
+
+                .board-search {
+                    text-align: center;
+                    border: none;
+                    width: 100%;
+                }
+            }
             .change-board {
                 color: $clr3;
                 font-weight: bolder;
+                border-top: 1px solid $clr5;
             }
 
             .mini-board-prev {
@@ -87,12 +114,10 @@
     .header-not-shown {
         background-color: $clr5;
         width: 0;
-
     }
     .header-shown {
         background-color: #fff;
         width: 15.937rem;
         // backface-visibility: hidden;
-
     }
 }
