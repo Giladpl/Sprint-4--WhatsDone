@@ -1442,11 +1442,11 @@ function _createBoard1(_id, title) {
         {
             "id": "a101",
             "action": "Changed Color",
-            "createdAt": 1616313904857,
+            "createdAt": 1616440539741,
             "byMember": {
-                "_id": "u101",
-                "fullname": "Abi Abambi",
-                "imgUrl": "http://some-img"
+                "_id": "u104",
+                "fullname": "Muki Abu Ja",
+                "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
             },
             "task": {
                 "id": "t101",
@@ -1458,9 +1458,9 @@ function _createBoard1(_id, title) {
             "action": "Update task title",
             "createdAt": 1616324053163,
             "byMember": {
-                "_id": "guest",
-                "fullname": "Guest",
-                "imgUrl": ""
+                "_id": "u106",
+                "fullname": "Nancy Williams",
+                "imgUrl": "https://randomuser.me/api/portraits/women/50.jpg"
             },
             "task": {
                 "id": "t105",
@@ -1470,25 +1470,26 @@ function _createBoard1(_id, title) {
         {
             "id": "sgvLm",
             "action": "Update task title",
-            "createdAt": 1616324053221,
+            "createdAt": 1616410539741,
             "byMember": {
                 "_id": "guest",
                 "fullname": "Guest",
                 "imgUrl": ""
             },
             "task": {
-                "id": "t105",
-                "title": "Getting an initial feedback from client?"
+                "_id": "u108",
+                "fullname": "Robert Wilford",
+                "imgUrl": "https://randomuser.me/api/portraits/men/28.jpg"
             }
         },
         {
             "id": "PWsgh",
             "action": "Update task title",
-            "createdAt": 1616324061782,
+            "createdAt": 1816324061782,
             "byMember": {
-                "_id": "guest",
-                "fullname": "Guest",
-                "imgUrl": ""
+                "_id": "u109",
+                "fullname": "Stephanie White",
+                "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
             },
             "task": {
                 "id": "t105",
@@ -1500,9 +1501,9 @@ function _createBoard1(_id, title) {
             "action": "Update task title",
             "createdAt": 1616324061838,
             "byMember": {
-                "_id": "guest",
-                "fullname": "Guest",
-                "imgUrl": ""
+                "_id": "u108",
+                "fullname": "Robert Wilford",
+                "imgUrl": "https://randomuser.me/api/portraits/men/28.jpg"
             },
             "task": {
                 "id": "t105",

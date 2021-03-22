@@ -6,11 +6,15 @@
     >
       <div class="activity flex-between">
         <div class="activity-time">{{activity.createdAt | moment}}</div>
-        <el-avatar
-          class="activity-avatar"
-          :src="activity.byMember.imgUrl"
-        ></el-avatar>
-        <div class="activity-title">{{activity.task.title}}</div>
+        <div class="avatar-title-wrapper">
+          <el-avatar
+            class="activity-avatar"
+            :src="activity.byMember.imgUrl"
+          ></el-avatar>
+          <div class="popup-container" :data-title="activityTitle(activity)">
+            <div class="activity-title">{{activity.task.title}}</div>
+          </div>
+        </div>
         <div class="activity-action">{{activity.action}}</div>
       </div>
     </div>
@@ -26,6 +30,11 @@ export default {
       type: Array,
       required: true
     },
+  },
+  methods: {
+    activityTitle(activity) {
+      return `${activity.task.title}`
+    }
   },
   filters: {
     moment(timestamp) {
