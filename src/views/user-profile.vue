@@ -71,7 +71,7 @@ export default {
       let allBoards = this.$store.getters.boards;
       allBoards.forEach(board => {
         let tasksBoard = board.tasks.filter(task => task.byMember._id === this.loggedInUser._id)
-        userTasks.push(tasksBoard)
+        userTasks.concat(tasksBoard)
       });
       return userTasks;
     },
