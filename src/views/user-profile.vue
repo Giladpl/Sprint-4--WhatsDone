@@ -17,15 +17,15 @@
         <el-button class="signup-btn"><router-link class="router-link" to="/login">Sign Up</router-link></el-button>
       </div>
       <div v-if="!isGuest" class="bottom">
-        <div class="user-boards">
+        <div v-if="userBoards" class="user-boards">
           <h2>My boards</h2>
-          <div v-for="board in boards" :key="board._id">
+          <div v-for="board in userBoards" :key="board._id">
             <h4>{{board.title}}</h4>
           </div>
         </div>
-        <div class="user-tasks">
+        <div v-if="userTasks" class="user-tasks">
           <h2>My Tasks</h2>
-          <div v-for="task in tasks" :key="task.id">
+          <div v-for="task in userTasks" :key="task.id">
             <h4>{{task.title}}</h4>
           </div>
         </div>
@@ -58,22 +58,23 @@ export default {
   name: "user-profile",
   data() {
     return {
-      isGuest: false
+      isGuest: false,
+      boards: null,
     };
   },
   computed: {
-    boards() {
-      let allBoards = this.$store.getters.boards;
-      return allBoards.filter(board => board.createdBy._id === this.loggedInUser._id) || null
+    userBoards() {
+      return this.boards.filter(board => board.createdBy._id === this.loggedInUser._id) 
     },
-    tasks() {
-      let userTasks = []
-      let allBoards = this.$store.getters.boards;
-      allBoards.forEach(board => {
-        let tasksBoard = board.tasks.filter(task => task.byMember._id === this.loggedInUser._id)
-        userTasks.concat(tasksBoard)
+    userTasks() {
+      let tasks = []
+      this.boards.forEach(board => {
+        board.groups.forEach(group => {
+          let miniTasks = group.tasks.filter(task => task.byMember._id === this.loggedInUser._id);
+          tasks.push(...miniTasks);
+        })
       });
-      return userTasks || null;
+      return tasks;
     },
     loggedInUser() {
       let user = this.$store.getters.loggedInUser;
@@ -89,7 +90,7 @@ export default {
     }
   },
   created() {
-    
+    this.boards = this.$store.getters.boards
   }
 };
 </script>
