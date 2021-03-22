@@ -4,7 +4,7 @@
         @input="boardMembersToShow()"
         @click.native.stop=""
         ref="searchInput"
-        placeholder="Search for a name"
+        placeholder="Search for a name" prefix-icon="el-icon-search"
         v-model="filterBy.name"
       ></el-input>
     <ul class="clean-list">
