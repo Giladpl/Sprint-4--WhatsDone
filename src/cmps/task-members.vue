@@ -2,6 +2,7 @@
   <section class="task-members-list flex">
       <el-input class="members-search"
         @input="boardMembersToShow()"
+        @click.native.stop=""
         ref="searchInput"
         placeholder="Search for a name"
         v-model="filterBy.name"
