@@ -64,7 +64,7 @@ export default {
   computed: {
     boards() {
       let allBoards = this.$store.getters.boards;
-      return allBoards.filter(board => board.createdBy._id === this.loggedInUser._id)
+      return allBoards.filter(board => board.createdBy._id === this.loggedInUser._id) || null
     },
     tasks() {
       let userTasks = []
@@ -73,7 +73,7 @@ export default {
         let tasksBoard = board.tasks.filter(task => task.byMember._id === this.loggedInUser._id)
         userTasks.concat(tasksBoard)
       });
-      return userTasks;
+      return userTasks || null;
     },
     loggedInUser() {
       let user = this.$store.getters.loggedInUser;
@@ -87,6 +87,9 @@ export default {
       }
       return user;
     }
+  },
+  created() {
+    
   }
 };
 </script>
