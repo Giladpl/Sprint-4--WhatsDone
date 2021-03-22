@@ -1444,15 +1444,9 @@ function _createBoard1() {
             "action": "Changed Color",
             "createdAt": 1616440539741,
             "byMember": {
-<<<<<<< HEAD
-                "_id": "u104",
-                "fullname": "Muki Abu Ja",
-                "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
-=======
                 "_id": "u101",
                 "fullname": "Abi Abambi",
                 "imgUrl": "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png"
->>>>>>> fe93057d62cb0dd001e88ae1a158b41e503ea220
             },
             "task": {
                 "id": "t101",
@@ -1464,15 +1458,9 @@ function _createBoard1() {
             "action": "Update task title",
             "createdAt": 1616324053163,
             "byMember": {
-<<<<<<< HEAD
-                "_id": "u106",
-                "fullname": "Nancy Williams",
-                "imgUrl": "https://randomuser.me/api/portraits/women/50.jpg"
-=======
                 "_id": "guest",
                 "fullname": "Guest",
                 "imgUrl": "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png"
->>>>>>> fe93057d62cb0dd001e88ae1a158b41e503ea220
             },
             "task": {
                 "id": "t105",
@@ -1499,15 +1487,9 @@ function _createBoard1() {
             "action": "Update task title",
             "createdAt": 1816324061782,
             "byMember": {
-<<<<<<< HEAD
-                "_id": "u109",
-                "fullname": "Stephanie White",
-                "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
-=======
                 "_id": "guest",
                 "fullname": "Guest",
                 "imgUrl": "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png"
->>>>>>> fe93057d62cb0dd001e88ae1a158b41e503ea220
             },
             "task": {
                 "id": "t105",
@@ -1519,15 +1501,9 @@ function _createBoard1() {
             "action": "Update task title",
             "createdAt": 1616324061838,
             "byMember": {
-<<<<<<< HEAD
-                "_id": "u108",
-                "fullname": "Robert Wilford",
-                "imgUrl": "https://randomuser.me/api/portraits/men/28.jpg"
-=======
                 "_id": "guest",
                 "fullname": "Guest",
                 "imgUrl": "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png"
->>>>>>> fe93057d62cb0dd001e88ae1a158b41e503ea220
             },
             "task": {
                 "id": "t105",
