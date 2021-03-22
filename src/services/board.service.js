@@ -85,17 +85,17 @@ function _createBoards() {
     let boards = storageService.load(KEY)
     if (!boards || !boards.length) {
         boards = [
-            _createBoard1('b101', 'Software Development'),
-            _createBoard2('b102', 'Trip Plannig')
+            _createBoard1(),
+            _createBoard2()
         ]
         storageService.store(KEY, boards)
     }
     return boards;
 }
 
-function _createBoard1(_id, title) {
+function _createBoard1() {
   return {
-    "_id": "b101",
+    "_id": "6058c5f5364773a1b1a9cecc",
     "title": "Software Development",
     "description": "Software Development Life Cycle",
     "createdAt": 1589983468418,
@@ -1514,9 +1514,9 @@ function _createBoard1(_id, title) {
 }
 
 
-function _createBoard2(_id, title) {
+function _createBoard2() {
     return {
-        "_id": "b102",
+        "_id": "6058c620364773a1b1a9defa",
         "title": "Trip Plannig",
         "description": "Start Planning Your Dream Vacation Now",
         "createdAt": 1589983468418,
