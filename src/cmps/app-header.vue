@@ -43,8 +43,7 @@
         </li>
         <li>
         <li class="flex">
-          <i class="sidebar-board-prev el-icon-search"></i>
-          <el-input class="board-search" placeholder="" />
+          <el-input class="board-search" placeholder="Search a board..."  prefix-icon="el-icon-search" />
         </li>
         <li>
           <h4 class="change-board">Change Board</h4>

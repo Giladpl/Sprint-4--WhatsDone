@@ -68,6 +68,7 @@
         border-inline-start: 1px solid hsla(0, 0%, 100%, 0.2);
         align-items: center;
         flex-direction: column;
+        justify-content: space-between;
         padding: 5px;
 
         .sidebar-board-prev {
@@ -75,39 +76,38 @@
             flex-direction: column;
 
             .el-icon-circle-plus-outline {
-                font-size: 25px;
+                font-size: 18px;
                 color: black;
                 cursor: pointer;
                 margin-bottom: 16px;
+                margin-inline-start: 7px;
+
             }
             img {
-                width: 25px;
+                width: 18px;
                 display: block;
                 margin-right: 0;
                 margin-bottom: 16px;
+                margin-inline-start: 7px;
             }
+            .board-search {
+                .el-icon-search {
+                    font-size: 18px;
+                    color: $clr6;
+                    margin-bottom: 16px;
+                    padding-left: 0;
+                }
 
-            .el-icon-search {
-                font-size: 25px;
-                color: black;
-                cursor: pointer;
-                margin-bottom: 16px;
-                justify-content: space-between;
-
-                .el-input {
-                    text-align: center;
+                .el-input--prefix .el-input__inner {
                     border: none;
-                    width: 100%;
-
-                    ::placeholder{
-                        content: "\e778";
-                    }
                 }
             }
+
             .change-board {
                 color: $clr3;
                 font-weight: bolder;
-                border-top: 1px solid $clr5;
+                border-top: 1px solid $clr6;
+                margin-top: 10px;
             }
 
             .mini-board-prev {
