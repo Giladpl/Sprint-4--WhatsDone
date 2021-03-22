@@ -92,11 +92,16 @@
                 color: black;
                 cursor: pointer;
                 margin-bottom: 16px;
+                justify-content: space-between;
 
-                .board-search {
+                .el-input {
                     text-align: center;
                     border: none;
                     width: 100%;
+
+                    ::placeholder{
+                        content: "\e778";
+                    }
                 }
             }
             .change-board {
