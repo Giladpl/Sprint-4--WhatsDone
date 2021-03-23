@@ -1,6 +1,6 @@
 <template>
   <section
-    v-if="boardToEdit"
+    v-if="board && boardToEdit"
     class="board-details"
     :style="isFixed"
   >
@@ -161,7 +161,6 @@ export default {
   },
   data() {
     return {
-      board: null,
       boardToEdit: null,
       isAddViewMenu: false,
       isMainScreen: false,
@@ -171,10 +170,10 @@ export default {
   methods: {
     async loadBoard() {
       try {
-        const id = this.$route.params.boardId;
-        const board = await boardService.getById(id);
-        this.board = board;
-        this.boardToEdit = JSON.parse(JSON.stringify(board));
+        const boardId = this.$route.params.boardId;
+        await this.$store.dispatch({ type: 'loadBoard', boardId });
+        // console.log('store', this.board );
+        this.boardToEdit = JSON.parse(JSON.stringify(this.board));
       } catch (err) {
         console.log("cannot load board", err);
       }
@@ -510,6 +509,9 @@ export default {
     boards() {
       return this.$store.getters.boards;
     },
+    board() {
+      return this.$store.getters.currBoard;
+    },
     classObjectScreen() {
       return {
         'main-screen': this.isMainScreen,
@@ -524,6 +526,12 @@ export default {
     "$route.params.boardId"() {
       this.loadBoard();
     },
+    // board: {
+    //   deep: true,
+    //   handler() {
+    //     this.loadBoard();
+    //   },
+    // },
   },
   created() {
     this.loadBoard();
