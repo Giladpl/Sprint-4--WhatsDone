@@ -39,18 +39,15 @@
         </li>
         <li></li>
         <li class="flex">
-          <el-input
-            class="board-search"
-            placeholder="Search a board..."
-            prefix-icon="el-icon-search"
-          />
+          <el-input  @input="boardToShow()" @click.native.stop="" ref="searchInput" 
+             v-model="filterBy.name"  class="board-search" placeholder="Search a board..." prefix-icon="el-icon-search" />
         </li>
         <li>
           <h4 class="change-board">Change Board</h4>
         </li>
         <li
           class="mini-board-prev flex"
-          v-for="board in boards"
+          v-for="board in boardsToShow"
           :key="board._id"
           :class="{ 'chosen-board': isChosenBoard(board._id) }"
         >
@@ -86,6 +83,10 @@ export default {
     return {
       isBoardNavbarShown: false,
       board: null,
+      boardsToShow: null,
+      filterBy: {
+        name: null
+      }
     };
   },
   methods: {
@@ -95,6 +96,12 @@ export default {
     },
     isChosenBoard(id) {
       return this.boardId === id;
+    },
+    boardToShow() {
+      this.boardsToShow = this.boards.filter(board => {
+        const regex = new RegExp(this.filterBy.name, 'i');
+        return !this.filterBy.name || regex.test(board.title)
+      });
     },
   },
   computed: {
@@ -113,6 +120,7 @@ export default {
     },
   },
   created() {
+      this.boardsToShow = JSON.parse(JSON.stringify(this.boards));
     // this.loggedInUser = this.$store.getters.loggedInUser;
   },
   components: {
