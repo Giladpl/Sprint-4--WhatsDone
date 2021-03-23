@@ -26,8 +26,9 @@
     .members-container,
     .status-container,
     .date-picker-container,
-    .priority-container {
-        width: 9.375rem;
+    .priority-container,
+    .stopwatch-container {
+        min-width: 9.375rem;
         height: 35px;
         display: flex;
         align-items: center;
@@ -35,7 +36,12 @@
         cursor: pointer;
     }
 
+    .stopwatch-container {
+        background-color: blanchedalmond;
+    }
+
     .date-picker-container {
+        min-width: 9.375rem;
         padding: 0 10px;
     }
 
@@ -90,7 +96,7 @@
     }
 
     .task-right-container {
-        min-width: 700px;
+        min-width: 800px;
         display: flex;
         justify-content: space-between;
     }

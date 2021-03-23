@@ -5,7 +5,11 @@
     :style="isFixed"
   >
     <div :class="classObjectScreen"></div>
-    <app-header :boardId="board._id" :boards="boards" @brdrRadiusChange="changeBrderRadius" />
+    <app-header
+      :boardId="board._id"
+      :boards="boards"
+      @brdrRadiusChange="changeBrderRadius"
+    />
     <div
       class="details-wrapper"
       :class="{'no-brdr-radius' : isBrdrRadius}"
@@ -46,7 +50,7 @@
           @click="openUserProfile"
         >
           <router-link
-            class="router-link"
+            class="router-link board-creator"
             to="/profile"
           >
             Created By: {{ board.createdBy.fullname }}
@@ -134,6 +138,7 @@
             @updateTasksOrder="updateTasksOrder"
             @addUpdate="addUpdate"
             @toggleMainScreen="toggleMainScreen"
+            @addTimeToTask="addTimeToTask"
           />
         </li>
       </draggable>
@@ -484,7 +489,19 @@ export default {
       } catch (err) {
         console.log(err);
       }
-    }
+    },
+    async addTimeToTask({ groupId, taskId, totalSeconds }) {
+      try {
+        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId);
+        const taskIdx = currGroup.tasks.findIndex((task) => task.id === taskId);
+        this.addActivity("Update time worked on task", currGroup.tasks[taskIdx]);
+        currGroup.tasks[taskIdx].secondsWorkedOn = totalSeconds;
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
+        this.loadBoard();
+      } catch (err) {
+        console.log("cannot update time worked on task", err);
+      }
+    },
   },
   computed: {
     loggedinUser() {

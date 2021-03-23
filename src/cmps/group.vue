@@ -11,7 +11,6 @@
             class="down-arrow-regular"
             :fill="group.color"
             viewBox="0 0 512 512"
-           
           >
             <path d="M256 16C123.451 16 16 123.453 16 256S123.451 496 256 496S496 388.547 496 256S388.549 16 256 16ZM377.594 248.344L273.594 360.344C269.047 365.219 262.672 368 256 368S242.953 365.219 238.406 360.344L134.406 248.344C127.922 241.344 126.188 231.156 130 222.406C133.812 213.656 142.453 208 152 208H360C369.547 208 378.188 213.656 382 222.406C385.812 231.156 384.078 241.344 377.594 248.344Z" />
           </svg>
@@ -51,6 +50,7 @@
         <div>Status</div>
         <div>Timeline</div>
         <div>Priority</div>
+        <div>Stopwatch</div>
       </div>
     </div>
     <draggable
@@ -85,6 +85,7 @@
           @updateTaskTitle="updateTaskTitle"
           @addUpdate="addUpdate"
           @toggleMainScreen="toggleMainScreen"
+          @addTimeToTask="addTimeToTask"
         />
       </li>
     </draggable>
@@ -233,6 +234,10 @@ export default {
     toggleMainScreen() {
       this.$emit('toggleMainScreen')
     },
+    addTimeToTask(update) {
+      update.groupId = this.group.id
+      this.$emit('addTimeToTask', update)
+    }
   },
   watch: {
     group: {

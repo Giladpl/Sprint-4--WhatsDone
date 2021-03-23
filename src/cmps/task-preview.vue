@@ -14,7 +14,8 @@
         >
           <i class="el-icon-delete"></i>
         </div>
-        <form class="task-input-form"
+        <form
+          class="task-input-form"
           @submit.prevent="updateTaskTitle"
           @change.prevent="updateTaskTitle"
         >
@@ -108,6 +109,12 @@
           @removePriority="removePriority"
         />
       </div>
+      <div class="stopwatch-container">
+        <stopwatch
+          :secondsWorkedOn="task.secondsWorkedOn"
+          @addTimeToTask="addTimeToTask"
+        ></stopwatch>
+      </div>
     </div>
   </section>
 </template>
@@ -119,6 +126,7 @@ import taskStatus from "./task-status";
 import taskPriority from "./task-priority";
 import vClickOutside from "v-click-outside";
 import taskDetails from "./task-details";
+import stopwatch from "./stopwatch";
 
 export default {
   directives: {
@@ -229,6 +237,10 @@ export default {
     toggleMainScreen() {
       this.$emit('toggleMainScreen')
     },
+    addTimeToTask(update) {
+      update.taskId = this.task.id
+      this.$emit('addTimeToTask', update)
+    }
   },
   computed: {
     getStatusById() {
@@ -255,7 +267,7 @@ export default {
   },
   created() {
     this.dueDateToEdit = this.task.dueDate
-    this.titleToEdit = this.task.title
+    this.titleToEdit = this.task.title    
   },
   components: {
     taskMembers,
@@ -263,6 +275,7 @@ export default {
     taskPriority,
     taskDetails,
     taskMembersContainer,
+    stopwatch
   },
 };
 </script>

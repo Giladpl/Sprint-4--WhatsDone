@@ -20,14 +20,13 @@
 
     .group-header {
         height: 48px;
-        // padding: 0 8px;
         padding-right: 8px;
         display: flex;
         text-align: center;
         color: $clr3;
 
         .group-header-right {
-            min-width: 700px;
+            min-width: 800px;
             display: flex;
             justify-content: space-between;
             padding-right: .625rem;
@@ -41,6 +40,7 @@
 
         .group-header-left {
             width: 100%;
+            justify-content: start;
 
             .down-arrow-container {
                 width: 15px;
@@ -74,7 +74,6 @@
         >*:not(.color-picker) {
             display: flex;
             align-items: center;
-            // justify-content: space-between;
         }
 
 
@@ -130,7 +129,7 @@
         }
 
         .bars-container-right {
-            min-width: 700px;
+            min-width: 800px;
             display: flex;
             // justify-content: space-between;
 
