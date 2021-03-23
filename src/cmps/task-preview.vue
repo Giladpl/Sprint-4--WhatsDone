@@ -1,7 +1,7 @@
 <template>
   <section
     class="task-preview flex-center"
-    v-bind:style="{ borderLeft: `8px solid ${groupColor}` }"
+    :style="{ borderLeft: `8px solid ${groupColor}` }"
   >
     <div
       class="task-left-container"
@@ -45,7 +45,10 @@
       @addUpdate="addUpdate"
       @toggleMainScreen="toggleMainScreen"
     />
-    <div class="task-right-container">
+    <div
+      class="task-right-container"
+      :style="dynamicWidth"
+    >
       <div
         class="members-container"
         @click="toggleTaskMembers"
@@ -109,7 +112,10 @@
           @removePriority="removePriority"
         />
       </div>
-      <div class="stopwatch-container">
+      <div
+        class="stopwatch-container non-hidden"
+        :style="dynamicHidden"
+      >
         <stopwatch
           :secondsWorkedOn="task.secondsWorkedOn"
           @addTimeToTask="addTimeToTask"
@@ -155,6 +161,10 @@ export default {
     },
     activities: {
       type: Array,
+      required: true,
+    },
+    isStopWatch: {
+      type: Boolean,
       required: true,
     },
   },
@@ -255,6 +265,12 @@ export default {
       );
       return priority;
     },
+    dynamicWidth() {
+      return [this.isStopWatch ? { 'min-width': '800px' } : { 'min-width': '700px' }]
+    },
+    dynamicHidden() {
+      return [this.isStopWatch ? { 'display': 'flex' } : { 'display': 'none' }]
+    }
   },
   watch: {
     task: {
@@ -267,7 +283,7 @@ export default {
   },
   created() {
     this.dueDateToEdit = this.task.dueDate
-    this.titleToEdit = this.task.title    
+    this.titleToEdit = this.task.title
   },
   components: {
     taskMembers,

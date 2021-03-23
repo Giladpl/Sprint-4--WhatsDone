@@ -121,6 +121,7 @@
             :priorities="board.priorities"
             :boardMembers="board.members"
             :activities="board.activities"
+            :isStopWatch="isStopWatch"
             @changeColor="changeGroupColor"
             @updateTitle="updateGroupTitle"
             @removeTask="removeTask"
@@ -140,6 +141,7 @@
             @addUpdate="addUpdate"
             @toggleMainScreen="toggleMainScreen"
             @addTimeToTask="addTimeToTask"
+            @toggleStopwatch="toggleStopwatch"
           />
         </li>
       </draggable>
@@ -167,6 +169,7 @@ export default {
       isAddViewMenu: false,
       isMainScreen: false,
       isBrdrRadius: false,
+      isStopWatch: false,
     };
   },
   methods: {
@@ -179,6 +182,9 @@ export default {
       } catch (err) {
         console.log("cannot load board", err);
       }
+    },
+    toggleStopwatch() {
+      this.isStopWatch = !this.isStopWatch;
     },
     openUserProfile() {
       console.log("open user profile");
