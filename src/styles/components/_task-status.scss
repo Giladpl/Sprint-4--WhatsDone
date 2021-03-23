@@ -3,7 +3,6 @@
     transform: translate(0, 56.5%);
     z-index: 1;
 
-    
     .status-list {
         width: 9.375rem;
         top: 40px;
@@ -21,12 +20,12 @@
         justify-content: space-between;
         align-items: center;
         background-color: $clr2;
+        cursor: pointer;
         
         i {
             font-size: 13px;
             opacity: 0;
         }
-        cursor: pointer;
 
         &:hover {
             background-color: $clr4;
@@ -35,8 +34,6 @@
                 opacity: 1; 
             }
         }
-
-        
     }
 
     .input-add-status {

@@ -131,10 +131,10 @@
         .bars-container-right {
             min-width: 800px;
             display: flex;
-            // justify-content: space-between;
+            transform: translateX(-4%);
 
             .space {
-                width: 9.375rem;
+                width: rem(176px);
                 padding: 0 10px;
             }
         }
