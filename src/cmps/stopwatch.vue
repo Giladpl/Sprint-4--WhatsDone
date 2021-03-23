@@ -1,24 +1,32 @@
 <template>
   <div class="stopwatch">
     <div
-      class="el-icon-video-play"
-      @click="start"
+      v-if="!isCounting"
+      class="el-icon-video-play btn-stopwatch"
+      @click="startTime"
     ></div>
-    <p>{{timeToShow}}</p>
     <div
-      class="el-icon-video-pause"
-      @click="stop"
-    ></div>
-    <!-- <button @click="reset">Reset</button> -->
+      v-else
+      class="el-icon-video-pause btn-stopwatch"
+      @click="pauseTime"
+    >
+    </div>
+      <p>{{timeToShow}}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: "stopwatch",
+  props: {
+    secondsWorkedOn: {
+      type: Number,
+      // required: true,
+    },
+  },
   data() {
     return {
-      elapsedTime: 0,
+      isCounting: false,
       hours: 0,
       minutes: 0,
       seconds: 0,
@@ -27,14 +35,17 @@ export default {
     };
   },
   methods: {
-    start() {
+    toggleTimer() {
+      this.isCounting = !this.isCounting;
+    },
+    startTime() {
+      this.toggleTimer()
       this.timer = setInterval(() => this.timeAdd(), 1000);
     },
-    stop() {
+    pauseTime() {
+      this.toggleTimer()
       clearInterval(this.timer);
-    },
-    reset() {
-      this.elapsedTime = 0;
+      this.$emit('addTimeToTask', { totalSeconds: this.totalSeconds })
     },
     timeAdd() {
       this.totalSeconds++
@@ -51,24 +62,11 @@ export default {
   },
   computed: {
     timeToShow() {
-      var secToShow = this.seconds
-      var minToShow = this.minutes
-      var hoursToShow = this.hours
-
-      if (this.seconds < 10) secToShow = this.seconds.toString().padStart(2, '0');
-      if (this.minutes < 10) minToShow = this.minutes.toString().padStart(2, '0');
-      if (this.hours < 10) hoursToShow = this.hours.toString().padStart(2, '0');
-
-      return `${hoursToShow}:${minToShow}:${secToShow}`
+      return new Date(this.totalSeconds * 1000).toISOString().substr(11, 8)
     },
+  },
+  created() {
+    this.totalSeconds = this.secondsWorkedOn
   }
 }
 </script>
-
-<style scoped>
-.stopwatch {
-  display: flex;
-  width: 100px;
-  background-color: inherit;
-}
-</style>

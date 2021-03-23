@@ -27,7 +27,8 @@
     .status-container,
     .date-picker-container,
     .priority-container {
-        width: 9.375rem;
+        min-width: 9.375rem;
+        // width: 9.375rem;
         height: 35px;
         display: flex;
         align-items: center;

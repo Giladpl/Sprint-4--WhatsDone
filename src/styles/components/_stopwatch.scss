@@ -1,0 +1,19 @@
+.stopwatch {
+  display: flex;
+  cursor: default;
+
+  p{
+    margin-bottom: 0px;
+  }
+
+  .btn-stopwatch{
+    font-size: rem(17px);
+    cursor: pointer;
+
+    &:hover{
+      opacity: 0.7;
+    }
+
+   
+  }
+}

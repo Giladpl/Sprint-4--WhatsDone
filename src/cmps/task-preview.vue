@@ -14,7 +14,8 @@
         >
           <i class="el-icon-delete"></i>
         </div>
-        <form class="task-input-form"
+        <form
+          class="task-input-form"
           @submit.prevent="updateTaskTitle"
           @change.prevent="updateTaskTitle"
         >
@@ -107,7 +108,10 @@
           @addPriority="addPriority"
           @removePriority="removePriority"
         />
-        <stopwatch></stopwatch>
+        <stopwatch
+          :secondsWorkedOn="task.secondsWorkedOn"
+          @addTimeToTask="addTimeToTask"
+        ></stopwatch>
       </div>
     </div>
   </section>
@@ -231,6 +235,10 @@ export default {
     toggleMainScreen() {
       this.$emit('toggleMainScreen')
     },
+    addTimeToTask(update) {
+      update.taskId = this.task.id
+      this.$emit('addTimeToTask', update)
+    }
   },
   computed: {
     getStatusById() {
@@ -257,7 +265,7 @@ export default {
   },
   created() {
     this.dueDateToEdit = this.task.dueDate
-    this.titleToEdit = this.task.title
+    this.titleToEdit = this.task.title    
   },
   components: {
     taskMembers,
