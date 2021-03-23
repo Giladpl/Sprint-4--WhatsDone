@@ -9,6 +9,7 @@
       :boardId="board._id"
       :boards="boards"
       @brdrRadiusChange="changeBrderRadius"
+      @addBoard="addNewBoard"
     />
     <div
       class="details-wrapper"
@@ -156,6 +157,7 @@ import vClickOutside from "v-click-outside";
 import draggable from "vuedraggable";
 
 export default {
+  name: 'board-details',
   directives: {
     clickOutside: vClickOutside.directive,
   },
@@ -285,6 +287,15 @@ export default {
         this.loadBoard();
       } catch (err) {
         console.log("cannot update board title", err);
+      }
+    },
+    async addNewBoard() {
+try {
+        const boardToAdd = boardService.getEmptyBoard();
+        await this.$store.dispatch({ type: "addBoard", board: boardToAdd });
+        this.loadBoard();
+      } catch (err) {
+        console.log(err);
       }
     },
     async updateBoardDescription(ev) {

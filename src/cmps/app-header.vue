@@ -25,7 +25,7 @@
       class="secondary-header flex"
       :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}">
       <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list" v-click-outside="toggleBoardNavbar">
-        <li class="add-board flex">
+        <li class="add-board flex" @click="addNewBoard">
           <i class="el-icon-circle-plus-outline"></i>
           Add
         </li>
@@ -103,6 +103,9 @@ export default {
         return !this.filterBy.name || regex.test(board.title)
       });
     },
+    addNewBoard() {
+      this.$emit('addBoard');
+    }
   },
   computed: {
     loggedInUser() {
