@@ -100,7 +100,7 @@ function _createBoard1() {
     "title": "Software Development",
     "description": "Software Development Life Cycle",
     "createdAt": 1589983468418,
-    "imgUrl": "https://assets.skyfilabs.com/images/blog/10-interesting-web-development-projects.webp",
+    "imgUrl": "https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif",
     "createdBy": {
         "_id": "60589078b5499f32382121e3",
         "fullname": "Shraga Puk",
@@ -1541,7 +1541,7 @@ function _createBoard2() {
         "title": "Trip Plannig",
         "description": "Start Planning Your Dream Vacation Now",
         "createdAt": 1589983468418,
-        "imgUrl": "https://img.huffingtonpost.com/asset/5755e87e130000a109383be7.jpeg?ops=scalefit_720_noupscale&format=webp",
+        "imgUrl": "https://media.giphy.com/media/YkXNjAkG7CfEVx3gcy/giphy.gif",
         "createdBy": {
             "_id": "60589234b5499f32382121e8",
             "fullname": "Nancy Williams",
