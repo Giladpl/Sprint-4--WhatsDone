@@ -107,7 +107,7 @@
           @addPriority="addPriority"
           @removePriority="removePriority"
         />
-        <!-- <stopwatch></stopwatch> -->
+        <stopwatch></stopwatch>
       </div>
     </div>
   </section>

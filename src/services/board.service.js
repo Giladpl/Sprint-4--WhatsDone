@@ -68,6 +68,7 @@ function getEmptyTask() {
         priorityId: 'pNew',
         createdAt: Date.now(),
         dueDate: Date.now(),
+        secondsWorkedOn: 0,
     }
 }
 
@@ -258,7 +259,8 @@ function _createBoard1() {
                     "statusId": "s103",
                     "priorityId": "p103",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-04-01T21:00:00.000Z"
+                    "dueDate": "2021-04-01T21:00:00.000Z",
+                    "secondsWorkedOn": 987543
                 },
                 {
                     "id": "t102",
@@ -383,7 +385,8 @@ function _createBoard1() {
                     "statusId": "s103",
                     "priorityId": "p102",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-04-11T21:00:00.000Z"
+                    "dueDate": "2021-04-11T21:00:00.000Z",
+                    "secondsWorkedOn": 351435435
                 },
                 {
                     "id": "t104",
@@ -443,7 +446,8 @@ function _createBoard1() {
                     "statusId": "s102",
                     "priorityId": "p101",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-04-13T21:00:00.000Z"
+                    "dueDate": "2021-04-13T21:00:00.000Z",
+                    "secondsWorkedOn": 23465324
                 },
                 {
                     "id": "t105",
@@ -513,7 +517,8 @@ function _createBoard1() {
                     "statusId": "s102",
                     "priorityId": "p102",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-04-01T21:00:00.000Z"
+                    "dueDate": "2021-04-01T21:00:00.000Z",
+                    "secondsWorkedOn": 2342345
                 }
             ],
             "color": "#8D0000"
@@ -569,7 +574,8 @@ function _createBoard1() {
                     "statusId": "s101",
                     "priorityId": "p101",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-05-04T21:00:00.000Z"
+                    "dueDate": "2021-05-04T21:00:00.000Z",
+                    "secondsWorkedOn": 1234
                 },
                 {
                     "id": "t107",
@@ -644,7 +650,8 @@ function _createBoard1() {
                     "statusId": "s102",
                     "priorityId": "p101",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-04-11T21:00:00.000Z"
+                    "dueDate": "2021-04-11T21:00:00.000Z",
+                    "secondsWorkedOn": 1234
                 },
                 {
                     "id": "t108",
@@ -699,7 +706,8 @@ function _createBoard1() {
                     "statusId": "s102",
                     "priorityId": "p102",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-04-03T21:00:00.000Z"
+                    "dueDate": "2021-04-03T21:00:00.000Z",
+                    "secondsWorkedOn":124
                 },
                 {
                     "id": "t109",
@@ -764,7 +772,8 @@ function _createBoard1() {
                     "statusId": "s101",
                     "priorityId": "p102",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-04-01T21:00:00.000Z"
+                    "dueDate": "2021-04-01T21:00:00.000Z",
+                    "secondsWorkedOn":154
                 },
                 {
                     "id": "t110",
@@ -824,7 +833,8 @@ function _createBoard1() {
                     "statusId": "s102",
                     "priorityId": "p103",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-04-02T21:00:00.000Z"
+                    "dueDate": "2021-04-02T21:00:00.000Z",
+                    "secondsWorkedOn":3546
                 }
             ],
             "color": "#77dbed"
@@ -880,7 +890,8 @@ function _createBoard1() {
                     "statusId": "s101",
                     "priorityId": "p103",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-04-10T21:00:00.000Z"
+                    "dueDate": "2021-04-10T21:00:00.000Z",
+                    "secondsWorkedOn":76
                 },
                 {
                     "id": "t112",
@@ -945,7 +956,8 @@ function _createBoard1() {
                     "statusId": "s103",
                     "priorityId": "p103",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-03-26T21:00:00.000Z"
+                    "dueDate": "2021-03-26T21:00:00.000Z",
+                    "secondsWorkedOn": 54335
                 },
                 {
                     "id": "t113",
@@ -1015,7 +1027,8 @@ function _createBoard1() {
                     "statusId": "s102",
                     "priorityId": "p102",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-03-24T22:00:00.000Z"
+                    "dueDate": "2021-03-24T22:00:00.000Z",
+                    "secondsWorkedOn": 4356
                 }
             ],
             "color": "#7cdb5c"
@@ -1071,7 +1084,8 @@ function _createBoard1() {
                     "statusId": "s102",
                     "priorityId": "p101",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-03-30T21:00:00.000Z"
+                    "dueDate": "2021-03-30T21:00:00.000Z",
+                    "secondsWorkedOn": 4786
                 },
                 {
                     "id": "t115",
@@ -1131,7 +1145,8 @@ function _createBoard1() {
                     "statusId": "s103",
                     "priorityId": "p103",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-03-29T21:00:00.000Z"
+                    "dueDate": "2021-03-29T21:00:00.000Z",
+                    "secondsWorkedOn": 235
                 },
                 {
                     "id": "t116",
@@ -1196,7 +1211,8 @@ function _createBoard1() {
                     "statusId": "s101",
                     "priorityId": "p103",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-03-28T21:00:00.000Z"
+                    "dueDate": "2021-03-28T21:00:00.000Z",
+                    "secondsWorkedOn": 3215
                 }
             ],
             "color": "#d1be30"
@@ -1247,7 +1263,8 @@ function _createBoard1() {
                     "statusId": "s103",
                     "priorityId": "p102",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-04-22T21:00:00.000Z"
+                    "dueDate": "2021-04-22T21:00:00.000Z",
+                    "secondsWorkedOn": 512
                 },
                 {
                     "id": "t118",
@@ -1307,7 +1324,8 @@ function _createBoard1() {
                     "statusId": "s102",
                     "priorityId": "p103",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-03-31T21:00:00.000Z"
+                    "dueDate": "2021-03-31T21:00:00.000Z",
+                    "secondsWorkedOn": 765
                 },
                 {
                     "id": "t119",
@@ -1367,7 +1385,8 @@ function _createBoard1() {
                     "statusId": "s102",
                     "priorityId": "p103",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-03-28T21:00:00.000Z"
+                    "dueDate": "2021-03-28T21:00:00.000Z",
+                    "secondsWorkedOn":462
                 },
                 {
                     "id": "t120",
@@ -1432,7 +1451,8 @@ function _createBoard1() {
                     "statusId": "s101",
                     "priorityId": "p102",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-04-29T21:00:00.000Z"
+                    "dueDate": "2021-04-29T21:00:00.000Z",
+                    "secondsWorkedOn":23
                 }
             ],
             "color": "#845EC2"
@@ -1618,7 +1638,8 @@ function _createBoard2() {
                         "statusId": "s101",
                         "priorityId": "p101",
                         "createdAt": 1616315457306,
-                        "dueDate": 1616315457306
+                        "dueDate": 1616315457306,
+                        "secondsWorkedOn": 6347
                     },
                     {
                         "id": "t121",
@@ -1677,7 +1698,8 @@ function _createBoard2() {
                         "statusId": "s101",
                         "priorityId": "p102",
                         "createdAt": 1590999730348,
-                        "dueDate": "2021-03-09T22:00:00.000Z"
+                        "dueDate": "2021-03-09T22:00:00.000Z",
+                        "secondsWorkedOn": 64
                     },
                     {
                         "id": "t122",
@@ -1732,7 +1754,8 @@ function _createBoard2() {
                         "statusId": "s103",
                         "priorityId": "p101",
                         "createdAt": 1590999730348,
-                        "dueDate": "2021-03-30T21:00:00.000Z"
+                        "dueDate": "2021-03-30T21:00:00.000Z",
+                        "secondsWorkedOn": 65432
                     }
                 ],
                 "color": "rgb(232, 109, 248)"
@@ -1799,7 +1822,8 @@ function _createBoard2() {
                         "statusId": "s104",
                         "priorityId": "p101",
                         "createdAt": 1590999730348,
-                        "dueDate": "2021-04-03T21:00:00.000Z"
+                        "dueDate": "2021-04-03T21:00:00.000Z",
+                        "secondsWorkedOn": 562
                     },
                     {
                         "id": "t124",
@@ -1854,7 +1878,8 @@ function _createBoard2() {
                         "statusId": "s103",
                         "priorityId": "p101",
                         "createdAt": 1590999730348,
-                        "dueDate": "2021-04-03T21:00:00.000Z"
+                        "dueDate": "2021-04-03T21:00:00.000Z",
+                        "secondsWorkedOn":43
                     },
                     {
                         "id": "t125",
@@ -1903,7 +1928,8 @@ function _createBoard2() {
                         "statusId": "s103",
                         "priorityId": "p101",
                         "createdAt": 1590999730348,
-                        "dueDate": "2021-04-09T21:00:00.000Z"
+                        "dueDate": "2021-04-09T21:00:00.000Z",
+                        "secondsWorkedOn": 65
                     },
                     {
                         "id": "cwsfE",
@@ -1920,7 +1946,8 @@ function _createBoard2() {
                         "statusId": "s102",
                         "priorityId": "p102",
                         "createdAt": 1616312959423,
-                        "dueDate": "2021-04-11T21:00:00.000Z"
+                        "dueDate": "2021-04-11T21:00:00.000Z",
+                        "secondsWorkedOn": 676
                     }
                 ],
                 "color": "#8D0000"
@@ -1972,7 +1999,8 @@ function _createBoard2() {
                         "statusId": "s103",
                         "priorityId": "p101",
                         "createdAt": 1590999730348,
-                        "dueDate": "2021-05-09T21:00:00.000Z"
+                        "dueDate": "2021-05-09T21:00:00.000Z",
+                        "secondsWorkedOn": 654
                     },
                     {
                         "id": "t127",
@@ -2027,7 +2055,8 @@ function _createBoard2() {
                         "statusId": "s102",
                         "priorityId": "p103",
                         "createdAt": 1590999730348,
-                        "dueDate": "2021-05-19T21:00:00.000Z"
+                        "dueDate": "2021-05-19T21:00:00.000Z",
+                        "secondsWorkedOn": 76543
                     },
                     {
                         "id": "t128",
@@ -2082,7 +2111,8 @@ function _createBoard2() {
                         "statusId": "s104",
                         "priorityId": "p102",
                         "createdAt": 1590999730348,
-                        "dueDate": "2021-05-31T21:00:00.000Z"
+                        "dueDate": "2021-05-31T21:00:00.000Z",
+                        "secondsWorkedOn":699
                     }
                 ],
                 "color": "rgb(78, 10, 167)"

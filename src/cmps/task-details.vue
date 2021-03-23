@@ -20,7 +20,7 @@
 import taskUpdate from "./task-update";
 import taskActivity from "./task-activity";
 import vClickOutside from "v-click-outside";
-import recordMsg from "./record-msg.vue";
+// import recordMsg from "./record-msg.vue";
 
 export default {
   directives: {
@@ -70,7 +70,7 @@ export default {
   components: {
     taskUpdate,
     taskActivity,
-    recordMsg,
+    // recordMsg,
   },
 };
 </script>
