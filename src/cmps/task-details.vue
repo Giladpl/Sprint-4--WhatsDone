@@ -12,7 +12,7 @@
       @addUpdate="addUpdate"
     />
     <task-activity v-if="isActivity" :activities="setTaskActivity" />
-    <record-msg />
+    <!-- <record-msg /> -->
   </section>
 </template>
 
