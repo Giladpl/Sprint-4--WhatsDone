@@ -107,6 +107,7 @@
           @addPriority="addPriority"
           @removePriority="removePriority"
         />
+        <stopwatch></stopwatch>
       </div>
     </div>
   </section>
@@ -119,6 +120,7 @@ import taskStatus from "./task-status";
 import taskPriority from "./task-priority";
 import vClickOutside from "v-click-outside";
 import taskDetails from "./task-details";
+import stopwatch from "./stopwatch";
 
 export default {
   directives: {
@@ -263,6 +265,7 @@ export default {
     taskPriority,
     taskDetails,
     taskMembersContainer,
+    stopwatch
   },
 };
 </script>

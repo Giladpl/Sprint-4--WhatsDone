@@ -7,7 +7,9 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import locale from 'element-ui/lib/locale/lang/en'
 import './styles/styles.scss';
+// import VueRecord from '@codekraft-studio/vue-record'
 
+// Vue.use(VueRecord)
 Vue.use(ElementUI, { locale });
 
 // Vue.use(require("moment"));

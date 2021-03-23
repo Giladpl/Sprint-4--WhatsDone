@@ -6,8 +6,13 @@
       <span @click="onUpdate">Updates</span>
       <span @click="onActivity">Activity Log</span>
     </div>
-    <task-update v-if="isUpdate" :comments="task.comments" @addUpdate="addUpdate"/>
+    <task-update
+      v-if="isUpdate"
+      :comments="task.comments"
+      @addUpdate="addUpdate"
+    />
     <task-activity v-if="isActivity" :activities="setTaskActivity" />
+    <!-- <record-msg /> -->
   </section>
 </template>
 
@@ -15,6 +20,7 @@
 import taskUpdate from "./task-update";
 import taskActivity from "./task-activity";
 import vClickOutside from "v-click-outside";
+// import recordMsg from "./record-msg.vue";
 
 export default {
   directives: {
@@ -47,11 +53,11 @@ export default {
     },
     onClose() {
       this.$emit("closeTaskDetails");
-      this.$emit('toggleMainScreen')
+      this.$emit("toggleMainScreen");
     },
     addUpdate(comment) {
-      this.$emit('addUpdate', comment);
-    }
+      this.$emit("addUpdate", comment);
+    },
   },
   computed: {
     setTaskActivity() {
@@ -64,6 +70,7 @@ export default {
   components: {
     taskUpdate,
     taskActivity,
+    // recordMsg,
   },
 };
 </script>

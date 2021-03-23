@@ -75,12 +75,17 @@
             display: flex;
             flex-direction: column;
 
-            .el-icon-circle-plus-outline {
-                font-size: 18px;
-                color: black;
-                cursor: pointer;
-                margin-bottom: 16px;
-                margin-inline-start: 7px;
+            .add-board {
+                margin-top: 16px;
+
+                .el-icon-circle-plus-outline {
+                    font-size: 18px;
+                    color: black;
+                    cursor: pointer;
+                    margin-bottom: 16px;
+                    margin-inline-start: 7px;
+                    margin-right: 10px;
+            }
 
             }
             img {
@@ -89,6 +94,7 @@
                 margin-right: 0;
                 margin-bottom: 16px;
                 margin-inline-start: 7px;
+                margin-right: 10px;
             }
             .board-search {
                 .el-icon-search {
@@ -106,14 +112,28 @@
             .change-board {
                 color: $clr3;
                 font-weight: bolder;
-                border-top: 1px solid $clr6;
+                border-top: 1px solid $clr4;
                 margin-top: 10px;
+                height: 20px;
             }
 
             .mini-board-prev {
                 border-bottom: 1px solid $clr4;
                 cursor: pointer;
+                height: 30px;
+                width: 100%;
+
+               &:hover {
+                    background-color: $clr4;
+                }
+                .el-icon-caret-right {
+                    margin-top: 10px;
+                }
             }
+        }
+
+        .chosen-board {
+            background-color:#f944441a;
         }
     }
     .header-not-shown {
