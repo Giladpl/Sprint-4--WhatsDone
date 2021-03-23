@@ -86,15 +86,28 @@
                     margin-inline-start: 7px;
                     margin-right: 10px;
                 }
+
+                &:hover {
+                    background-color: $clr4;
+                }
             }
-            img {
-                width: 18px;
-                display: block;
-                margin-right: 0;
-                margin-bottom: 16px;
-                margin-inline-start: 7px;
-                margin-right: 10px;
+
+            .sidebar-filters {
+               cursor: pointer;
+                img {
+                    width: 18px;
+                    display: block;
+                    margin-right: 0;
+                    margin-bottom: 16px;
+                    margin-inline-start: 7px;
+                    margin-right: 10px;
+                }
+
+                &:hover {
+                    background-color: $clr4;
+                }
             }
+
             .board-search {
                 .el-icon-search {
                     font-size: 18px;

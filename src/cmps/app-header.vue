@@ -29,7 +29,7 @@
           <i class="el-icon-circle-plus-outline"></i>
           Add
         </li>
-        <li class="flex">
+        <li class="sidebar-filters flex">
           <i
             ><img
               class="sidebar-board-prev img"
