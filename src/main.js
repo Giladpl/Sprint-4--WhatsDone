@@ -7,9 +7,9 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import locale from 'element-ui/lib/locale/lang/en'
 import './styles/styles.scss';
-// import VueRecord from '@codekraft-studio/vue-record'
+// import AudioRecorder from 'vue-audio-recorder'
 
-// Vue.use(VueRecord)
+// Vue.use(AudioRecorder)
 Vue.use(ElementUI, { locale });
 
 Vue.config.productionTip = false

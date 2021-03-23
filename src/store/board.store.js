@@ -1,4 +1,5 @@
 import { boardService } from "../services/board.service.js";
+import {socketService } from "../services/socket.service.js";
 
 export const boardStore = {
     state: {
@@ -7,12 +8,14 @@ export const boardStore = {
     },
     getters: {
         boards(state) { return state.boards },
-        getCurrBoard(state) { return state.currBoard },
-        isStopwatch(state) { return state.isStopwatch}
+        currBoard(state) { return state.currBoard }
     },
     mutations: {
         setBoards(state, payload) {
             state.boards = payload.boards;
+        },
+        setBoard(state, payload) {
+            state.currBoard = payload.board;
         },
         addBoard(state, { board }) {
             state.boards.push(board);
@@ -33,7 +36,24 @@ export const boardStore = {
                 commit({ type: 'setBoards', boards });
             } catch (err) {
                 console.log('Store: Cannot load boards', err);
-                throw new Error('Cannot load boards');
+                throw err;
+            }
+        },
+        async loadBoard({ commit }, {boardId}) {
+            try {
+                const board = await boardService.getById(boardId);
+                commit({ type: 'setBoard', board });
+                // socketService.emit('watch-board', boardId);
+                // socketService.off('board-updated');
+                // socketService.on('board-updated', (boardToSave) => {
+                //     commit({ type: 'setBoard', boardToSave });
+                // });
+                // socketService.on('task-updated', (task) => {
+                //     commit({ type: 'saveTask', task });
+                // });
+            } catch (err) {
+                console.log('boardStore: Error in loadBoard', err);
+                throw err;
             }
         },
         async saveBoard({ commit }, { board }) {
@@ -43,7 +63,7 @@ export const boardStore = {
                 commit({ type, board: savedBoard })
             } catch (err) {
                 console.log('Store: Cannot save board', err);
-                throw new Error('Cannot save board');
+                throw err;
             }
         },
         async removeBoard({ commit }, payload) {
@@ -52,7 +72,7 @@ export const boardStore = {
                 commit(payload);
             } catch (err) {
                 console.log('Store: Cannot remove board', err);
-                throw new Error('Cannot remove board');
+                throw err;
             }
         }
     }

@@ -1,6 +1,6 @@
 <template>
   <section
-    v-if="boardToEdit"
+    v-if="board && boardToEdit"
     class="board-details"
     :style="isFixed"
   >
@@ -9,6 +9,7 @@
       :boardId="board._id"
       :boards="boards"
       @brdrRadiusChange="changeBrderRadius"
+      @addBoard="addNewBoard"
     />
     <div
       class="details-wrapper"
@@ -158,12 +159,12 @@ import vClickOutside from "v-click-outside";
 import draggable from "vuedraggable";
 
 export default {
+  name: 'board-details',
   directives: {
     clickOutside: vClickOutside.directive,
   },
   data() {
     return {
-      board: null,
       boardToEdit: null,
       isAddViewMenu: false,
       isMainScreen: false,
@@ -174,10 +175,10 @@ export default {
   methods: {
     async loadBoard() {
       try {
-        const id = this.$route.params.boardId;
-        const board = await boardService.getById(id);
-        this.board = board;
-        this.boardToEdit = JSON.parse(JSON.stringify(board));
+        const boardId = this.$route.params.boardId;
+        await this.$store.dispatch({ type: 'loadBoard', boardId });
+        // console.log('store', this.board );
+        this.boardToEdit = JSON.parse(JSON.stringify(this.board));
       } catch (err) {
         console.log("cannot load board", err);
       }
@@ -291,6 +292,15 @@ export default {
         this.loadBoard();
       } catch (err) {
         console.log("cannot update board title", err);
+      }
+    },
+    async addNewBoard() {
+try {
+        const boardToAdd = boardService.getEmptyBoard();
+        await this.$store.dispatch({ type: "addBoard", board: boardToAdd });
+        this.loadBoard();
+      } catch (err) {
+        console.log(err);
       }
     },
     async updateBoardDescription(ev) {
@@ -516,6 +526,9 @@ export default {
     boards() {
       return this.$store.getters.boards;
     },
+    board() {
+      return this.$store.getters.currBoard;
+    },
     classObjectScreen() {
       return {
         'main-screen': this.isMainScreen,
@@ -530,6 +543,12 @@ export default {
     "$route.params.boardId"() {
       this.loadBoard();
     },
+    // board: {
+    //   deep: true,
+    //   handler() {
+    //     this.loadBoard();
+    //   },
+    // },
   },
   created() {
     this.loadBoard();
