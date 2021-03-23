@@ -11,10 +11,10 @@
     font-size: 0.8125rem;
     justify-content: space-between;
 
-    input[type=text]{
+    .task-input-form input[type=text]{
         padding: rem(5px) rem(5px)
       }
-    input[type=text]:focus {
+    .task-input-form input[type=text]:focus {
         outline: 1px dashed black;
         padding: rem(5px) rem(5px)
       }
