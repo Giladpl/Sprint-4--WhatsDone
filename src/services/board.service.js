@@ -325,7 +325,9 @@ function _createBoard1() {
                     "statusId": "s103",
                     "priorityId": "p101",
                     "createdAt": 1590999730348,
-                    "dueDate": "2021-03-05T22:00:00.000Z"
+                    "dueDate": "2021-03-05T22:00:00.000Z",
+                    "secondsWorkedOn": 351465485
+
                 },
                 {
                     "id": "t103",
