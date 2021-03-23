@@ -50,6 +50,7 @@
         <div>Status</div>
         <div>Timeline</div>
         <div>Priority</div>
+        <div>Stopwatch</div>
       </div>
     </div>
     <draggable

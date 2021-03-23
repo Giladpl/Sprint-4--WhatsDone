@@ -108,6 +108,8 @@
           @addPriority="addPriority"
           @removePriority="removePriority"
         />
+      </div>
+      <div class="stopwatch-container">
         <stopwatch
           :secondsWorkedOn="task.secondsWorkedOn"
           @addTimeToTask="addTimeToTask"
