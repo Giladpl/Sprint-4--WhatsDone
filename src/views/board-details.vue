@@ -297,7 +297,7 @@ export default {
     async addNewBoard() {
 try {
         const boardToAdd = boardService.getEmptyBoard();
-        await this.$store.dispatch({ type: "addBoard", board: boardToAdd });
+        await this.$store.dispatch({ type: "saveBoard", board: boardToAdd });
         this.loadBoard();
       } catch (err) {
         console.log(err);
