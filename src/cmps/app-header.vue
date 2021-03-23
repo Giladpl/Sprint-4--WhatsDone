@@ -104,7 +104,6 @@ export default {
       });
     },
     addNewBoard() {
-      this.$emit('addBoard');
       this.$emit('addingboard');
     }
   },

@@ -5,15 +5,17 @@
     :style="isFixed"
   >
     <div :class="classObjectScreen"></div>
-    <app-header :boardId="board._id" :boards="boards" @brdrRadiusChange="changeBrderRadius" @addBoard="addNewBoard" />
-      <el-button type="text" @addingboard="addingboard" v-if="isAddingBoard">Insert A Board Name</el-button>
+    <app-header :boardId="board._id" :boards="boards" @brdrRadiusChange="changeBrderRadius" 
+        @addBoard="addNewBoard" @addingboard="addNewBoard"/>
+      
     <div
       class="details-wrapper"
       :class="{'no-brdr-radius' : isBrdrRadius}"
     >
       <div class="board-static-header">
         <div class="board-top-row flex-between">
-          <input class="board-title-input" type="text" @change="updateBoardTitle" v-model="boardToEdit.title" />
+          <input class="board-title-input" type="text" @change="updateBoardTitle" 
+            v-model="boardToEdit.title" />
           <div class="board-btns flex-between">
             <board-member-avatar
               :board="board"
@@ -161,7 +163,6 @@ export default {
       isMainScreen: false,
       isBrdrRadius: false,
       isStopWatch: false,
-      isAddingBoard: false,
     };
   },
   methods: {
@@ -175,14 +176,7 @@ export default {
         console.log("cannot load board", err);
       }
     },
-    addingboard() {
-      this.isAddingBoard = !this.isAddingBoard;
-      this.$prompt('Insert a board title', '', { confirmButtonText: 'OK', cancelButtonText: 'Cancel' })
-      .then(({ value }) => addNewBoard(value))
-      .catch(() => {
-        this.$message({ type: 'info', message: 'No name was given' });       
-      });
-    },
+    
 
     toggleStopwatch() {
       this.isStopWatch = !this.isStopWatch;
@@ -295,12 +289,12 @@ export default {
         console.log("cannot update board title", err);
       }
     },
-    async addNewBoard(title = 'New board') {
+    async addNewBoard() {
     try {
         const boardToAdd = boardService.getEmptyBoard();
-        boardToAdd.title = title;
         await this.$store.dispatch({ type: "saveBoard", board: boardToAdd });
         this.loadBoard();
+        this.$router.push(`/board/${boardToAdd._id}`);
       } catch (err) {
         console.log(err);
       }
