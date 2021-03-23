@@ -1540,7 +1540,7 @@ function _createBoard1() {
 function _createBoard2() {
     return {
         "_id": "6059efce364773a1b1dbadf5",
-        "title": "Trip Plannig",
+        "title": "Trip Planning",
         "description": "Start Planning Your Dream Vacation Now",
         "createdAt": 1589983468418,
         "imgUrl": "https://media.giphy.com/media/YkXNjAkG7CfEVx3gcy/giphy.gif",
