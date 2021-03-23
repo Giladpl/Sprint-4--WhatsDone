@@ -25,6 +25,10 @@
         }
     }
 
+    .home-description {
+        margin-bottom: 15px;
+    }
+
     span {
         color: $clr5;
         font-weight: 600;
@@ -36,11 +40,10 @@
     }
 
     .try-btn {
-        margin: 2px;
         padding: 8px 15px;
         background-color: $clr5;
         border: 1px solid $clr2;
-        border-radius: 4px;
+        // border-radius: 4px;
         color: $clr2;
 
         &:hover {
