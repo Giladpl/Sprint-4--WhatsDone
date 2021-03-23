@@ -50,7 +50,7 @@
           @click="openUserProfile"
         >
           <router-link
-            class="router-link"
+            class="router-link board-creator"
             to="/profile"
           >
             Created By: {{ board.createdBy.fullname }}

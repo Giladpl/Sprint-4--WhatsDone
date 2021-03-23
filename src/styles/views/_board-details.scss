@@ -4,6 +4,10 @@
     display: flex;
     width: auto;
 
+    .board-creator:hover {
+        text-decoration: underline
+    }
+
     .details-wrapper {
         width: 100%;
         padding: 0 30px;
