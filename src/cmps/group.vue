@@ -111,9 +111,13 @@
     />
     <div class="bars-container">
       <div class="bars-container-left"></div>
-      <div class="bars-container-right">
+      <div
+        class="bars-container-right"
+        :style="this.isStopWatch ? dynamicWideBar : dynamicNarrowBar"
+      >
         <div class="space"></div>
         <status-bar
+          :style="this.isStopWatch ? '' : statusBarPatch"
           :statuses="statuses"
           :tasks="group.tasks"
         />
@@ -266,7 +270,17 @@ export default {
     },
     dynamicHidden() {
       return [this.isStopWatch ? { 'display': 'block' } : { 'display': 'none' }]
-    }
+    },
+    dynamicNarrowBar() {
+      return { 'justify-content': 'space-between', 'transform': 'translateX(-2.5%)', 'min-width': '700px' }
+    },
+    dynamicWideBar() {
+      return { 'justify-content': 'unset', 'transform': 'translateX(-4%)', 'min-width': '800px' }
+    },
+    statusBarPatch() {
+      return { 'transform': 'translateX(-6%)' }
+    },
+
   },
   watch: {
     group: {
