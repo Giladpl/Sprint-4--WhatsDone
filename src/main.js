@@ -12,8 +12,6 @@ import VueRecord from '@codekraft-studio/vue-record'
 Vue.use(VueRecord)
 Vue.use(ElementUI, { locale });
 
-// Vue.use(require("moment"));
-
 Vue.config.productionTip = false
 
 new Vue({
