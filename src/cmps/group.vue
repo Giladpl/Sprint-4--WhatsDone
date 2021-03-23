@@ -45,12 +45,24 @@
         v-if="isColorPicker"
         @changeColor="changeColor"
       />
-      <div class="group-header-right">
+      <div
+        class="group-header-right"
+        :style="dynamicWidth"
+      >
         <div>Members</div>
         <div>Status</div>
         <div>Timeline</div>
         <div>Priority</div>
-        <div>Stopwatch</div>
+        <div :style="dynamicHidden">Stopwatch</div>
+        <!-- <div :class="{hidden : !this.isStopWatch}">Stopwatch</div> -->
+        <el-dropdown class="group-options-menu">
+          <span class="el-dropdown-link">
+            <i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item @click.native="toggleStopwatch()">Task Time Counter</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
       </div>
     </div>
     <draggable
@@ -71,6 +83,7 @@
           :priorities="priorities"
           :boardMembers="boardMembers"
           :activities="activities"
+          :isStopWatch="isStopWatch"
           @removeMemberFromTask="removeMemberFromTask"
           @addMemberToTask="addMemberToTask"
           @removeTask="removeTask"
@@ -146,6 +159,10 @@ export default {
     },
     activities: {
       type: Array,
+      required: true,
+    },
+    isStopWatch: {
+      type: Boolean,
       required: true,
     },
   },
@@ -237,6 +254,18 @@ export default {
     addTimeToTask(update) {
       update.groupId = this.group.id
       this.$emit('addTimeToTask', update)
+    },
+    toggleStopwatch() {
+      this.$emit('toggleStopwatch')
+    }
+
+  },
+  computed: {
+    dynamicWidth() {
+      return [this.isStopWatch ? { 'min-width': '800px' } : { 'min-width': '700px' }]
+    },
+    dynamicHidden() {
+      return [this.isStopWatch ? { 'display': 'block' } : { 'display': 'none' }]
     }
   },
   watch: {

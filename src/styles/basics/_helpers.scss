@@ -35,6 +35,15 @@
     flex-direction: column;
 }
 
+.non-hidden{
+    opacity: 1;
+}
+
+.hidden{
+    display: none;
+    opacity: 0;
+}
+
 .router-link {
     text-decoration: none;
     color: inherit;

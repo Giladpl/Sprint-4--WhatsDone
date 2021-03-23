@@ -36,6 +36,10 @@
                 font-size: 15px;
                 width: 9.375rem;
             }
+            .group-options-menu{
+                position: absolute;
+                left: 92.5%;
+            }
         }
 
         .group-header-left {
@@ -69,6 +73,7 @@
                     outline: 1px dashed $clr6;
                 }
             }
+           
         }
 
         >*:not(.color-picker) {
