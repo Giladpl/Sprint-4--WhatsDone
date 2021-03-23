@@ -1,11 +1,12 @@
 <template>
-    <el-card class="board-preview">
-        <p>
-            <img :src="board.imgUrl" height="300">
-        </p>
-        <h4>{{board.title}}</h4>
-        <p>Created by: {{board.createdBy.fullname}}</p>
-    </el-card>
+    <div class="board-preview">
+        <div class="card-img">
+            <img :src="board.imgUrl">
+        </div>
+        <div class="card-title">
+            <p>{{board.title}}</p>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -16,5 +17,7 @@
                 required: true
             }
         }
+        // https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif
+        //https://media.giphy.com/media/YkXNjAkG7CfEVx3gcy/giphy.gif
     }
 </script>

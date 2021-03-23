@@ -1,13 +1,9 @@
 .board-list {
     display: flex;
     justify-content: center;
-
-    > * {
-        padding: 0 10px;
-        text-align: center;
-
-        &:hover {
-            opacity: 0.8;
-        }
+    flex-wrap: wrap;
+    
+    @media all and (max-width: 500px) {
+        flex-direction: column;
     }
 }
