@@ -1,9 +1,11 @@
 .stopwatch {
   display: flex;
   cursor: default;
+  margin-left: 10px;
 
   p{
     margin-bottom: 0px;
+    margin-left: 5px;
   }
 
   .btn-stopwatch{
