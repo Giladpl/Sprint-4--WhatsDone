@@ -3,9 +3,8 @@
     transform: translate(0, 56.5%);
     z-index: 1;
 
-    
     .priority-list {
-        min-width: 9.375rem;
+        width: 9.375rem;
         top: 40px;
         padding: 5px 10px;
         z-index: 5;
@@ -33,7 +32,8 @@
 
         i {
             font-size: 13px;
-            opacity: 0; }
+            opacity: 0; 
+        }
     }
 
     .input-add-priority {
