@@ -17,7 +17,5 @@
                 required: true
             }
         }
-        // https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif
-        //https://media.giphy.com/media/YkXNjAkG7CfEVx3gcy/giphy.gif
     }
 </script>
