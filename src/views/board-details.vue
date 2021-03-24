@@ -5,20 +5,9 @@
     :style="isFixed"
   >
     <div :class="classObjectScreen"></div>
-<<<<<<< HEAD
-    <app-header
-      :boardId="board._id"
-      :boards="boards"
-      @brdrRadiusChange="changeBrderRadius"
-      @addBoard="addNewBoard"
-      @addingboard="addNewBoard"
-    />
-
-=======
     <app-header :boardId="board._id" :boards="boards" @borderRadiusChange="changeBrderRadius" 
        @addingBoard="addNewBoard"/>
       
->>>>>>> c31274e4ddbe77e7780f9c7617f694f9d490984e
     <div
       class="details-wrapper"
       :class="{'no-border-radius' : isBorderRadius}"
@@ -186,11 +175,8 @@ export default {
       isMainScreen: false,
       isBorderRadius: false,
       isStopWatch: false,
-<<<<<<< HEAD
       isView: false,
-=======
       isAddingBoard: false,
->>>>>>> c31274e4ddbe77e7780f9c7617f694f9d490984e
     };
   },
   methods: {
@@ -319,17 +305,6 @@ export default {
         console.log("cannot update board title", err);
       }
     },
-<<<<<<< HEAD
-    async addNewBoard() {
-      try {
-        const boardToAdd = boardService.getEmptyBoard();
-        await this.$store.dispatch({ type: "saveBoard", board: boardToAdd });
-        this.loadBoard();
-        this.$router.push(`/board/${boardToAdd._id}`);
-      } catch (err) {
-        console.log(err);
-      }
-=======
     addNewBoard() {
       this.isAddingBoard = true;
       let boardToAdd = boardService.getEmptyBoard();
@@ -341,7 +316,6 @@ export default {
           this.$router.push(`/board/${boardToAdd._id}`)
         })
         .catch(err => console.log('No name was saved or object had error while saving in to DB', err))     
->>>>>>> c31274e4ddbe77e7780f9c7617f694f9d490984e
     },
     async updateBoardDescription(ev) {
       this.boardToEdit.description = ev.target.value;
