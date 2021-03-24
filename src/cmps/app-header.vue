@@ -97,7 +97,7 @@ export default {
       return this.boardId === id;
     },
     addNewBoard() {
-      this.$emit('addingboard');
+      this.$emit('addingBoard');
     }
   },
   computed: {
