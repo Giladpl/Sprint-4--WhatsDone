@@ -1,26 +1,33 @@
 <template>
-  <div>
-    <h2>Board Priorities by Percentages:</h2>
-    <chartPriorityTotal />
-    <h2>Board Statuses by Percentages:</h2>
-    <chartStatusTotal />
-    <h2>Task per Hour:</h2>
-    <chartTimePerTask />
-  </div>
+  <section class="charts-main-container flex">
+    <div class="upper-charts flex">
+      <div class="priority-chart">
+        <h2>Board Priorities by Percentages:</h2>
+        <chartPriorityTotal class="chart chart-priority" />
+      </div>
+      <div class="status-chart">
+        <h2>Board Statuses by Percentages:</h2>
+        <chartStatusTotal class="chart chart-status" />
+      </div>
+    </div>
+    <div class="lower-chart">
+      <h2>Task per Hour:</h2>
+      <chartTimePerTask class="chart chart-time" />
+    </div>
+  </section>
 </template>
 
 <script>
-import chartPriorityTotal from "./chart-priority-total"
-import chartStatusTotal from "./chart-status-total"
-import chartTimePerTask from "./chart-time-per-task"
+import chartPriorityTotal from "./chart-priority-total";
+import chartStatusTotal from "./chart-status-total";
+import chartTimePerTask from "./chart-time-per-task";
 export default {
-
   components: {
     chartPriorityTotal,
     chartStatusTotal,
-    chartTimePerTask
-  }
-}
+    chartTimePerTask,
+  },
+};
 </script>
 
 <style>

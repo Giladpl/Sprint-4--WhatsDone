@@ -49,7 +49,7 @@ export default {
           color += letters[Math.floor(Math.random() * 16)];
         }
         return color;
-      });                   //to put in service
+      });                  
     },
   },
   mounted() {
