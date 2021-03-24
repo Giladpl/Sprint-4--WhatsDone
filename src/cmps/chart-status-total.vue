@@ -77,8 +77,8 @@ export default {
   },
   created() {
     this.createStatusesMap()
-    console.log(this.totalTasks);
-    console.log(this.statusPercantages);
+    // console.log(this.totalTasks);
+    // console.log(this.statusPercantages);
 
   },
 }

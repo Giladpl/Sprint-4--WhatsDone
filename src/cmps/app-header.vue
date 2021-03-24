@@ -24,7 +24,7 @@
     <div
       class="secondary-header flex"
       :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}">
-      <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list" v-click-outside="toggleBoardNavbar">
+      <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list">
         <li class="add-board flex" @click="addNewBoard">
           <i class="el-icon-circle-plus-outline"></i>
           Add
@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import vClickOutside from "v-click-outside";
+// import vClickOutside from "v-click-outside";
 export default {
   name: "appHeader",
   props: {
@@ -76,7 +76,7 @@ export default {
     },
   },
   directives: {
-    clickOutside: vClickOutside.directive,
+    // clickOutside: vClickOutside.directive,
   },
   data() {
     return {

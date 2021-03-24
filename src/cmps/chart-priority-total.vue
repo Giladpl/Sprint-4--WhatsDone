@@ -9,16 +9,7 @@ export default {
   extends: Pie,
   data() {
     return {
-      // chartdata: {
-      //   labels: this.priorityLabels,
-      //   datasets: [
-      //     {
-      //       label: 'Board Total Progress by Percentage',
-      //       backgroundColor: this.priorityColors,
-      //       data: this.priorityPercantages
-      //     }
-      //   ],
-      // },
+      
       options: {
         responsive: true,
         maintainAspectRatio: false,
@@ -43,17 +34,6 @@ export default {
               priority.count++
               this.totalTasks++
             }
-          })
-        })
-      })
-    },
-    createStatusesMap() {
-      this.statusesMap = JSON.parse(JSON.stringify(this.currBoard.statuses))
-      this.statusesMap.forEach(task => task.count = 0)
-      this.statusesMap.forEach(status => {
-        this.currBoard.groups.forEach(group => {
-          group.tasks.forEach(task => {
-            if (task.statusId === status.id) status.count++
           })
         })
       })
@@ -99,7 +79,6 @@ export default {
   },
   created() {
     this.createPrioritiesMap()
-    this.createStatusesMap()
   },
 }
 </script>
