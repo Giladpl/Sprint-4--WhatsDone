@@ -5,6 +5,7 @@
     :style="isFixed"
   >
     <div :class="classObjectScreen"></div>
+<<<<<<< HEAD
     <app-header
       :boardId="board._id"
       :boards="boards"
@@ -13,9 +14,14 @@
       @addingboard="addNewBoard"
     />
 
+=======
+    <app-header :boardId="board._id" :boards="boards" @borderRadiusChange="changeBrderRadius" 
+       @addingBoard="addNewBoard"/>
+      
+>>>>>>> c31274e4ddbe77e7780f9c7617f694f9d490984e
     <div
       class="details-wrapper"
-      :class="{'no-brdr-radius' : isBrdrRadius}"
+      :class="{'no-border-radius' : isBorderRadius}"
     >
       <div class="board-static-header">
         <div class="board-top-row flex-between">
@@ -154,6 +160,7 @@
           />
         </li>
       </draggable>
+    <el-button type="text" v-if="isAddingBoard">Insert A Board Name</el-button>
     </div>
   </section>
 </template>
@@ -177,9 +184,13 @@ export default {
       boardToEdit: null,
       isAddViewMenu: false,
       isMainScreen: false,
-      isBrdrRadius: false,
+      isBorderRadius: false,
       isStopWatch: false,
+<<<<<<< HEAD
       isView: false,
+=======
+      isAddingBoard: false,
+>>>>>>> c31274e4ddbe77e7780f9c7617f694f9d490984e
     };
   },
   methods: {
@@ -209,7 +220,7 @@ export default {
       this.isMainScreen = !this.isMainScreen;
     },
     changeBrderRadius() {
-      this.isBrdrRadius = !this.isBrdrRadius;
+      this.isBorderRadius = !this.isBorderRadius;
     },
     addActivity(action, task) {
       const activity = {
@@ -308,6 +319,7 @@ export default {
         console.log("cannot update board title", err);
       }
     },
+<<<<<<< HEAD
     async addNewBoard() {
       try {
         const boardToAdd = boardService.getEmptyBoard();
@@ -317,6 +329,19 @@ export default {
       } catch (err) {
         console.log(err);
       }
+=======
+    addNewBoard() {
+      this.isAddingBoard = true;
+      let boardToAdd = boardService.getEmptyBoard();
+      this.$prompt('Insert a board title', '', { confirmButtonText: 'OK', cancelButtonText: 'Cancel' })
+        .then(({ value }) => boardToAdd.title = value)
+        .then(() => this.$store.dispatch({ type: "saveBoard", board: boardToAdd }))
+        .then(() => {
+          this.loadBoard()
+          this.$router.push(`/board/${boardToAdd._id}`)
+        })
+        .catch(err => console.log('No name was saved or object had error while saving in to DB', err))     
+>>>>>>> c31274e4ddbe77e7780f9c7617f694f9d490984e
     },
     async updateBoardDescription(ev) {
       this.boardToEdit.description = ev.target.value;

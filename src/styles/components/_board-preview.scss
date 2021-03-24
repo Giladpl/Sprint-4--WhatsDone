@@ -1,32 +1,19 @@
 
 .board-preview {
-    margin: 30px;
-    width: 300px;
-    height: 300px;
-    border-radius: 40px;
-    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-    cursor: pointer;
-    transition: 0.4s;
-
-    &:hover {
-        transform: scale(0.9, 0.9);
-        box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), -5px -5px 30px 15px rgba(0,0,0,0.22);
+    > * {
+        margin-bottom: 20px;
     }
 
-    .card-img img{
-        width: 300px;
-        height: 300px;
-        border-radius: 40px;
+    .card-img {
+        margin-left: auto;
+        margin-right: auto;
+        img {
+            width: 200px;
+            height: 200px;
+        }
     }
 
     .card-title {
-        text-align: center;
-        border-radius: 0px 0px 40px 40px;
-        font-family: sans-serif;
-        font-weight: bolder;
         font-size: 25px;
-        margin-top: -53px;
-        height: 40px;
-        color: white;
     }
 }
