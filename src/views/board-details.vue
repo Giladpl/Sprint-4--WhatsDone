@@ -5,17 +5,26 @@
     :style="isFixed"
   >
     <div :class="classObjectScreen"></div>
-    <app-header :boardId="board._id" :boards="boards" @brdrRadiusChange="changeBrderRadius" 
-        @addBoard="addNewBoard" @addingboard="addNewBoard"/>
-      
+    <app-header
+      :boardId="board._id"
+      :boards="boards"
+      @brdrRadiusChange="changeBrderRadius"
+      @addBoard="addNewBoard"
+      @addingboard="addNewBoard"
+    />
+
     <div
       class="details-wrapper"
       :class="{'no-brdr-radius' : isBrdrRadius}"
     >
       <div class="board-static-header">
         <div class="board-top-row flex-between">
-          <input class="board-title-input" type="text" @change="updateBoardTitle" 
-            v-model="boardToEdit.title" />
+          <input
+            class="board-title-input"
+            type="text"
+            @change="updateBoardTitle"
+            v-model="boardToEdit.title"
+          />
           <div class="board-btns flex-between">
             <board-member-avatar
               :board="board"
@@ -78,17 +87,23 @@
             />
             Calander
           </div>
-          <div>
+          <router-link
+            :to="'/board/' + board._id + '/chart'"
+            @click.native="toggleAddView"
+          >
             <img
               class="btn-add-view-menu"
               src="@/assets/icons/chart.svg"
             />
             Chart
-          </div>
+          </router-link>
         </div>
       </div>
 
+      <router-view v-if="isView" @toggleAddView="toggleAddView"/>
+
       <el-button
+        v-if="!isView"
         @click="addGroup"
         class="btn-add-group"
         type="primary"
@@ -98,6 +113,7 @@
       </el-button>
 
       <draggable
+        v-if="!isView"
         class="clean-list"
         v-model="board.groups"
         @start="drag = true"
@@ -163,6 +179,7 @@ export default {
       isMainScreen: false,
       isBrdrRadius: false,
       isStopWatch: false,
+      isView: false,
     };
   },
   methods: {
@@ -176,8 +193,9 @@ export default {
         console.log("cannot load board", err);
       }
     },
-    
-
+    toggleAddView() {
+      this.isView = !this.isView
+    },
     toggleStopwatch() {
       this.isStopWatch = !this.isStopWatch;
     },
@@ -208,6 +226,7 @@ export default {
           title: task.title,
         },
       };
+      // activity.byMember = userService.getLoggediUser()
       if (this.loggedinUser) {
         activity.byMember._id = this.loggedinUser._id;
         activity.byMember.fullname = this.loggedinUser.fullname;
@@ -290,7 +309,7 @@ export default {
       }
     },
     async addNewBoard() {
-    try {
+      try {
         const boardToAdd = boardService.getEmptyBoard();
         await this.$store.dispatch({ type: "saveBoard", board: boardToAdd });
         this.loadBoard();

@@ -5,6 +5,7 @@ import login from '../views/login.vue'
 import boardDetails from '../views/board-details.vue'
 import userProfile from '../views/user-profile.vue'
 import board from '../views/board.vue'
+import chart from '../cmps/chart.vue'
 
 Vue.use(VueRouter)
 
@@ -27,17 +28,23 @@ const routes = [
   {
     path: '/board/:boardId',
     name: 'board-details',
-    component: boardDetails
+    component: boardDetails,
+    children: [
+      {
+          path: 'chart',
+          component: chart
+      },
+      // {
+      //     path: '',
+      //     component: 
+      // },       
+  ]
   },
   {
     path: '/profile',
     name: 'user-profile',
     component: userProfile
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  // }
 ]
 
 const router = new VueRouter({
