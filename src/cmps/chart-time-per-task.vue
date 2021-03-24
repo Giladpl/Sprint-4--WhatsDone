@@ -68,7 +68,6 @@ export default {
   },
   created() {
     this.createTimePerGroupMap();
-    console.log(this.timePerGroupMap);
   },
 };
 </script>
