@@ -62,7 +62,6 @@
 </template>
 
 <script>
-import boardList from "./board-list.vue";
 import vClickOutside from "v-click-outside";
 export default {
   name: "appHeader",
@@ -97,12 +96,6 @@ export default {
     isChosenBoard(id) {
       return this.boardId === id;
     },
-    boardToShow() {
-      this.boardsToShow = this.boards.filter(board => {
-        const regex = new RegExp(this.filterBy.name, 'i');
-        return !this.filterBy.name || regex.test(board.title)
-      });
-    },
     addNewBoard() {
       this.$emit('addingboard');
     }
@@ -120,13 +113,26 @@ export default {
       }
       return user;
     },
+    boardToShow() {
+      this.boardsToShow = this.boards.filter(board => {
+        const regex = new RegExp(this.filterBy.name, 'i');
+        return !this.filterBy.name || regex.test(board.title)
+      });
+    },
   },
+  // watch: {
+  //   // board: {
+  //   //   deep: true,
+  //   //   handler() {
+  //   //     this.loadBoard();
+  //   //   },
+  //   // },
+  // },
   created() {
       this.boardsToShow = JSON.parse(JSON.stringify(this.boards));
     // this.loggedInUser = this.$store.getters.loggedInUser;
   },
   components: {
-    boardList,
   },
 };
 </script>
