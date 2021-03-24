@@ -1,6 +1,19 @@
 .home-page {
+    display: flex;
+    width: 100vw;
+}
+
+.side-bar {
+    background: #ff416c;
+    background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
+    color: #fff;
+    width: 20%;
+}
+
+.main-home-page {
     color: $clr3;
     height: 100vh;
+    width: 100%;
     display: grid;
     gap: 20px;
     grid-template-columns: 1fr;
@@ -25,6 +38,10 @@
         }
     }
 
+    .co-working-img {
+        width: 400px;
+    }
+
     .home-description {
         margin-bottom: 15px;
     }
@@ -35,21 +52,17 @@
         font-style: italic;
     }
 
-    .logo {
-        width: 19rem;
-    }
-
     .try-btn {
-        padding: 8px 15px;
-        background-color: $clr5;
+        padding: 10px 20px;
+        background-color: #ff416c;
         border: 1px solid $clr2;
-        // border-radius: 4px;
+        border-radius: 9px;
         color: $clr2;
 
         &:hover {
-            color: $clr5;
+            color: #ff416c;
             background-color: $clr2;
-            border: 1px solid $clr3;
+            border: 1px solid #ff416c;
         }
 
         &:active {
