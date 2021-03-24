@@ -67,6 +67,12 @@ export default {
     addUpdate() {
       this.updateToEdit.createdAt = Date.now();
       this.$emit('addUpdate', this.updateToEdit);
+      this.updateToEdit = {
+        update: null,
+        file: null,
+        createdAt: null,
+        byMember: null,
+      }
     },
   },
 };
