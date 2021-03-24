@@ -1,5 +1,5 @@
 <template>
-	<ul class="board-list clean-list">
+	<ul class="board-list clean-list flex">
 		<li v-for="board in boards" :key="board._id" class="board-preview-container">
             <router-link class="router-link" :to="'/board/' + board._id"><board-preview :board="board" /></router-link>
 		</li>

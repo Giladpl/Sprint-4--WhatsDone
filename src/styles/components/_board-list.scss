@@ -1,9 +1,30 @@
 .board-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .2), 0 10px 10px rgba(0, 0, 0, .2);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    margin-left: auto;
+    margin-right: auto;
 
-    @media all and (max-width: 500px) {
-        flex-direction: column;
+    > * {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        &:hover {
+            opacity: .9;
+        }
+    }
+
+    > *:not(:last-child) {
+        background: #ff416c;
+        background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
+        color: #fff;
     }
 }
