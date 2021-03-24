@@ -6,6 +6,9 @@
         <div class="card-title">
             <p>{{board.title}}</p>
         </div>
+        <div class="card-description">
+            <p>{{board.description}}</p>
+        </div>
     </div>
 </template>
 
