@@ -10,7 +10,7 @@
 			<router-link to="/login">Login</router-link>
 			<router-link to="/login">SignUp</router-link>
 		</nav>
-    <h1>Try one of the boards</h1>
+    <h1>Try one of our pre-made boards:</h1>
     <board-list :boards="boards" />
   </section>
 </template>
