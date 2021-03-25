@@ -3,7 +3,7 @@ import { storageService } from './storage.service.js'
 import { utilService } from './util.service.js'
 import {httpService} from './http.service.js'
 
-// const KEY = 'boardsDB';
+const KEY = 'boardsDB';
 
 export const boardService = {
     query,
@@ -15,7 +15,7 @@ export const boardService = {
     getEmptyGroup
 }
 
-// _createBoards()
+_createBoards()
 
 function query() {
     return httpService.get(`board/`)

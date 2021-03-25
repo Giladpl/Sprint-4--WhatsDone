@@ -124,13 +124,13 @@
       <draggable
         v-if="!isView"
         class="clean-list"
-        v-model="board.groups"
+        v-model="boardToEdit.groups"
         @start="drag = true"
         @end="drag = false"
         @change="changeGroupByDrag"
       >
         <li
-          v-for="group in board.groups"
+          v-for="group in boardToEdit.groups"
           :key="group._id"
         >
           <group
@@ -200,9 +200,9 @@ export default {
   methods: {
     async loadBoard() {
       try {
+        if (this.boardToEdit) socketService.emit('board-updated', this.boardToEdit);
         const boardId = this.$route.params.boardId;
         await this.$store.dispatch({ type: 'loadBoard', boardId });
-        // console.log('store', this.board );
         this.boardToEdit = JSON.parse(JSON.stringify(this.board));
       } catch (err) {
         console.log("cannot load board", err);
@@ -270,7 +270,7 @@ export default {
           currGroup.tasks.splice(idx, 1);
           this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         })
-        // .then(() => this.loadBoard())
+        .then(() => this.loadBoard())
         .catch(() => console.log("Could not remove task"));
     },
     removeGroup({ groupId }) {
@@ -290,7 +290,7 @@ export default {
           this.boardToEdit.groups.splice(groupIdx, 1);
           this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         })
-        // .then(() => this.loadBoard())
+        .then(() => this.loadBoard())
         .catch(() => console.log("Could not remove group"));
     },
     async changeGroupColor(groupUpdate) {
@@ -327,7 +327,7 @@ export default {
         .then(({ value }) => boardToAdd.title = value)
         .then(() => this.$store.dispatch({ type: "saveBoard", board: boardToAdd }))
         .then(() => {
-          // this.loadBoard()
+          this.loadBoard()
           this.$router.push(`/board/${boardToAdd._id}`)
         })
         .catch(err => console.log('No name was saved or object had error while saving in to DB', err))
@@ -456,6 +456,7 @@ export default {
         this.addActivity("Update priority", currGroup.tasks[idx]);
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
+        // socketService.emit('board-updated', this.boardToEdit);
       } catch (err) {
         console.log("cannot update priority", err);
       }
@@ -516,7 +517,6 @@ export default {
     },
     async changeGroupByDrag() {
       try {
-        this.boardToEdit.groups.splice(0, this.boardToEdit.groups.length, ...this.board.groups);
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
@@ -574,16 +574,15 @@ export default {
   watch: {
     "$route.params.boardId"() {
       this.loadBoard();
-    },
-    // board: {
-    //   deep: true,
-    //   handler() {
-    //     this.loadBoard();
-    //   },
-    // },
+    }
   },
   created() {
     this.loadBoard();
+    const boardId = this.$route.params.boardId;
+    socketService.emit('watch-board', boardId);
+    socketService.on('board-update', (boardToSave) => {
+      this.boardToEdit = boardToSave;
+    });
   },
   components: {
     group,

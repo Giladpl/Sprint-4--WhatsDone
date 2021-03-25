@@ -27,6 +27,7 @@ export const boardStore = {
         editBoard(state, { board }) {
             const idx = state.boards.findIndex(t => t._id === board._id);
             state.boards.splice(idx, 1, board);
+            // state.currBoard = board;
         },
     },
     actions: {
@@ -43,11 +44,11 @@ export const boardStore = {
             try {
                 const board = await boardService.getById(boardId);
                 commit({ type: 'setBoard', board });
-                socketService.emit('watch-board', boardId);
-                socketService.off('board-updated');
-                socketService.on('board-updated', (boardToSave) => {
-                    commit({ type: 'setBoard', boardToSave });
-                });
+                // socketService.emit('watch-board', boardId);
+                // socketService.off('board-updated');
+                // socketService.on('board-updated', (boardToSave) => {
+                //     commit({ type: 'setBoard', boardToSave });
+                // });
                 // socketService.on('task-updated', (task) => {
                 //     commit({ type: 'saveTask', task });
                 // });
