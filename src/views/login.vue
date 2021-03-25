@@ -104,6 +104,7 @@ export default {
 			}
 			try {
 				await this.$store.dispatch({ type: 'login', userCred: this.loginCred });
+				// this.$router.push('/board/6059efa4364773a1b1dba789');
 				this.$router.push('/board');
 			} catch (err) {
 				console.log(err);
