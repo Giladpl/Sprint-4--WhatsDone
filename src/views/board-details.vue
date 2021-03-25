@@ -124,7 +124,7 @@
         v-model="board.groups"
         @start="drag = true"
         @end="drag = false"
-        @change="changedByDrag"
+        @change="changeGroupByDrag"
       >
         <li
           v-for="group in board.groups"
@@ -488,16 +488,6 @@ export default {
         console.log("cannot update task", err);
       }
     },
-    async updateTasksOrder({ tasks, groupId }) {
-      try {
-        const [currGroup] = this.boardToEdit.groups.filter(group => group.id === groupId);
-        currGroup.tasks.splice(0, currGroup.tasks.length, ...tasks);
-        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
-        this.loadBoard();
-      } catch (err) {
-        console.log(err);
-      }
-    },
     async addUpdate(update) {
       try {
         update.comment.byMember = this.loggedinUser;
@@ -510,7 +500,17 @@ export default {
         console.log("cannot add update", err);
       }
     },
-    async changedByDrag() {
+    async updateTasksOrder({ tasks, groupId }) {
+      try {
+        const currGroup = this.boardToEdit.groups.find(group => group.id === groupId);
+        currGroup.tasks.splice(0, currGroup.tasks.length, ...tasks);
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
+        this.loadBoard();
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    async changeGroupByDrag() {
       try {
         this.boardToEdit.groups.splice(0, this.boardToEdit.groups.length, ...this.board.groups);
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
@@ -534,7 +534,7 @@ export default {
   },
   computed: {
     loggedinUser() {
-       let user = this.$store.getters.loggedInUser;
+      let user = this.$store.getters.loggedInUser;
       if (!user) {
         user = {
           _id: "guest",
