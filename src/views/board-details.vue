@@ -575,12 +575,12 @@ export default {
     "$route.params.boardId"() {
       this.loadBoard();
     },
-    // board: {
-    //   deep: true,
-    //   handler() {
-    //     this.loadBoard();
-    //   },
-    // },
+    board: {
+      deep: true,
+      handler() {
+        this.loadBoard();
+      },
+    },
   },
   created() {
     this.loadBoard();
