@@ -124,7 +124,7 @@
       <draggable
         v-if="!isView"
         class="clean-list"
-        v-model="board.groups"
+        v-model="boardToEdit.groups"
         @start="drag = true"
         @end="drag = false"
         @change="changeGroupByDrag"
@@ -516,7 +516,6 @@ export default {
     },
     async changeGroupByDrag() {
       try {
-        this.boardToEdit.groups.splice(0, this.boardToEdit.groups.length, ...this.board.groups);
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
