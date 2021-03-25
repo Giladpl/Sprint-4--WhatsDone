@@ -25,6 +25,9 @@
             v-model="boardToEdit.title"
           />
           <div class="board-btns flex-between">
+            <router-link to="/profile">
+               <el-avatar class="header-avatar" size="medium" :src="loggedInUser.imgUrl"></el-avatar>
+            </router-link>
             <board-member-avatar
               :board="board"
               :members="board.members"
