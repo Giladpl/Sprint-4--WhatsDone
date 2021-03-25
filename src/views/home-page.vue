@@ -4,10 +4,10 @@
         <home-page-header />
         <div class="main-hero flex-between">
             <div class="hero-content">
-                <h1 class="title-hero">make sure you are in control and on top of everyting!</h1>
+                <h1 class="title-hero">Project management made simple.</h1>
                 <p class="txt-hero">
                     From the initial idea to the end product. Manage you project with your team members
-                    by defining tasks, assign different responsibilities and check their statuses.
+                    by defining tasks, assigning responsibilities and folowing-up with their statuses.
                 </p>
                 <router-link class="try-btn" to="/board">Try now!</router-link>
             </div>
