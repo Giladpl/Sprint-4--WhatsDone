@@ -137,6 +137,10 @@
     .add-view-card{
         width: 200px;
         position: absolute;
+
+        .chart-btn{
+            color: $clr3;
+        }
     }
 
     .btn-add-view-menu{

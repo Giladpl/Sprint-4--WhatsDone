@@ -21,4 +21,20 @@
         grid-column: 1 / 3;
         grid-row: 2
     }
+
+}
+
+.add-view-btn{
+    margin: 15px 0;
+    width: rem(92.17px);
+    background-color: #fff;
+    color: $clr3;
+    border-color: $clr4;
+
+    &:hover {
+        color: unset;
+        border-color: transparent;
+        background-color: unset;
+        background-color: $clr4;
+    }
 }

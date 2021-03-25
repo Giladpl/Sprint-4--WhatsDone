@@ -5,9 +5,13 @@
     :style="isFixed"
   >
     <div :class="classObjectScreen"></div>
-    <app-header :boardId="board._id" :boards="boards" @borderRadiusChange="changeBrderRadius" 
-       @addingBoard="addNewBoard"/>
-      
+    <app-header
+      :boardId="board._id"
+      :boards="boards"
+      @borderRadiusChange="changeBrderRadius"
+      @addingBoard="addNewBoard"
+    />
+
     <div
       class="details-wrapper"
       :class="{'no-border-radius' : isBorderRadius}"
@@ -82,20 +86,27 @@
             />
             Calander
           </div>
-          <router-link
-            :to="'/board/' + board._id + '/chart'"
-            @click.native="toggleAddView"
-          >
-            <img
-              class="btn-add-view-menu"
-              src="@/assets/icons/chart.svg"
-            />
-            Chart
-          </router-link>
+          <div>
+            <router-link
+              class="chart-btn"
+              :to="'/board/' + board._id + '/chart'"
+              @click.native="toggleAddView"
+            >
+              <img
+                class="btn-add-view-menu"
+                src="@/assets/icons/chart.svg"
+              />
+              Chart
+            </router-link>
+          </div>
         </div>
       </div>
 
-      <router-view v-if="isView" @toggleAddView="toggleAddView"/>
+      <router-view
+        v-if="isView"
+        @toggleAddView="toggleAddView"
+        @backToBoard="backToBoard"
+      />
 
       <el-button
         v-if="!isView"
@@ -149,7 +160,10 @@
           />
         </li>
       </draggable>
-    <el-button type="text" v-if="isAddingBoard">Insert A Board Name</el-button>
+      <el-button
+        type="text"
+        v-if="isAddingBoard"
+      >Insert A Board Name</el-button>
     </div>
   </section>
 </template>
@@ -190,8 +204,14 @@ export default {
         console.log("cannot load board", err);
       }
     },
+    backToBoard() {
+      const boardId = this.$route.params.boardId;
+      this.toggleAddView()
+      this.$router.push('/board/' + boardId)
+    },
     toggleAddView() {
       this.isView = !this.isView
+      this.isAddViewMenu = false
     },
     toggleStopwatch() {
       this.isStopWatch = !this.isStopWatch;
@@ -315,7 +335,7 @@ export default {
           this.loadBoard()
           this.$router.push(`/board/${boardToAdd._id}`)
         })
-        .catch(err => console.log('No name was saved or object had error while saving in to DB', err))     
+        .catch(err => console.log('No name was saved or object had error while saving in to DB', err))
     },
     async updateBoardDescription(ev) {
       this.boardToEdit.description = ev.target.value;
