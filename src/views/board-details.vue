@@ -8,7 +8,7 @@
     <app-header
       :boardId="board._id"
       :boards="boards"
-      @borderRadiusChange="changeBrderRadius"
+      @borderRadiusChange="changeBorderRadius"
       @addingBoard="addNewBoard"
     />
 
@@ -25,6 +25,9 @@
             v-model="boardToEdit.title"
           />
           <div class="board-btns flex-between">
+            <router-link to="/profile">
+             <el-avatar class="header-avatar" size="small" :src="loggedInUser.imgUrl"></el-avatar>
+            </router-link>
             <board-member-avatar
               :board="board"
               :members="board.members"
@@ -191,6 +194,7 @@ export default {
       isStopWatch: false,
       isView: false,
       isAddingBoard: false,
+      currUser: null
     };
   },
   methods: {
@@ -225,7 +229,7 @@ export default {
     toggleMainScreen() {
       this.isMainScreen = !this.isMainScreen;
     },
-    changeBrderRadius() {
+    changeBorderRadius() {
       this.isBorderRadius = !this.isBorderRadius;
     },
     addActivity(action, task) {
@@ -243,7 +247,7 @@ export default {
           title: task.title,
         },
       };
-      activity.byMember = this.loggedinUser;
+      activity.byMember = this.loggedInUser;
       this.boardToEdit.activities.push(activity);
     },
     removeTask({ taskId, groupId }) {
@@ -490,7 +494,7 @@ export default {
     },
     async addUpdate(update) {
       try {
-        update.comment.byMember = this.loggedinUser;
+        update.comment.byMember = this.loggedInUser;
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === update.groupId);
         const idx = currGroup.tasks.findIndex(task => task.id === update.taskId);
         currGroup.tasks[idx].comments.push(update.comment);
@@ -533,8 +537,8 @@ export default {
     },
   },
   computed: {
-    loggedinUser() {
-      let user = this.$store.getters.loggedInUser;
+    loggedInUser() {
+       let user = this.$store.getters.loggedInUser;
       if (!user) {
         user = {
           _id: "guest",

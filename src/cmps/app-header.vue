@@ -91,7 +91,7 @@ export default {
   methods: {
     toggleBoardNavbar() {
       this.isBoardNavbarShown = !this.isBoardNavbarShown;
-      this.$emit("brdrRadiusChange");
+      this.$emit("borderRadiusChange");
     },
     isChosenBoard(id) {
       return this.boardId === id;
