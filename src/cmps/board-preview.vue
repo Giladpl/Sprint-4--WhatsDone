@@ -1,7 +1,8 @@
 <template>
     <div class="board-preview">
         <div class="card-img">
-            <img :src="board.imgUrl">
+            <img v-if="isImg" src="@/assets/icons/programming.svg">
+            <img v-if="!isImg" src="@/assets/icons/travelers.svg">
         </div>
         <div class="card-title">
             <p>{{board.title}}</p>
@@ -18,6 +19,11 @@
             board: {
                 type: Object,
                 required: true
+            }
+        },
+        computed: {
+            isImg() {
+                return this.board._id === '6059efa4364773a1b1dba789'
             }
         }
     }
