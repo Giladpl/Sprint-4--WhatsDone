@@ -246,6 +246,7 @@ export default {
       this.$emit('updateTaskTitle', update);
     },
     changedByDrag() {
+      console.log('group' ,this.group.tasks);
       this.$emit('updateTasksOrder', { groupId: this.group.id, tasks: this.group.tasks })
     },
     addUpdate(update) {
