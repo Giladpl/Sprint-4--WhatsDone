@@ -18,21 +18,21 @@
     </div>
     <div class="main-feature flex">
         <div class="feature-box fd-column">
-            <div class="icon-box"></div>
+            <div class="icon-box flex-center"><i class="el-icon-notebook-2"></i></div>
             <div class="content-box">
                 <div class="title-box">Project management</div>
                 <div class="txt-box ">Plan, track, and manage any project from start to finish</div>
             </div>
         </div>
         <div class="feature-box fd-column">
-            <div class="icon-box flex-center"><i class="el-icon-notebook-2"></i></div>
+            <div class="icon-box flex-center"><i class="el-icon-chat-round"></i></div>
             <div class="content-box">
                 <div class="title-box">Team communication</div>
                 <div class="txt-box ">Always know who is doing what, and how they are doing</div>
             </div>
         </div>
         <div class="feature-box fd-column">
-            <div class="icon-box"></div>
+            <div class="icon-box flex-center"><i class="el-icon-s-data"></i></div>
             <div class="content-box">
                 <div class="title-box">Advanced tools</div>
                 <div class="txt-box ">Useful features like progress bars and charts will help you monitor progress</div>
