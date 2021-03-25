@@ -200,9 +200,9 @@ export default {
   methods: {
     async loadBoard() {
       try {
+        if (this.boardToEdit) socketService.emit('board-updated', this.boardToEdit);
         const boardId = this.$route.params.boardId;
         await this.$store.dispatch({ type: 'loadBoard', boardId });
-        // console.log('store', this.board );
         this.boardToEdit = JSON.parse(JSON.stringify(this.board));
       } catch (err) {
         console.log("cannot load board", err);
@@ -456,6 +456,7 @@ export default {
         this.addActivity("Update priority", currGroup.tasks[idx]);
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
+        // socketService.emit('board-updated', this.boardToEdit);
       } catch (err) {
         console.log("cannot update priority", err);
       }
@@ -573,16 +574,15 @@ export default {
   watch: {
     "$route.params.boardId"() {
       this.loadBoard();
-    },
-    // board: {
-    //   deep: true,
-    //   handler() {
-    //     this.loadBoard();
-    //   },
-    // },
+    }
   },
   created() {
     this.loadBoard();
+    const boardId = this.$route.params.boardId;
+    socketService.emit('watch-board', boardId);
+    socketService.on('board-update', (boardToSave) => {
+      this.boardToEdit = boardToSave;
+    });
   },
   components: {
     group,
