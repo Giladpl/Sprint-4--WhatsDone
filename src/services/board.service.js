@@ -18,28 +18,28 @@ export const boardService = {
 _createBoards()
 
 function query() {
-    return httpService.get(`board/`)
-    // return asyncStorageService.query(KEY)
+    // return httpService.get(`board/`)
+    return asyncStorageService.query(KEY)
 }
 
 function getById(id) {
-    return httpService.get(`board/${id}`)
-    // return asyncStorageService.get(KEY, id);
+    // return httpService.get(`board/${id}`)
+    return asyncStorageService.get(KEY, id);
 }
 
 function remove(id) {
-    return httpService.delete(`board/${id}`)
-    // return asyncStorageService.remove(KEY, id);
+    // return httpService.delete(`board/${id}`)
+    return asyncStorageService.remove(KEY, id);
 }
 
 function save(board) {
-    if (board._id) {
-        return httpService.put(`board/${board._id}`, board)
-    } else {
-        return httpService.post(`board/`, board)
-    }
-    // const savedBoard = (board._id) ? asyncStorageService.put(KEY, board) : asyncStorageService.post(KEY, board)
-    // return savedBoard;
+    // if (board._id) {
+    //     return httpService.put(`board/${board._id}`, board)
+    // } else {
+    //     return httpService.post(`board/`, board)
+    // }
+    const savedBoard = (board._id) ? asyncStorageService.put(KEY, board) : asyncStorageService.post(KEY, board)
+    return savedBoard;
 }
 
 function getEmptyBoard() {
