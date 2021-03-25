@@ -246,7 +246,16 @@ export default {
           title: task.title,
         },
       };
-      activity.byMember = this.loggedinUser;
+      // activity.byMember = userService.getLoggediUser()
+      if (this.loggedinUser) {
+        activity.byMember._id = this.loggedinUser._id;
+        activity.byMember.fullname = this.loggedinUser.fullname;
+        activity.byMember.imgUrl = this.loggedinUser.imgUrl;
+      } else {
+        activity.byMember._id = 'guest';
+        activity.byMember.fullname = 'Guest';
+        activity.byMember.imgUrl = 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png';
+      }
       this.boardToEdit.activities.push(activity);
     },
     removeTask({ taskId, groupId }) {
@@ -503,7 +512,19 @@ export default {
     },
     async addUpdate(update) {
       try {
-        update.comment.byMember = this.loggedinUser;
+        if (this.loggedinUser) {
+          update.comment.byMember = {
+            _id: this.loggedinUser._id,
+            fullname: this.loggedinUser.fullname,
+            imgUrl: this.loggedinUser.imgUrl,
+          };
+        } else {
+          update.comment.byMember = {
+            _id: 'guest',
+            fullname: 'Guest',
+            imgUrl: 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png',
+          };
+        }
         const [currGroup] = this.boardToEdit.groups.filter(group => group.id === update.groupId);
         const idx = currGroup.tasks.findIndex(task => task.id === update.taskId);
         currGroup.tasks[idx].comments.push(update.comment);
@@ -537,22 +558,7 @@ export default {
   },
   computed: {
     loggedinUser() {
-       let user = this.$store.getters.loggedInUser;
-      if (!user) {
-        user = {
-          _id: "guest",
-          fullname: "Guest",
-          imgUrl:
-            "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",
-        };
-      } else {
-        user = {
-          _id: user._id,
-          fullname: user.fullname,
-          imgUrl: user.imgUrl
-        };
-      }
-      return user;
+      return this.$store.getters.loggedInUser;
     },
     boards() {
       return this.$store.getters.boards;
