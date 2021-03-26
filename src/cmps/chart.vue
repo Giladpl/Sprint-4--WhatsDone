@@ -5,13 +5,11 @@
       size="small"
       @click="backToBoard"
     >Back</el-button>
-    <div>Total Number of Groups: {{currBoard.groups.length}}</div>
-    <div>Total Number of Tasks: {{taskNumber}}</div>
-    <div>Total Number of Members: {{currBoard.members.length}}</div>
     <div class="charts-main-container">
-      <el-card>Board Members:</el-card>
-      <el-card>Board Groups:</el-card>
-      <el-card>Board Tasks:</el-card>
+      <el-card class="num-group">Total Number of Groups: {{currBoard.groups.length}}</el-card>
+      <el-card class="num-task">Total Number of Tasks: {{taskNumber}}</el-card>
+      <el-card class="num-member">Total Number of Members: {{currBoard.members.length}}</el-card>
+      <el-card class="num-member2">Total Number of Members: {{currBoard.members.length}}</el-card>
       <el-card class="priority-chart-container">
         <h4>Board Priorities by Percentages:</h4>
         <chartPriorityTotal class="chart priority-chart" />
