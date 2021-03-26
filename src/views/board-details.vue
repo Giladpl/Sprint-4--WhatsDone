@@ -123,9 +123,13 @@
           size="small">
           Add Group
         </el-button>
-
+      <div class="select-filter-container flex">
+        <img
+              class="select-filter img"
+              src="@/assets/icons/filter.svg"
+          />
         <el-select
-          class="select-filter flex"
+          class="select-filter" 
           multiple
           collapse-tags
           v-model="filteredMembersIds"
@@ -150,6 +154,7 @@
             </div> -->
           </el-option>
         </el-select>
+      </div>
         <i class="el-icon-sort">Sort</i>
         <el-input @click.native.stop="" ref="" class="task-search" placeholder="Search a task..." prefix-icon="el-icon-search" />
       </div>

@@ -151,13 +151,10 @@
         width: rem(1049px);
         
         .group-header {
-            // .group-header-right {
-            //     display: none;
-            // }
-
             .group-header-left {
                 .group-title-input {
                     font-size: rem(14px);
+                    width: 70vw;
                 }
             }
         }
