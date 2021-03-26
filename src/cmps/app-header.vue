@@ -58,15 +58,14 @@
         </li>
       </ul>
     </div>
-    <div class="main-header-mobile flex">
+    <div class="main-header-mobile flex-between">
       <div class="logo-container">
         <router-link to="/">
-          <i><img class="logo" src="@/assets/icons/increase.svg" /></i>
+          <img class="logo" src="@/assets/icons/increase.svg" />
         </router-link>
       </div>
-      <div class="board-title">
-
-      </div>
+      <div class="board-title">{{currBoard.title}}</div>
+      <div>☰</div>
     </div>
   </section>
 </template>
@@ -129,6 +128,9 @@ export default {
         return !this.filterBy.name || regex.test(board.title)
       });
     },
+    currBoard() {
+      return this.boards.filter(board => board._id === this.boardId)
+    }
   },
   created() {
       this.boardsToShow = JSON.parse(JSON.stringify(this.boards));
