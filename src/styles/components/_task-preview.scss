@@ -134,12 +134,12 @@
     @include for-mobile-layout { 
         padding: 0;
 
-        .members-container,
-        .status-container,
-        .date-picker-container,
-        .priority-container {
-            display: none;
-        }
+        // .members-container,
+        // .status-container,
+        // .date-picker-container,
+        // .priority-container {
+        //     display: none;
+        // }
 
         .task-left-container {
             .task-title {
