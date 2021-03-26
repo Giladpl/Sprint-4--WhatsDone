@@ -240,17 +240,17 @@
             border-top-left-radius: 0;
             position: absolute;
             top: 50px;
-            width: 1049px;
         }
-
+        
         .filters-container {
             display: none;
         }
     }
-
+    
     @include for-mobile-layout {
         
         .details-wrapper{
+            // width: 1049px;
             overflow: auto;
 
         }
