@@ -132,6 +132,8 @@
     }
 
     @include for-mobile-layout { 
+        padding: 0;
+
         .members-container,
         .status-container,
         .date-picker-container,
@@ -141,7 +143,7 @@
 
         .task-left-container {
             .task-title {
-                width: 320px;
+                width: 70vw;
             }
         }
     }
