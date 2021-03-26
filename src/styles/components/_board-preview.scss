@@ -16,4 +16,17 @@
     .card-title {
         font-size: 25px;
     }
+
+    @include for-mobile-layout {
+        .card-img {
+            img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        .card-title {
+            font-size: 15px;
+        }
+    }
 }

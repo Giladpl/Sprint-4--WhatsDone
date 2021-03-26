@@ -42,4 +42,23 @@
         font-weight: bold;
         font-size: 2rem;
     }
+
+    @include for-mobile-layout {
+        nav {
+            padding: 1rem;
+
+            .logo-container {
+                font-size: 20px;
+            }
+
+            > * {
+                font-size: 15px;
+            }
+        }
+
+        h1 {
+            font-size: 15px;
+            margin-top: 30px;
+        }
+    }
 }
