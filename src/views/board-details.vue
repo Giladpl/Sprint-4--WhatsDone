@@ -599,34 +599,33 @@ export default {
       return this.isMainScreen ? 'position: fixed' : ''
     },
     tasksToShow() {
-      const tasksToShow = this.board.groups.filter(group => {
+      return this.board.groups.filter(group => {
         group.tasks.filter(task => {
           task.members.filter(member => {
-            member => member._id === (this.filteredMembersIds.find(memberId => memberId === member._id))
+            member._id === (this.filteredMembersIds.find(memberId => memberId === member._id))
           })
         })
       })
-      return tasksToShow
     },
-    watch: {
-      "$route.params.boardId"() {
-        this.loadBoard();
-      }
-    },
-    created() {
+  },
+  watch: {
+    "$route.params.boardId"() {
       this.loadBoard();
-      const boardId = this.$route.params.boardId;
-      socketService.emit('watch-board', boardId);
-      socketService.on('board-update', (boardToSave) => {
-        this.boardToEdit = boardToSave;
-      });
-    },
-    components: {
-      group,
-      appHeader,
-      boardMemberAvatar,
-      draggable,
-    },
-  }
+    }
+  },
+  created() {
+    this.loadBoard();
+    const boardId = this.$route.params.boardId;
+    socketService.emit('watch-board', boardId);
+    socketService.on('board-update', (boardToSave) => {
+      this.boardToEdit = boardToSave;
+    });
+  },
+  components: {
+    group,
+    appHeader,
+    boardMemberAvatar,
+    draggable,
+  },
 }
 </script>
