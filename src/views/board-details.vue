@@ -599,13 +599,14 @@ export default {
       return this.isMainScreen ? 'position: fixed' : ''
     },
     tasksToShow() {
-      return this.board.groups.filter(group => {
-        group.tasks.filter(task => {
-          task.members.filter(member => {
-            member._id === (this.filteredMembersIds.find(memberId => memberId === member._id))
-          })
-        })
-      })
+      // const tasksToShow = this.board.groups.filter(group => {
+      //   group.tasks.filter(task => {
+      //     task.members.filter(member => {
+      //       member => member._id === (this.filteredMembersIds.find(memberId => memberId === member._id))
+      //     })
+      //   })
+      // })
+      // console.log(tasksToShow)
     },
   },
   watch: {
@@ -627,5 +628,5 @@ export default {
     boardMemberAvatar,
     draggable,
   },
-}
+};
 </script>
