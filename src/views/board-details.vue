@@ -68,13 +68,6 @@
             size="small">
             + Add View
           </el-button>
-          <select class="select-filter flex" filterable>
-            <option disabled selected>Filter</option>
-            <option>All</option>
-            <option v-for="member in board.members" :key="member._id">
-              <img :src="member.imgUrl"> {{member.fullname}}
-            </option>
-          </select>
         </div>
         <div
           v-click-outside="toggleAddViewMenu"
@@ -116,16 +109,24 @@
         @toggleAddView="toggleAddView"
         @backToBoard="backToBoard"
       />
-
-      <el-button
-        v-if="!isView"
-        @click="addGroup"
-        class="btn-add-group"
-        type="primary"
-        size="small"
-      >
-        Add Group
-      </el-button>
+      <div class="filters-container flex">
+        <el-button
+          v-if="!isView"
+          @click="addGroup"
+          class="btn-add-group"
+          type="primary"
+          size="small"
+        >
+          Add Group
+        </el-button>
+        <select class="select-filter flex" filterable>
+          <option disabled selected>Filter</option>
+          <option>All</option>
+          <option v-for="member in board.members" :key="member._id">
+            <img :src="member.imgUrl"> {{member.fullname}}
+          </option>
+        </select>
+      </div>
 
       <draggable
         v-if="!isView"
@@ -305,10 +306,7 @@ export default {
           (group) => group.id === groupUpdate.groupId
         );
         currGroup.color = groupUpdate.chosenColor;
-        await this.$store.dispatch({
-          type: "saveBoard",
-          board: this.boardToEdit,
-        });
+        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
         this.loadBoard();
       } catch (err) {
         console.log("cannot update group color", err);
@@ -317,10 +315,7 @@ export default {
     async updateBoardTitle(ev) {
       this.boardToEdit.title = ev.target.value;
       try {
-        await this.$store.dispatch({
-          type: "saveBoard",
-          board: this.boardToEdit,
-        });
+        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
         this.loadBoard();
       } catch (err) {
         console.log("cannot update board title", err);
@@ -341,10 +336,7 @@ export default {
     async updateBoardDescription(ev) {
       this.boardToEdit.description = ev.target.value;
       try {
-        await this.$store.dispatch({
-          type: "saveBoard",
-          board: this.boardToEdit,
-        });
+        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
         this.loadBoard();
       } catch (err) {
         console.log("cannot update board description", err);
