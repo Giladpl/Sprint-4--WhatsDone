@@ -146,7 +146,8 @@
     }
 
     @include for-mobile-layout {
-        padding-bottom: 30px;
+        padding-bottom: 0;
+        margin-bottom: 30px;
 
         .group-header {
             .group-header-right {
