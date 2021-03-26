@@ -138,7 +138,12 @@
         // .status-container,
         // .date-picker-container,
         // .priority-container {
-        //     display: none;
+        //     min-width: 7.375rem;
+        // }
+
+        // .status,
+        // .priority {
+        //     width: 7.375rem;
         // }
 
         .task-left-container {
@@ -146,5 +151,9 @@
                 width: 70vw;
             }
         }
+
+        // .task-right-container {
+        //     min-width: 600px;
+        // }
     }
 }
