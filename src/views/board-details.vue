@@ -26,7 +26,11 @@
           />
           <div class="board-btns flex-between">
             <router-link to="/profile">
-             <el-avatar class="header-avatar" size="small" :src="loggedInUser.imgUrl"></el-avatar>
+              <el-avatar
+                class="header-avatar"
+                size="small"
+                :src="loggedInUser.imgUrl"
+              ></el-avatar>
             </router-link>
             <board-member-avatar
               :board="board"
@@ -65,7 +69,8 @@
           <el-button
             @click="toggleAddViewMenu"
             class="add-view-btn"
-            size="small">
+            size="small"
+          >
             + Add View
           </el-button>
         </div>
@@ -119,11 +124,31 @@
         >
           Add Group
         </el-button>
-        <el-select class="select-filter flex" filterable>
-          <el-option disabled selected>Filter</el-option>
+        <el-select
+          class="select-filter flex"
+          filterable
+          multiple
+          collapse-tags
+          v-model="filterMembers"
+        >
+          <el-option
+            disabled
+            selected
+          >Filter</el-option>
           <el-option>All</el-option>
-          <el-option v-for="member in board.members" :key="member._id">
-            <img :src="member.imgUrl"> {{member.fullname}}
+          <el-option
+            v-for="member in board.members"
+            :key="member._id"
+            :value="member.id"
+          ><div class="flex-between">
+            <el-avatar
+              shape="circle"
+              size="small"
+              fit="fit"
+              :src="member.imgUrl"
+            ></el-avatar>
+            <p>{{member.fullname}}</p>
+            </div>
           </el-option>
         </el-select>
       </div>
@@ -202,6 +227,7 @@ export default {
       isView: false,
       isAddingBoard: false,
       currUser: null,
+      filterMembers: null,
     };
   },
   methods: {
@@ -306,7 +332,7 @@ export default {
           (group) => group.id === groupUpdate.groupId
         );
         currGroup.color = groupUpdate.chosenColor;
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot update group color", err);
@@ -315,7 +341,7 @@ export default {
     async updateBoardTitle(ev) {
       this.boardToEdit.title = ev.target.value;
       try {
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot update board title", err);
@@ -336,7 +362,7 @@ export default {
     async updateBoardDescription(ev) {
       this.boardToEdit.description = ev.target.value;
       try {
-        await this.$store.dispatch({type: "saveBoard", board: this.boardToEdit});
+        await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {
         console.log("cannot update board description", err);
@@ -536,7 +562,7 @@ export default {
   },
   computed: {
     loggedInUser() {
-       let user = this.$store.getters.loggedInUser;
+      let user = this.$store.getters.loggedInUser;
       if (!user) {
         user = {
           _id: "guest",
