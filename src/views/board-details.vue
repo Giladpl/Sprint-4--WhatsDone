@@ -256,10 +256,10 @@ export default {
     },
     removeTask({ taskId, groupId }) {
       this.$confirm(
-        "This will permanently delete the task. Continue?",
-        "Warning",
+        "It will be removed permanently.",
+        "Remove this task?",
         {
-          confirmButtonText: "OK",
+          confirmButtonText: "Delete",
           cancelButtonText: "Cancel",
           type: "warning",
         }
@@ -279,10 +279,10 @@ export default {
     },
     removeGroup({ groupId }) {
       this.$confirm(
-        "This will permanently delete the group. Continue?",
-        "Warning",
+        "This will permanently delete the group.",
+        "Delete this group?",
         {
-          confirmButtonText: "OK",
+          confirmButtonText: "Delete",
           cancelButtonText: "Cancel",
           type: "warning",
         }
