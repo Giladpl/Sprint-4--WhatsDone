@@ -226,10 +226,13 @@
     .no-border-radius {
         border-top-left-radius: 0;
     }
-
+    .handle{
+        cursor: move;
+    }
+    
     @include for-mobile-layout {
         display: block;
-        width: 1049px;
+        width: 100%;
 
         .board-static-header {
             display: none;
@@ -240,6 +243,7 @@
             border-top-left-radius: 0;
             position: absolute;
             top: 50px;
+            overflow: auto;
         }
         
         .filters-container {
@@ -247,16 +251,5 @@
         }
     }
     
-    .handle{
-        cursor: move;
-    }
-    @include for-mobile-layout {
-        
-        .details-wrapper{
-            // width: 1049px;
-            overflow: auto;
-
-        }
-        
-    }
+    
 }

@@ -147,7 +147,7 @@
 
     @include for-mobile-layout {
         padding-bottom: 0;
-        margin-bottom: 30px;
+        // margin-bottom: 30px;
         width: rem(1049px);
         padding-right: 10px;
 
@@ -167,8 +167,8 @@
             //     }
             // }
         }
-        .bars-container {
-            display: none;
-        }
+        // .bars-container {
+        //     display: none;
+        // }
     }
 }
