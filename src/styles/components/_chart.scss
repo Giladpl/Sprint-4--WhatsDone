@@ -1,25 +1,45 @@
 .charts-main-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    max-width: 50%;
-    margin: rem(100px) auto;
-    grid-gap: rem(100px);
+    grid-template-columns: 3fr 3fr 1fr;
+    grid-template-rows: 1fr .5fr .5fr;
+    gap: rem(50px);
+    // max-width: 80%;
+    // margin: rem(100px) auto;
     text-align: center;
 
-    .status-chart {
+    .status-chart-container {
         grid-column: 1 / 2;
-        grid-row: 1
+        grid-row: 1 / 2;
+        
+        .status-chart {
+            width: 250px;
+            height: 230px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
-    .priority-chart {
+    .priority-chart-container {
         grid-column: 2 / 3;
-        grid-row: 1
+        grid-row: 1 / 2;
+
+        .priority-chart {
+            width: 200px;
+            height: 230px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
-    .lower-chart {
+    .lower-chart-container {
         grid-column: 1 / 3;
-        grid-row: 2
+        grid-row: 2 / 4;
+
+        .time-chart {
+
+        }
     }
 
 }

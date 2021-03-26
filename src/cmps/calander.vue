@@ -6,6 +6,7 @@
     slot-scope="{date, data}">
     <p :class="data.isSelected ? 'is-selected' : ''">
       {{ data.day.split('-').slice(1).join('-') }} {{ data.isSelected ? '✔️' : ''}}
+      {{date}}
     </p>
   </template>
 </el-calendar>
@@ -14,7 +15,7 @@
 <script>
 export default {
   
-  }
+}
 </script>
 
 

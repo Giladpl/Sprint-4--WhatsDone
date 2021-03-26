@@ -6,18 +6,21 @@
       @click="backToBoard"
     >Back</el-button>
     <div class="charts-main-container">
-      <div class="priority-chart">
-        <h2>Board Priorities by Percentages:</h2>
-        <chartPriorityTotal class="chart chart-priority" />
-      </div>
-      <div class="status-chart">
-        <h2>Board Statuses by Percentages:</h2>
-        <chartStatusTotal class="chart chart-status" />
-      </div>
-      <div class="lower-chart">
-        <h2>Total Work Time per Task:</h2>
-        <chartTimePerTask class="chart chart-time" />
-      </div>
+      <el-card>Board Members:</el-card>
+      <el-card>Board Groups:</el-card>
+      <el-card>Board Tasks:</el-card>
+      <el-card class="priority-chart-container">
+        <h4>Board Priorities by Percentages:</h4>
+        <chartPriorityTotal class="chart priority-chart" />
+      </el-card>
+      <el-card class="status-chart-container">
+        <h4>Board Statuses by Percentages:</h4>
+        <chartStatusTotal class="chart status-chart" />
+      </el-card>
+      <el-card class="lower-chart-container">
+        <h4>Total Work Time per Task:</h4>
+        <chartTimePerTask class="chart time-chart" />
+      </el-card>
     </div>
   </section>
 </template>
