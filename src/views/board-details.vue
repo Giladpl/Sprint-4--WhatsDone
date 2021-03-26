@@ -120,30 +120,31 @@
           @click="addGroup"
           class="btn-add-group"
           type="primary"
-          size="small">
+          size="small"
+        >
           Add Group
         </el-button>
-      <div class="select-filter-container flex">
-        <img
-              class="select-filter img"
-              src="@/assets/icons/filter.svg"
+        <div class="select-filter-container flex">
+          <img
+            class="select-filter img"
+            src="@/assets/icons/filter.svg"
           />
-        <el-select
-          class="select-filter" 
-          multiple
-          collapse-tags
-          v-model="filteredMembersIds"
-          placeholder="Filter Tasks by Members"
-          @change="filterMembers"
-        >
-          <el-option
-            v-for="member in board.members"
-            :key="member._id"
-            :value="member._id"
-            :label="member.fullname"
+          <el-select
+            class="select-filter"
+            multiple
+            collapse-tags
+            v-model="filteredMembersIds"
+            placeholder="Filter Tasks by Members"
+            @change="filterMembers"
           >
-            <!-- {{member.fullname}} -->
-            <!-- <div class="flex-between">
+            <el-option
+              v-for="member in board.members"
+              :key="member._id"
+              :value="member._id"
+              :label="member.fullname"
+            >
+              <!-- {{member.fullname}} -->
+              <!-- <div class="flex-between">
               <el-avatar
                 shape="circle"
                 size="small"
@@ -152,11 +153,17 @@
               ></el-avatar>
               <p>{{member.fullname}}</p>
             </div> -->
-          </el-option>
-        </el-select>
-      </div>
+            </el-option>
+          </el-select>
+        </div>
         <i class="el-icon-sort">Sort</i>
-        <el-input @click.native.stop="" ref="" class="task-search" placeholder="Search a task..." prefix-icon="el-icon-search" />
+        <el-input
+          @click.native.stop=""
+          ref=""
+          class="task-search"
+          placeholder="Search a task..."
+          prefix-icon="el-icon-search"
+        />
       </div>
 
       <draggable
@@ -166,11 +173,14 @@
         @start="drag = true"
         @end="drag = false"
         @change="changeGroupByDrag"
+        :scroll-sensitivity="200"
+        :force-fallback="true"
+        handle=".handle"
       >
         <li
           v-for="group in boardToEdit.groups"
           :key="group._id"
-        >
+        ><span class="handle">&vellip;&vellip;</span> 
           <group
             :group="group"
             :statuses="board.statuses"

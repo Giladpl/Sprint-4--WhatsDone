@@ -70,6 +70,8 @@
       @start="drag = true"
       @end="drag = false"
       @change="changedByDrag"
+      :scroll-sensitivity="200"
+      :force-fallback="true"
     >
       <li
         v-for="task in group.tasks"

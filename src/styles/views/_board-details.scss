@@ -247,6 +247,9 @@
         }
     }
     
+    .handle{
+        cursor: move;
+    }
     @include for-mobile-layout {
         
         .details-wrapper{
