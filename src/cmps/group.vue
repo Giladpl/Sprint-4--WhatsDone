@@ -75,6 +75,7 @@
       drag-class="dragging-item"
       chosen-class="chosen-item"
       ghost-class="ghost-item"
+      group="tasks"
     >
       <li
         v-for="task in group.tasks"
