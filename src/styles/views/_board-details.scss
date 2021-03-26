@@ -172,20 +172,20 @@
         }
     
         .select-filter {
-            margin: 10px 0;
-            background-color: #fff;
-            // color: #3f4045;
-            // border-color: #e6e9ef;
-            margin: 10px 10px;
+            margin: 10px;
             background-color: #fff;
             color: $clr3;
-            // border-color: $clr4;
             justify-content: space-between;
             cursor: pointer;
+
+            .el-input__inner {
+            border: none;
+            }
         }
 
         .el-icon-sort {
             color:#C0C4CC;
+            margin: 10px;
         }
 
         .task-search {
@@ -199,6 +199,7 @@
 
             .el-input__inner {
                 width: fit-content;
+                border: none;
             }
         }
     }
