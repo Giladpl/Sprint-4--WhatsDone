@@ -124,31 +124,31 @@
         >
           Add Group
         </el-button>
+
         <el-select
           class="select-filter flex"
-          filterable
           multiple
           collapse-tags
-          v-model="filterMembers"
+          v-model="filteredMembersIds"
+          placeholder="Filter Tasks by Members"
+          @change="filterMembers"
         >
-          <el-option
-            disabled
-            selected
-          >Filter</el-option>
-          <el-option>All</el-option>
           <el-option
             v-for="member in board.members"
             :key="member._id"
-            :value="member.id"
-          ><div class="flex-between">
-            <el-avatar
-              shape="circle"
-              size="small"
-              fit="fit"
-              :src="member.imgUrl"
-            ></el-avatar>
-            <p>{{member.fullname}}</p>
-            </div>
+            :value="member._id"
+            :label="member.fullname"
+          >
+            <!-- {{member.fullname}} -->
+            <!-- <div class="flex-between">
+              <el-avatar
+                shape="circle"
+                size="small"
+                fit="fit"
+                :src="member.imgUrl"
+              ></el-avatar>
+              <p>{{member.fullname}}</p>
+            </div> -->
           </el-option>
         </el-select>
       </div>
@@ -227,7 +227,7 @@ export default {
       isView: false,
       isAddingBoard: false,
       currUser: null,
-      filterMembers: null,
+      filteredMembersIds: [],
     };
   },
   methods: {
@@ -240,6 +240,10 @@ export default {
       } catch (err) {
         console.log("cannot load board", err);
       }
+    },
+    filterMembers() {
+      console.log(this.filteredMembersIds);
+      
     },
     backToBoard() {
       const boardId = this.$route.params.boardId;

@@ -173,6 +173,8 @@
 
     @include for-mobile-layout {
         height: rem(50px);
+        position: fixed;
+        width: 100%;
 
         .main-header-mobile {
             display: flex;

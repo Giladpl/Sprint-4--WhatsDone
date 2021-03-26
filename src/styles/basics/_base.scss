@@ -54,3 +54,10 @@ a {
 a:active {
 	color: $clr2;
 }
+
+@include for-mobile-layout {
+
+	body{
+			overflow-x: auto;
+	}
+}
