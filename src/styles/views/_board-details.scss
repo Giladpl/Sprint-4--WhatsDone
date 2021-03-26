@@ -229,6 +229,7 @@
 
     @include for-mobile-layout {
         display: block;
+        width: 1049px;
 
         .board-static-header {
             display: none;
@@ -238,7 +239,12 @@
             padding: rem(10px);
             border-top-left-radius: 0;
             position: absolute;
+<<<<<<< HEAD
             top: rem(50px);
+=======
+            top: 50px;
+            width: 1049px;
+>>>>>>> dffc3a836f884af785bcf9fda456bc3996735f08
         }
 
         .filters-container {
