@@ -1,6 +1,21 @@
 .group {
     padding-bottom: 50px;
-    
+
+    .dragging-item {
+        // transform: scale(1.2);
+        transform: rotate(2deg);
+        
+    }
+
+    .chosen-item {
+        // transform: scale(1.2);
+        // transform: rotate(2deg);
+    }
+
+    .ghost-item {
+        visibility: hidden;
+    }
+
     .color-palette {
         width: 16px;
         color: 63 64 69;
@@ -36,7 +51,8 @@
                 font-size: 15px;
                 width: 9.375rem;
             }
-            .group-options-menu{
+
+            .group-options-menu {
                 position: absolute;
                 left: 92.5%;
             }
@@ -73,7 +89,7 @@
                     outline: 1px dashed $clr6;
                 }
             }
-           
+
         }
 
         >*:not(.color-picker) {
@@ -124,6 +140,7 @@
         }
     }
 
+
     .bars-container {
         width: 100%;
         display: flex;
@@ -167,6 +184,7 @@
             //     }
             // }
         }
+
         // .bars-container {
         //     display: none;
         // }

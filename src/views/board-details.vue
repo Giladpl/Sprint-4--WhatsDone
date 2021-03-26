@@ -176,11 +176,14 @@
         :scroll-sensitivity="200"
         :force-fallback="true"
         handle=".handle"
+        drag-class="dragging-item"
+        chosen-class="chosen-item"
+        ghost-class="ghost-item"
       >
         <li
           v-for="group in boardToEdit.groups"
           :key="group._id"
-        ><span class="handle">&vellip;&vellip;</span> 
+        ><span class="handle">&vellip;&vellip;</span>
           <group
             :group="group"
             :statuses="board.statuses"

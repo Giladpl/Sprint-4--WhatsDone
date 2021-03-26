@@ -72,6 +72,9 @@
       @change="changedByDrag"
       :scroll-sensitivity="200"
       :force-fallback="true"
+      drag-class="dragging-item"
+      chosen-class="chosen-item"
+      ghost-class="ghost-item"
     >
       <li
         v-for="task in group.tasks"

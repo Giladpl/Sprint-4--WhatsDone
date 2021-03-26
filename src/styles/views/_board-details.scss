@@ -8,6 +8,21 @@
         text-decoration: underline;
     }
 
+    .dragging-item {
+        // transform: scale(1.2);
+        transform: rotate(2deg);
+        
+    }
+
+    .chosen-item {
+        // transform: scale(1.2);
+        // transform: rotate(2deg);
+    }
+
+    .ghost-item {
+        visibility: hidden;
+    }
+
     .details-wrapper {
         width: 100%;
         padding: 0 30px;
