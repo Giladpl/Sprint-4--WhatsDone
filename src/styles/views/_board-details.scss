@@ -164,6 +164,9 @@
     }
 
     .filters-container {
+        align-items: center;
+        color: $clr2;
+
         .btn-add-group {
             margin: 10px 0;
         }
@@ -171,15 +174,32 @@
         .select-filter {
             margin: 10px 0;
             background-color: #fff;
-            color: #3f4045;
-            border-color: #e6e9ef;
+            // color: #3f4045;
+            // border-color: #e6e9ef;
             margin: 10px 10px;
             background-color: #fff;
             color: $clr3;
-            border-color: $clr4;
+            // border-color: $clr4;
             justify-content: space-between;
             cursor: pointer;
-            align-items: center;
+        }
+
+        .el-icon-sort {
+            color:#C0C4CC;
+        }
+
+        .task-search {
+            .el-icon-search {
+                font-size: 18px;
+                color: $clr6;
+                margin-bottom: 16px;
+                padding-left: 0;
+                width: fit-content;
+            }
+
+            .el-input__inner {
+                width: fit-content;
+            }
         }
     }
 

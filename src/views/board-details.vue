@@ -120,8 +120,7 @@
           @click="addGroup"
           class="btn-add-group"
           type="primary"
-          size="small"
-        >
+          size="small">
           Add Group
         </el-button>
 
@@ -151,6 +150,8 @@
             </div> -->
           </el-option>
         </el-select>
+        <i class="el-icon-sort">Sort</i>
+        <el-input @click.native.stop="" ref="" class="task-search" placeholder="Search a task..." prefix-icon="el-icon-search" />
       </div>
 
       <draggable
