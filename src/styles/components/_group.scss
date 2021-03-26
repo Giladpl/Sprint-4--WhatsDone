@@ -144,4 +144,16 @@
             }
         }
     }
+
+    @include for-mobile-layout {
+        .group-header {
+            .group-header-right {
+                display: none;
+
+            }
+        }
+        .bars-container {
+            display: none;
+        }
+    }
 }

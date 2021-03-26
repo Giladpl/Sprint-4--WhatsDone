@@ -130,4 +130,21 @@
     .btns-hidden {
         opacity: 0;
     }
+
+    @include for-mobile-layout { 
+        padding: 0;
+
+        .members-container,
+        .status-container,
+        .date-picker-container,
+        .priority-container {
+            display: none;
+        }
+
+        .task-left-container {
+            .task-title {
+                width: 70vw;
+            }
+        }
+    }
 }
