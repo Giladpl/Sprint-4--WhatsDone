@@ -64,7 +64,7 @@
           <img class="logo" src="@/assets/icons/increase.svg" />
         </router-link>
       </div>
-      <div class="board-title">{{currBoard.title}}</div>
+      <div v-if="currBoard" class="board-title">{{currBoard.title}}</div>
       <div>☰</div>
     </div>
   </section>
@@ -129,7 +129,7 @@ export default {
       });
     },
     currBoard() {
-      return this.boards.filter(board => board._id === this.boardId)
+      return this.boards.find(board => board._id === this.boardId)
     }
   },
   created() {

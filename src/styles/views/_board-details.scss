@@ -188,4 +188,22 @@
     .no-border-radius {
         border-top-left-radius: 0;
     }
+
+    @include for-mobile-layout {
+        display: block;
+
+        .board-static-header {
+            display: none;
+
+        }
+
+        .details-wrapper {
+            padding: 10px;
+            border-top-left-radius: 0;
+        }
+
+        .filters-container {
+            display: none;
+        }
+    }
 }

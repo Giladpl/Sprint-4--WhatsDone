@@ -160,5 +160,26 @@
     }
 
     .main-header-mobile {
+        display: none;
+        color: #fff;
+        width: 100%;
+        padding-right: rem(10px);
+
+        .logo-container {
+            width: 20px;
+
+        }
+    }
+
+    @include for-mobile-layout {
+        height: rem(50px);
+
+        .main-header-mobile {
+            display: flex;
+        }
+
+        .main-header {
+            display: none;
+        }
     }
 }
