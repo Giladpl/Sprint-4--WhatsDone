@@ -243,7 +243,7 @@ export default {
     },
     filterMembers() {
       console.log(this.filteredMembersIds);
-      
+
     },
     backToBoard() {
       const boardId = this.$route.params.boardId;
@@ -597,26 +597,35 @@ export default {
     },
     isFixed() {
       return this.isMainScreen ? 'position: fixed' : ''
-    }
-  },
-  watch: {
-    "$route.params.boardId"() {
+    },
+    tasksToShow() {
+      const tasksToShow = this.board.groups.filter(group => {
+        group.tasks.filter(task => {
+          task.members.filter(member => {
+            member => member._id === (this.filteredMembersIds.find(memberId => memberId === member._id))
+          })
+        })
+      })
+      return tasksToShow
+    },
+    watch: {
+      "$route.params.boardId"() {
+        this.loadBoard();
+      }
+    },
+    created() {
       this.loadBoard();
-    }
-  },
-  created() {
-    this.loadBoard();
-    const boardId = this.$route.params.boardId;
-    socketService.emit('watch-board', boardId);
-    socketService.on('board-update', (boardToSave) => {
-      this.boardToEdit = boardToSave;
-    });
-  },
-  components: {
-    group,
-    appHeader,
-    boardMemberAvatar,
-    draggable,
-  },
-};
+      const boardId = this.$route.params.boardId;
+      socketService.emit('watch-board', boardId);
+      socketService.on('board-update', (boardToSave) => {
+        this.boardToEdit = boardToSave;
+      });
+    },
+    components: {
+      group,
+      appHeader,
+      boardMemberAvatar,
+      draggable,
+    },
+  };
 </script>
