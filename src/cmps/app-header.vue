@@ -58,6 +58,16 @@
         </li>
       </ul>
     </div>
+    <div class="main-header-mobile flex">
+      <div class="logo-container">
+        <router-link to="/">
+          <i><img class="logo" src="@/assets/icons/increase.svg" /></i>
+        </router-link>
+      </div>
+      <div class="board-title">
+
+      </div>
+    </div>
   </section>
 </template>
 
@@ -120,17 +130,8 @@ export default {
       });
     },
   },
-  // watch: {
-  //   // board: {
-  //   //   deep: true,
-  //   //   handler() {
-  //   //     this.loadBoard();
-  //   //   },
-  //   // },
-  // },
   created() {
       this.boardsToShow = JSON.parse(JSON.stringify(this.boards));
-    // this.loggedInUser = this.$store.getters.loggedInUser;
   },
   components: {
   },
