@@ -68,11 +68,11 @@
             size="small">
             + Add View
           </el-button>
-          <select class="select-filter" filterable>
+          <select class="select-filter flex" filterable>
             <option disabled selected>Filter</option>
             <option>All</option>
             <option v-for="member in board.members" :key="member._id">
-              {{member.fullname}}
+              <img :src="member.imgUrl"> {{member.fullname}}
             </option>
           </select>
         </div>
