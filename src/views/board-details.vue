@@ -119,13 +119,13 @@
         >
           Add Group
         </el-button>
-        <select class="select-filter flex" filterable>
-          <option disabled selected>Filter</option>
-          <option>All</option>
-          <option v-for="member in board.members" :key="member._id">
+        <el-select class="select-filter flex" filterable>
+          <el-option disabled selected>Filter</el-option>
+          <el-option>All</el-option>
+          <el-option v-for="member in board.members" :key="member._id">
             <img :src="member.imgUrl"> {{member.fullname}}
-          </option>
-        </select>
+          </el-option>
+        </el-select>
       </div>
 
       <draggable
