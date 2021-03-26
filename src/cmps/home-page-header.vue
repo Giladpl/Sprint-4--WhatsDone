@@ -5,7 +5,7 @@
 				<img src="@/assets/icons/increase.svg" />
 				<span>WhatsDone</span>
 			</div>
-			<router-link to="/login">Login</router-link>
+			<router-link class="header-login" to="/login">Login</router-link>
 			<router-link to="/login">SignUp</router-link>
 		</nav>
 	</header>
