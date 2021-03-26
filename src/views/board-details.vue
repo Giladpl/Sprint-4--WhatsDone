@@ -68,11 +68,13 @@
             size="small">
             + Add View
           </el-button>
-          <el-select class="select-filter" v-model="value" filterable placeholder="Filter by members">
-            <el-option v-for="member in board.members" :key="member._id" :label="member.fullname"
-             :value="member.fullname">
-            </el-option>
-          </el-select>
+          <select class="select-filter flex" filterable>
+            <option disabled selected>Filter</option>
+            <option>All</option>
+            <option v-for="member in board.members" :key="member._id">
+              <img :src="member.imgUrl"> {{member.fullname}}
+            </option>
+          </select>
         </div>
         <div
           v-click-outside="toggleAddViewMenu"
