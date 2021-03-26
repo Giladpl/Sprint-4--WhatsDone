@@ -61,14 +61,18 @@
             Created By: {{ board.createdBy.fullname }}
           </router-link>
         </div>
-        <div class="add-view-row-container">
+        <div class="buttons-row-container flex">
           <el-button
             @click="toggleAddViewMenu"
             class="add-view-btn"
-            size="small"
-          >
+            size="small">
             + Add View
           </el-button>
+          <el-select class="select-filter" v-model="value" filterable placeholder="Filter by members">
+            <el-option v-for="member in board.members" :key="member._id" :label="member.fullname"
+             :value="member.fullname">
+            </el-option>
+          </el-select>
         </div>
         <div
           v-click-outside="toggleAddViewMenu"
@@ -194,7 +198,7 @@ export default {
       isStopWatch: false,
       isView: false,
       isAddingBoard: false,
-      currUser: null
+      currUser: null,
     };
   },
   methods: {
