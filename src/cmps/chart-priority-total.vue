@@ -9,7 +9,7 @@ export default {
   extends: Pie,
   data() {
     return {
-      
+
       options: {
         responsive: true,
         maintainAspectRatio: false,
@@ -57,7 +57,7 @@ export default {
     },
     priorityPercantages() {
       return this.prioritiesMap.reduce((acc, priority) => {
-        acc.push(priority.count / this.totalTasks * 100)
+        acc.push((priority.count / this.totalTasks * 100).toFixed(2))
         return acc
       }, [])
     },

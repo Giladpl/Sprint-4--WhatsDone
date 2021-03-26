@@ -5,6 +5,9 @@
       size="small"
       @click="backToBoard"
     >Back</el-button>
+    <div>Total Number of Groups: {{currBoard.groups.length}}</div>
+    <div>Total Number of Tasks: {{taskNumber}}</div>
+    <div>Total Number of Members: {{currBoard.members.length}}</div>
     <div class="charts-main-container">
       <div class="priority-chart">
         <h2>Board Priorities by Percentages:</h2>
@@ -31,6 +34,18 @@ export default {
   methods: {
     backToBoard() {
       this.$emit('backToBoard')
+    }
+  },
+  computed: {
+    currBoard() {
+      return this.$store.getters.currBoard;
+    },
+    taskNumber() {
+      var taskNumber = 0
+      this.currBoard.groups.forEach(group => {
+        taskNumber += group.tasks.length
+      })
+      return taskNumber
     }
   },
   components: {
