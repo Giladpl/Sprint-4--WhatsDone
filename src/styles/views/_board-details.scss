@@ -181,7 +181,7 @@
     .filters-container {
         align-items: center;
         font-family: Roboto, sans-serif;
-
+        width: 100%;
 
         > * ::placeholder {
             color: $clr3;
@@ -198,6 +198,10 @@
             justify-content: flex-start;
             align-items: center;
             cursor: pointer;
+
+            *:hover {
+                background-color: $clr4;
+            }
 
             .el-input__inner {
                 border: none;

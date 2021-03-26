@@ -7,7 +7,7 @@
         placeholder="Write an update.."
         v-model="updateToEdit.update"
       ></el-input>
-      <div class="flex-between">
+      <div class="add-uptate-btns flex-between">
         <div class="file-btn"><i class="el-icon-paperclip"></i>Add File</div>
         <el-button size="small">Update</el-button>
       </div>

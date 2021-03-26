@@ -6,16 +6,17 @@
     height: 100vh;
     width: 570px;
     z-index: 151;
-    transition: .5s;
+    transition: 0.5s;
     text-align: left;
     padding: 5px 20px;
     box-shadow: 0 0 10px 0 $clr5;
     overflow-y: auto;
-    
-    .close-btn{
+
+    .close-btn {
         position: absolute;
         right: 5px;
         top: 5px;
+        cursor: pointer;
     }
 
     .task-title {
@@ -33,6 +34,31 @@
             font-size: 15px;
             margin-right: 10px;
             cursor: pointer;
+        }
+    }
+}
+
+@include for-mobile-layout {
+
+    .main-screen {
+        opacity: 0;
+    }
+
+    .task-details {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        padding-right: rem(10px);
+
+        .task-title {
+            font-size: rem(18px);
+            font-weight: bolder;
+        }
+
+        .btns-container {
+            left: 10px;
+
         }
     }
 }
