@@ -5,7 +5,7 @@
     width: auto;
 
     .board-creator:hover {
-        text-decoration: underline
+        text-decoration: underline;
     }
 
     .details-wrapper {
@@ -14,7 +14,7 @@
         border-top-left-radius: 10px;
         background-color: #fff;
     }
-    
+
     .main-screen {
         z-index: 150;
         position: fixed;
@@ -23,21 +23,21 @@
         left: 0;
         bottom: 0;
         right: 0;
-        background-color: rgba(0, 0, 0, 0.300);
+        background-color: rgba(0, 0, 0, 0.3);
         cursor: pointer;
-        transition: opacity .8s;
+        transition: opacity 0.8s;
     }
 
-    .screen-fixed{
+    .screen-fixed {
         position: fixed;
     }
-    
-    .main-screen-hidden{
+
+    .main-screen-hidden {
         opacity: 0;
         // transition: opacity .8s;
     }
 
-    .board-static-header{
+    .board-static-header {
         position: sticky;
         top: 0;
         z-index: 100;
@@ -55,18 +55,17 @@
                 outline: 1px dashed $clr6;
             }
         }
-        
 
-        .board-top-row{
+        .board-top-row {
             height: 70px;
-            padding-top: 20px;  
-            padding-bottom: 10px;  
+            padding-top: 20px;
+            padding-bottom: 10px;
 
             .board-title-input {
                 font-size: 25px;
                 width: 100%;
             }
-    
+
             .board-btns {
                 > * {
                     cursor: pointer;
@@ -84,7 +83,7 @@
                 // }
 
                 .add-btn {
-                    color:#0085ff;
+                    color: #0085ff;
                     border-color: #0085ff;
 
                     &:hover {
@@ -93,7 +92,7 @@
                 }
             }
         }
-    
+
         .board-description-input {
             min-width: 400px;
             margin-bottom: 5px;
@@ -104,7 +103,6 @@
             font-size: 15px;
             cursor: pointer;
             margin-bottom: 10px;
-                
         }
 
         .add-view-card {
@@ -134,30 +132,41 @@
         }
     }
 
-    .add-view-card{
+    .add-view-card {
         width: 200px;
         position: absolute;
 
-        .chart-btn{
+        .chart-btn {
             color: $clr3;
         }
     }
 
-    .btn-add-view-menu{
+    .btn-add-view-menu {
         width: 13px;
         margin-right: 5px;
     }
 
-    .buttons-row-container{
+    .buttons-row-container {
         width: 100%;
         border: 1px solid transparent;
         box-shadow: 0 3px 4px -5px #484444;
 
-        .add-view-btn{
+        .add-view-btn {
             margin: 10px 0;
             background-color: #fff;
             color: $clr3;
             border-color: $clr4;
+
+            .select-filter select {
+                margin: 10px 0;
+                background-color: #fff;
+                color: #3f4045;
+                border-color: #e6e9ef;
+                margin: 10px 0;
+                background-color: #fff;
+                color: $clr3;
+                border-color: $clr4;
+            }
 
             &:hover {
                 background-color: $clr4;
@@ -169,11 +178,7 @@
         margin: 10px 0;
     }
 
-   
-
     .no-border-radius {
         border-top-left-radius: 0;
     }
-
-    
 }
