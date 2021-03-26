@@ -162,8 +162,8 @@
     .main-header-mobile {
         display: none;
         color: #fff;
-        width: 100%;
-        padding-right: rem(10px);
+        width: 93%;
+        padding: rem(10px);
 
         .logo-container {
             width: 20px;
@@ -174,7 +174,7 @@
     @include for-mobile-layout {
         height: rem(50px);
         position: fixed;
-        width: 100%;
+        width: 100vw;
 
         .main-header-mobile {
             display: flex;
