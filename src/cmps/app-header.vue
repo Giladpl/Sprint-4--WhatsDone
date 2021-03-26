@@ -65,7 +65,7 @@
         </router-link>
       </div>
       <div v-if="currBoard" class="board-title">{{currBoard.title}}</div>
-      <div>☰</div>
+      <div class="burger-menu">☰</div>
     </div>
   </section>
 </template>

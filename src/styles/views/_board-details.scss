@@ -165,34 +165,52 @@
 
     .filters-container {
         align-items: center;
-        color: $clr2;
+        font-family: Roboto, sans-serif;
+
+
+        > * ::placeholder {
+            color: $clr3;
+            font-family: Roboto, sans-serif;
+        }
 
         .btn-add-group {
             margin: 10px 0;
         }
-    
-        .select-filter {
-            margin: 10px;
+
+        .select-filter-container {
+            margin: rem(10px);
             background-color: #fff;
-            color: $clr3;
-            justify-content: space-between;
+            justify-content: flex-start;
+            align-items: center;
             cursor: pointer;
 
             .el-input__inner {
-            border: none;
+                border: none;
+                padding-left: rem(5px);
+            }
+
+            img {
+                width: rem(18px);
+                display: block;
+            }
+
+            &:hover {
+                background-color: $clr4;
             }
         }
 
         .el-icon-sort {
-            color:#C0C4CC;
-            margin: 10px;
+            color: $clr3;
+            margin: rem(10px);
+            margin-left: rem(-10px);
+            
         }
 
         .task-search {
             .el-icon-search {
-                font-size: 18px;
-                color: $clr6;
-                margin-bottom: 16px;
+                font-size: rem(18px);
+                color: $clr3;
+                margin-bottom: rem(16px);
                 padding-left: 0;
                 width: fit-content;
             }
@@ -200,10 +218,10 @@
             .el-input__inner {
                 width: fit-content;
                 border: none;
+                color: $clr3;
             }
         }
     }
-
 
     .no-border-radius {
         border-top-left-radius: 0;
@@ -215,11 +233,10 @@
 
         .board-static-header {
             display: none;
-
         }
 
         .details-wrapper {
-            padding: 10px;
+            padding: rem(10px);
             border-top-left-radius: 0;
             position: absolute;
             top: 50px;
@@ -229,5 +246,14 @@
         .filters-container {
             display: none;
         }
+    }
+
+    @include for-mobile-layout {
+        
+        .details-wrapper{
+            overflow: auto;
+
+        }
+        
     }
 }

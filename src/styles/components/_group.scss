@@ -148,7 +148,8 @@
     @include for-mobile-layout {
         padding-bottom: 0;
         margin-bottom: 30px;
-
+        width: rem(1049px);
+        
         .group-header {
             .group-header-left {
                 .group-title-input {
