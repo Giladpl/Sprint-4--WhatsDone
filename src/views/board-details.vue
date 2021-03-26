@@ -627,5 +627,6 @@ export default {
       boardMemberAvatar,
       draggable,
     },
-  };
+  }
+}
 </script>
