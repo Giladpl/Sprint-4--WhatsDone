@@ -228,4 +228,13 @@
             display: none;
         }
     }
+
+    @include for-mobile-layout {
+        
+        .details-wrapper{
+            overflow: auto;
+
+        }
+        
+    }
 }
