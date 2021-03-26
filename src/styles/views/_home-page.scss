@@ -101,9 +101,12 @@
 }
 
 @include for-mobile-layout {
+    .main-layout {
+       max-width: 100%;
+    }
+    
     .hero-homepage {
         .hero-container {
-            max-width: rem(460px);
             background: linear-gradient(to right, #6273ff, rgba(91, 218, 201, 0.8)) no-repeat 0 0 / cover;
         }
 
@@ -132,14 +135,12 @@
             }
         }
         .main-hero {
-            max-width: rem(460px);
 
             .hero-content {
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
                 padding: rem(10px);
-                // text-align: center;
 
                 h1 {
                     margin-bottom: rem(6px);
@@ -177,21 +178,30 @@
             }
 
             .img-hero {
-                width: rem(300px);
+                position:absolute;
+                bottom: rem(98px);
+                left: rem(200px);
+
+                img {
+                    width: rem(150px) !important;
+                }
+                
             }
         }
     }
 
     .main-feature {
-        padding: 3rem 0;
+        max-width: inherit;
+        padding: 1rem 0 !important;
         text-align: center;
-        justify-content: space-between;
-        max-width: rem(1010px);
+        justify-content: space-evenly;
+        flex-direction: column;
         margin: auto;
+        margin-top: rem(30px) !important;
+
 
         > * {
-            padding: 0 1rem;
-            max-width: rem(300px);
+            max-width: rem(250px);
         }
 
         .title-box {
@@ -201,6 +211,8 @@
 
         .txt-box {
             font-size: rem(15px);
+            margin-bottom: rem(30px);
+
         }
 
         .icon-box {
@@ -209,7 +221,7 @@
             padding: rem(10px);
             height: 5rem;
             width: 5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem !important;
             margin-left: auto;
             margin-right: auto;
 
