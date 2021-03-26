@@ -65,7 +65,7 @@
         </router-link>
       </div>
       <div v-if="currBoard" class="board-title">{{currBoard.title}}</div>
-      <div class="burger-menu">☰</div>
+      <div class="burger-menu" @click="toggleMenu">☰</div>
     </div>
   </section>
 </template>
@@ -107,6 +107,9 @@ export default {
     },
     addNewBoard() {
       this.$emit('addingBoard');
+    },
+    toggleMenu() {
+      console.log('hi');
     }
   },
   computed: {
