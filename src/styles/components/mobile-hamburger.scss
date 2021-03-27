@@ -8,7 +8,7 @@
     width: 30%;
     transform: translateX(100%);
     box-shadow: none;
-    z-index: 10;
+    z-index: 160;
     box-shadow: -4px 0px 15px 0px $clr5;
 
     transition: transform 0.8s, box-shadow 0.8s;
@@ -19,6 +19,8 @@
         background-color: $clr2;
         color: $clr3;
         width: max-content;
+        
+
 
         .add-board-mobile {
             margin-top: 16px;
