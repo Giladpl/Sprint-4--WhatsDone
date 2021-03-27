@@ -55,6 +55,7 @@
         <div>Priority</div>
         <div :style="dynamicHidden">Stopwatch</div>
         <!-- <div :class="{hidden : !this.isStopWatch}">Stopwatch</div> -->
+      </div>
         <el-dropdown
           class="group-options-menu"
           trigger="click"
@@ -73,7 +74,6 @@
             <el-dropdown-item @click.native="toggleStopwatch()">Task Time Counter</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
-      </div>
     </div>
     <draggable
       v-model="group.tasks"

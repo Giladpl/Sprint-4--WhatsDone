@@ -156,6 +156,7 @@
             min-width: 800px;
             display: flex;
             transform: translateX(-4%);
+            margin-right: 1.5%;
 
             .space {
                 width: rem(176px);
@@ -167,7 +168,7 @@
     @include for-mobile-layout {
         padding-bottom: 0;
         // margin-bottom: 30px;
-        width: rem(1049px);
+        width: rem(1065px);
         padding-right: 10px;
 
         .group-header {
@@ -187,8 +188,10 @@
             // }
         }
 
-        // .bars-container {
-        //     display: none;
-        // }
+        .bars-container {
+            .bars-container-right {
+                margin-right: 0.5%;
+            }
+        }
     }
 }
