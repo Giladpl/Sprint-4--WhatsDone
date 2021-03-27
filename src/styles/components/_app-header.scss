@@ -181,7 +181,10 @@
         .main-header-mobile {
             display: flex;
             width: 92%;
-            
+        }
+
+        .burger-menu{
+            cursor: pointer;
         }
 
         .main-header {

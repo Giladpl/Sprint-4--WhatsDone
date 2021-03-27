@@ -8,7 +8,12 @@
         v-model="updateToEdit.update"
       ></el-input>
       <div class="add-uptate-btns flex-between">
-        <div class="file-btn"><i class="el-icon-paperclip"></i>Add File</div>
+        <div
+          v-if="!isAddFile"
+          @click="toggleAddFile"
+          class="file-btn"
+        ><i class="el-icon-paperclip"></i>Add File</div>
+        <img-upload v-else @save="saveImg"></img-upload>
         <el-button size="small">Update</el-button>
       </div>
     </form>
@@ -39,6 +44,7 @@
 </template>
 
 <script>
+import imgUpload from "./img-upload.cmp.vue"
 var moment = require("moment");
 
 export default {
@@ -56,6 +62,8 @@ export default {
         createdAt: null,
         byMember: null,
       },
+        isAddFile: false,
+        imgUrls:[],
     };
   },
   filters: {
@@ -74,7 +82,18 @@ export default {
         byMember: null,
       }
     },
+    toggleAddFile() {
+      this.isAddFile = !this.isAddFile;
+    },
+    saveImg(imgUrl) {
+      this.imgUrls.push(imgUrl)
+      console.log(this.imgUrls);
+
+    },
   },
+  components: {
+    imgUpload
+  }
 };
 </script>
 

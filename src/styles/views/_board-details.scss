@@ -43,14 +43,15 @@
         transition: opacity 0.8s;
     }
 
-    .screen-fixed {
-        position: fixed;
-    }
-
     .main-screen-hidden {
         opacity: 0;
         // transition: opacity .8s;
     }
+    
+    .screen-fixed {
+        position: fixed;
+    }
+
 
     .board-static-header {
         position: sticky;
@@ -79,6 +80,7 @@
             .board-title-input {
                 font-size: 25px;
                 width: 100%;
+                height: auto;
             }
 
             .board-btns {
@@ -111,6 +113,7 @@
         .board-description-input {
             min-width: 400px;
             margin-bottom: 5px;
+            height: auto;
         }
 
         .created-by {
@@ -278,6 +281,10 @@
         
         .filters-container {
             display: none;
+        }
+
+        .main-screen {
+            z-index: 2;
         }
     }
     

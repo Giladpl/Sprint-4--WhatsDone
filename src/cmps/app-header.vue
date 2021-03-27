@@ -3,9 +3,15 @@
     <div class="main-header flex">
       <div class="top-header flex">
         <router-link to="/">
-          <i><img class="logo" src="@/assets/icons/increase.svg" /></i>
+          <i><img
+              class="logo"
+              src="@/assets/icons/increase.svg"
+            /></i>
         </router-link>
-        <i class="header-icon el-icon-s-grid" @click="toggleBoardNavbar"></i>
+        <i
+          class="header-icon el-icon-s-grid"
+          @click="toggleBoardNavbar"
+        ></i>
         <i class="header-icon el-icon-bell"></i>
       </div>
       <div class="bottom-header flex">
@@ -17,30 +23,46 @@
           ></el-avatar>
         </router-link>
         <router-link to="/">
-          <i><img class="exit" src="@/assets/icons/exit.svg" /></i>
+          <i><img
+              class="exit"
+              src="@/assets/icons/exit.svg"
+            /></i>
         </router-link>
       </div>
     </div>
     <div
       class="secondary-header flex"
-      :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}">
-      <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list">
-        <li class="add-board flex" @click="addNewBoard">
+      :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}"
+    >
+      <ul
+        v-if="isBoardNavbarShown"
+        class="sidebar-board-prev clean-list"
+      >
+        <li
+          class="add-board flex"
+          @click="addNewBoard"
+        >
           <i class="el-icon-circle-plus-outline"></i>
           Add
         </li>
         <li class="sidebar-filters flex">
-          <i
-            ><img
+          <i><img
               class="sidebar-board-prev img"
               src="@/assets/icons/filter.svg"
-          /></i>
+            /></i>
           Filters
         </li>
         <li></li>
         <li class="flex">
-          <el-input  @input="boardToShow()" @click.native.stop="" ref="searchInput" 
-             v-model="filterBy.name"  class="board-search" placeholder="Search a board..." prefix-icon="el-icon-search" />
+          <el-input
+            @input="boardToShow()"
+            @click.native.stop=""
+            ref="searchInput"
+            v-model="filterBy.name"
+            class="board-search"
+            placeholder="Search a board..."
+            prefix-icon="el-icon-search"
+          />
         </li>
         <li>
           <h4 class="change-board">Change Board</h4>
@@ -52,7 +74,10 @@
           :class="{ 'chosen-board': isChosenBoard(board._id) }"
         >
           <i class="el-icon-caret-right" />
-          <router-link class="router-link" :to="'/board/' + board._id">
+          <router-link
+            class="router-link"
+            :to="'/board/' + board._id"
+          >
             <h4>{{ board.title }}</h4>
           </router-link>
         </li>
@@ -61,13 +86,26 @@
     <div class="main-header-mobile flex-between">
       <div class="logo-container">
         <router-link to="/">
-          <img class="logo" src="@/assets/icons/increase.svg" />
+          <img
+            class="logo"
+            src="@/assets/icons/increase.svg"
+          />
         </router-link>
       </div>
-      <div v-if="currBoard" class="board-title">{{currBoard.title}}</div>
-      <div class="burger-menu" @click="toggleMenu">☰
-        <mobile-hamburger v-if="isHamburger" :boardId="boardId"
-      :boards="boards" />
+      <div
+        v-if="currBoard"
+        class="board-title"
+      >{{currBoard.title}}</div>
+      <div
+        class="burger-menu"
+        @click="toggleMenu"
+        v-click-outside="toggleMenu"
+      >☰
+        <mobile-hamburger
+          v-if="isHamburger"
+          :boardId="boardId"
+          :boards="boards"
+        />
       </div>
     </div>
   </section>
@@ -75,7 +113,7 @@
 
 <script>
 import mobileHamburger from './mobile-hamburger'
-// import vClickOutside from "v-click-outside";
+import vClickOutside from "v-click-outside";
 export default {
   name: "appHeader",
   props: {
@@ -89,7 +127,7 @@ export default {
     },
   },
   directives: {
-    // clickOutside: vClickOutside.directive,
+    clickOutside: vClickOutside.directive,
   },
   data() {
     return {
@@ -115,7 +153,7 @@ export default {
     },
     toggleMenu() {
       this.isHamburger = !this.isHamburger;
-      // this.$emit('toggleMainScreen')
+      this.$emit('toggleMainScreen')
     }
   },
   computed: {
@@ -142,7 +180,7 @@ export default {
     }
   },
   created() {
-      this.boardsToShow = JSON.parse(JSON.stringify(this.boards));
+    this.boardsToShow = JSON.parse(JSON.stringify(this.boards));
   },
   components: {
     mobileHamburger,

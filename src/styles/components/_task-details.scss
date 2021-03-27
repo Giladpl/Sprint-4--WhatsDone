@@ -39,11 +39,6 @@
 }
 
 @include for-mobile-layout {
-
-    .main-screen {
-        opacity: 0;
-    }
-
     .task-details {
         position: fixed;
         display: flex;
@@ -58,7 +53,6 @@
 
         .btns-container {
             left: 10px;
-
         }
     }
 }

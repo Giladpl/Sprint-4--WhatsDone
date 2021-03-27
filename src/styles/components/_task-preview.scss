@@ -14,7 +14,8 @@
     justify-content: space-between;
 
     .task-input-form input[type=text]{
-        padding: rem(5px) rem(5px)
+        padding: rem(5px) rem(5px);
+        height: auto;
       }
     .task-input-form input[type=text]:focus {
         outline: 1px dashed black;

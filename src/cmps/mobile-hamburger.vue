@@ -37,6 +37,8 @@
 </template>
 
 <script>
+// import vClickOutside from "v-click-outside";
+
 export default {
   name: "mobileHamburger",
   props: {
@@ -49,9 +51,9 @@ export default {
       required: true,
     },
   },
-  directives: {
-    // clickOutside: vClickOutside.directive,
-  },
+  // directives: {
+  //   clickOutside: vClickOutside.directive,
+  // },
   data() {
     return {
       board: null,
@@ -74,7 +76,6 @@ export default {
     },
     toggleMenu() {
       this.isHamburger = !this.isHamburger;
-      console.log('hi');
     }
   },
   computed: {
