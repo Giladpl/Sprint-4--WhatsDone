@@ -1,38 +1,14 @@
 <template>
-  <section class="header-component flex">
-    <div class="main-header flex">
-      <div class="top-header flex">
-        <router-link to="/">
-          <i><img class="logo" src="@/assets/icons/increase.svg" /></i>
-        </router-link>
-        <i class="header-icon el-icon-s-grid" @click="toggleBoardNavbar"></i>
-        <i class="header-icon el-icon-bell"></i>
-      </div>
-      <div class="bottom-header flex">
-        <router-link to="/profile">
-          <el-avatar
-            class="header-avatar"
-            size="medium"
-            :src="loggedInUser.imgUrl"
-          ></el-avatar>
-        </router-link>
-        <router-link to="/">
-          <i><img class="exit" src="@/assets/icons/exit.svg" /></i>
-        </router-link>
-      </div>
-    </div>
-    <div
-      class="secondary-header flex"
-      :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}">
-      <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list">
-        <li class="add-board flex" @click="addNewBoard">
+  <section class="hamburger-main flex">
+      <ul class="mobile-menu-prev clean-list">
+        <li class="add-board-mobile flex" @click="addNewBoard">
           <i class="el-icon-circle-plus-outline"></i>
           Add
         </li>
-        <li class="sidebar-filters flex">
+        <li class="mobile-filters flex">
           <i
             ><img
-              class="sidebar-board-prev img"
+              class="mobile-menu-prev img"
               src="@/assets/icons/filter.svg"
           /></i>
           Filters
@@ -40,16 +16,16 @@
         <li></li>
         <li class="flex">
           <el-input  @input="boardToShow()" @click.native.stop="" ref="searchInput" 
-             v-model="filterBy.name"  class="board-search" placeholder="Search a board..." prefix-icon="el-icon-search" />
+             v-model="filterBy.name"  class="mobile-board-search" placeholder="Search a board..." prefix-icon="el-icon-search" />
         </li>
         <li>
-          <h4 class="change-board">Change Board</h4>
+          <h4 class="mobile-change-board">Change Board</h4>
         </li>
         <li
-          class="mini-board-prev flex"
+          class="mobile-mini-board-prev flex"
           v-for="board in boardsToShow"
           :key="board._id"
-          :class="{ 'chosen-board': isChosenBoard(board._id) }"
+          :class="{ 'mobile-chosen-board': isChosenBoard(board._id) }"
         >
           <i class="el-icon-caret-right" />
           <router-link class="router-link" :to="'/board/' + board._id">
@@ -57,27 +33,12 @@
           </router-link>
         </li>
       </ul>
-    </div>
-    <div class="main-header-mobile flex-between">
-      <div class="logo-container">
-        <router-link to="/">
-          <img class="logo" src="@/assets/icons/increase.svg" />
-        </router-link>
-      </div>
-      <div v-if="currBoard" class="board-title">{{currBoard.title}}</div>
-      <div class="burger-menu" @click="toggleMenu">☰
-        <mobile-hamburger v-if="isHamburger" :boardId="boardId"
-      :boards="boards" />
-      </div>
-    </div>
   </section>
 </template>
 
 <script>
-import mobileHamburger from './mobile-hamburger'
-// import vClickOutside from "v-click-outside";
 export default {
-  name: "appHeader",
+  name: "mobileHamburger",
   props: {
     boards: {
       type: Array,
@@ -93,10 +54,8 @@ export default {
   },
   data() {
     return {
-      isBoardNavbarShown: false,
       board: null,
       boardsToShow: null,
-      isHamburger: false,
       filterBy: {
         name: null
       }
@@ -145,7 +104,7 @@ export default {
       this.boardsToShow = JSON.parse(JSON.stringify(this.boards));
   },
   components: {
-    mobileHamburger,
   },
 };
 </script>
+
