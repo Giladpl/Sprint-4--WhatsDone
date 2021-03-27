@@ -70,12 +70,15 @@
       @start="drag = true"
       @end="drag = false"
       @change="changedByDrag"
-      :scroll-sensitivity="200"
+      :scroll-sensitivity="250"
       :force-fallback="true"
       drag-class="dragging-item"
       chosen-class="chosen-item"
       ghost-class="ghost-item"
       group="tasks"
+      :animation="400"
+      :delay="100"
+      :touchStartThreshold="3"
     >
       <li
         v-for="task in group.tasks"

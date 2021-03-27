@@ -173,12 +173,15 @@
         @start="drag = true"
         @end="drag = false"
         @change="changeGroupByDrag"
-        :scroll-sensitivity="200"
+        :scroll-sensitivity="250"
         :force-fallback="true"
+        :animation="400"
         handle=".handle"
         drag-class="dragging-item"
         chosen-class="chosen-item"
         ghost-class="ghost-item"
+        :delay="100"
+
       >
         <li
           v-for="group in boardToEdit.groups"
