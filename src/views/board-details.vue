@@ -73,6 +73,15 @@
           >
             + Add View
           </el-button>
+          <div class="flex-center">
+            <div class="btn-integrate">
+              <img src="@/assets/icons/plug.svg" >
+              Integrate 
+              <img src="@/assets/icons/slack.svg" >
+              <img src="@/assets/icons/gmail.svg" >
+            </div>
+            <div class="btn-automate"><img src="@/assets/icons/robot.svg" >Automate</div>
+          </div>
         </div>
         <div
           v-click-outside="toggleAddViewMenu"
