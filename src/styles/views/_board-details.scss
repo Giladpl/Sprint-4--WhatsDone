@@ -181,7 +181,7 @@
     .filters-container {
         align-items: center;
         font-family: Roboto, sans-serif;
-        width: 100%;
+        // width: 100%;
 
         > * ::placeholder {
             color: $clr3;
@@ -226,8 +226,9 @@
         }
 
         .task-search {
+            width: rem(50px);
             .el-icon-search {
-                font-size: rem(18px);
+                font-size: rem(15px);
                 color: $clr3;
                 margin-bottom: rem(16px);
                 padding-left: 0;

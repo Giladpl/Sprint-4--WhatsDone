@@ -168,7 +168,7 @@
     @include for-mobile-layout {
         padding-bottom: 0;
         // margin-bottom: 30px;
-        width: rem(1065px);
+        width: 73.5625rem;
         padding-right: 10px;
 
         .group-header {
@@ -186,6 +186,10 @@
             //         width: 7.375rem;
             //     }
             // }
+        }
+
+        .input-add-task {
+            width: 97%;
         }
 
         .bars-container {
