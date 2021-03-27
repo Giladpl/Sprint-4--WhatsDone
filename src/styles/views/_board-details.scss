@@ -181,7 +181,10 @@
     .filters-container {
         align-items: center;
         font-family: Roboto, sans-serif;
-        // width: 100%;
+
+        > * {
+            margin-right: rem(20px);
+        }
 
         > * ::placeholder {
             color: $clr3;
@@ -190,10 +193,11 @@
 
         .btn-add-group {
             margin: 10px 0;
+            margin-right: 20px;
         }
 
         .select-filter-container {
-            margin: rem(10px);
+            margin: rem(15px);
             background-color: #fff;
             justify-content: flex-start;
             align-items: center;
@@ -220,13 +224,13 @@
 
         .el-icon-sort {
             color: $clr3;
-            margin: rem(10px);
+            margin: rem(20px);
             margin-left: rem(-10px);
             
         }
 
         .task-search {
-            width: rem(50px);
+            width: rem(40px);
             .el-icon-search {
                 font-size: rem(15px);
                 color: $clr3;
@@ -236,10 +240,15 @@
             }
 
             .el-input__inner {
+                width: rem(40px);
                 width: fit-content;
                 border: none;
                 color: $clr3;
             }
+        }
+
+        img {
+            width: 15px;
         }
     }
 
