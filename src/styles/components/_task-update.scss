@@ -25,7 +25,7 @@
             width: 100%;
             border-top: 1px solid $clr4;
             color: $clr3;
-            font-size: .8125rem;
+            font-size: 0.8125rem;
 
             > * {
                 width: 50%;
@@ -49,5 +49,20 @@
             cursor: pointer;
         }
     }
+}
 
+@include for-mobile-layout {
+    .update-container {
+        width: 90vw;
+        margin-right: rem(10px);
+
+        .comment-content {
+            width: 90vw;
+
+            .member-content {
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
 }
