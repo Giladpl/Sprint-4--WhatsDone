@@ -1,5 +1,5 @@
 <template>
-  <section class="hamburger-main flex">
+  <section class="hamburger-main flex" v-click-outside="toggleMenu">
       <ul class="mobile-menu-prev clean-list">
         <li class="add-board-mobile flex" @click="addNewBoard">
           <i class="el-icon-circle-plus-outline"></i>
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-// import vClickOutside from "v-click-outside";
+import vClickOutside from "v-click-outside";
 
 export default {
   name: "mobileHamburger",
@@ -51,9 +51,9 @@ export default {
       required: true,
     },
   },
-  // directives: {
-  //   clickOutside: vClickOutside.directive,
-  // },
+  directives: {
+    clickOutside: vClickOutside.directive,
+  },
   data() {
     return {
       board: null,
@@ -64,10 +64,10 @@ export default {
     };
   },
   methods: {
-    toggleBoardNavbar() {
-      this.isBoardNavbarShown = !this.isBoardNavbarShown;
-      this.$emit("borderRadiusChange");
-    },
+    // toggleBoardNavbar() {
+    //   this.isBoardNavbarShown = !this.isBoardNavbarShown;
+    //   this.$emit("borderRadiusChange");
+    // },
     isChosenBoard(id) {
       return this.boardId === id;
     },
@@ -75,7 +75,7 @@ export default {
       this.$emit('addingBoard');
     },
     toggleMenu() {
-      this.isHamburger = !this.isHamburger;
+      this.$emit('toggleMenu');
     }
   },
   computed: {
