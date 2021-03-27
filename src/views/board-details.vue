@@ -165,6 +165,10 @@
           </el-select>
         </div>
         <i class="el-icon-sort">Sort</i>
+        <img src="@/assets/icons/push-pin.svg">
+        <img src="@/assets/icons/restriction.svg">
+        <img src="@/assets/icons/fill.svg">
+        <img src="@/assets/icons/pen.svg">
       </div>
 
       <draggable
