@@ -55,9 +55,19 @@
         <div>Priority</div>
         <div :style="dynamicHidden">Stopwatch</div>
         <!-- <div :class="{hidden : !this.isStopWatch}">Stopwatch</div> -->
-        <el-dropdown class="group-options-menu">
+        <el-dropdown
+          class="group-options-menu"
+          trigger="click"
+        >
           <span class="el-dropdown-link">
-            <i class="el-icon-arrow-down el-icon--right"></i>
+            <i
+              v-if="!isStopWatch"
+              class="el-icon-circle-plus"
+            ></i>
+            <i
+              v-else
+              class="el-icon-remove"
+            ></i>
           </span>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item @click.native="toggleStopwatch()">Task Time Counter</el-dropdown-item>
@@ -255,7 +265,6 @@ export default {
       this.$emit('updateTaskTitle', update);
     },
     changedByDrag() {
-      // console.log('group' ,this.group.tasks);
       this.$emit('updateTasksOrder', { groupId: this.group.id, tasks: this.group.tasks })
     },
     addUpdate(update) {

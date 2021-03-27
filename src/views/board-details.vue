@@ -187,7 +187,7 @@
           v-for="group in boardToEdit.groups"
           :key="group._id"
         ><span class="handle">&vellip;&vellip;</span>
-          <group
+          <group 
             :group="group"
             :statuses="board.statuses"
             :priorities="board.priorities"
