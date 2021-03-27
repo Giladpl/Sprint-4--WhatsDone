@@ -13,7 +13,10 @@
           @click="toggleAddFile"
           class="file-btn"
         ><i class="el-icon-paperclip"></i>Add File</div>
-        <img-upload v-else @save="saveImg"></img-upload>
+        <img-upload
+          v-else
+          @save="saveImg"
+        ></img-upload>
         <el-button size="small">Update</el-button>
       </div>
     </form>
@@ -34,6 +37,7 @@
           <div class="comment-time">{{ comment.createdAt | moment }}</div>
         </div>
         <div class="comment-update">{{ comment.update }}</div>
+        <img :src="comment.file">
         <div class="btns flex">
           <div class="like-btn flex-center">Like</div>
           <div class="reply-btn flex-center">Reply</div>
@@ -62,8 +66,7 @@ export default {
         createdAt: null,
         byMember: null,
       },
-        isAddFile: false,
-        imgUrls:[],
+      isAddFile: false,
     };
   },
   filters: {
@@ -86,8 +89,7 @@ export default {
       this.isAddFile = !this.isAddFile;
     },
     saveImg(imgUrl) {
-      this.imgUrls.push(imgUrl)
-      console.log(this.imgUrls);
+      this.updateToEdit.file = imgUrl
 
     },
   },

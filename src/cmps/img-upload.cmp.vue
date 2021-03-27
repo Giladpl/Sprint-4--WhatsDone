@@ -12,7 +12,6 @@
         <img
           v-if="!isDragOver"
           src="https://www.lifewire.com/thmb/P856-0hi4lmA2xinYWyaEpRIckw=/1920x1326/filters:no_upscale():max_bytes(150000):strip_icc()/cloud-upload-a30f385a928e44e199a62210d578375a.jpg"
-          alt=""
         />
 
         <h3 v-else>Drop here</h3>
@@ -30,7 +29,6 @@
       class="loader"
       v-else
       src="https://i.pinimg.com/originals/65/ba/48/65ba488626025cff82f091336fbf94bb.gif"
-      alt=""
     />
   </div>
 </template>
@@ -65,30 +63,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.loader {
-  height: 150px;
-}
-
-label img {
-  height: 40px;
-  width: auto;
-  cursor: pointer;
-  transition: height 0.6s;
-}
-
-input {
-  width: 0;
-  height: 0;
-}
-.drag {
-  color: grey;
-  display: inline-block;
-  padding: 10px 5px;
-  width: 60px;
-  height: 60px;
-  border: 1px dashed gray;
-  border-radius: 8px;
-}
-</style>
