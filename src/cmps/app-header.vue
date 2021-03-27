@@ -115,7 +115,7 @@ export default {
     },
     toggleMenu() {
       this.isHamburger = !this.isHamburger;
-      console.log('hi');
+      // this.$emit('toggleMainScreen')
     }
   },
   computed: {
