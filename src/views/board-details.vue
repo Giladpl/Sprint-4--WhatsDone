@@ -12,6 +12,7 @@
       @addingBoard="addNewBoard"
       @toggleMainScreen="toggleMainScreen"
     />
+    <div class="triangle-dent-header"></div>
 
     <div
       class="details-wrapper"
