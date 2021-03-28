@@ -56,24 +56,24 @@
         <div :style="dynamicHidden">Stopwatch</div>
         <!-- <div :class="{hidden : !this.isStopWatch}">Stopwatch</div> -->
       </div>
-        <el-dropdown
-          class="group-options-menu"
-          trigger="click"
-        >
-          <span class="el-dropdown-link">
-            <i
-              v-if="!isStopWatch"
-              class="el-icon-circle-plus"
-            ></i>
-            <i
-              v-else
-              class="el-icon-remove"
-            ></i>
-          </span>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item @click.native="toggleStopwatch()">Task Time Counter</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
+      <el-dropdown
+        class="group-options-menu"
+        trigger="click"
+      >
+        <span class="el-dropdown-link">
+          <i
+            v-if="!isStopWatch"
+            class="el-icon-circle-plus"
+          ></i>
+          <i
+            v-else
+            class="el-icon-remove"
+          ></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item @click.native="toggleStopwatch()">Task Time Counter</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
     </div>
     <draggable
       v-model="group.tasks"
@@ -82,6 +82,7 @@
       @change="changedByDrag"
       :scroll-sensitivity="250"
       :force-fallback="true"
+      :disabled="!isDragEnabled"
       drag-class="dragging-item"
       chosen-class="chosen-item"
       ghost-class="ghost-item"
@@ -194,6 +195,7 @@ export default {
       isColorPicker: false,
       groupTitle: null,
       isShownGroupEdit: false,
+      isDragEnabled: true,
     };
   },
   methods: {
@@ -273,6 +275,7 @@ export default {
     },
     toggleMainScreen() {
       this.$emit('toggleMainScreen')
+      this.toggleDragging()
     },
     addTimeToTask(update) {
       update.groupId = this.group.id
@@ -280,7 +283,10 @@ export default {
     },
     toggleStopwatch() {
       this.$emit('toggleStopwatch')
-    }
+    },
+    toggleDragging() {
+      this.isDragEnabled = !this.isDragEnabled;
+    },
 
   },
   computed: {

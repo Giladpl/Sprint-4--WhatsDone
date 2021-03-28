@@ -2,7 +2,8 @@
     background-color: $clr5;
     min-height: 100vh;
     display: flex;
-    width: auto;
+    // width: auto;
+    width: -webkit-fill-available;
 
     .triangle-dent-header {
         clip-path: polygon(100% 3%, 50% 50%, 100% 100%);
