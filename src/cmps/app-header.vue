@@ -25,6 +25,11 @@
       class="secondary-header flex " 
       :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}">
       <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list" v-click-outside="toggleBoardNavbar">
+        <li>
+          <router-link :to="'/board/' + boardId + '/chart'">
+          <i class="el-icon-s-data" />Charts
+          </router-link>
+          </li>
         <li class="add-board flex" @click="addNewBoard">
           <i class="el-icon-circle-plus-outline"></i>
           Add
@@ -39,7 +44,7 @@
         </li>
         <li></li>
         <li class="flex">
-          <el-input  @input="boardToShow()" @click.native.stop="" ref="searchInput" 
+          <el-input  @input="boardToShow()" ref="searchInput" 
              v-model="filterBy.name"  class="board-search" placeholder="Search a board..." prefix-icon="el-icon-search" />
         </li>
         <li>
@@ -67,7 +72,7 @@
           <img class="logo" src="@/assets/icons/increase.svg" />
         </router-link>
       </div>
-    </div>
+          </div>
   </section>
 </template>
 

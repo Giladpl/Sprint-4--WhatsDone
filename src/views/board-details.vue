@@ -180,7 +180,7 @@
             class="select-filter"
             multiple
             collapse-tags
-            v-model="filteredMembersIds"
+            v-model="filterBy.members"
             placeholder="Filter"
             @change="filterMembers"
           >
@@ -294,7 +294,6 @@ export default {
       isView: false,
       isAddingBoard: false,
       currUser: null,
-      filteredMembersIds: [],
       isDragEnabled: true,
       isBoardActivity: false,
       filterBy: {
@@ -319,6 +318,10 @@ export default {
     },
     filterMembers() {
       console.log(this.tasksToShow);
+    },
+    testSearch() {
+      console.log(this.filterBy.title);
+      console.log(this.taskBySearch);
     },
     backToBoard() {
       const boardId = this.$route.params.boardId;
@@ -671,6 +674,9 @@ export default {
     board() {
       return this.$store.getters.boardToShow;
     },
+    boardToShow() {
+      return JSON.parse(JSON.stringify(this.board));
+    },
     classObjectScreen() {
       return {
         'main-screen': this.isMainScreen,
@@ -695,6 +701,7 @@ export default {
       return tasks
     },
   },
+  
   watch: {
     "$route.params.boardId"() {
       this.loadBoard();
