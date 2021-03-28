@@ -306,8 +306,13 @@ export default {
       this.toggleMainScreen()
     },
     filterMembers() {
+<<<<<<< HEAD
       // console.log(this.filteredMembersIds);
 
+=======
+      console.log(this.filteredMembersIds);
+      console.log( this.tasksToShow);
+>>>>>>> 2b496d5ad1f6a8f9aceaff8b503ac905efbcdd0d
     },
     backToBoard() {
       const boardId = this.$route.params.boardId;
@@ -667,14 +672,16 @@ export default {
       return this.isMainScreen ? 'position: fixed' : ''
     },
     tasksToShow() {
-      // const tasksToShow = this.board.groups.filter(group => {
-      //   group.tasks.filter(task => {
-      //     task.members.filter(member => {
-      //       member => member._id === (this.filteredMembersIds.find(memberId => memberId === member._id))
-      //     })
-      //   })
-      // })
-      // console.log(tasksToShow)
+      return this.board.groups.filter(group => {
+        return group.tasks.filter(task => {
+          return task.members.filter(member => {
+            return this.filteredMembersIds.find(memberId => {
+              if (memberId === member._id) return member
+              return false
+            })
+          })
+        })
+      })
     },
   },
   watch: {
@@ -689,6 +696,7 @@ export default {
     socketService.on('board-update', (boardToSave) => {
       this.boardToEdit = boardToSave;
     });
+    this.tasksToShow()
   },
   components: {
     group,
