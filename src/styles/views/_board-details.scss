@@ -15,6 +15,53 @@
         width: 15px;
         z-index: 2;
     }
+ 
+
+    .board-activity {
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color: #fff;
+        height: 100vh;
+        width: 570px;
+        z-index: 151;
+        transition: 0.5s;
+        text-align: left;
+        padding: 5px 20px;
+        box-shadow: 0 0 10px 0 $clr5;
+        height: 100%;
+        overflow: auto;
+        animation-name: activityDropDown;
+        animation-duration: 0.2s;
+
+        
+    .activities-title {
+        font-size: 20px;
+        font-weight: bolder;
+        padding: 15px 0;
+        margin: auto;
+        margin-bottom: 5%;
+    }
+
+    .close-btn {
+        position: relative;
+        right: 3px;
+        top: 10px;
+        cursor: pointer;
+    }
+
+
+        @keyframes activityDropDown {
+            from {
+                height: 0;
+            }
+
+            to {
+                height: 100%
+            }
+        }
+
+    }
 
     .board-creator:hover {
         text-decoration: underline;
@@ -282,6 +329,8 @@
         font-size: larger;
     }
 
+
+
     @include for-mobile-layout {
         display: block;
         width: 100%;
@@ -306,7 +355,7 @@
             z-index: 2;
         }
 
-        .triangle-dent-header{
+        .triangle-dent-header {
             display: none;
         }
     }
