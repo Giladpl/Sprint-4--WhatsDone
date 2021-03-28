@@ -45,8 +45,8 @@ export default {
       var taskNumber = 0
       this.currBoard.groups.forEach(group => {
         taskNumber += group.tasks.length
-      })
-      return taskNumber
+      });
+      return taskNumber;
     }
   },
   components: {
