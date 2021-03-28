@@ -39,7 +39,7 @@
         </li>
         <li></li>
         <li class="flex">
-          <el-input  @input="boardToShow()" @click.native.stop="" ref="searchInput" 
+          <el-input  @input="boardToShow()" ref="searchInput" 
              v-model="filterBy.name"  class="board-search" placeholder="Search a board..." prefix-icon="el-icon-search" />
         </li>
         <li>
