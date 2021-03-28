@@ -30,7 +30,7 @@
             <router-link to="/profile">
               <el-avatar
                 class="header-avatar"
-                size="small"
+                size="medium"
                 :src="loggedInUser.imgUrl"
               ></el-avatar>
             </router-link>
