@@ -19,37 +19,37 @@ export const userService = {
 // userService.signup({fullname: 'Muki G', username: 'muki', password:'123', score: 100})
 
 function getUsers() {
-    // return httpService.get(`user`)
-    return asyncStorageService.query('user')
+    return httpService.get(`user`)
+    // return asyncStorageService.query('user')
 }
 
 function getById(userId) {
-    // return httpService.get(`user/${userId}`)
-    return asyncStorageService.get('user', userId)
+    return httpService.get(`user/${userId}`)
+    // return asyncStorageService.get('user', userId)
 }
 function remove(userId) {
-    // return httpService.delete(`user/${userId}`)
-    return asyncStorageService.remove('user', userId)
+    return httpService.delete(`user/${userId}`)
+    // return asyncStorageService.remove('user', userId)
 }
 
 async function update(user) {
-    // user = await httpService.put(`user/${user._id}`, user)
-    // if (getLoggedInUser()._id === user._id) _saveLocalUser(user)
-    return asyncStorageService.put('user', user)
+    user = await httpService.put(`user/${user._id}`, user)
+    if (getLoggedInUser()._id === user._id) _saveLocalUser(user)
+    // return asyncStorageService.put('user', user)
 }
 
 async function login(userCred) {
-    // const user = await httpService.post('auth/login', userCred)
-    // if (user) return _saveLocalUser(user)
+    const user = await httpService.post('auth/login', userCred)
+    if (user) return _saveLocalUser(user)
     
-    const users = await asyncStorageService.query('user')
-    const user = users.find(user => user.username === userCred.username)
-    return _saveLocalUser(user)
+    // const users = await asyncStorageService.query('user')
+    // const user = users.find(user => user.username === userCred.username)
+    // return _saveLocalUser(user)
 }
 
 async function signup(userCred) {
-    // const user = await httpService.post('auth/signup', userCred)
-    const user = await asyncStorageService.post('user', userCred)
+    const user = await httpService.post('auth/signup', userCred)
+    // const user = await asyncStorageService.post('user', userCred)
     return _saveLocalUser(user)
 }
 
