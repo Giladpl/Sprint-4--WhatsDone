@@ -55,7 +55,7 @@ export default {
     },
     statusPercantages() {
       return this.statusesMap.reduce((acc, status) => {
-        acc.push((status.count / this.totalTasks * 100).toFixed(2))
+        acc.push(parseInt(status.count / this.totalTasks * 100))
         return acc
       }, [])
     },

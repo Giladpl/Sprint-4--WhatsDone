@@ -5,6 +5,8 @@
     gap: rem(30px);
     text-align: center;
     margin-bottom: rem(30px);
+    color: $clr3;
+    font-size: larger;
 
     > * {
         > * {
@@ -44,6 +46,16 @@
             width: 500px;
         }
     }
+    span {
+        // color: $clr3;
+        font-weight: bolder;
+        font-size: larger;
+    }
+
+    i {
+        color: $clr5;
+        font-size:xx-large;
+    }
 
     .num-group {
         grid-column: 1 / 2;
@@ -52,6 +64,7 @@
         > * {
             height: 100%;
         }
+
     }
 
     .num-task {
