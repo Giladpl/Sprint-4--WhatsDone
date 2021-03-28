@@ -23,7 +23,7 @@
         },
         computed: {
             isImg() {
-                return this.board._id === '605c9ef2364773a1b17697f5'
+                return this.board._id === '6060b41cead0657d66fc78cd'
             }
         }
     }
