@@ -280,7 +280,7 @@ export default {
       }
     },
     filterMembers() {
-      console.log(this.filteredMembersIds);
+      // console.log(this.filteredMembersIds);
 
     },
     backToBoard() {
