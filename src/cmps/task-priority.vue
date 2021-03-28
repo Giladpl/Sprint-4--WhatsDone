@@ -2,7 +2,8 @@
     <section class="priority-modal">
         <ul v-if="renderPriorities" class="priority-list clean-list">
             <li v-for="priority in renderPriorities" :key="priority.id" >
-                <div class="label" @click="onPriority(priority.id)" v-bind:style="{ borderLeft: `10px solid ${priority.color}` }" >
+                <div class="label" @click="onPriority(priority.id)" v-bind:style="{ backgroundColor: `${priority.color}` }" >
+                <!-- <div class="label" @click="onPriority(priority.id)" v-bind:style="{ borderLeft: `10px solid ${priority.color}` }" > -->
                     {{priority.title}}
                     <i class="el-icon-delete" @click.stop="onRemovePriority(priority.id)"></i>
                 </div>

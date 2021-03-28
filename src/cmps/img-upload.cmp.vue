@@ -2,7 +2,7 @@
   <div class="img-upload-container">
     <template v-if="!isLoading">
       <!-- UPLOAD IMG -->
-      <label
+      <label title="Click to manually search or drag and drop"
         for="imgUploader"
         @drop.prevent="handleFile"
         @dragover.prevent="dragOver"

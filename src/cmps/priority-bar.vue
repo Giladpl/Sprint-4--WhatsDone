@@ -1,7 +1,7 @@
 <template>
   <section
     class="priority-bar-wrapper"
-    v-if="priorities"
+    v-if="tasks.length"
   >
     <div
       class="part-of-bar"

@@ -1,17 +1,32 @@
 <template>
-  <section class="task-details" v-click-outside="onClose">
-    <div class="close-btn" @click="onClose"><i class="el-icon-close"></i></div>
+  <section
+    class="task-details"
+    v-click-outside="onClose"
+  >
+    <div
+      class="close-btn"
+      @click="onClose"
+    ><i class="el-icon-close"></i></div>
     <div class="task-title">{{ task.title }}</div>
     <div class="btns-container">
-      <span @click="onUpdate">Updates</span>
-      <span @click="onActivity">Activity Log</span>
+      <span
+        @click="onUpdate"
+        :style="isUpdateChosen"
+      >Updates</span>
+      <span
+        @click="onActivity"
+        :style="isActivityChosen"
+      >Activity Log</span>
     </div>
     <task-update
       v-if="isUpdate"
       :comments="task.comments"
       @addUpdate="addUpdate"
     />
-    <task-activity v-if="isActivity" :activities="setTaskActivity" />
+    <task-activity
+      v-if="isActivity"
+      :activities="setTaskActivity"
+    />
     <!-- <record-msg /> -->
   </section>
 </template>
@@ -65,6 +80,12 @@ export default {
       return copyActivities.filter(
         (activity) => activity.task.id === this.task.id
       );
+    },
+    isUpdateChosen() {
+      return [this.isUpdate ? { textDecoration: 'underline' } : { textDecoration: 'none' }]
+    },
+    isActivityChosen() {
+      return [this.isActivity ? { textDecoration: 'underline' } : { textDecoration: 'none' }]
     },
   },
   components: {

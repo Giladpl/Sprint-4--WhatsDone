@@ -440,7 +440,7 @@ export default {
     async addGroup() {
       try {
         const groupToAdd = boardService.getEmptyGroup();
-        this.boardToEdit.groups.push(groupToAdd);
+        this.boardToEdit.groups.unshift(groupToAdd);
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
       } catch (err) {

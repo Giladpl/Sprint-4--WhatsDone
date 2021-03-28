@@ -2,7 +2,8 @@
     <section class="status-modal">
         <ul v-if="renderStatuses" class="status-list clean-list">
             <li v-for="status in renderStatuses" :key="status.id" >
-                <div class="label" @click="onStatus(status.id)" v-bind:style="{ borderLeft: `10px solid ${status.color}` }" >
+                <div class="label" @click="onStatus(status.id)" v-bind:style="{ backgroundColor: `${status.color}`}" >
+                <!-- <div class="label" @click="onStatus(status.id)" v-bind:style="{ borderLeft: `10px solid ${status.color}` }" > -->
                     {{status.title}}
                     <i class="el-icon-delete" @click.stop="onRemoveStatus(status.id)"></i>
                 </div>

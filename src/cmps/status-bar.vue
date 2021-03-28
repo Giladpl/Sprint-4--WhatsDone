@@ -1,7 +1,7 @@
 <template>
   <section
     class="status-bar-wrapper"
-    v-if="statuses"
+    v-if="tasks.length"
   >
     <div
       class="part-of-bar"

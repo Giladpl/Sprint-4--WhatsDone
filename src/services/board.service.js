@@ -172,7 +172,7 @@ function _createBoard1() {
             "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
         },
         {
-            "_id": "60589169b5499f32382121e6",
+            "_id": "60589169b2497f92382121e6",
             "fullname": "Muki Abu Ja",
             "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
         },
@@ -219,7 +219,7 @@ function _createBoard1() {
         {
             "_id": "605892efb5499f32382121ef",
             "fullname": "Zina Michailov",
-            "imgUrl": "@/assets/img/oren.png"
+            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
         },
     ],
     "groups": [
@@ -250,9 +250,9 @@ function _createBoard1() {
                     "comments": [
                         {
                             "id": "c101",
-                            "update": "Added the basic pages to the presentation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
+                            "update": "Started working on the first draft.",
+                            "file": null,
+                            "createdAt": 1614501804 * 1000,
                             "byMember": {
                                 "_id": "60589078b5499f32382121e3",
                                 "fullname": "Shraga Puk",
@@ -261,9 +261,9 @@ function _createBoard1() {
                         },
                         {
                             "id": "c102",
-                            "update": "Fixed the layout of the current Highlights page",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Sending all members a the schedule for the next week",
+                            "file": null,
+                            "createdAt": 1615797804  * 1000,
                             "byMember": {
                                 "_id": "605890eab5499f32382121e4",
                                 "fullname": "Datia Puk",
@@ -282,43 +282,32 @@ function _createBoard1() {
                     "title": "Calculation of labor and other possible future costs of project",
                     "members": [
                         {
-                            "_id": "60589127b5499f32382121e5",
-                            "fullname": "Tuki Norma",
-                            "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                        },
+                            "_id": "605892a8b5499f32382121ea",
+                            "fullname": "Robert Wilford",
+                            "imgUrl": "https://randomuser.me/api/portraits/men/28.jpg"
+                          },
                         {
                             "_id": "60589198b5499f32382121e7",
                             "fullname": "JSON De Parse",
                             "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
                         },
                         {
-                            "_id": "60589169b5499f32382121e6",
+                            "_id": "60589169b2497f92382121e6",
                             "fullname": "Muki Abu Ja",
                             "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
                         }
                     ],
-                    "byMember": {
-                        "_id": "60589127b5499f32382121e5",
-                        "fullname": "Tuki Norma",
-                        "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
+                    "byMember":  {
+                        "_id": "60589169b2497f92382121e6",
+                        "fullname": "Muki Abu Ja",
+                        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
                     },
                     "comments": [
                         {
                             "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
-                            "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                            }
-                        },
-                        {
-                            "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Working with financial-controller team on possible costs",
+                            "file": null,
+                            "createdAt": 1616143404  * 1000,
                             "byMember": {
                                 "_id": "60589198b5499f32382121e7",
                                 "fullname": "JSON De Parse",
@@ -326,14 +315,25 @@ function _createBoard1() {
                             }
                         },
                         {
-                            "id": "c105",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "id": "c104",
+                            "update": "Building first draft file with foreseeable labor charges",
+                            "file": null,
+                            "createdAt": 1616834604 * 1000,
                             "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
+                                "_id": "60589169b2497f92382121e6",
+                                "fullname": "Muki Abu Ja",
+                                "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
+                            }
+                        },
+                        {
+                            "id": "c105",
+                            "update": "Talked with all 3rd party vendors to understand costs",
+                            "file": null,
+                            "createdAt": 1616921004  * 1000,
+                            "byMember": {
+                                "_id": "605892a8b5499f32382121ea",
+                                "fullname": "Robert Wilford",
+                                "imgUrl": "https://randomuser.me/api/portraits/men/28.jpg"
                             }
                         }
                     ],
@@ -354,44 +354,44 @@ function _createBoard1() {
                             "imgUrl": "https://randomuser.me/api/portraits/women/50.jpg"
                         },
                         {
-                            "_id": "6058927bb5499f32382121e9",
-                            "fullname": "Dan Willer",
-                            "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
-                        }
+                            "_id": "605892efb5499f32382121ee",
+                            "fullname": "Gilad Peltz",
+                            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
+                          }
                     ],
                     "byMember": {
-                        "_id": "605892a8b5499f32382121ea",
-                        "fullname": "Robert Wilford",
-                        "imgUrl": "https://randomuser.me/api/portraits/men/28.jpg"
+                        "_id": "60589234b5499f32382121e8",
+                        "fullname": "Nancy Williams",
+                        "imgUrl": "https://randomuser.me/api/portraits/women/50.jpg"
                     },
                     "comments": [
                         {
                             "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
+                            "update": "communicated with share-holders to better understand goals",
+                            "file": null,
+                            "createdAt": 1615711404  * 1000,
                             "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
+                                "_id": "605892efb5499f32382121ee",
+                                "fullname": "Gilad Peltz",
+                                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
+                              }
+                        },
+                        {
+                            "id": "c104",
+                            "update": "Building a proposed time-line for the project",
+                            "file": null,
+                            "createdAt": 1615884204 * 1000,
+                            "byMember":    {
+                                "_id": "60589234b5499f32382121e8",
+                                "fullname": "Nancy Williams",
+                                "imgUrl": "https://randomuser.me/api/portraits/women/50.jpg"
                             }
                         },
                         {
                             "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        },
-                        {
-                            "id": "c105",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Sending proposed timeline to team-leader for approval",
+                            "file": null,
+                            "createdAt": 1616057004 * 1000,
                             "byMember": {
                                 "_id": "60589198b5499f32382121e7",
                                 "fullname": "JSON De Parse",
@@ -410,10 +410,10 @@ function _createBoard1() {
                     "title": "Assignment and preparation of the relevant project's working-teams",
                     "members": [
                         {
-                            "_id": "60589127b5499f32382121e5",
-                            "fullname": "Tuki Norma",
-                            "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                        },
+                            "_id": "605892efb5499f32382121ec",
+                            "fullname": "Dan Henderson",
+                            "imgUrl": "https://randomuser.me/api/portraits/men/32.jpg"
+                          },
                         {
                             "_id": "60589198b5499f32382121e7",
                             "fullname": "JSON De Parse",
@@ -421,27 +421,27 @@ function _createBoard1() {
                         }
                     ],
                     "byMember": {
-                        "_id": "60589127b5499f32382121e5",
-                        "fullname": "Tuki Norma",
-                        "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                    },
+                        "_id": "605892efb5499f32382121ec",
+                        "fullname": "Dan Henderson",
+                        "imgUrl": "https://randomuser.me/api/portraits/men/32.jpg"
+                      },
                     "comments": [
                         {
                             "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
+                            "update": "Talked to all prospect team members to check availability",
+                            "file": null,
+                            "createdAt": 1616229804 * 1000,
                             "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                            }
+                                "_id": "605892efb5499f32382121ec",
+                                "fullname": "Dan Henderson",
+                                "imgUrl": "https://randomuser.me/api/portraits/men/32.jpg"
+                              }
                         },
                         {
                             "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Working on prep program for the teams",
+                            "file": null,
+                            "createdAt": 1616316204 * 1000,
                             "byMember": {
                                 "_id": "60589198b5499f32382121e7",
                                 "fullname": "JSON De Parse",
@@ -450,13 +450,13 @@ function _createBoard1() {
                         },
                         {
                             "id": "c102",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Started executing the training program",
+                            "file": null,
+                            "createdAt": 1616402604 * 1000,
                             "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
+                                "_id": "605892efb5499f32382121ec",
+                                "fullname": "Dan Henderson",
+                                "imgUrl": "https://randomuser.me/api/portraits/men/32.jpg"
                             }
                         }
                     ],
@@ -481,38 +481,38 @@ function _createBoard1() {
                             "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
                         },
                         {
-                            "_id": "60589078b5499f32382121e3",
-                            "fullname": "Shraga Puk",
-                            "imgUrl": "https://randomuser.me/api/portraits/men/21.jpg"
-                        },
+                            "_id": "605892efb5499f32382121ed",
+                            "fullname": "Oren Karaso",
+                            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
+                          },
                         {
-                            "_id": "60589127b5499f32382121e5",
-                            "fullname": "Tuki Norma",
-                            "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
+                            "_id": "605892efb5499f32382121ef",
+                            "fullname": "Zina Michailov",
+                            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
                         }
                     ],
                     "byMember": {
-                        "_id": "60589127b5499f32382121e5",
-                        "fullname": "Tuki Norma",
-                        "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
+                        "_id": "605892efb5499f32382121ef",
+                        "fullname": "Zina Michailov",
+                        "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
                     },
                     "comments": [
                         {
                             "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
-                            "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                            }
+                            "update": "Scheduled a meeting with the client",
+                            "file": null,
+                            "createdAt": 1616402604 * 1000,
+                            "byMember":  {
+                                "_id": "605892efb5499f32382121ed",
+                                "fullname": "Oren Karaso",
+                                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
+                              }
                         },
                         {
                             "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Conducted meeting together with costumer-satisfaction manager",
+                            "file": null,
+                            "createdAt": 1616489004 * 1000,
                             "byMember": {
                                 "_id": "60589198b5499f32382121e7",
                                 "fullname": "JSON De Parse",
@@ -521,13 +521,13 @@ function _createBoard1() {
                         },
                         {
                             "id": "c102",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Following up with development teams on readjusting product to client's satisfaction",
+                            "file": null,
+                            "createdAt": 1616575404 * 1000,
                             "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
+                                "_id": "605892efb5499f32382121ef",
+                                "fullname": "Zina Michailov",
+                                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
                             }
                         }
                     ],
@@ -565,28 +565,6 @@ function _createBoard1() {
                         "imgUrl": "https://randomuser.me/api/portraits/men/28.jpg"
                     },
                     "comments": [
-                        {
-                            "id": "c101",
-                            "update": "Added the basic pages to the presentation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
-                            "byMember": {
-                                "_id": "60589078b5499f32382121e3",
-                                "fullname": "Shraga Puk",
-                                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                            }
-                        },
-                        {
-                            "id": "c102",
-                            "update": "Fixed the layout of the current Highlights page",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "605890eab5499f32382121e4",
-                                "fullname": "Datia Puk",
-                                "imgUrl": "https://randomuser.me/api/portraits/women/14.jpg"
-                            }
-                        }
                     ],
                     "statusId": "s101",
                     "priorityId": "p101",
@@ -609,7 +587,7 @@ function _createBoard1() {
                             "imgUrl": "https://randomuser.me/api/portraits/women/50.jpg"
                         },
                         {
-                            "_id": "60589169b5499f32382121e6",
+                            "_id": "60589169b2497f92382121e6",
                             "fullname": "Muki Abu Ja",
                             "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
                         },
@@ -631,38 +609,16 @@ function _createBoard1() {
                     },
                     "comments": [
                         {
-                            "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
+                            "id": "c101",
+                            "update": "Checking which is more relevant- Vue or Angular",
+                            "file": null,
+                            "createdAt": 1616575404 * 1000,
                             "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
+                                "_id": "605892efb5499f32382121ec",
+                                "fullname": "Dan Henderson",
+                                "imgUrl": "https://randomuser.me/api/portraits/men/32.jpg"
                             }
                         },
-                        {
-                            "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        },
-                        {
-                            "id": "c102",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        }
                     ],
                     "statusId": "s102",
                     "priorityId": "p101",
@@ -675,50 +631,43 @@ function _createBoard1() {
                     "title": "Initial planning of the desired user interface",
                     "members": [
                         {
-                            "_id": "60589127b5499f32382121e5",
-                            "fullname": "Tuki Norma",
-                            "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                        }
+                            "_id": "6058927bb5499f32382121e9",
+                            "fullname": "Dan Willer",
+                            "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
+                          },
+                          {
+                            "_id": "605892efb5499f32382121ed",
+                            "fullname": "Oren Karaso",
+                            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
+                        },
+                        {
+                            "_id": "605892efb5499f32382121ee",
+                            "fullname": "Gilad Peltz",
+                            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
+                        },
+                        {
+                            "_id": "605892efb5499f32382121ef",
+                            "fullname": "Zina Michailov",
+                            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
+                        },
                     ],
                     "byMember": {
-                        "_id": "60589127b5499f32382121e5",
-                        "fullname": "Tuki Norma",
-                        "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
+                        "_id": "6058927bb5499f32382121e9",
+                        "fullname": "Dan Willer",
+                        "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
                     },
                     "comments": [
                         {
                             "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
+                            "update": "Working with UI/UX team to understand interface",
+                            "file": null,
+                            "createdAt": 1616661804 * 1000,
                             "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
+                                "_id": "6058927bb5499f32382121e9",
+                                "fullname": "Dan Willer",
+                                "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
                             }
                         },
-                        {
-                            "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        },
-                        {
-                            "id": "c106",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        }
                     ],
                     "statusId": "s102",
                     "priorityId": "p102",
@@ -754,37 +703,26 @@ function _createBoard1() {
                     "comments": [
                         {
                             "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
-                            "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
+                            "update": "Deciding on Apple/Android/Windows",
+                            "file": null,
+                            "createdAt": 1616661804 * 1000,
+                            "byMember":  {
+                                "_id": "605892a8b5499f32382121ea",
+                                "fullname": "Robert Wilford",
+                                "imgUrl": "https://randomuser.me/api/portraits/men/28.jpg"
                             }
                         },
                         {
                             "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
+                            "update": "Understanding specific restrictions of each platform",
+                            "file": null,
+                            "createdAt": 1616748204 * 1000,
+                            "byMember":  {
+                                "_id": "6058927bb5499f32382121e9",
+                                "fullname": "Dan Willer",
+                                "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
                             }
                         },
-                        {
-                            "id": "c105",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        }
                     ],
                     "statusId": "s101",
                     "priorityId": "p102",
@@ -797,55 +735,44 @@ function _createBoard1() {
                     "title": "Understanding the desired flow of the program",
                     "members": [
                         {
-                            "_id": "60589169b5499f32382121e6",
+                            "_id": "60589169b2497f92382121e6",
                             "fullname": "Muki Abu Ja",
                             "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
                         },
                         {
-                            "_id": "60589198b5499f32382121e7",
-                            "fullname": "JSON De Parse",
-                            "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                        }
+                            "_id": "605892efb5499f32382121ee",
+                            "fullname": "Gilad Peltz",
+                            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
+                          }
                     ],
                     "byMember": {
-                        "_id": "60589127b5499f32382121e5",
-                        "fullname": "Tuki Norma",
-                        "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                    },
+                        "_id": "605892efb5499f32382121ee",
+                        "fullname": "Gilad Peltz",
+                        "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
+                      },
                     "comments": [
                         {
                             "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
-                            "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
+                            "update": "Sending first draft flow for approval",
+                            "file": null,
+                            "createdAt": 1616402604 * 1000,
+                            "byMember":  {
+                                "_id": "60589169b2497f92382121e6",
+                                "fullname": "Muki Abu Ja",
+                                "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
                             }
                         },
                         {
                             "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Following approval, working on implementation of flow",
+                            "file": null,
+                            "createdAt": 1616489004 * 1000,
                             "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
+                                "_id": "60589169b2497f92382121e6",
+                                "fullname": "Muki Abu Ja",
+                                "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
                             }
                         },
-                        {
-                            "id": "c107",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        }
                     ],
                     "statusId": "s102",
                     "priorityId": "p103",
@@ -883,9 +810,9 @@ function _createBoard1() {
                     "comments": [
                         {
                             "id": "c101",
-                            "update": "Added the basic pages to the presentation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
+                            "update": "Started working on first prototype",
+                            "file": null,
+                            "createdAt": 1616489004 * 1000,
                             "byMember": {
                                 "_id": "60589078b5499f32382121e3",
                                 "fullname": "Shraga Puk",
@@ -894,9 +821,31 @@ function _createBoard1() {
                         },
                         {
                             "id": "c102",
-                            "update": "Fixed the layout of the current Highlights page",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Documented several bugs in first version",
+                            "file": null,
+                            "createdAt": 1616489004 * 1000,
+                            "byMember": {
+                                "_id": "605890eab5499f32382121e4",
+                                "fullname": "Datia Puk",
+                                "imgUrl": "https://randomuser.me/api/portraits/women/14.jpg"
+                            }
+                        },
+                        {
+                            "id": "c102",
+                            "update": "Documented several bugs in first version",
+                            "file": null,
+                            "createdAt": 1616575404* 1000,
+                            "byMember": {
+                                "_id": "605890eab5499f32382121e4",
+                                "fullname": "Datia Puk",
+                                "imgUrl": "https://randomuser.me/api/portraits/women/14.jpg"
+                            }
+                        },
+                        {
+                            "id": "c103",
+                            "update": "Fixed bug in users-store",
+                            "file": null,
+                            "createdAt": 1616661804* 1000,
                             "byMember": {
                                 "_id": "605890eab5499f32382121e4",
                                 "fullname": "Datia Puk",
@@ -915,7 +864,7 @@ function _createBoard1() {
                     "title": "Working on Pages and CMPS structure",
                     "members": [
                         {
-                            "_id": "60589169b5499f32382121e6",
+                            "_id": "60589169b2497f92382121e6",
                             "fullname": "Muki Abu Ja",
                             "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
                         },
@@ -938,9 +887,9 @@ function _createBoard1() {
                     "comments": [
                         {
                             "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
+                            "update": "Created pages and cmps skeleton",
+                            "file": null,
+                            "createdAt": 1616661804* 1000,
                             "byMember": {
                                 "_id": "605892a8b5499f32382121ea",
                                 "fullname": "Robert Wilford",
@@ -950,8 +899,8 @@ function _createBoard1() {
                         {
                             "id": "c105",
                             "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "file": null,
+                            "createdAt": 1616834604* 1000,
                             "byMember": {
                                 "_id": "60589198b5499f32382121e7",
                                 "fullname": "JSON De Parse",
@@ -961,12 +910,12 @@ function _createBoard1() {
                         {
                             "id": "c109",
                             "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "file": null,
+                            "createdAt": 1616921004* 1000,
                             "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
+                                "_id": "6058927bb5499f32382121e9",
+                                "fullname": "Dan Willer",
+                                "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
                             }
                         }
                     ],
@@ -1009,35 +958,35 @@ function _createBoard1() {
                     "comments": [
                         {
                             "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
+                            "update": "Created first style file with all imports to other files",
+                            "file": null,
+                            "createdAt": 1615625004 * 1000,
                             "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
+                                "_id": "60589234b5499f32382121e8",
+                                "fullname": "Nancy Williams",
+                                "imgUrl": "https://randomuser.me/api/portraits/women/50.jpg"
                             }
                         },
                         {
                             "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Created main css layout for homepage",
+                            "file": null,
+                            "createdAt": 1615711404* 1000,
                             "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
+                                "_id": "605892efb5499f32382121ec",
+                                "fullname": "Dan Henderson",
+                                "imgUrl": "https://randomuser.me/api/portraits/men/32.jpg"
                             }
                         },
                         {
                             "id": "c107",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "All imports are in good working order",
+                            "file": null,
+                            "createdAt": 1615797804* 1000,
                             "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
+                                "_id": "605892cfb5499f32382121eb",
+                                "fullname": "Stephanie White",
+                                "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
                             }
                         }
                     ],
@@ -1064,10 +1013,10 @@ function _createBoard1() {
                             "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
                         },
                         {
-                            "_id": "60589078b5499f32382121e3",
-                            "fullname": "Shraga Puk",
-                            "imgUrl": "https://randomuser.me/api/portraits/men/21.jpg"
-                        }
+                            "_id": "605892efb5499f32382121ed",
+                            "fullname": "Oren Karaso",
+                            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
+                          }
                     ],
                     "byMember": {
                         "_id": "60589078b5499f32382121e3",
@@ -1077,20 +1026,20 @@ function _createBoard1() {
                     "comments": [
                         {
                             "id": "c101",
-                            "update": "Added the basic pages to the presentation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
+                            "update": "Initial meeting with QA team",
+                            "file": null,
+                            "createdAt": 1615797804* 1000,
                             "byMember": {
-                                "_id": "60589078b5499f32382121e3",
-                                "fullname": "Shraga Puk",
-                                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                            }
+                                "_id": "605892efb5499f32382121ed",
+                                "fullname": "Oren Karaso",
+                                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
+                              }
                         },
                         {
                             "id": "c102",
-                            "update": "Fixed the layout of the current Highlights page",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Starting to work together with QA experts on finding and fixing bugs",
+                            "file": null,
+                            "createdAt": 1615884204* 1000,
                             "byMember": {
                                 "_id": "605890eab5499f32382121e4",
                                 "fullname": "Datia Puk",
@@ -1125,39 +1074,7 @@ function _createBoard1() {
                         "imgUrl": "https://randomuser.me/api/portraits/women/50.jpg"
                     },
                     "comments": [
-                        {
-                            "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
-                            "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                            }
-                        },
-                        {
-                            "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        },
-                        {
-                            "id": "c109",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        }
+                        
                     ],
                     "statusId": "s103",
                     "priorityId": "p103",
@@ -1170,7 +1087,7 @@ function _createBoard1() {
                     "title": "Commencing the testing/debugging cycle",
                     "members": [
                         {
-                            "_id": "60589169b5499f32382121e6",
+                            "_id": "60589169b2497f92382121e6",
                             "fullname": "Muki Abu Ja",
                             "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
                         },
@@ -1180,50 +1097,18 @@ function _createBoard1() {
                             "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
                         },
                         {
-                            "_id": "60589169b5499f32382121e6",
+                            "_id": "60589169b2497f92382121e6",
                             "fullname": "Muki Abu Ja",
                             "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
                         }
                     ],
                     "byMember": {
-                        "_id": "60589169b5499f32382121e6",
+                        "_id": "60589169b2497f92382121e6",
                         "fullname": "Muki Abu Ja",
                         "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
                     },
                     "comments": [
-                        {
-                            "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
-                            "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                            }
-                        },
-                        {
-                            "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        },
-                        {
-                            "id": "c105",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        }
+                
                     ],
                     "statusId": "s101",
                     "priorityId": "p103",
@@ -1256,26 +1141,15 @@ function _createBoard1() {
                     "comments": [
                         {
                             "id": "c101",
-                            "update": "Added the basic pages to the presentation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
+                            "update": "Setting a complete deployment schedule",
+                            "file": null,
+                            "createdAt": 1615884204* 1000,
                             "byMember": {
-                                "_id": "60589078b5499f32382121e3",
-                                "fullname": "Shraga Puk",
-                                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+                                "_id": "6058927bb5499f32382121e9",
+                                "fullname": "Dan Willer",
+                                "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
                             }
                         },
-                        {
-                            "id": "c102",
-                            "update": "Fixed the layout of the current Highlights page",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "605890eab5499f32382121e4",
-                                "fullname": "Datia Puk",
-                                "imgUrl": "https://randomuser.me/api/portraits/women/14.jpg"
-                            }
-                        }
                     ],
                     "statusId": "s103",
                     "priorityId": "p102",
@@ -1306,37 +1180,26 @@ function _createBoard1() {
                     "comments": [
                         {
                             "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
+                            "update": "New bug in sign-in was reported",
+                            "file": null,
+                            "createdAt": 1616057004* 1000,
                             "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                            }
+                                "_id": "605892efb5499f32382121ee",
+                                "fullname": "Gilad Peltz",
+                                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
+                              }
                         },
                         {
                             "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Liaising with QA team to fix reported new bug",
+                            "file": null,
+                            "createdAt": 1616229804* 1000,
                             "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
+                                "_id": "605892efb5499f32382121ef",
+                                "fullname": "Zina Michailov",
+                                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
+                              }
                         },
-                        {
-                            "id": "c105",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        }
                     ],
                     "statusId": "s102",
                     "priorityId": "p103",
@@ -1365,39 +1228,7 @@ function _createBoard1() {
                         "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
                     },
                     "comments": [
-                        {
-                            "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
-                            "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                            }
-                        },
-                        {
-                            "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        },
-                        {
-                            "id": "c106",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
-                            "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
-                        }
+        
                     ],
                     "statusId": "s102",
                     "priorityId": "p103",
@@ -1407,23 +1238,23 @@ function _createBoard1() {
                 },
                 {
                     "id": "t120",
-                    "title": "Continued development of additional newly features for future releases",
+                    "title": "Continued development of additional new features for future releases",
                     "members": [
                         {
-                            "_id": "60589169b5499f32382121e6",
-                            "fullname": "Muki Abu Ja",
-                            "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
+                            "_id": "605892efb5499f32382121ed",
+                            "fullname": "Oren Karaso",
+                            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
                         },
                         {
-                            "_id": "60589198b5499f32382121e7",
-                            "fullname": "JSON De Parse",
-                            "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
+                            "_id": "605892efb5499f32382121ee",
+                            "fullname": "Gilad Peltz",
+                            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
                         },
                         {
-                            "_id": "605892efb5499f32382121ec",
-                            "fullname": "Dan Henderson",
-                            "imgUrl": "https://randomuser.me/api/portraits/men/32.jpg"
-                        }
+                            "_id": "605892efb5499f32382121ef",
+                            "fullname": "Zina Michailov",
+                            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
+                        },
                     ],
                     "byMember": {
                         "_id": "605892efb5499f32382121ec",
@@ -1433,35 +1264,68 @@ function _createBoard1() {
                     "comments": [
                         {
                             "id": "c103",
-                            "update": "Created a git depository and sent invitation",
-                            "file": "http://some-img",
-                            "createdAt": 154514,
+                            "update": "Understanding possible road-map from stack-holders",
+                            "file": null,
+                            "createdAt": 1614808800* 1000,
                             "byMember": {
-                                "_id": "60589127b5499f32382121e5",
-                                "fullname": "Tuki Norma",
-                                "imgUrl": "https://i.pinimg.com/originals/3f/9a/4e/3f9a4edcb4e19d9c68516f16cf546624.jpg"
-                            }
+                                "_id": "605892efb5499f32382121ee",
+                                "fullname": "Gilad Peltz",
+                                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
+                              }
                         },
                         {
                             "id": "c105",
-                            "update": "Uploaded the first commit with the folders structure",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Mapping possible upgrades from inspecting competitors abilities.",
+                            "file": null,
+                            "createdAt": 1614981600* 1000,
                             "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
-                            }
+                                "_id": "605892efb5499f32382121ed",
+                                "fullname": "Oren Karaso",
+                                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
+                              }
                         },
                         {
                             "id": "c107",
-                            "update": "Finished the initial wire-connection, all looks in good working order",
-                            "file": "http://some-img",
-                            "createdAt": 154574,
+                            "update": "Following up with customer-experience manager regarding user's preferences",
+                            "file": null,
+                            "createdAt": 1615154400* 1000,
                             "byMember": {
-                                "_id": "60589198b5499f32382121e7",
-                                "fullname": "JSON De Parse",
-                                "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
+                                "_id": "605892efb5499f32382121ef",
+                                "fullname": "Zina Michailov",
+                                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
+                            }
+                        },
+                        {
+                            "id": "c108",
+                            "update": "Possible new feature specifically for women during women's empowerment month",
+                            "file": null,
+                            "createdAt": 1615413600* 1000,
+                            "byMember": {
+                                "_id": "605892efb5499f32382121ef",
+                                "fullname": "Zina Michailov",
+                                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
+                            }
+                        },
+                        {
+                            "id": "c109",
+                            "update": "FYI everyone, next version's release day was set for tomorrow instead of next week",
+                            "file": null,
+                            "createdAt": 1615586400* 1000,
+                            "byMember": {
+                                "_id": "605892efb5499f32382121ee",
+                                "fullname": "Gilad Peltz",
+                                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
+                            }
+                        },
+                        {
+                            "id": "c1107",
+                            "update": "Good to know, I'm just putting the final touches on the new feature we discussed",
+                            "file": null,
+                            "createdAt": 1615759200* 1000,
+                            "byMember": {
+                                "_id": "605892efb5499f32382121ed",
+                                "fullname": "Oren Karaso",
+                                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
                             }
                         }
                     ],
@@ -1481,9 +1345,10 @@ function _createBoard1() {
             "action": "Changed Color",
             "createdAt": 1616440539741,
             "byMember": {
-                "_id": "u101",
-                "fullname": "Abi Abambi",
-                "imgUrl": "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png"
+                "_id": "605892efb5499f32382121ed",
+                "fullname": "Oren Karaso",
+                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
+                  
             },
             "task": {
                 "id": "t101",
@@ -1538,15 +1403,29 @@ function _createBoard1() {
             "action": "Update task title",
             "createdAt": 1616324061838,
             "byMember": {
-                "_id": "guest",
-                "fullname": "Guest",
-                "imgUrl": "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png"
-            },
+                "_id": "605892efb5499f32382121ee",
+                "fullname": "Gilad Peltz",
+                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
+              },
             "task": {
                 "id": "t105",
                 "title": "Getting an initial feedback from client"
             }
-        }
+        },
+        {
+            "id": "4p6tF",
+            "action": "Update task title",
+            "createdAt": 1616324061831,
+            "byMember": {
+                "_id": "605892efb5499f32382121ef",
+                "fullname": "Zina Michailov",
+                "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
+              },
+            "task": {
+                "id": "t105",
+                "title": "Getting an initial feedback from client"
+            }
+            }
     ]
 }
 }
@@ -1692,7 +1571,7 @@ function _createBoard2() {
                             {
                                 "id": "c101",
                                 "update": "Added the basic pages to the presentation",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154514,
                                 "byMember": {
                                     "_id": "60589078b5499f32382121e3",
@@ -1703,7 +1582,7 @@ function _createBoard2() {
                             {
                                 "id": "c102",
                                 "update": "Fixed the layout of the current Highlights page",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154574,
                                 "byMember": {
                                     "_id": "605890eab5499f32382121e4",
@@ -1737,7 +1616,7 @@ function _createBoard2() {
                             {
                                 "id": "c103",
                                 "update": "Created a git depository and sent invitation",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154514,
                                 "byMember": {
                                     "_id": "60589127b5499f32382121e5",
@@ -1748,7 +1627,7 @@ function _createBoard2() {
                             {
                                 "id": "c105",
                                 "update": "Uploaded the first commit with the folders structure",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154574,
                                 "byMember": {
                                     "_id": "60589198b5499f32382121e7",
@@ -1759,7 +1638,7 @@ function _createBoard2() {
                             {
                                 "id": "c102",
                                 "update": "Finished the initial wire-connection, all looks in good working order",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154574,
                                 "byMember": {
                                     "_id": "60589198b5499f32382121e7",
@@ -1805,7 +1684,7 @@ function _createBoard2() {
                             {
                                 "id": "c103",
                                 "update": "Created a git depository and sent invitation",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154514,
                                 "byMember": {
                                     "_id": "60589127b5499f32382121e5",
@@ -1816,7 +1695,7 @@ function _createBoard2() {
                             {
                                 "id": "c105",
                                 "update": "Uploaded the first commit with the folders structure",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154574,
                                 "byMember": {
                                     "_id": "60589198b5499f32382121e7",
@@ -1827,7 +1706,7 @@ function _createBoard2() {
                             {
                                 "id": "c102",
                                 "update": "Finished the initial wire-connection, all looks in good working order",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154574,
                                 "byMember": {
                                     "_id": "60589198b5499f32382121e7",
@@ -1861,7 +1740,7 @@ function _createBoard2() {
                             {
                                 "id": "c103",
                                 "update": "Created a git depository and sent invitation",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154514,
                                 "byMember": {
                                     "_id": "60589127b5499f32382121e5",
@@ -1872,7 +1751,7 @@ function _createBoard2() {
                             {
                                 "id": "c105",
                                 "update": "Uploaded the first commit with the folders structure",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154574,
                                 "byMember": {
                                     "_id": "60589198b5499f32382121e7",
@@ -1883,7 +1762,7 @@ function _createBoard2() {
                             {
                                 "id": "c102",
                                 "update": "Finished the initial wire-connection, all looks in good working order",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154574,
                                 "byMember": {
                                     "_id": "60589198b5499f32382121e7",
@@ -1922,7 +1801,7 @@ function _createBoard2() {
                             {
                                 "id": "c101",
                                 "update": "Added the basic pages to the presentation",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154514,
                                 "byMember": {
                                     "_id": "60589078b5499f32382121e3",
@@ -1933,7 +1812,7 @@ function _createBoard2() {
                             {
                                 "id": "c102",
                                 "update": "Fixed the layout of the current Highlights page",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154574,
                                 "byMember": {
                                     "_id": "605890eab5499f32382121e4",
@@ -1993,7 +1872,7 @@ function _createBoard2() {
                             {
                                 "id": "c101",
                                 "update": "Added the basic pages to the presentation",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154514,
                                 "byMember": {
                                     "_id": "60589078b5499f32382121e3",
@@ -2004,7 +1883,7 @@ function _createBoard2() {
                             {
                                 "id": "c102",
                                 "update": "Fixed the layout of the current Highlights page",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154574,
                                 "byMember": {
                                     "_id": "605890eab5499f32382121e4",
@@ -2038,7 +1917,7 @@ function _createBoard2() {
                             {
                                 "id": "c103",
                                 "update": "Created a git depository and sent invitation",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154514,
                                 "byMember": {
                                     "_id": "60589127b5499f32382121e5",
@@ -2049,7 +1928,7 @@ function _createBoard2() {
                             {
                                 "id": "c105",
                                 "update": "Uploaded the first commit with the folders structure",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154574,
                                 "byMember": {
                                     "_id": "60589198b5499f32382121e7",
@@ -2060,7 +1939,7 @@ function _createBoard2() {
                             {
                                 "id": "c109",
                                 "update": "Finished the initial wire-connection, all looks in good working order",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154574,
                                 "byMember": {
                                     "_id": "60589198b5499f32382121e7",
@@ -2094,7 +1973,7 @@ function _createBoard2() {
                             {
                                 "id": "c103",
                                 "update": "Created a git depository and sent invitation",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154514,
                                 "byMember": {
                                     "_id": "60589127b5499f32382121e5",
@@ -2105,7 +1984,7 @@ function _createBoard2() {
                             {
                                 "id": "c105",
                                 "update": "Uploaded the first commit with the folders structure",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154574,
                                 "byMember": {
                                     "_id": "60589198b5499f32382121e7",
@@ -2116,7 +1995,7 @@ function _createBoard2() {
                             {
                                 "id": "c107",
                                 "update": "Finished the initial wire-connection, all looks in good working order",
-                                "file": "http://some-img",
+                                "file": null,
                                 "createdAt": 154574,
                                 "byMember": {
                                     "_id": "60589198b5499f32382121e7",
