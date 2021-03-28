@@ -12,18 +12,18 @@
     box-shadow: 0 0 10px 0 $clr5;
     overflow-y: auto;
    
+    .task-title {
+        font-size: 20px;
+        font-weight: bolder;
+        padding: 15px 0;
+      
+    }
 
     .close-btn {
         position: relative;
         right: 3px;
         top: 10px;
         cursor: pointer;
-    }
-
-    .task-title {
-        font-size: 20px;
-        font-weight: bolder;
-        padding: 15px 0;
     }
 
     .btns-container {
