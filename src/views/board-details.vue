@@ -56,7 +56,10 @@
               :board="board"
               :members="board.members"
             />
-            <div @click="toggleBoardActivity">Activity</div>
+            <div @click="toggleBoardActivity" class="flex">
+              <img class="activity-img" src="@/assets/icons/small-zigzag-arrow-upward.svg" >
+              Activity
+            </div>
 
             <div>
               <el-button
@@ -156,11 +159,11 @@
           Add Group
         </el-button>
         <el-input
-          ref=""
+          @change="onSearch"
           class="task-search"
           placeholder="Search"
-          prefix-icon="el-icon-search" v-model="filterBy.title"
-           @input="testSearch"
+          prefix-icon="el-icon-search"
+          v-model="filterBy.txt"
         />
         <div class="select-filter-container flex">
           <img
@@ -288,8 +291,7 @@ export default {
       isDragEnabled: true,
       isBoardActivity: false,
       filterBy: {
-        title: '',
-        members: []
+        txt: null
       }
     };
   },
@@ -309,8 +311,8 @@ export default {
       this.toggleMainScreen()
     },
     filterMembers() {
-      console.log(this.filterBy.members);
-      console.log( this.tasksToShow);
+      console.log(this.filteredMembersIds);
+      console.log(this.tasksToShow);
     },
     testSearch() {
       console.log(this.filterBy.title);
@@ -343,6 +345,9 @@ export default {
     },
     toggleDragging() {
       this.isDragEnabled = !this.isDragEnabled;
+    },
+    onSearch() {
+      this.$store.commit({ type: 'setFilter', filterBy: this.filterBy })
     },
     addActivity(action, task) {
       const activity = {
@@ -662,7 +667,7 @@ export default {
       return this.$store.getters.boards;
     },
     board() {
-      return this.$store.getters.currBoard;
+      return this.$store.getters.boardToShow;
     },
     boardToShow() {
       return JSON.parse(JSON.stringify(this.board));
@@ -677,24 +682,18 @@ export default {
       return this.isMainScreen ? 'position: fixed' : ''
     },
     tasksToShow() {
-      this.boardToShow = this.board.groups.filter(group => {
+      const tasks = this.boardToEdit.groups.filter(group => {
         return group.tasks.filter(task => {
           return task.members.filter(member => {
-            return this.filterBy.members.find(memberId => {
-              if (memberId === member._id) return member;
-              return false;
+            this.filteredMembersIds.forEach(mamberId => {
+              if (member._id === mamberId) return member;
+              else return false;
             });
-          });
-        });
-      });
-    },
-     taskBySearch() {
-      this.boardToShow = this.board.groups.map(group => {
-        return group.tasks.filter(task => {
-          const regex = new RegExp(this.filterBy.title, 'i');
-          return !this.filterBy.title || regex.test(task.title)
+          })
         })
-      });
+      })
+      console.log(tasks);
+      return true
     },
   },
   
@@ -710,8 +709,6 @@ export default {
     socketService.on('board-update', (boardToSave) => {
       this.boardToEdit = boardToSave;
     });
-    // this.tasksToShow()
-    //   console.log('tset:', this.boardToEdit.groups);
   },
   components: {
     group,
