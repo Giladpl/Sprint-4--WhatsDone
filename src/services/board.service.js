@@ -209,12 +209,12 @@ function _createBoard1() {
         {
             "_id": "605892efb5499f32382121ed",
             "fullname": "Oren Karaso",
-            "imgUrl": "@/assets/img/oren.png"
+            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
         },
         {
             "_id": "605892efb5499f32382121ee",
             "fullname": "Gilad Peltz",
-            "imgUrl": "@/assets/img/oren.png"
+            "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
         },
         {
             "_id": "605892efb5499f32382121ef",
