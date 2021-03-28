@@ -56,8 +56,14 @@
               :board="board"
               :members="board.members"
             />
-            <div @click="toggleBoardActivity" class="flex">
-              <img class="activity-img" src="@/assets/icons/small-zigzag-arrow-upward.svg" >
+            <div
+              @click="toggleBoardActivity"
+              class="flex"
+            >
+              <img
+                class="activity-img"
+                src="@/assets/icons/small-zigzag-arrow-upward.svg"
+              >
               Activity
             </div>
 
@@ -312,7 +318,6 @@ export default {
       this.toggleMainScreen()
     },
     filterMembers() {
-      console.log(this.filteredMembersIds);
       console.log(this.tasksToShow);
     },
     backToBoard() {
@@ -676,18 +681,18 @@ export default {
       return this.isMainScreen ? 'position: fixed' : ''
     },
     tasksToShow() {
-      const tasks = this.boardToEdit.groups.filter(group => {
-        return group.tasks.filter(task => {
-          return task.members.filter(member => {
-            this.filteredMembersIds.forEach(mamberId => {
-              if (member._id === mamberId) return member;
-              else return false;
-            });
+      const tasks = [];
+      this.boardToEdit.groups.forEach(group => {
+        return group.tasks.forEach(task => {
+          return task.members.forEach(member => {
+            this.filteredMembersIds.find(memberId => {
+              if (member._id === memberId) tasks.push(task);
+            }
+            );
           })
         })
       })
-      console.log(tasks);
-      return true
+      return tasks
     },
   },
   watch: {
