@@ -235,7 +235,7 @@
       <el-button
         type="text"
         v-if="isAddingBoard"
-      >Insert A Board Name</el-button>
+      ></el-button>
     </div>
   </section>
 </template>

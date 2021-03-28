@@ -59,22 +59,19 @@
       </ul>
     </div>
     <div class="main-header-mobile flex-between">
+      <div class="burger-menu" @click="toggleBoardNavbar">☰
+      </div>
+      <div v-if="currBoard" class="board-title">{{currBoard.title}}</div>
       <div class="logo-container">
         <router-link to="/">
           <img class="logo" src="@/assets/icons/increase.svg" />
         </router-link>
-      </div>
-      <div v-if="currBoard" class="board-title">{{currBoard.title}}</div>
-      <div class="burger-menu" @click="toggleMobileMenu">☰
-        <mobile-hamburger v-if="isHamburger" :boardId="boardId"
-      :boards="boards" @toggleMenu="toggleMobileMenu"/>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import mobileHamburger from './mobile-hamburger'
 import vClickOutside from "v-click-outside";
 export default {
   name: "appHeader",
@@ -95,8 +92,6 @@ export default {
     return {
       isBoardNavbarShown: false,
       board: null,
-      boardsToShow: null,
-      isHamburger: false,
       filterBy: {
         name: null
       }
@@ -105,7 +100,8 @@ export default {
   methods: {
     toggleBoardNavbar() {
       this.isBoardNavbarShown = !this.isBoardNavbarShown;
-      this.$emit("borderRadiusChange");
+      if (screen.width >= 460)this.$emit('borderRadiusChange');
+      if (screen.width <= 460) this.$emit('toggleMainScreen');
     },
     isChosenBoard(id) {
       return this.boardId === id;
@@ -113,10 +109,9 @@ export default {
     addNewBoard() {
       this.$emit('addingBoard');
     },
-    toggleMobileMenu() {
-      this.isHamburger = !this.isHamburger;
-      this.$emit('toggleMainScreen')
-    }
+    // toggleMobileMenu() {
+    //   this.isHamburger = !this.isHamburger;
+    // }
   },
   computed: {
     loggedInUser() {
@@ -131,6 +126,9 @@ export default {
       }
       return user;
     },
+    boardsToShow() {
+      return JSON.parse(JSON.stringify(this.boards));
+    },
     boardToShow() {
       this.boardsToShow = this.boards.filter(board => {
         const regex = new RegExp(this.filterBy.name, 'i');
@@ -140,12 +138,6 @@ export default {
     currBoard() {
       return this.boards.find(board => board._id === this.boardId)
     }
-  },
-  created() {
-      this.boardsToShow = JSON.parse(JSON.stringify(this.boards));
-  },
-  components: {
-    mobileHamburger,
   },
 };
 </script>
