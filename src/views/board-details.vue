@@ -56,7 +56,10 @@
               :board="board"
               :members="board.members"
             />
-            <div @click="toggleBoardActivity">Activity</div>
+            <div @click="toggleBoardActivity" class="flex">
+              <img class="activity-img" src="@/assets/icons/small-zigzag-arrow-upward.svg" >
+              Activity
+            </div>
 
             <div>
               <el-button
@@ -307,7 +310,7 @@ export default {
     },
     filterMembers() {
       console.log(this.filteredMembersIds);
-      console.log( this.tasksToShow);
+      console.log(this.tasksToShow);
     },
     backToBoard() {
       const boardId = this.$route.params.boardId;
@@ -667,16 +670,18 @@ export default {
       return this.isMainScreen ? 'position: fixed' : ''
     },
     tasksToShow() {
-      return this.board.groups.filter(group => {
+      const tasks = this.boardToEdit.groups.filter(group => {
         return group.tasks.filter(task => {
           return task.members.filter(member => {
-            return this.filteredMembersIds.find(memberId => {
-              if (memberId === member._id) return member
-              return false
-            })
+            this.filteredMembersIds.forEach(mamberId => {
+              if (member._id === mamberId) return member;
+              else return false;
+            });
           })
         })
       })
+      console.log(tasks);
+      return true
     },
   },
   watch: {
@@ -691,7 +696,6 @@ export default {
     socketService.on('board-update', (boardToSave) => {
       this.boardToEdit = boardToSave;
     });
-    this.tasksToShow()
   },
   components: {
     group,
