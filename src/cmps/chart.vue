@@ -6,9 +6,9 @@
       @click="backToBoard"
     >Back</el-button>
     <div class="charts-main-container">
-      <el-card class="num-group">Total Number of Groups: {{currBoard.groups.length}}</el-card>
-      <el-card class="num-task">Total Number of Tasks: {{taskNumber}}</el-card>
-      <el-card class="num-member">Total Number of Members: {{currBoard.members.length}}</el-card>
+      <el-card class="num-group"><i class="el-icon-finished" />Total Number of Groups: {{currBoard.groups.length}}</el-card>
+      <el-card class="num-task"><i class="el-icon-s-data" />Total Number of Tasks: {{taskNumber}}</el-card>
+      <el-card class="num-member"><i class="el-icon-user-solid" />Total Number of Members: {{currBoard.members.length}}</el-card>
       <el-card class="num-member2">Total Number of Members: {{currBoard.members.length}}</el-card>
       <el-card class="priority-chart-container">
         <h4>Board Priorities by Percentages:</h4>
