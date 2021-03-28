@@ -3,7 +3,7 @@ import { storageService } from './storage.service.js'
 import { utilService } from './util.service.js'
 import {httpService} from './http.service.js'
 
-const KEY = 'boardsDB';
+// const KEY = 'boardsDB';
 
 export const boardService = {
     query,
@@ -15,31 +15,31 @@ export const boardService = {
     getEmptyGroup
 }
 
-_createBoards()
+// _createBoards()
 
 function query() {
-    // return httpService.get(`board/`)
-    return asyncStorageService.query(KEY)
+    return httpService.get(`board/`)
+    // return asyncStorageService.query(KEY)
 }
 
 function getById(id) {
-    // return httpService.get(`board/${id}`)
-    return asyncStorageService.get(KEY, id);
+    return httpService.get(`board/${id}`)
+    // return asyncStorageService.get(KEY, id);
 }
 
 function remove(id) {
-    // return httpService.delete(`board/${id}`)
-    return asyncStorageService.remove(KEY, id);
+    return httpService.delete(`board/${id}`)
+    // return asyncStorageService.remove(KEY, id);
 }
 
 function save(board) {
-    // if (board._id) {
-    //     return httpService.put(`board/${board._id}`, board)
-    // } else {
-    //     return httpService.post(`board/`, board)
-    // }
-    const savedBoard = (board._id) ? asyncStorageService.put(KEY, board) : asyncStorageService.post(KEY, board)
-    return savedBoard;
+    if (board._id) {
+        return httpService.put(`board/${board._id}`, board)
+    } else {
+        return httpService.post(`board/`, board)
+    }
+    // const savedBoard = (board._id) ? asyncStorageService.put(KEY, board) : asyncStorageService.post(KEY, board)
+    // return savedBoard;
 }
 
 function getEmptyBoard() {
@@ -96,7 +96,7 @@ function _createBoards() {
 
 function _createBoard1() {
   return {
-    "_id": "605c9ef2364773a1b17697f5",
+    "_id": "6060b41cead0657d66fc78cd",
     "title": "Software Development",
     "description": "Software Development Life Cycle",
     "createdAt": 1589983468418,
@@ -207,17 +207,17 @@ function _createBoard1() {
             "imgUrl": "https://randomuser.me/api/portraits/men/32.jpg"
         },
         {
-            "_id": "605892efb5499f32382121ed",
+            "_id": "6060b00ef79b8634549f0cda",
             "fullname": "Oren Karaso",
             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616948279/oren_b0aews.jpg"
         },
         {
-            "_id": "605892efb5499f32382121ee",
+            "_id": "6060b106f79b8634549f0cdb",
             "fullname": "Gilad Peltz",
             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
         },
         {
-            "_id": "605892efb5499f32382121ef",
+            "_id": "6060b16cf79b8634549f0cdc",
             "fullname": "Zina Michailov",
             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
         },
@@ -354,7 +354,7 @@ function _createBoard1() {
                             "imgUrl": "https://randomuser.me/api/portraits/women/50.jpg"
                         },
                         {
-                            "_id": "605892efb5499f32382121ee",
+                            "_id": "6060b106f79b8634549f0cdb",
                             "fullname": "Gilad Peltz",
                             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
                           }
@@ -371,7 +371,7 @@ function _createBoard1() {
                             "file": null,
                             "createdAt": 1615711404  * 1000,
                             "byMember": {
-                                "_id": "605892efb5499f32382121ee",
+                                "_id": "6060b106f79b8634549f0cdb",
                                 "fullname": "Gilad Peltz",
                                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
                               }
@@ -481,18 +481,18 @@ function _createBoard1() {
                             "imgUrl": "https://randomuser.me/api/portraits/men/25.jpg"
                         },
                         {
-                            "_id": "605892efb5499f32382121ed",
+                            "_id": "6060b00ef79b8634549f0cda",
                             "fullname": "Oren Karaso",
                             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
                           },
                         {
-                            "_id": "605892efb5499f32382121ef",
+                            "_id": "6060b16cf79b8634549f0cdc",
                             "fullname": "Zina Michailov",
                             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
                         }
                     ],
                     "byMember": {
-                        "_id": "605892efb5499f32382121ef",
+                        "_id": "6060b16cf79b8634549f0cdc",
                         "fullname": "Zina Michailov",
                         "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
                     },
@@ -503,7 +503,7 @@ function _createBoard1() {
                             "file": null,
                             "createdAt": 1616402604 * 1000,
                             "byMember":  {
-                                "_id": "605892efb5499f32382121ed",
+                                "_id": "6060b00ef79b8634549f0cda",
                                 "fullname": "Oren Karaso",
                                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
                               }
@@ -525,7 +525,7 @@ function _createBoard1() {
                             "file": null,
                             "createdAt": 1616575404 * 1000,
                             "byMember": {
-                                "_id": "605892efb5499f32382121ef",
+                                "_id": "6060b16cf79b8634549f0cdc",
                                 "fullname": "Zina Michailov",
                                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
                             }
@@ -636,17 +636,17 @@ function _createBoard1() {
                             "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
                           },
                           {
-                            "_id": "605892efb5499f32382121ed",
+                            "_id": "6060b00ef79b8634549f0cda",
                             "fullname": "Oren Karaso",
                             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
                         },
                         {
-                            "_id": "605892efb5499f32382121ee",
+                            "_id": "6060b106f79b8634549f0cdb",
                             "fullname": "Gilad Peltz",
                             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
                         },
                         {
-                            "_id": "605892efb5499f32382121ef",
+                            "_id": "6060b16cf79b8634549f0cdc",
                             "fullname": "Zina Michailov",
                             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
                         },
@@ -740,13 +740,13 @@ function _createBoard1() {
                             "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
                         },
                         {
-                            "_id": "605892efb5499f32382121ee",
+                            "_id": "6060b106f79b8634549f0cdb",
                             "fullname": "Gilad Peltz",
                             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
                           }
                     ],
                     "byMember": {
-                        "_id": "605892efb5499f32382121ee",
+                        "_id": "6060b106f79b8634549f0cdb",
                         "fullname": "Gilad Peltz",
                         "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
                       },
@@ -1013,7 +1013,7 @@ function _createBoard1() {
                             "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
                         },
                         {
-                            "_id": "605892efb5499f32382121ed",
+                            "_id": "6060b00ef79b8634549f0cda",
                             "fullname": "Oren Karaso",
                             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
                           }
@@ -1030,7 +1030,7 @@ function _createBoard1() {
                             "file": null,
                             "createdAt": 1615797804* 1000,
                             "byMember": {
-                                "_id": "605892efb5499f32382121ed",
+                                "_id": "6060b00ef79b8634549f0cda",
                                 "fullname": "Oren Karaso",
                                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
                               }
@@ -1184,7 +1184,7 @@ function _createBoard1() {
                             "file": null,
                             "createdAt": 1616057004* 1000,
                             "byMember": {
-                                "_id": "605892efb5499f32382121ee",
+                                "_id": "6060b106f79b8634549f0cdb",
                                 "fullname": "Gilad Peltz",
                                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
                               }
@@ -1195,7 +1195,7 @@ function _createBoard1() {
                             "file": null,
                             "createdAt": 1616229804* 1000,
                             "byMember": {
-                                "_id": "605892efb5499f32382121ef",
+                                "_id": "6060b16cf79b8634549f0cdc",
                                 "fullname": "Zina Michailov",
                                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
                               }
@@ -1241,17 +1241,17 @@ function _createBoard1() {
                     "title": "Continued development of additional new features for future releases",
                     "members": [
                         {
-                            "_id": "605892efb5499f32382121ed",
+                            "_id": "6060b00ef79b8634549f0cda",
                             "fullname": "Oren Karaso",
                             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
                         },
                         {
-                            "_id": "605892efb5499f32382121ee",
+                            "_id": "6060b106f79b8634549f0cdb",
                             "fullname": "Gilad Peltz",
                             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
                         },
                         {
-                            "_id": "605892efb5499f32382121ef",
+                            "_id": "6060b16cf79b8634549f0cdc",
                             "fullname": "Zina Michailov",
                             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
                         },
@@ -1268,7 +1268,7 @@ function _createBoard1() {
                             "file": null,
                             "createdAt": 1614808800* 1000,
                             "byMember": {
-                                "_id": "605892efb5499f32382121ee",
+                                "_id": "6060b106f79b8634549f0cdb",
                                 "fullname": "Gilad Peltz",
                                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
                               }
@@ -1279,7 +1279,7 @@ function _createBoard1() {
                             "file": null,
                             "createdAt": 1614981600* 1000,
                             "byMember": {
-                                "_id": "605892efb5499f32382121ed",
+                                "_id": "6060b00ef79b8634549f0cda",
                                 "fullname": "Oren Karaso",
                                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
                               }
@@ -1290,7 +1290,7 @@ function _createBoard1() {
                             "file": null,
                             "createdAt": 1615154400* 1000,
                             "byMember": {
-                                "_id": "605892efb5499f32382121ef",
+                                "_id": "6060b16cf79b8634549f0cdc",
                                 "fullname": "Zina Michailov",
                                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
                             }
@@ -1301,7 +1301,7 @@ function _createBoard1() {
                             "file": null,
                             "createdAt": 1615413600* 1000,
                             "byMember": {
-                                "_id": "605892efb5499f32382121ef",
+                                "_id": "6060b16cf79b8634549f0cdc",
                                 "fullname": "Zina Michailov",
                                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
                             }
@@ -1312,7 +1312,7 @@ function _createBoard1() {
                             "file": null,
                             "createdAt": 1615586400* 1000,
                             "byMember": {
-                                "_id": "605892efb5499f32382121ee",
+                                "_id": "6060b106f79b8634549f0cdb",
                                 "fullname": "Gilad Peltz",
                                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
                             }
@@ -1323,7 +1323,7 @@ function _createBoard1() {
                             "file": null,
                             "createdAt": 1615759200* 1000,
                             "byMember": {
-                                "_id": "605892efb5499f32382121ed",
+                                "_id": "6060b00ef79b8634549f0cda",
                                 "fullname": "Oren Karaso",
                                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
                             }
@@ -1345,7 +1345,7 @@ function _createBoard1() {
             "action": "Changed Color",
             "createdAt": 1616440539741,
             "byMember": {
-                "_id": "605892efb5499f32382121ed",
+                "_id": "6060b00ef79b8634549f0cda",
                 "fullname": "Oren Karaso",
                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616920955/oren_vt7isv.png"
                   
@@ -1403,7 +1403,7 @@ function _createBoard1() {
             "action": "Update task title",
             "createdAt": 1616324061838,
             "byMember": {
-                "_id": "605892efb5499f32382121ee",
+                "_id": "6060b106f79b8634549f0cdb",
                 "fullname": "Gilad Peltz",
                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616882905/zpqmij06vx7mdwywd2ne.jpg"
               },
@@ -1417,7 +1417,7 @@ function _createBoard1() {
             "action": "Update task title",
             "createdAt": 1616324061831,
             "byMember": {
-                "_id": "605892efb5499f32382121ef",
+                "_id": "6060b16cf79b8634549f0cdc",
                 "fullname": "Zina Michailov",
                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
               },
@@ -1425,7 +1425,7 @@ function _createBoard1() {
                 "id": "t105",
                 "title": "Getting an initial feedback from client"
             }
-            }
+        }
     ]
 }
 }
@@ -1433,7 +1433,7 @@ function _createBoard1() {
 
 function _createBoard2() {
     return {
-        "_id": "605c9f47364773a1b176a9e0",
+        "_id": "6060b463ead0657d66fc95e1",
         "title": "Trip Planning",
         "description": "Start Planning Your Dream Vacation Now",
         "createdAt": 1589983468418,

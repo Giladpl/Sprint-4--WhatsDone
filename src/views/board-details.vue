@@ -5,6 +5,24 @@
     :style="isFixed"
   >
     <div :class="classObjectScreen"></div>
+
+    <div
+      v-if="isBoardActivity"
+      class="board-activity"
+    >
+      <div class="flex"><i
+          class="el-icon-close close-btn"
+          @click="toggleBoardActivity"
+        ></i>
+        <h3 class="activities-title">Board Activities</h3>
+      </div>
+
+      <task-activity
+        :activities="boardToEdit.activities"
+        v-click-outside="toggleBoardActivity"
+      />
+    </div>
+
     <app-header
       :boardId="board._id"
       :boards="boards"
@@ -38,7 +56,8 @@
               :board="board"
               :members="board.members"
             />
-            <div>Activity</div>
+            <div @click="toggleBoardActivity">Activity</div>
+
             <div>
               <el-button
                 class="add-btn"
@@ -48,6 +67,7 @@
             <div class="more-btn"><i class="el-icon-more"></i></div>
           </div>
         </div>
+
         <div>
           <input
             class="board-description-input"
@@ -245,6 +265,7 @@ import { boardService } from "../services/board.service.js";
 import group from "@/cmps/group";
 import appHeader from "@/cmps/app-header";
 import boardMemberAvatar from "@/cmps/board-member-avatar";
+import taskActivity from "@/cmps/task-activity";
 import { utilService } from "../services/util.service.js";
 import vClickOutside from "v-click-outside";
 import draggable from "vuedraggable";
@@ -266,6 +287,7 @@ export default {
       currUser: null,
       filteredMembersIds: [],
       isDragEnabled: true,
+      isBoardActivity: false,
     };
   },
   methods: {
@@ -278,6 +300,10 @@ export default {
       } catch (err) {
         console.log("cannot load board", err);
       }
+    },
+    toggleBoardActivity() {
+      this.isBoardActivity = !this.isBoardActivity
+      this.toggleMainScreen()
     },
     filterMembers() {
       // console.log(this.filteredMembersIds);
@@ -669,6 +695,7 @@ export default {
     appHeader,
     boardMemberAvatar,
     draggable,
+    taskActivity
   },
 };
 </script>
