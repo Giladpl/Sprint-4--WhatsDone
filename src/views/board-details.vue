@@ -77,12 +77,12 @@
           </el-button>
           <div class="flex-center">
             <div class="btn-integrate">
-              <img src="@/assets/icons/plug.svg" >
-              Integrate 
-              <img src="@/assets/icons/slack.svg" >
-              <img src="@/assets/icons/gmail.svg" >
+              <img src="@/assets/icons/plug.svg">
+              Integrate
+              <img src="@/assets/icons/slack.svg">
+              <img src="@/assets/icons/gmail.svg">
             </div>
-            <div class="btn-automate"><img src="@/assets/icons/robot.svg" >Automate</div>
+            <div class="btn-automate"><img src="@/assets/icons/robot.svg">Automate</div>
           </div>
         </div>
         <div
@@ -191,6 +191,7 @@
         :scroll-sensitivity="250"
         :force-fallback="true"
         :animation="400"
+        :disabled="!isDragEnabled"
         handle=".handle"
         drag-class="dragging-item"
         chosen-class="chosen-item"
@@ -264,6 +265,7 @@ export default {
       isAddingBoard: false,
       currUser: null,
       filteredMembersIds: [],
+      isDragEnabled: true,
     };
   },
   methods: {
@@ -301,9 +303,13 @@ export default {
     },
     toggleMainScreen() {
       this.isMainScreen = !this.isMainScreen;
+      this.toggleDragging()
     },
     changeBorderRadius() {
       this.isBorderRadius = !this.isBorderRadius;
+    },
+    toggleDragging() {
+      this.isDragEnabled = !this.isDragEnabled;
     },
     addActivity(action, task) {
       const activity = {
