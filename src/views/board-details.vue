@@ -159,11 +159,11 @@
           Add Group
         </el-button>
         <el-input
-          @click.native.stop=""
-          ref=""
+          @change="onSearch"
           class="task-search"
           placeholder="Search"
           prefix-icon="el-icon-search"
+          v-model="filterBy.txt"
         />
         <div class="select-filter-container flex">
           <img
@@ -291,6 +291,9 @@ export default {
       filteredMembersIds: [],
       isDragEnabled: true,
       isBoardActivity: false,
+      filterBy: {
+        txt: null
+      }
     };
   },
   methods: {
@@ -339,6 +342,10 @@ export default {
     },
     toggleDragging() {
       this.isDragEnabled = !this.isDragEnabled;
+    },
+    onSearch(txt) {
+      console.log('txt' ,txt);
+      console.log(this.tasksToShowBySearch);
     },
     addActivity(action, task) {
       const activity = {
@@ -683,6 +690,14 @@ export default {
       console.log(tasks);
       return true
     },
+    tasksToShowBySearch() {
+      const regex = new RegExp(this.filterBy.txt, 'i');
+      return this.boardToEdit.groups.filter(group => {
+        return group.tasks.filter(task => { 
+          return regex.test(task.title)
+        })
+      })
+    }
   },
   watch: {
     "$route.params.boardId"() {
