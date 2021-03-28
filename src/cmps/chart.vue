@@ -6,10 +6,10 @@
       @click="backToBoard"
     >Back</el-button>
     <div class="charts-main-container">
-      <el-card class="num-group"><i class="el-icon-finished" />Total Number of Groups: {{currBoard.groups.length}}</el-card>
-      <el-card class="num-task"><i class="el-icon-s-data" />Total Number of Tasks: {{taskNumber}}</el-card>
-      <el-card class="num-member"><i class="el-icon-user-solid" />Total Number of Members: {{currBoard.members.length}}</el-card>
-      <el-card class="num-member2">Total Number of Members: {{currBoard.members.length}}</el-card>
+      <el-card class="num-group"><span>Groups:</span><i class="el-icon-finished" />{{currBoard.groups.length}}</el-card>
+      <el-card class="num-task"><span>Tasks:</span><i class="el-icon-s-data" />{{taskNumber}}</el-card>
+      <el-card class="num-member"><span>Members:</span><i class="el-icon-user-solid" />{{currBoard.members.length}}</el-card>
+      <el-card class="num-done"><span>Done:</span><i class="el-icon-star-on" />{{totalDoneTasks.length}}</el-card>
       <el-card class="priority-chart-container">
         <h4>Board Priorities by Percentages:</h4>
         <chartPriorityTotal class="chart priority-chart" />
@@ -45,8 +45,16 @@ export default {
       var taskNumber = 0
       this.currBoard.groups.forEach(group => {
         taskNumber += group.tasks.length
-      })
-      return taskNumber
+      });
+      return taskNumber;
+    },
+    totalDoneTasks() {
+      var res = this.currBoard.groups.map(group => {
+        return group.tasks.filter(task => {
+          return task.statusId === 's101'
+        });
+      });
+      return res;
     }
   },
   components: {

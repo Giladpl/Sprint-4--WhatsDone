@@ -22,9 +22,9 @@
       </div>
     </div>
     <div
-      class="secondary-header flex"
+      class="secondary-header flex " 
       :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}">
-      <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list">
+      <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list" v-click-outside="toggleBoardNavbar">
         <li class="add-board flex" @click="addNewBoard">
           <i class="el-icon-circle-plus-outline"></i>
           Add
@@ -109,9 +109,6 @@ export default {
     addNewBoard() {
       this.$emit('addingBoard');
     },
-    // toggleMobileMenu() {
-    //   this.isHamburger = !this.isHamburger;
-    // }
   },
   computed: {
     loggedInUser() {

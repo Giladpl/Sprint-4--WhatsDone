@@ -24,9 +24,7 @@ export default {
       this.currBoard.groups.forEach((group) => {
         this.timePerGroupMap[group.title] = 0;
         group.tasks.forEach((task) => {
-          this.timePerGroupMap[group.title] += +(
-            task.secondsWorkedOn / 3600
-          ).toFixed(2);
+          this.timePerGroupMap[group.title] += parseInt(task.secondsWorkedOn / 3600);
         });
       });
     },
