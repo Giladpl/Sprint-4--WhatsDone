@@ -102,9 +102,9 @@ function _createBoard1() {
     "createdAt": 1589983468418,
     "imgUrl": "@/assets/icons/programming.svg",
     "createdBy": {
-        "_id": "60589078b5499f32382121e3",
-        "fullname": "Shraga Puk",
-        "imgUrl": "https://randomuser.me/api/portraits/men/21.jpg"
+        "_id": "6058927bb5499f32382121e9",
+        "fullname": "Dan Willer",
+        "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
     },
     "statuses": [
         {
@@ -205,7 +205,22 @@ function _createBoard1() {
             "_id": "605892efb5499f32382121ec",
             "fullname": "Dan Henderson",
             "imgUrl": "https://randomuser.me/api/portraits/men/32.jpg"
-        }
+        },
+        {
+            "_id": "605892efb5499f32382121ed",
+            "fullname": "Oren Karaso",
+            "imgUrl": "@/assets/img/oren.png"
+        },
+        {
+            "_id": "605892efb5499f32382121ee",
+            "fullname": "Gilad Peltz",
+            "imgUrl": "@/assets/img/oren.png"
+        },
+        {
+            "_id": "605892efb5499f32382121ef",
+            "fullname": "Zina Michailov",
+            "imgUrl": "@/assets/img/oren.png"
+        },
     ],
     "groups": [
         {
