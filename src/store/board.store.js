@@ -5,10 +5,24 @@ export const boardStore = {
     state: {
         boards: [],
         currBoard: null,
+        filterBy: {
+            txt: null
+        }
     },
     getters: {
         boards(state) { return state.boards },
-        currBoard(state) { return state.currBoard }
+        currBoard(state) { return state.currBoard },
+        boardToShow(state) {
+            if (!state.filterBy.txt) return state.currBoard;
+            const regex = new RegExp(state.filterBy.txt, 'i');
+            const newBoard = state.currBoard.groups.filter(group => {
+                return group.tasks.filter(task => { 
+                    return regex.test(task.title)
+                })
+            })
+            console.log(newBoard);
+            return newBoard
+        }
     },
     mutations: {
         setBoards(state, payload) {
@@ -29,6 +43,9 @@ export const boardStore = {
             state.boards.splice(idx, 1, board);
             // state.currBoard = board;
         },
+        setFilter(state, payload) {
+            state.filterBy = payload.filterBy;
+        },
     },
     actions: {
         async loadBoards({ commit }, { filterBy }) {
@@ -44,14 +61,6 @@ export const boardStore = {
             try {
                 const board = await boardService.getById(boardId);
                 commit({ type: 'setBoard', board });
-                // socketService.emit('watch-board', boardId);
-                // socketService.off('board-updated');
-                // socketService.on('board-updated', (boardToSave) => {
-                //     commit({ type: 'setBoard', boardToSave });
-                // });
-                // socketService.on('task-updated', (task) => {
-                //     commit({ type: 'saveTask', task });
-                // });
             } catch (err) {
                 console.log('boardStore: Error in loadBoard', err);
                 throw err;

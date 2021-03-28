@@ -343,9 +343,8 @@ export default {
     toggleDragging() {
       this.isDragEnabled = !this.isDragEnabled;
     },
-    onSearch(txt) {
-      console.log('txt' ,txt);
-      console.log(this.tasksToShowBySearch);
+    onSearch() {
+      this.$store.commit({ type: 'setFilter', filterBy: this.filterBy })
     },
     addActivity(action, task) {
       const activity = {
@@ -665,7 +664,7 @@ export default {
       return this.$store.getters.boards;
     },
     board() {
-      return this.$store.getters.currBoard;
+      return this.$store.getters.boardToShow;
     },
     classObjectScreen() {
       return {
@@ -690,14 +689,6 @@ export default {
       console.log(tasks);
       return true
     },
-    tasksToShowBySearch() {
-      const regex = new RegExp(this.filterBy.txt, 'i');
-      return this.boardToEdit.groups.filter(group => {
-        return group.tasks.filter(task => { 
-          return regex.test(task.title)
-        })
-      })
-    }
   },
   watch: {
     "$route.params.boardId"() {
