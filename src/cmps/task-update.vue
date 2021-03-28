@@ -8,7 +8,7 @@
         v-model="updateToEdit.update"
       ></el-input>
       <div class="add-uptate-btns flex-between">
-        <div
+        <div 
           v-if="!isAddFile"
           @click="toggleAddFile"
           class="file-btn"
@@ -17,7 +17,7 @@
           v-else
           @save="saveImg"
         ></img-upload>
-        <el-button size="small">Update</el-button>
+        <el-button @click.native="addUpdate" size="small">Update</el-button>
       </div>
     </form>
     <div v-if="comments">
@@ -37,7 +37,7 @@
           <div class="comment-time">{{ comment.createdAt | moment }}</div>
         </div>
         <div class="comment-update">{{ comment.update }}</div>
-        <img :src="comment.file">
+        <img v-if="comment.file" :src="comment.file">
         <div class="btns flex">
           <div class="like-btn flex-center">Like</div>
           <div class="reply-btn flex-center">Reply</div>
