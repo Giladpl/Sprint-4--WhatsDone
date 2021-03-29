@@ -1433,7 +1433,7 @@ function _createBoard1() {
 
 function _createBoard2() {
     return {
-        "_id": "6060b463ead0657d66fc95e1",
+        "_id": "6061d84dead0657d6678930f",
         "title": "Trip Planning",
         "description": "Start Planning Your Dream Vacation Now",
         "createdAt": 1589983468418,
