@@ -182,7 +182,6 @@
             collapse-tags
             v-model="filterBy.members"
             placeholder="Filter"
-            @change="filterMembers"
           >
             <el-option
               v-for="member in board.members"
@@ -317,13 +316,10 @@ export default {
       this.isBoardActivity = !this.isBoardActivity
       this.toggleMainScreen()
     },
-    filterMembers() {
-      console.log(this.tasksToShow);
-    },
-    testSearch() {
-      console.log(this.filterBy.title);
-      console.log(this.taskBySearch);
-    },
+    // testSearch() {
+    //   console.log(this.filterBy.title);
+    //   console.log(this.taskBySearch);
+    // },
     backToBoard() {
       const boardId = this.$route.params.boardId;
       this.toggleAddView()
