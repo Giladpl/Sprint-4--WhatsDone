@@ -701,7 +701,6 @@ export default {
       return tasks
     },
   },
-  
   watch: {
     "$route.params.boardId"() {
       this.loadBoard();
@@ -712,6 +711,7 @@ export default {
     const boardId = this.$route.params.boardId;
     socketService.emit('watch-board', boardId);
     socketService.on('board-update', (boardToSave) => {
+      if (boardToSave._id !== boardId) return;
       this.boardToEdit = boardToSave;
     });
   },
