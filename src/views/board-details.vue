@@ -182,7 +182,6 @@
             collapse-tags
             v-model="filterBy.members"
             placeholder="Filter"
-            @change="filterMembers"
           >
             <el-option
               v-for="member in board.members"
@@ -317,12 +316,8 @@ export default {
       this.isBoardActivity = !this.isBoardActivity
       this.toggleMainScreen()
     },
-    filterMembers() {
-      console.log(this.tasksToShow);
-    },
-    testSearch() {
-      console.log(this.filterBy.title);
-      console.log(this.taskBySearch);
+    onSearch() {
+      console.log('search');
     },
     backToBoard() {
       const boardId = this.$route.params.boardId;
@@ -351,11 +346,6 @@ export default {
     },
     toggleDragging() {
       this.isDragEnabled = !this.isDragEnabled;
-    },
-    onSearch() {
-      // console.log(this.filterBy);
-
-      this.$store.commit({ type: 'setFilter', filterBy: this.filterBy.txt })
     },
     addActivity(action, task) {
       const activity = {
@@ -674,7 +664,7 @@ export default {
       return this.$store.getters.boards;
     },
     board() {
-      return this.$store.getters.boardToShow;
+      return this.$store.getters.currBoard;
     },
     boardToShow() {
       return JSON.parse(JSON.stringify(this.board));
@@ -700,9 +690,9 @@ export default {
         return tasks.length ? { ...group, tasks } : null
       })
       return groups.filter(group => group)
+      // const regex = new RegExp(state.filterBy.txt, 'i');
     },
   },
-
   watch: {
     "$route.params.boardId"() {
       this.loadBoard();
