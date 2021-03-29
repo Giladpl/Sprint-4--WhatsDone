@@ -22,7 +22,7 @@ export const boardStore = {
             })
             console.log(newBoard);
             return newBoard
-        }
+        },
     },
     mutations: {
         setBoards(state, payload) {
@@ -43,8 +43,8 @@ export const boardStore = {
             state.boards.splice(idx, 1, board);
             // state.currBoard = board;
         },
-        setFilter(state, payload) {
-            state.filterBy = payload.filterBy;
+        setFilter(state, {filterBy}) {
+            state.filterBy = filterBy;
         },
     },
     actions: {

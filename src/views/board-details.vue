@@ -165,7 +165,7 @@
           Add Group
         </el-button>
         <el-input
-          @change="onSearch"
+          @input="onSearch"
           class="task-search"
           placeholder="Search"
           prefix-icon="el-icon-search"
@@ -228,7 +228,7 @@
         :delay="100"
       >
         <li
-          v-for="group in boardToEdit.groups"
+          v-for="group in groupsToShow"
           :key="group._id"
         ><span class="handle">&vellip;&vellip;</span>
           <group
@@ -297,7 +297,8 @@ export default {
       isDragEnabled: true,
       isBoardActivity: false,
       filterBy: {
-        txt: null
+        txt: null,
+        members: []
       }
     };
   },
@@ -352,7 +353,9 @@ export default {
       this.isDragEnabled = !this.isDragEnabled;
     },
     onSearch() {
-      this.$store.commit({ type: 'setFilter', filterBy: this.filterBy })
+      // console.log(this.filterBy);
+
+      this.$store.commit({ type: 'setFilter', filterBy: this.filterBy.txt })
     },
     addActivity(action, task) {
       const activity = {
@@ -685,21 +688,21 @@ export default {
     isFixed() {
       return this.isMainScreen ? 'position: fixed' : ''
     },
-    tasksToShow() {
-      const tasks = [];
-      this.boardToEdit.groups.forEach(group => {
-        return group.tasks.forEach(task => {
-          return task.members.forEach(member => {
-            this.filteredMembersIds.find(memberId => {
-              if (member._id === memberId) tasks.push(task);
-            }
-            );
+    groupsToShow() {
+      if (!this.filterBy.members.length) return this.boardToEdit.groups
+      const groups = this.boardToEdit.groups.map(group => {
+        const tasks = group.tasks.filter(task => {
+          const members = task.members.filter(member => {
+            return this.filterBy.members.find(memberId => memberId === member._id)
           })
+          return members.length
         })
+        return tasks.length ? { ...group, tasks } : null
       })
-      return tasks
+      return groups.filter(group => group)
     },
   },
+
   watch: {
     "$route.params.boardId"() {
       this.loadBoard();
