@@ -569,7 +569,6 @@ export default {
         this.addActivity("Update priority", currGroup.tasks[idx]);
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
-        // socketService.emit('board-updated', this.boardToEdit);
       } catch (err) {
         console.log("cannot update priority", err);
       }
