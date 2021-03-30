@@ -78,6 +78,7 @@
           v-for="board in boardsToShow"
           :key="board._id"
           :class="{ 'chosen-board': isChosenBoard(board._id) }"
+          @click="toggleBoardNavbar"
         >
           <i class="el-icon-caret-right" />
           <router-link
