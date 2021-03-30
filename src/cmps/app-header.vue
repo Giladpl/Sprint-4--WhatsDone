@@ -39,11 +39,6 @@
         class="sidebar-board-prev clean-list"
         v-click-outside="toggleBoardNavbar"
       >
-        <li>
-          <router-link :to="'/board/' + boardId + '/chart'">
-            <i class="el-icon-s-data" />Charts
-          </router-link>
-        </li>
         <li
           class="add-board flex"
           @click="addNewBoard"
@@ -57,6 +52,12 @@
               src="@/assets/icons/filter.svg"
             /></i>
           Filters
+        </li>
+        <li @click="toggleCharts" class="charts-mobile-link">
+          <router-link :to="'/board/' + boardId + '/chart'" class="router-link">
+            <i class="el-icon-s-data" />
+            Charts
+          </router-link>
         </li>
         <li></li>
         <li class="flex">
@@ -77,6 +78,7 @@
           v-for="board in boardsToShow"
           :key="board._id"
           :class="{ 'chosen-board': isChosenBoard(board._id) }"
+          @click="toggleBoardNavbar"
         >
           <i class="el-icon-caret-right" />
           <router-link
@@ -148,6 +150,10 @@ export default {
     addNewBoard() {
       this.$emit('addingBoard');
     },
+    toggleCharts() {
+      this.toggleBoardNavbar();
+      this.$emit('toggleAddView');
+    }
   },
   computed: {
     loggedInUser() {

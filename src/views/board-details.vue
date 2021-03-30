@@ -29,6 +29,7 @@
       @borderRadiusChange="changeBorderRadius"
       @addingBoard="addNewBoard"
       @toggleMainScreen="toggleMainScreen"
+       @toggleAddView="toggleAddView"
     />
     <div class="triangle-dent-header"></div>
     <div
@@ -132,7 +133,7 @@
             />
             Calander
           </div>
-          <div>
+          <div class="chart-btn">
             <router-link
               class="chart-btn"
               :to="'/board/' + board._id + '/chart'"
@@ -309,6 +310,8 @@ export default {
     toggleAddView() {
       this.isView = !this.isView
       this.isAddViewMenu = false
+      // this.$router.push(`/board/ + ${this.boardToEdit._id} + /chart`);
+    //  "'/board/' + boardId + '/chart'"
     },
     toggleStopwatch() {
       this.isStopWatch = !this.isStopWatch;
@@ -684,10 +687,7 @@ export default {
       this.loadBoard();
     },
     "$route"(newParamas, prevParams) {
-      // console.log('newParams', newParamas);
-      // console.log('prevParams', prevParams);
-      if (!newParamas.fullPath.includes('chart')) this.toggleAddView()
-
+      if (!newParamas.fullPath.includes('chart')) this.isView = false;
     }
   },
   created() {
