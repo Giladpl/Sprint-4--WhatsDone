@@ -186,13 +186,14 @@
                 .burger-menu {
                     cursor: pointer;
                     margin-right: rem(10px);
-                    font-size: rem(30px);
-                    margin-bottom: rem(5px);
+                    font-size: 1.45rem;
+                    // margin-bottom: rem(5px);
                 }
                 .el-avatar--small {
-                    width: rem(30px);
-                    height: rem(30px);
-                    line-height: rem(30px);
+                    display: flex;
+                    width: rem(20px);
+                    height: rem(20px);
+                    // line-height: rem(20px);
                 }
             }
         }
