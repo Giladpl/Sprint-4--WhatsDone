@@ -251,51 +251,28 @@
     .filters-container {
         align-items: center;
         font-family: Roboto, sans-serif;
-
-        > * {
-            margin-right: rem(20px);
-        }
+        display: grid;
+        margin-top: 10px;
+        gap: 10px;
+        grid-template-columns: repeat(3, 5.76063rem) 4.76063rem repeat(4, rem(20px)) 1fr;
 
         > * ::placeholder {
             color: $clr3;
             font-family: Roboto, sans-serif;
         }
 
-        .btn-add-group {
-            margin: 10px 0;
-            margin-right: 20px;
+        .el-input__inner {
+            border: none;
         }
 
-        .select-filter-container {
-            margin: rem(15px);
-            background-color: #fff;
-            justify-content: flex-start;
-            align-items: center;
-            cursor: pointer;
-
-            *:hover {
-                background-color: $clr4;
-            }
-
-            .el-input__inner {
-                border: none;
-                padding-left: rem(5px);
-            }
-
-            img {
-                width: rem(18px);
-                display: block;
-            }
-
-            &:hover {
-                background-color: $clr4;
-            }
-        }
+        img {
+            width: rem(18px);
+            display: block;
+        }        
 
         .el-icon-sort {
             color: $clr3;
-            margin: rem(20px);
-            margin-left: rem(-10px);
+            margin-left: 0.5rem;
         }
 
         .task-search {

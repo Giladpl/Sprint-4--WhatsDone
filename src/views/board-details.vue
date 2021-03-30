@@ -151,7 +151,7 @@
         </div>
       </div>
       <div
-        class="filters-container flex"
+        class="filters-container"
         v-if="!isView"
       >
         <el-button
@@ -169,7 +169,6 @@
           prefix-icon="el-icon-search"
           v-model="filterBy.txt"
         />
-        <!-- <div class="select-filter-container flex"> -->
         <!-- <img
             class="select-filter img"
             src="@/assets/icons/filter.svg"
@@ -189,8 +188,7 @@
           >
           </el-option>
         </el-select>
-        <!-- </div> -->
-        <i class="el-icon-sort">Sort</i>
+        <div><i class="el-icon-sort">Sort</i></div>
         <img src="@/assets/icons/push-pin.svg">
         <img src="@/assets/icons/restriction.svg">
         <img src="@/assets/icons/fill.svg">
