@@ -66,7 +66,6 @@
               >
               Activity
             </div>
-
             <div>
               <el-button
                 class="add-btn"
@@ -698,6 +697,9 @@ export default {
       if (boardToSave._id !== boardId) return;
       this.boardToEdit = boardToSave;
     });
+    socketService.on('notifications-update', (notification) => {
+      console.log(notification);
+    })
   },
   components: {
     group,
