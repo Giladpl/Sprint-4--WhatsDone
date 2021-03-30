@@ -61,6 +61,7 @@
           v-if="isTaskMemebersShown"
           :boardMembers="boardMembers"
           :taskMembers="task.members"
+          :task="task"
         />
       </div>
       <div class="status-container">

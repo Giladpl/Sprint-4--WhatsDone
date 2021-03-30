@@ -29,9 +29,7 @@ export default {
     }
   },
   computed: {
-
     restOfMembersAvatar() {
-
       return this.task.members.length - 2;
     }
   },

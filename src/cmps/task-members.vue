@@ -54,6 +54,10 @@ export default {
       type: Array,
       required: true,
     },
+    task: {
+      type: Object,
+      required: true,
+    }
   },
   name: 'task-members',
   data() {
@@ -71,6 +75,7 @@ export default {
     },
     addMemberToTask(member) {
       this.$emit('addMemberToTask', member);
+      socketService.emit('notifications-updated', {member, task: this.task})
     },
     boardMembersToShow() {
       this.taskMembersIds = this.taskMembers.reduce((acc, member) => {
