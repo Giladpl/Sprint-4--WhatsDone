@@ -168,27 +168,27 @@
           prefix-icon="el-icon-search"
           v-model="filterBy.txt"
         />
-        <div class="select-filter-container flex">
-          <img
+        <!-- <div class="select-filter-container flex"> -->
+        <!-- <img
             class="select-filter img"
             src="@/assets/icons/filter.svg"
-          />
-          <el-select
-            class="select-filter"
-            multiple
-            collapse-tags
-            v-model="filterBy.members"
-            placeholder="Filter"
+          /> -->
+        <el-select 
+          class="select-filter"
+          multiple
+          collapse-tags
+          v-model="filterBy.members"
+          placeholder="Filter"
+        >
+          <el-option
+            v-for="member in board.members"
+            :key="member._id"
+            :value="member._id"
+            :label="member.fullname"
           >
-            <el-option
-              v-for="member in board.members"
-              :key="member._id"
-              :value="member._id"
-              :label="member.fullname"
-            >
-            </el-option>
-          </el-select>
-        </div>
+          </el-option>
+        </el-select>
+        <!-- </div> -->
         <i class="el-icon-sort">Sort</i>
         <img src="@/assets/icons/push-pin.svg">
         <img src="@/assets/icons/restriction.svg">
