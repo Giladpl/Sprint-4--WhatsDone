@@ -1,10 +1,5 @@
 <template>
   <section>
-    <el-button
-      class="add-view-btn"
-      size="small"
-      @click="backToBoard"
-    >Back</el-button>
     <div class="charts-main-container">
       <el-card class="num-group"><span>Groups:</span><i class="el-icon-finished" />{{currBoard.groups.length}}</el-card>
       <el-card class="num-task"><span>Tasks:</span><i class="el-icon-s-data" />{{taskNumber}}</el-card>
@@ -32,11 +27,6 @@ import chartStatusTotal from "./chart-status-total";
 import chartTimePerTask from "./chart-time-per-task";
 export default {
 
-  methods: {
-    backToBoard() {
-      this.$emit('backToBoard')
-    }
-  },
   computed: {
     currBoard() {
       return this.$store.getters.currBoard;
@@ -57,6 +47,7 @@ export default {
       return res;
     }
   },
+  
   components: {
     chartPriorityTotal,
     chartStatusTotal,
