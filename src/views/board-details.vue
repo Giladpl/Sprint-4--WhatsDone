@@ -149,11 +149,7 @@
         </div>
       </div>
 
-      <router-view
-        v-if="isView"
-        @toggleAddView="toggleAddView"
-        @backToBoard="backToBoard"
-      />
+      <router-view v-if="isView" />
       <div class="filters-container flex">
         <el-button
           v-if="!isView"
@@ -188,16 +184,6 @@
               :value="member._id"
               :label="member.fullname"
             >
-              <!-- {{member.fullname}} -->
-              <!-- <div class="flex-between">
-              <el-avatar
-                shape="circle"
-                size="small"
-                fit="fit"
-                :src="member.imgUrl"
-              ></el-avatar>
-              <p>{{member.fullname}}</p>
-            </div> -->
             </el-option>
           </el-select>
         </div>
@@ -314,11 +300,6 @@ export default {
     toggleBoardActivity() {
       this.isBoardActivity = !this.isBoardActivity
       this.toggleMainScreen()
-    },
-    backToBoard() {
-      const boardId = this.$route.params.boardId;
-      this.toggleAddView()
-      this.$router.push('/board/' + boardId)
     },
     toggleAddView() {
       this.isView = !this.isView
@@ -691,30 +672,17 @@ export default {
         if (groupCopy.tasks.length) acc.push(groupCopy)
         return acc
       }, [])
-
-      // const groups = this.boardToEdit.groups.map(group => {
-      //   let groupCopy = JSON.parse(JSON.stringify(group))
-      //   if (this.filterBy.members.length) {
-      //     const tasks = groupCopy.tasks.filter(task => {
-      //       const members = task.members.filter(member => {
-      //         return this.filterBy.members.find(memberId => memberId === member._id)
-      //       })
-      //       return members.length
-      //     })
-      //     return tasks.length ? { ...groupCopy, tasks } : null
-      //   }
-      //   if (this.filterBy.txt) {
-      //     const regex = new RegExp(this.filterBy.txt, 'i');
-      //     return groupCopy.tasks.filter(task => regex.test(task.title))
-
-      //   }
-      // })
-      // return groups.filter(group => group)
     },
   },
   watch: {
     "$route.params.boardId"() {
       this.loadBoard();
+    },
+    "$route"(newParamas, prevParams) {
+      // console.log('newParams', newParamas);
+      // console.log('prevParams', prevParams);
+      if (!newParamas.fullPath.includes('chart')) this.toggleAddView()
+
     }
   },
   created() {
