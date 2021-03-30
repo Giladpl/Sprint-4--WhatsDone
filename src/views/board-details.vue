@@ -139,16 +139,18 @@
               :to="'/board/' + board._id + '/chart'"
               @click.native="toggleAddView"
             >
-              <img
-                class="btn-add-view-menu"
-                src="@/assets/icons/chart.svg"
-              />
-              Chart
+              <div>
+                <img
+                  class="btn-add-view-menu"
+                  src="@/assets/icons/chart.svg"
+                />
+                Chart
+              </div>
             </router-link>
           </div>
         </div>
       </div>
-      <div 
+      <div
         class="filters-container flex"
         v-if="!isView"
       >
