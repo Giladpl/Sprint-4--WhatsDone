@@ -6,6 +6,7 @@ import boardDetails from '../views/board-details.vue'
 import userProfile from '../views/user-profile.vue'
 import board from '../views/board.vue'
 import chart from '../cmps/chart.vue'
+import group from '../cmps/group.vue'
 
 Vue.use(VueRouter)
 
@@ -31,13 +32,13 @@ const routes = [
     component: boardDetails,
     children: [
       {
-          path: 'chart',
-          component: chart
+        path: 'group',
+        component: group
       },
-      // {
-      //     path: '',
-      //     component: 
-      // },       
+      {
+        path: 'chart',
+        component: chart
+      },       
   ]
   },
   {
