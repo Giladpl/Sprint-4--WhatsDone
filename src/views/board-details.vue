@@ -62,7 +62,7 @@
             >
               <img
                 class="activity-img"
-                src="@/assets/icons/small-zigzag-arrow-upward.svg"
+                src="@/assets/icons/arrow.jpeg"
               >
               Activity
             </div>
@@ -681,8 +681,10 @@ export default {
     },
   },
   watch: {
-    "$route.params.boardId"() {
-      this.loadBoard();
+    async "$route.params.boardId"() {
+      const boardId = this.$route.params.boardId;
+      await this.$store.dispatch({ type: 'loadBoard', boardId });
+      this.boardToEdit = JSON.parse(JSON.stringify(this.board));
     },
     "$route"(newParamas, prevParams) {
       if (!newParamas.fullPath.includes('chart')) this.isView = false;

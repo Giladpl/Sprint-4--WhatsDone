@@ -131,8 +131,9 @@
             }
 
             .activity-img {
-                width: 25px;
+                width: 18px;
                 margin-right: 5px;
+                object-fit: contain;
             }
 
             .board-btns {
@@ -273,6 +274,7 @@
         .el-icon-sort {
             color: $clr3;
             margin-left: 0.5rem;
+            font-size: 15px;
         }
 
         .task-search {
