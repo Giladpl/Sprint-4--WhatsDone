@@ -148,13 +148,10 @@
           </div>
         </div>
       </div>
-
-      <router-view
-        v-if="isView"
-        @toggleAddView="toggleAddView"
-        @backToBoard="backToBoard"
-      />
-      <div class="filters-container flex">
+      <div 
+        class="filters-container flex"
+        v-if="!isView"
+      >
         <el-button
           v-if="!isView"
           @click="addGroup"
@@ -207,7 +204,11 @@
         <img src="@/assets/icons/fill.svg">
         <img src="@/assets/icons/pen.svg">
       </div>
-
+      <router-view
+        v-if="isView"
+        @toggleAddView="toggleAddView"
+        @backToBoard="backToBoard"
+      />
       <draggable
         v-if="!isView"
         class="clean-list"
