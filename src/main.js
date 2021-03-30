@@ -9,6 +9,7 @@ import locale from 'element-ui/lib/locale/lang/en'
 import './styles/styles.scss';
 // import AudioRecorder from 'vue-audio-recorder'
 
+//try
 // Vue.use(AudioRecorder)
 Vue.use(ElementUI, { locale });
 

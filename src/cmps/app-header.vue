@@ -91,10 +91,19 @@
       </ul>
     </div>
     <div class="main-header-mobile flex-between">
+      <div class="mobile-menu-left flex">
       <div
         class="burger-menu"
         @click="toggleBoardNavbar"
       >☰
+      </div>
+      <router-link to="/profile">
+          <el-avatar
+            class="header-avatar"
+            size="small"
+            :src="loggedInUser.imgUrl"
+          ></el-avatar>
+        </router-link>
       </div>
       <div
         v-if="currBoard"
@@ -183,3 +192,8 @@ export default {
   },
 };
 </script>
+
+
+
+
+

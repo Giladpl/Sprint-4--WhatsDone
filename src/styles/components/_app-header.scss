@@ -178,11 +178,23 @@
 
         .main-header-mobile {
             display: flex;
+            align-items: center;
             width: 100%;
-        }
-
-        .burger-menu {
-            cursor: pointer;
+            .mobile-menu-left {
+                justify-content: center;
+                align-items: center;
+                .burger-menu {
+                    cursor: pointer;
+                    margin-right: rem(10px);
+                    font-size: rem(30px);
+                    margin-bottom: rem(5px);
+                }
+                .el-avatar--small {
+                    width: rem(30px);
+                    height: rem(30px);
+                    line-height: rem(30px);
+                }
+            }
         }
 
         .main-header {
