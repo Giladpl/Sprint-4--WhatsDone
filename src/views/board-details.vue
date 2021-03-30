@@ -698,7 +698,7 @@ export default {
       this.boardToEdit = boardToSave;
     });
     socketService.on('notifications-update', (notification) => {
-      console.log(notification);
+      // console.log(notification);
     })
   },
   components: {
