@@ -34,10 +34,7 @@ const routes = [
           path: 'chart',
           component: chart
       },
-      // {
-      //     path: '',
-      //     component: 
-      // },       
+         
   ]
   },
   {

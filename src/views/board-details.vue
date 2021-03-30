@@ -29,6 +29,7 @@
       @borderRadiusChange="changeBorderRadius"
       @addingBoard="addNewBoard"
       @toggleMainScreen="toggleMainScreen"
+       @toggleAddView="toggleAddView"
     />
     <div class="triangle-dent-header"></div>
 
@@ -148,7 +149,6 @@
           </div>
         </div>
       </div>
-
       <router-view
         v-if="isView"
         @toggleAddView="toggleAddView"
@@ -331,6 +331,8 @@ export default {
     toggleAddView() {
       this.isView = !this.isView
       this.isAddViewMenu = false
+      // this.$router.push(`/board/ + ${this.boardToEdit._id} + /chart`);
+    //  "'/board/' + boardId + '/chart'"
     },
     toggleStopwatch() {
       this.isStopWatch = !this.isStopWatch;

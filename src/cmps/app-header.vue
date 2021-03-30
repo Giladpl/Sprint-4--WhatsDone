@@ -26,9 +26,9 @@
       :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}">
       <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list" v-click-outside="toggleBoardNavbar">
         <li>
-          <router-link :to="'/board/' + boardId + '/chart'">
+          <div class="charts-link" @click="toggleCharts">
           <i class="el-icon-s-data" />Charts
-          </router-link>
+          </div>
           </li>
         <li class="add-board flex" @click="addNewBoard">
           <i class="el-icon-circle-plus-outline"></i>
@@ -114,6 +114,9 @@ export default {
     addNewBoard() {
       this.$emit('addingBoard');
     },
+    toggleCharts() {
+      this.$emit('toggleBoard');
+    }
   },
   computed: {
     loggedInUser() {
