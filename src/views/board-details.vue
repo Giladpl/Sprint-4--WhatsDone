@@ -165,7 +165,6 @@
           Add Group
         </el-button>
         <el-input
-          @change="onSearch"
           class="task-search"
           placeholder="Search"
           prefix-icon="el-icon-search"
@@ -182,7 +181,6 @@
             collapse-tags
             v-model="filterBy.members"
             placeholder="Filter"
-            @change="filterMembers"
           >
             <el-option
               v-for="member in board.members"
@@ -228,7 +226,7 @@
         :delay="100"
       >
         <li
-          v-for="group in boardToEdit.groups"
+          v-for="group in groupsToShow"
           :key="group._id"
         ><span class="handle">&vellip;&vellip;</span>
           <group
@@ -297,7 +295,8 @@ export default {
       isDragEnabled: true,
       isBoardActivity: false,
       filterBy: {
-        txt: null
+        txt: '',
+        members: []
       }
     };
   },
@@ -315,13 +314,6 @@ export default {
     toggleBoardActivity() {
       this.isBoardActivity = !this.isBoardActivity
       this.toggleMainScreen()
-    },
-    filterMembers() {
-      console.log(this.tasksToShow);
-    },
-    testSearch() {
-      console.log(this.filterBy.title);
-      console.log(this.taskBySearch);
     },
     backToBoard() {
       const boardId = this.$route.params.boardId;
@@ -352,9 +344,6 @@ export default {
     },
     toggleDragging() {
       this.isDragEnabled = !this.isDragEnabled;
-    },
-    onSearch() {
-      this.$store.commit({ type: 'setFilter', filterBy: this.filterBy })
     },
     addActivity(action, task) {
       const activity = {
@@ -571,7 +560,6 @@ export default {
         this.addActivity("Update priority", currGroup.tasks[idx]);
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
         this.loadBoard();
-        // socketService.emit('board-updated', this.boardToEdit);
       } catch (err) {
         console.log("cannot update priority", err);
       }
@@ -674,7 +662,7 @@ export default {
       return this.$store.getters.boards;
     },
     board() {
-      return this.$store.getters.boardToShow;
+      return this.$store.getters.currBoard;
     },
     boardToShow() {
       return JSON.parse(JSON.stringify(this.board));
@@ -688,19 +676,42 @@ export default {
     isFixed() {
       return this.isMainScreen ? 'position: fixed' : ''
     },
-    tasksToShow() {
-      const tasks = [];
-      this.boardToEdit.groups.forEach(group => {
-        return group.tasks.forEach(task => {
-          return task.members.forEach(member => {
-            this.filteredMembersIds.find(memberId => {
-              if (member._id === memberId) tasks.push(task);
-            }
-            );
+    groupsToShow() {
+      if (!this.filterBy.members.length && !this.filterBy.txt) return this.boardToEdit.groups
+      return this.boardToEdit.groups.reduce((acc, group) => {
+        let groupCopy = JSON.parse(JSON.stringify(group))
+        if (this.filterBy.members.length) {
+          groupCopy.tasks = groupCopy.tasks.filter(task => {
+            const members = task.members.filter(member => this.filterBy.members.includes(member._id))
+            return members.length
           })
-        })
-      })
-      return tasks
+        }
+        if (this.filterBy.txt) {
+          const regex = new RegExp(this.filterBy.txt, 'i');
+          groupCopy.tasks = groupCopy.tasks.filter(task => regex.test(task.title))
+        }
+        if (groupCopy.tasks.length) acc.push(groupCopy)
+        return acc
+      }, [])
+
+      // const groups = this.boardToEdit.groups.map(group => {
+      //   let groupCopy = JSON.parse(JSON.stringify(group))
+      //   if (this.filterBy.members.length) {
+      //     const tasks = groupCopy.tasks.filter(task => {
+      //       const members = task.members.filter(member => {
+      //         return this.filterBy.members.find(memberId => memberId === member._id)
+      //       })
+      //       return members.length
+      //     })
+      //     return tasks.length ? { ...groupCopy, tasks } : null
+      //   }
+      //   if (this.filterBy.txt) {
+      //     const regex = new RegExp(this.filterBy.txt, 'i');
+      //     return groupCopy.tasks.filter(task => regex.test(task.title))
+
+      //   }
+      // })
+      // return groups.filter(group => group)
     },
   },
   watch: {

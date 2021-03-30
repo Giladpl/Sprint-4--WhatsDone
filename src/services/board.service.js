@@ -96,7 +96,7 @@ function _createBoards() {
 
 function _createBoard1() {
   return {
-    "_id": "6060b41cead0657d66fc78cd",
+    "_id": "6061ee8fead0657d66801d60",
     "title": "Software Development",
     "description": "Software Development Life Cycle",
     "createdAt": 1589983468418,
@@ -220,7 +220,7 @@ function _createBoard1() {
             "_id": "6060b16cf79b8634549f0cdc",
             "fullname": "Zina Michailov",
             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
-        },
+        }
     ],
     "groups": [
         {
@@ -252,7 +252,7 @@ function _createBoard1() {
                             "id": "c101",
                             "update": "Started working on the first draft.",
                             "file": null,
-                            "createdAt": 1614501804 * 1000,
+                            "createdAt": 1614501804000,
                             "byMember": {
                                 "_id": "60589078b5499f32382121e3",
                                 "fullname": "Shraga Puk",
@@ -263,7 +263,7 @@ function _createBoard1() {
                             "id": "c102",
                             "update": "Sending all members a the schedule for the next week",
                             "file": null,
-                            "createdAt": 1615797804  * 1000,
+                            "createdAt": 1615797804000,
                             "byMember": {
                                 "_id": "605890eab5499f32382121e4",
                                 "fullname": "Datia Puk",
@@ -307,7 +307,7 @@ function _createBoard1() {
                             "id": "c103",
                             "update": "Working with financial-controller team on possible costs",
                             "file": null,
-                            "createdAt": 1616143404  * 1000,
+                            "createdAt": 1616143404000,
                             "byMember": {
                                 "_id": "60589198b5499f32382121e7",
                                 "fullname": "JSON De Parse",
@@ -318,7 +318,7 @@ function _createBoard1() {
                             "id": "c104",
                             "update": "Building first draft file with foreseeable labor charges",
                             "file": null,
-                            "createdAt": 1616834604 * 1000,
+                            "createdAt": 1616834604000,
                             "byMember": {
                                 "_id": "60589169b2497f92382121e6",
                                 "fullname": "Muki Abu Ja",
@@ -329,7 +329,7 @@ function _createBoard1() {
                             "id": "c105",
                             "update": "Talked with all 3rd party vendors to understand costs",
                             "file": null,
-                            "createdAt": 1616921004  * 1000,
+                            "createdAt": 1616921004000,
                             "byMember": {
                                 "_id": "605892a8b5499f32382121ea",
                                 "fullname": "Robert Wilford",
@@ -369,7 +369,7 @@ function _createBoard1() {
                             "id": "c103",
                             "update": "communicated with share-holders to better understand goals",
                             "file": null,
-                            "createdAt": 1615711404  * 1000,
+                            "createdAt": 1615711404000,
                             "byMember": {
                                 "_id": "6060b106f79b8634549f0cdb",
                                 "fullname": "Gilad Peltz",
@@ -380,7 +380,7 @@ function _createBoard1() {
                             "id": "c104",
                             "update": "Building a proposed time-line for the project",
                             "file": null,
-                            "createdAt": 1615884204 * 1000,
+                            "createdAt": 1615884204000,
                             "byMember":    {
                                 "_id": "60589234b5499f32382121e8",
                                 "fullname": "Nancy Williams",
@@ -391,7 +391,7 @@ function _createBoard1() {
                             "id": "c105",
                             "update": "Sending proposed timeline to team-leader for approval",
                             "file": null,
-                            "createdAt": 1616057004 * 1000,
+                            "createdAt": 1616057004000,
                             "byMember": {
                                 "_id": "60589198b5499f32382121e7",
                                 "fullname": "JSON De Parse",
@@ -430,7 +430,7 @@ function _createBoard1() {
                             "id": "c103",
                             "update": "Talked to all prospect team members to check availability",
                             "file": null,
-                            "createdAt": 1616229804 * 1000,
+                            "createdAt": 1616229804000,
                             "byMember": {
                                 "_id": "605892efb5499f32382121ec",
                                 "fullname": "Dan Henderson",
@@ -441,7 +441,7 @@ function _createBoard1() {
                             "id": "c105",
                             "update": "Working on prep program for the teams",
                             "file": null,
-                            "createdAt": 1616316204 * 1000,
+                            "createdAt": 1616316204000,
                             "byMember": {
                                 "_id": "60589198b5499f32382121e7",
                                 "fullname": "JSON De Parse",
@@ -452,7 +452,7 @@ function _createBoard1() {
                             "id": "c102",
                             "update": "Started executing the training program",
                             "file": null,
-                            "createdAt": 1616402604 * 1000,
+                            "createdAt": 1616402604000,
                             "byMember": {
                                 "_id": "605892efb5499f32382121ec",
                                 "fullname": "Dan Henderson",
@@ -501,7 +501,7 @@ function _createBoard1() {
                             "id": "c103",
                             "update": "Scheduled a meeting with the client",
                             "file": null,
-                            "createdAt": 1616402604 * 1000,
+                            "createdAt": 1616402604000,
                             "byMember":  {
                                 "_id": "6060b00ef79b8634549f0cda",
                                 "fullname": "Oren Karaso",
@@ -512,7 +512,7 @@ function _createBoard1() {
                             "id": "c105",
                             "update": "Conducted meeting together with costumer-satisfaction manager",
                             "file": null,
-                            "createdAt": 1616489004 * 1000,
+                            "createdAt": 1616489004000,
                             "byMember": {
                                 "_id": "60589198b5499f32382121e7",
                                 "fullname": "JSON De Parse",
@@ -523,7 +523,7 @@ function _createBoard1() {
                             "id": "c102",
                             "update": "Following up with development teams on readjusting product to client's satisfaction",
                             "file": null,
-                            "createdAt": 1616575404 * 1000,
+                            "createdAt": 1616575404000,
                             "byMember": {
                                 "_id": "6060b16cf79b8634549f0cdc",
                                 "fullname": "Zina Michailov",
@@ -612,13 +612,13 @@ function _createBoard1() {
                             "id": "c101",
                             "update": "Checking which is more relevant- Vue or Angular",
                             "file": null,
-                            "createdAt": 1616575404 * 1000,
+                            "createdAt": 1616575404000,
                             "byMember": {
                                 "_id": "605892efb5499f32382121ec",
                                 "fullname": "Dan Henderson",
                                 "imgUrl": "https://randomuser.me/api/portraits/men/32.jpg"
                             }
-                        },
+                        }
                     ],
                     "statusId": "s102",
                     "priorityId": "p101",
@@ -649,7 +649,7 @@ function _createBoard1() {
                             "_id": "6060b16cf79b8634549f0cdc",
                             "fullname": "Zina Michailov",
                             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
-                        },
+                        }
                     ],
                     "byMember": {
                         "_id": "6058927bb5499f32382121e9",
@@ -661,13 +661,13 @@ function _createBoard1() {
                             "id": "c103",
                             "update": "Working with UI/UX team to understand interface",
                             "file": null,
-                            "createdAt": 1616661804 * 1000,
+                            "createdAt": 1616661804000,
                             "byMember": {
                                 "_id": "6058927bb5499f32382121e9",
                                 "fullname": "Dan Willer",
                                 "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
                             }
-                        },
+                        }
                     ],
                     "statusId": "s102",
                     "priorityId": "p102",
@@ -705,7 +705,7 @@ function _createBoard1() {
                             "id": "c103",
                             "update": "Deciding on Apple/Android/Windows",
                             "file": null,
-                            "createdAt": 1616661804 * 1000,
+                            "createdAt": 1616661804000,
                             "byMember":  {
                                 "_id": "605892a8b5499f32382121ea",
                                 "fullname": "Robert Wilford",
@@ -716,13 +716,13 @@ function _createBoard1() {
                             "id": "c105",
                             "update": "Understanding specific restrictions of each platform",
                             "file": null,
-                            "createdAt": 1616748204 * 1000,
+                            "createdAt": 1616748204000,
                             "byMember":  {
                                 "_id": "6058927bb5499f32382121e9",
                                 "fullname": "Dan Willer",
                                 "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
                             }
-                        },
+                        }
                     ],
                     "statusId": "s101",
                     "priorityId": "p102",
@@ -755,7 +755,7 @@ function _createBoard1() {
                             "id": "c103",
                             "update": "Sending first draft flow for approval",
                             "file": null,
-                            "createdAt": 1616402604 * 1000,
+                            "createdAt": 1616402604000,
                             "byMember":  {
                                 "_id": "60589169b2497f92382121e6",
                                 "fullname": "Muki Abu Ja",
@@ -766,13 +766,13 @@ function _createBoard1() {
                             "id": "c105",
                             "update": "Following approval, working on implementation of flow",
                             "file": null,
-                            "createdAt": 1616489004 * 1000,
+                            "createdAt": 1616489004000,
                             "byMember": {
                                 "_id": "60589169b2497f92382121e6",
                                 "fullname": "Muki Abu Ja",
                                 "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPGD2nRVqluXRYoJdMRuczqzyorOJThR8Dg&usqp=CAU"
                             }
-                        },
+                        }
                     ],
                     "statusId": "s102",
                     "priorityId": "p103",
@@ -812,7 +812,7 @@ function _createBoard1() {
                             "id": "c101",
                             "update": "Started working on first prototype",
                             "file": null,
-                            "createdAt": 1616489004 * 1000,
+                            "createdAt": 1616489004000,
                             "byMember": {
                                 "_id": "60589078b5499f32382121e3",
                                 "fullname": "Shraga Puk",
@@ -823,7 +823,7 @@ function _createBoard1() {
                             "id": "c102",
                             "update": "Documented several bugs in first version",
                             "file": null,
-                            "createdAt": 1616489004 * 1000,
+                            "createdAt": 1616489004000,
                             "byMember": {
                                 "_id": "605890eab5499f32382121e4",
                                 "fullname": "Datia Puk",
@@ -834,7 +834,7 @@ function _createBoard1() {
                             "id": "c102",
                             "update": "Documented several bugs in first version",
                             "file": null,
-                            "createdAt": 1616575404* 1000,
+                            "createdAt": 1616575404000,
                             "byMember": {
                                 "_id": "605890eab5499f32382121e4",
                                 "fullname": "Datia Puk",
@@ -845,7 +845,7 @@ function _createBoard1() {
                             "id": "c103",
                             "update": "Fixed bug in users-store",
                             "file": null,
-                            "createdAt": 1616661804* 1000,
+                            "createdAt": 1616661804000,
                             "byMember": {
                                 "_id": "605890eab5499f32382121e4",
                                 "fullname": "Datia Puk",
@@ -889,7 +889,7 @@ function _createBoard1() {
                             "id": "c103",
                             "update": "Created pages and cmps skeleton",
                             "file": null,
-                            "createdAt": 1616661804* 1000,
+                            "createdAt": 1616661804000,
                             "byMember": {
                                 "_id": "605892a8b5499f32382121ea",
                                 "fullname": "Robert Wilford",
@@ -900,7 +900,7 @@ function _createBoard1() {
                             "id": "c105",
                             "update": "Uploaded the first commit with the folders structure",
                             "file": null,
-                            "createdAt": 1616834604* 1000,
+                            "createdAt": 1616834604000,
                             "byMember": {
                                 "_id": "60589198b5499f32382121e7",
                                 "fullname": "JSON De Parse",
@@ -911,7 +911,7 @@ function _createBoard1() {
                             "id": "c109",
                             "update": "Finished the initial wire-connection, all looks in good working order",
                             "file": null,
-                            "createdAt": 1616921004* 1000,
+                            "createdAt": 1616921004000,
                             "byMember": {
                                 "_id": "6058927bb5499f32382121e9",
                                 "fullname": "Dan Willer",
@@ -960,7 +960,7 @@ function _createBoard1() {
                             "id": "c103",
                             "update": "Created first style file with all imports to other files",
                             "file": null,
-                            "createdAt": 1615625004 * 1000,
+                            "createdAt": 1615625004000,
                             "byMember": {
                                 "_id": "60589234b5499f32382121e8",
                                 "fullname": "Nancy Williams",
@@ -971,7 +971,7 @@ function _createBoard1() {
                             "id": "c105",
                             "update": "Created main css layout for homepage",
                             "file": null,
-                            "createdAt": 1615711404* 1000,
+                            "createdAt": 1615711404000,
                             "byMember": {
                                 "_id": "605892efb5499f32382121ec",
                                 "fullname": "Dan Henderson",
@@ -982,7 +982,7 @@ function _createBoard1() {
                             "id": "c107",
                             "update": "All imports are in good working order",
                             "file": null,
-                            "createdAt": 1615797804* 1000,
+                            "createdAt": 1615797804000,
                             "byMember": {
                                 "_id": "605892cfb5499f32382121eb",
                                 "fullname": "Stephanie White",
@@ -1028,7 +1028,7 @@ function _createBoard1() {
                             "id": "c101",
                             "update": "Initial meeting with QA team",
                             "file": null,
-                            "createdAt": 1615797804* 1000,
+                            "createdAt": 1615797804000,
                             "byMember": {
                                 "_id": "6060b00ef79b8634549f0cda",
                                 "fullname": "Oren Karaso",
@@ -1039,7 +1039,7 @@ function _createBoard1() {
                             "id": "c102",
                             "update": "Starting to work together with QA experts on finding and fixing bugs",
                             "file": null,
-                            "createdAt": 1615884204* 1000,
+                            "createdAt": 1615884204000,
                             "byMember": {
                                 "_id": "605890eab5499f32382121e4",
                                 "fullname": "Datia Puk",
@@ -1143,13 +1143,13 @@ function _createBoard1() {
                             "id": "c101",
                             "update": "Setting a complete deployment schedule",
                             "file": null,
-                            "createdAt": 1615884204* 1000,
+                            "createdAt": 1615884204000,
                             "byMember": {
                                 "_id": "6058927bb5499f32382121e9",
                                 "fullname": "Dan Willer",
                                 "imgUrl": "https://randomuser.me/api/portraits/men/29.jpg"
                             }
-                        },
+                        }
                     ],
                     "statusId": "s103",
                     "priorityId": "p102",
@@ -1182,7 +1182,7 @@ function _createBoard1() {
                             "id": "c103",
                             "update": "New bug in sign-in was reported",
                             "file": null,
-                            "createdAt": 1616057004* 1000,
+                            "createdAt": 1616057004000,
                             "byMember": {
                                 "_id": "6060b106f79b8634549f0cdb",
                                 "fullname": "Gilad Peltz",
@@ -1193,13 +1193,13 @@ function _createBoard1() {
                             "id": "c105",
                             "update": "Liaising with QA team to fix reported new bug",
                             "file": null,
-                            "createdAt": 1616229804* 1000,
+                            "createdAt": 1616229804000,
                             "byMember": {
                                 "_id": "6060b16cf79b8634549f0cdc",
                                 "fullname": "Zina Michailov",
                                 "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
                               }
-                        },
+                        }
                     ],
                     "statusId": "s102",
                     "priorityId": "p103",
@@ -1254,7 +1254,7 @@ function _createBoard1() {
                             "_id": "6060b16cf79b8634549f0cdc",
                             "fullname": "Zina Michailov",
                             "imgUrl": "https://res.cloudinary.com/dpurt6mxc/image/upload/v1616923565/zina_qfvbkd.jpg"
-                        },
+                        }
                     ],
                     "byMember": {
                         "_id": "605892efb5499f32382121ec",
@@ -1266,7 +1266,7 @@ function _createBoard1() {
                             "id": "c103",
                             "update": "Understanding possible road-map from stack-holders",
                             "file": null,
-                            "createdAt": 1614808800* 1000,
+                            "createdAt": 1614808800000,
                             "byMember": {
                                 "_id": "6060b106f79b8634549f0cdb",
                                 "fullname": "Gilad Peltz",
@@ -1277,7 +1277,7 @@ function _createBoard1() {
                             "id": "c105",
                             "update": "Mapping possible upgrades from inspecting competitors abilities.",
                             "file": null,
-                            "createdAt": 1614981600* 1000,
+                            "createdAt": 1614981600000,
                             "byMember": {
                                 "_id": "6060b00ef79b8634549f0cda",
                                 "fullname": "Oren Karaso",
@@ -1288,7 +1288,7 @@ function _createBoard1() {
                             "id": "c107",
                             "update": "Following up with customer-experience manager regarding user's preferences",
                             "file": null,
-                            "createdAt": 1615154400* 1000,
+                            "createdAt": 1615154400000,
                             "byMember": {
                                 "_id": "6060b16cf79b8634549f0cdc",
                                 "fullname": "Zina Michailov",
@@ -1299,7 +1299,7 @@ function _createBoard1() {
                             "id": "c108",
                             "update": "Possible new feature specifically for women during women's empowerment month",
                             "file": null,
-                            "createdAt": 1615413600* 1000,
+                            "createdAt": 1615413600000,
                             "byMember": {
                                 "_id": "6060b16cf79b8634549f0cdc",
                                 "fullname": "Zina Michailov",
@@ -1310,7 +1310,7 @@ function _createBoard1() {
                             "id": "c109",
                             "update": "FYI everyone, next version's release day was set for tomorrow instead of next week",
                             "file": null,
-                            "createdAt": 1615586400* 1000,
+                            "createdAt": 1615586400000,
                             "byMember": {
                                 "_id": "6060b106f79b8634549f0cdb",
                                 "fullname": "Gilad Peltz",
@@ -1321,7 +1321,7 @@ function _createBoard1() {
                             "id": "c1107",
                             "update": "Good to know, I'm just putting the final touches on the new feature we discussed",
                             "file": null,
-                            "createdAt": 1615759200* 1000,
+                            "createdAt": 1615759200000,
                             "byMember": {
                                 "_id": "6060b00ef79b8634549f0cda",
                                 "fullname": "Oren Karaso",
@@ -1433,7 +1433,7 @@ function _createBoard1() {
 
 function _createBoard2() {
     return {
-        "_id": "6060b463ead0657d66fc95e1",
+        "_id": "6061eeedead0657d668038ba",
         "title": "Trip Planning",
         "description": "Start Planning Your Dream Vacation Now",
         "createdAt": 1589983468418,

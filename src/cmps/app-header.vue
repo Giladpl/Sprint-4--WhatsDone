@@ -3,9 +3,15 @@
     <div class="main-header flex">
       <div class="top-header flex">
         <router-link to="/">
-          <i><img class="logo" src="@/assets/icons/increase.svg" /></i>
+          <i><img
+              class="logo"
+              src="@/assets/icons/increase.svg"
+            /></i>
         </router-link>
-        <i class="header-icon el-icon-s-grid" @click="toggleBoardNavbar"></i>
+        <i
+          class="header-icon el-icon-s-grid"
+          @click="toggleBoardNavbar"
+        ></i>
         <i class="header-icon el-icon-bell"></i>
       </div>
       <div class="bottom-header flex">
@@ -17,35 +23,51 @@
           ></el-avatar>
         </router-link>
         <router-link to="/">
-          <i><img class="exit" src="@/assets/icons/exit.svg" /></i>
+          <i><img
+              class="exit"
+              src="@/assets/icons/exit.svg"
+            /></i>
         </router-link>
       </div>
     </div>
     <div
-      class="secondary-header flex " 
-      :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}">
-      <ul v-if="isBoardNavbarShown" class="sidebar-board-prev clean-list" v-click-outside="toggleBoardNavbar">
+      class="secondary-header flex "
+      :class="{'header-shown': isBoardNavbarShown,'header-not-shown': !isBoardNavbarShown}"
+    >
+      <ul
+        v-if="isBoardNavbarShown"
+        class="sidebar-board-prev clean-list"
+        v-click-outside="toggleBoardNavbar"
+      >
         <li>
-          <div class="charts-link" @click="toggleCharts">
-          <i class="el-icon-s-data" />Charts
-          </div>
-          </li>
-        <li class="add-board flex" @click="addNewBoard">
+          <router-link :to="'/board/' + boardId + '/chart'">
+            <i class="el-icon-s-data" />Charts
+          </router-link>
+        </li>
+        <li
+          class="add-board flex"
+          @click="addNewBoard"
+        >
           <i class="el-icon-circle-plus-outline"></i>
           Add
         </li>
         <li class="sidebar-filters flex">
-          <i
-            ><img
+          <i><img
               class="sidebar-board-prev img"
               src="@/assets/icons/filter.svg"
-          /></i>
+            /></i>
           Filters
         </li>
         <li></li>
         <li class="flex">
-          <el-input  @input="boardToShow()" ref="searchInput" 
-             v-model="filterBy.name"  class="board-search" placeholder="Search a board..." prefix-icon="el-icon-search" />
+          <el-input
+            @input="boardToShow()"
+            ref="searchInput"
+            v-model="filterBy.name"
+            class="board-search"
+            placeholder="Search a board..."
+            prefix-icon="el-icon-search"
+          />
         </li>
         <li>
           <h4 class="change-board">Change Board</h4>
@@ -57,22 +79,34 @@
           :class="{ 'chosen-board': isChosenBoard(board._id) }"
         >
           <i class="el-icon-caret-right" />
-          <router-link class="router-link" :to="'/board/' + board._id">
+          <router-link
+            class="router-link"
+            :to="'/board/' + board._id"
+          >
             <h4>{{ board.title }}</h4>
           </router-link>
         </li>
       </ul>
     </div>
     <div class="main-header-mobile flex-between">
-      <div class="burger-menu" @click="toggleBoardNavbar">☰
+      <div
+        class="burger-menu"
+        @click="toggleBoardNavbar"
+      >☰
       </div>
-      <div v-if="currBoard" class="board-title">{{currBoard.title}}</div>
+      <div
+        v-if="currBoard"
+        class="board-title"
+      >{{currBoard.title}}</div>
       <div class="logo-container">
         <router-link to="/">
-          <img class="logo" src="@/assets/icons/increase.svg" />
+          <img
+            class="logo"
+            src="@/assets/icons/increase.svg"
+          />
         </router-link>
       </div>
-          </div>
+    </div>
   </section>
 </template>
 
@@ -105,7 +139,7 @@ export default {
   methods: {
     toggleBoardNavbar() {
       this.isBoardNavbarShown = !this.isBoardNavbarShown;
-      if (screen.width >= 460)this.$emit('borderRadiusChange');
+      if (screen.width >= 460) this.$emit('borderRadiusChange');
       if (screen.width <= 460) this.$emit('toggleMainScreen');
     },
     isChosenBoard(id) {

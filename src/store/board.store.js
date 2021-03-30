@@ -4,25 +4,11 @@ import {socketService } from "../services/socket.service.js";
 export const boardStore = {
     state: {
         boards: [],
-        currBoard: null,
-        filterBy: {
-            txt: null
-        }
+        currBoard: null
     },
     getters: {
         boards(state) { return state.boards },
-        currBoard(state) { return state.currBoard },
-        boardToShow(state) {
-            if (!state.filterBy.txt) return state.currBoard;
-            const regex = new RegExp(state.filterBy.txt, 'i');
-            const newBoard = state.currBoard.groups.filter(group => {
-                return group.tasks.filter(task => { 
-                    return regex.test(task.title)
-                })
-            })
-            console.log(newBoard);
-            return newBoard
-        }
+        currBoard(state) { return state.currBoard }
     },
     mutations: {
         setBoards(state, payload) {
@@ -41,11 +27,7 @@ export const boardStore = {
         editBoard(state, { board }) {
             const idx = state.boards.findIndex(t => t._id === board._id);
             state.boards.splice(idx, 1, board);
-            // state.currBoard = board;
-        },
-        setFilter(state, payload) {
-            state.filterBy = payload.filterBy;
-        },
+        }
     },
     actions: {
         async loadBoards({ commit }, { filterBy }) {
