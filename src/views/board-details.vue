@@ -528,6 +528,11 @@ export default {
     },
     async removeStatus(statusId) {
       try {
+        this.boardToEdit.groups.forEach(group => {
+          group.tasks.forEach(task => {
+            if (task.statusId === statusId) task.statusId = 'sNew';
+          })
+        });
         const statusIdx = this.boardToEdit.statuses.findIndex(status => status.id === statusId);
         this.boardToEdit.statuses.splice(statusIdx, 1);
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
@@ -560,6 +565,11 @@ export default {
     },
     async removePriority(priorityId) {
       try {
+        this.boardToEdit.groups.forEach(group => {
+          group.tasks.forEach(task => {
+            if (task.priorityId === priorityId) task.priorityId = 'pNew';
+          })
+        });
         const priorityIdx = this.boardToEdit.priorities.findIndex(priority => priority.id === priorityId);
         this.boardToEdit.priorities.splice(priorityIdx, 1);
         await this.$store.dispatch({ type: "saveBoard", board: this.boardToEdit });
